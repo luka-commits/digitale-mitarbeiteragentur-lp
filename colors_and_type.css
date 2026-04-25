@@ -130,10 +130,12 @@ html, body {
 
 body {
   background-color: var(--dma-elfenbein);
+  /* V5 Apple-Vision-Pro-tinted Background — stärkere Tiefsee + Petrol-Tints für Liquid-Glass-Tiefe */
   background-image:
-    radial-gradient(ellipse 70% 55% at 15% 20%, rgba(47, 118, 128, 0.06), transparent 55%),
-    radial-gradient(ellipse 60% 45% at 90% 10%, rgba(26, 46, 58, 0.05), transparent 60%),
-    radial-gradient(ellipse 80% 50% at 80% 90%, rgba(205, 224, 222, 0.55), transparent 55%),
+    radial-gradient(ellipse 80% 60% at 12% 8%, rgba(47, 118, 128, 0.18), transparent 55%),
+    radial-gradient(ellipse 70% 55% at 92% 18%, rgba(26, 46, 58, 0.16), transparent 60%),
+    radial-gradient(ellipse 90% 50% at 50% 100%, rgba(111, 166, 174, 0.22), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 85% 70%, rgba(47, 118, 128, 0.10), transparent 60%),
     linear-gradient(180deg, var(--dma-elfenbein) 0%, var(--dma-papier) 100%);
   background-attachment: fixed;
   min-height: 100vh;
