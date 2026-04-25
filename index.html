@@ -15,7 +15,10 @@
 <nav class="nav" id="nav">
   <div class="container nav-inner">
     <div class="nav-left">
-      <a class="dma-shortform" href="#" aria-label="DMA · Digitale Mitarbeiter Agentur"><span class="slash">/////</span>DMA</a>
+      <a class="dma-shortform" href="#" aria-label="DMA · Digitale Mitarbeiter Agentur">
+        <span class="mark"><span class="slash">/////</span>DMA</span>
+        <span class="descriptor" data-i18n="brand.descriptor">Digitale Mitarbeiter Agentur</span>
+      </a>
       <div class="nav-center">
         <a href="#agents" data-i18n="nav.agents">Rollen</a>
         <a href="#example" data-i18n="nav.example">Beispiel</a>
@@ -29,9 +32,32 @@
         <button data-lang="en">EN</button>
       </div>
       <a class="btn btn-primary btn-sm" href="#lead" data-i18n="nav.cta">Erstgespräch</a>
+      <button class="nav-mobile-toggle" id="nav-mobile-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-mobile-panel">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
     </div>
   </div>
 </nav>
+
+<!-- Mobile-Panel as body-sibling — outside <nav> because nav has backdrop-filter
+     which would otherwise contain fixed-position descendants -->
+<div class="nav-mobile-panel" id="nav-mobile-panel" aria-hidden="true">
+  <div class="container">
+    <div class="nav-mobile-links">
+      <a href="#agents" data-i18n="nav.agents">Rollen</a>
+      <a href="#example" data-i18n="nav.example">Beispiel</a>
+      <a href="#felipe" data-i18n="nav.about">Über uns</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    </div>
+    <div class="nav-mobile-foot">
+      <div class="lang-toggle" role="group" aria-label="Sprache">
+        <button class="active" data-lang="de">DE</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <a class="btn btn-primary btn-sm" href="#lead" data-i18n="nav.cta">Erstgespräch</a>
+    </div>
+  </div>
+</div>
 
 <!-- ============ HERO ============ -->
 <header class="hero">
@@ -39,15 +65,14 @@
     <span class="eyebrow hero-eyebrow fade-up" data-i18n="hero.eyebrow">Digitale Mitarbeiter · Industrie-Mittelstand · DSGVO-konform</span>
     <h1 class="hero-headline fade-up delay-1" data-i18n="hero.h1">Ihr neuer Kollege ist digital.</h1>
     <p class="hero-sub fade-up delay-2" data-i18n="hero.sub">In 30 Tagen besetzt — mit digitalen Mitarbeitern, die nie krank werden.</p>
-    <p class="hero-body fade-up delay-2" data-i18n="hero.body">Wir besetzen offene Büro- und Innendienst-Rollen im deutschen Industrie-Mittelstand.</p>
     <div class="hero-ctas fade-up delay-3">
       <a class="btn btn-primary" href="#lead" data-i18n="hero.cta1">Erstgespräch buchen</a>
       <a class="btn btn-text" href="#agents" data-i18n="hero.cta2">Digitale Kollegen kennenlernen</a>
     </div>
     <div class="hero-pills fade-up delay-3">
-      <span class="hero-pill glass glass-hover"><span class="pill-dot"></span><span data-i18n="hero.pill1">In 30 Tagen besetzt</span></span>
-      <span class="hero-pill glass glass-hover"><span class="pill-dot"></span><span data-i18n="hero.pill2">DSGVO · EU-Rechenzentrum</span></span>
-      <span class="hero-pill glass glass-hover"><span class="pill-dot"></span><span data-i18n="hero.pill3">24 / 7 verfügbar</span></span>
+      <span class="hero-pill glass glass-hover" data-i18n="hero.pill1">30 Tage besetzt</span>
+      <span class="hero-pill glass glass-hover" data-i18n="hero.pill2">DSGVO · EU-Rechenzentrum</span>
+      <span class="hero-pill glass glass-hover" data-i18n="hero.pill3">24 / 7 verfügbar</span>
     </div>
   </div>
 </header>
@@ -90,27 +115,8 @@
       </div>
 
       <p class="timeline-quote" data-i18n="timeline.quote">Vakanz-Ø DACH 173 Tage · DMA: 30 Tage</p>
-    </div>
 
-    <div class="problem-bullets fade-up">
-      <div class="problem-col problem-col--negative">
-        <h4 data-i18n="problem.not.head">Nicht das</h4>
-        <ul>
-          <li><svg class="bullet-icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5 l8 8 M13 5 l-8 8" stroke-linecap="round"/></svg><span data-i18n="problem.not.1">Noch eine Stellenanzeige schalten.</span></li>
-          <li><svg class="bullet-icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5 l8 8 M13 5 l-8 8" stroke-linecap="round"/></svg><span data-i18n="problem.not.2">Werkstudenten einarbeiten, die wieder kündigen.</span></li>
-          <li><svg class="bullet-icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5 l8 8 M13 5 l-8 8" stroke-linecap="round"/></svg><span data-i18n="problem.not.3">Dem Team mehr Überstunden zumuten.</span></li>
-          <li><svg class="bullet-icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5 l8 8 M13 5 l-8 8" stroke-linecap="round"/></svg><span data-i18n="problem.not.4">Eine Agentur in Monatspaketen abrechnen lassen.</span></li>
-        </ul>
-      </div>
-      <div class="problem-col problem-col--positive">
-        <h4 data-i18n="problem.this.head">Sondern das</h4>
-        <ul>
-          <li><svg class="bullet-icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9 l3.5 3.5 L14 6" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="problem.this.1">Ein digitaler Mitarbeiter, der die Rolle übernimmt.</span></li>
-          <li><svg class="bullet-icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9 l3.5 3.5 L14 6" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="problem.this.2">Trainiert auf Ihre Prozesse, integriert in Ihre Tools.</span></li>
-          <li><svg class="bullet-icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9 l3.5 3.5 L14 6" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="problem.this.3">Verfügbar rund um die Uhr — keine Krankheitstage.</span></li>
-          <li><svg class="bullet-icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9 l3.5 3.5 L14 6" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="problem.this.4">DSGVO-konform, EU-Rechenzentrum, Datenhoheit bei Ihnen.</span></li>
-        </ul>
-      </div>
+      <p class="timeline-bridge fade-up" data-i18n="timeline.bridge">Die Stelle bleibt offen. Oder Paula startet nächste Woche.</p>
     </div>
   </div>
 </section>
@@ -140,13 +146,7 @@
           <h3 data-i18n="ext.paula.name">Paula</h3>
           <div class="persona-role" data-i18n="ext.paula.role">Digitale Auftragssachbearbeiterin</div>
           <p class="persona-body" data-i18n="ext.paula.body">Paula übernimmt Ihre Auftragssachbearbeitung. Statt fünf Bewerbungen sichten: Paula startet nächste Woche.</p>
-          <div class="skills">
-            <span class="skill">Auftragsannahme</span>
-            <span class="skill">ERP-Pflege</span>
-            <span class="skill">Liefertermine</span>
-            <span class="skill">Kundenrückfragen</span>
-            <span class="skill">Reklamation</span>
-          </div>
+          <span class="feed-eyebrow" data-i18n="feed.live">↓ Heute live</span>
           <div class="activity-feed">
             <div class="activity-feed-track" data-feed="paula">
               <div class="activity-item"><span class="time">09:14</span><span class="desc">Auftrag #4521 angelegt</span></div>
@@ -172,13 +172,7 @@
           <h3 data-i18n="ext.martin.name">Martin</h3>
           <div class="persona-role" data-i18n="ext.martin.role">Digitaler Einkaufssachbearbeiter</div>
           <p class="persona-body" data-i18n="ext.martin.body">Martin übernimmt Ihren Einkauf. Ihr Einkaufsleiter braucht kein drittes Paar Hände — er hat Martin.</p>
-          <div class="skills">
-            <span class="skill">Bedarfsmeldungen</span>
-            <span class="skill">Lieferanten-Abfragen</span>
-            <span class="skill">Bestellung</span>
-            <span class="skill">Wareneingang</span>
-            <span class="skill">Mahn-Vorlauf</span>
-          </div>
+          <span class="feed-eyebrow" data-i18n="feed.live">↓ Heute live</span>
           <div class="activity-feed">
             <div class="activity-feed-track" data-feed="martin">
               <div class="activity-item"><span class="time">08:42</span><span class="desc">Bedarfsmeldung Stahlprofile geprüft</span></div>
@@ -203,13 +197,7 @@
           <h3 data-i18n="ext.jonas.name">Jonas</h3>
           <div class="persona-role" data-i18n="ext.jonas.role">Digitaler Vertriebsinnendienst</div>
           <p class="persona-body" data-i18n="ext.jonas.body">Jonas übernimmt Ihren Vertriebsinnendienst. Ihre Verkäufer reden mit Kunden. Jonas schreibt das Angebot.</p>
-          <div class="skills">
-            <span class="skill">Anfragen</span>
-            <span class="skill">Angebot</span>
-            <span class="skill">CRM-Pflege</span>
-            <span class="skill">Follow-Up</span>
-            <span class="skill">Auftragsbestätigung</span>
-          </div>
+          <span class="feed-eyebrow" data-i18n="feed.live">↓ Heute live</span>
           <div class="activity-feed">
             <div class="activity-feed-track" data-feed="jonas">
               <div class="activity-item"><span class="time">08:55</span><span class="desc">Angebot Müller GmbH versendet</span></div>
@@ -268,31 +256,27 @@
   <div class="container">
     <div class="section-head fade-up">
       <span class="eyebrow" data-i18n="usp.eyebrow">Standard, nicht Add-On</span>
-      <h2 data-i18n="usp.headline">Fünf Dinge, die jeder Kollege mitbringt.</h2>
-      <p data-i18n="usp.lede">Keine Upsells. Ohne diese fünf Punkte hält ein digitaler Mitarbeiter keinen Monat im echten Betrieb durch.</p>
+      <h2 data-i18n="usp.headline">Vier Dinge, die jeder Kollege mitbringt.</h2>
+      <p data-i18n="usp.lede">Keine Upsells. Ohne diese vier Punkte hält ein digitaler Mitarbeiter keinen Monat im echten Betrieb durch.</p>
     </div>
 
     <div class="usp-switcher fade-up">
       <div class="usp-tabs" role="tablist">
         <button class="usp-tab active" data-usp="integration">
-          <svg class="tab-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="12" y="3" width="7" height="7" rx="1"/><rect x="3" y="12" width="7" height="7" rx="1"/><rect x="12" y="12" width="7" height="7" rx="1"/></svg>
+          <span class="tab-num">01</span>
           <span><span class="tab-title" data-i18n="usp.t1.title">Integration in Ihren Stack</span><span class="tab-sub" data-i18n="usp.t1.sub">CRM, Ticket-System, Kalender, ERP, DATEV.</span></span>
         </button>
         <button class="usp-tab" data-usp="dsgvo">
-          <svg class="tab-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 2 L4 5 V11 C4 15 7 19 11 20 C15 19 18 15 18 11 V5 Z"/><path d="M8 11 l2 2 l4-5"/></svg>
+          <span class="tab-num">02</span>
           <span><span class="tab-title" data-i18n="usp.t2.title">DSGVO von Tag 1</span><span class="tab-sub" data-i18n="usp.t2.sub">EU-Rechenzentrum, AV-Vertrag, kein Modell-Training.</span></span>
         </button>
         <button class="usp-tab" data-usp="dashboard">
-          <svg class="tab-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="16" height="16" rx="1"/><line x1="3" y1="8" x2="19" y2="8"/><line x1="9" y1="8" x2="9" y2="19"/></svg>
+          <span class="tab-num">03</span>
           <span><span class="tab-title" data-i18n="usp.t3.title">Dashboard, das Sie verstehen</span><span class="tab-sub" data-i18n="usp.t3.sub">Live-Feed, Handoff-Log, Audit-Trail.</span></span>
         </button>
-        <button class="usp-tab" data-usp="learning">
-          <svg class="tab-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="3"/><circle cx="4" cy="4" r="2"/><circle cx="18" cy="4" r="2"/><circle cx="4" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><line x1="6" y1="6" x2="9" y2="9"/><line x1="16" y1="6" x2="13" y2="9"/><line x1="6" y1="16" x2="9" y2="13"/><line x1="16" y1="16" x2="13" y2="13"/></svg>
-          <span><span class="tab-title" data-i18n="usp.t4.title">Lernt weiter — wie ein Kollege</span><span class="tab-sub" data-i18n="usp.t4.sub">Monatlicher Review, neue Edge-Cases.</span></span>
-        </button>
         <button class="usp-tab" data-usp="lockin">
-          <svg class="tab-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 11 L18 11 M11 4 L18 11 L11 18"/></svg>
-          <span><span class="tab-title" data-i18n="usp.t5.title">Kein Vendor-Lock</span><span class="tab-sub" data-i18n="usp.t5.sub">Runbook, Schulung, dokumentierte Übergabe.</span></span>
+          <span class="tab-num">04</span>
+          <span><span class="tab-title" data-i18n="usp.t4.title">Kein Vendor-Lock</span><span class="tab-sub" data-i18n="usp.t4.sub">Runbook, Schulung, dokumentierte Übergabe.</span></span>
         </button>
       </div>
 
@@ -352,31 +336,10 @@
           </div>
         </div>
 
-        <!-- Learning -->
-        <div class="usp-stage-panel" data-panel="learning">
-          <h4 data-i18n="usp.s4.head">Er wird besser, nicht älter.</h4>
-          <p data-i18n="usp.s4.body">Monatlicher Review, neue Edge-Cases aus echtem Betrieb in die Wissensbasis. Im Retainer enthalten — keine Extra-Rechnung für Verbesserungen.</p>
-          <div class="graph-mock" id="graph-mock">
-            <!-- Nodes positioniert -->
-            <div class="graph-node large" style="left: 48%; top: 45%;"></div>
-            <div class="graph-node" style="left: 22%; top: 25%;"></div>
-            <div class="graph-node" style="left: 75%; top: 22%;"></div>
-            <div class="graph-node" style="left: 18%; top: 65%;"></div>
-            <div class="graph-node" style="left: 78%; top: 70%;"></div>
-            <div class="graph-node" style="left: 35%; top: 78%;"></div>
-            <div class="graph-node" style="left: 60%; top: 78%;"></div>
-            <div class="graph-node" style="left: 30%; top: 12%;"></div>
-            <div class="graph-node" style="left: 65%; top: 12%;"></div>
-            <div class="graph-node" style="left: 12%; top: 45%;"></div>
-            <div class="graph-node" style="left: 88%; top: 45%;"></div>
-            <p class="graph-caption" data-i18n="usp.s4.caption">47 neue Edge-Cases im April · 12 Wissens-Nodes ergänzt</p>
-          </div>
-        </div>
-
         <!-- Lock-in -->
         <div class="usp-stage-panel" data-panel="lockin">
-          <h4 data-i18n="usp.s5.head">Wenn Sie kündigen, läuft er weiter.</h4>
-          <p data-i18n="usp.s5.body">Quellcode, Dokumentation, Runbook und Schulung gehen an Sie über. Ihr Team kann ihn weiter betreiben — oder einen Wettbewerber damit beauftragen.</p>
+          <h4 data-i18n="usp.s4.head">Wenn Sie kündigen, läuft er weiter.</h4>
+          <p data-i18n="usp.s4.body">Quellcode, Dokumentation, Runbook und Schulung gehen an Sie über. Ihr Team kann ihn weiter betreiben — oder einen Wettbewerber damit beauftragen.</p>
           <div class="handover-grid">
             <div class="handover-cell">
               <div class="cell-mark">01</div>
@@ -412,19 +375,19 @@
       <div class="process-line"><span class="midpoint"></span></div>
 
       <div class="atelier-card process-step">
-        <div class="step-num" data-i18n="process.s1.num">01 · 30 Min</div>
+        <div class="step-num" data-i18n="process.s1.num">01 · 30 MIN</div>
         <h4 data-i18n="process.s1.head">Erstgespräch</h4>
-        <p data-i18n="process.s1.body">Wir hören zu, welche Rolle Ihnen am meisten fehlt. Wenn wir nicht der richtige Partner sind, sagen wir das — keine Sales-Pipeline.</p>
+        <p data-i18n="process.s1.body">Welche Rolle fehlt am meisten. Kein Match → wir sagen es.</p>
       </div>
       <div class="atelier-card process-step">
-        <div class="step-num" data-i18n="process.s2.num">02 · 1 Woche</div>
+        <div class="step-num" data-i18n="process.s2.num">02 · 1 WOCHE</div>
         <h4 data-i18n="process.s2.head">Scoping</h4>
-        <p data-i18n="process.s2.body">Wir schreiben Ihren Prozess auf, identifizieren Tools und Daten, fixieren Scope und Preis. Festes Angebot, kein Tagessatz-Modell.</p>
+        <p data-i18n="process.s2.body">Prozess + Tools dokumentiert. Festes Angebot, kein Tagessatz.</p>
       </div>
       <div class="atelier-card process-step">
-        <div class="step-num" data-i18n="process.s3.num">03 · 3 Wochen</div>
+        <div class="step-num" data-i18n="process.s3.num">03 · 3 WOCHEN</div>
         <h4 data-i18n="process.s3.head">Onboarding</h4>
-        <p data-i18n="process.s3.body">Aufbau, Test mit echten Fällen, Schulung Ihres Teams, Go-Live mit Begleitung. Ab Tag 30 produktiv.</p>
+        <p data-i18n="process.s3.body">Aufbau, Test mit echten Fällen, Schulung. Ab Tag 30 produktiv.</p>
       </div>
     </div>
   </div>
@@ -444,9 +407,30 @@
         <span data-i18n="ex.meta.size">200 Mitarbeiter</span>
         <span data-i18n="ex.meta.role">Disposition</span>
       </div>
-      <p data-i18n="ex.p1">Der Senior-Disponent ging in Rente. Nachfolger: nicht zu finden. Disposition für Sondertransporte ist Spezialwissen — Routen, Achslast, Behörden, Wochen-Vorausplanung. Drei Monate Vakanz hätten zwölf Aufträge gekostet.</p>
-      <p data-i18n="ex.p2">Mit Armin, dem Geschäftsführer, haben wir in 30 Tagen einen digitalen Disponenten aufgebaut. Trainiert auf 18 Monate historischer Auftragsdaten, integriert in das Branchen-ERP, verbunden mit dem Fahrer-Kalender und dem Sondergenehmigungs-Portal.</p>
-      <p data-i18n="ex.p3">Ergebnis: Kein Auftrag mehr verloren. Zwei Disponenten arbeiten heute mit dem digitalen Kollegen statt drei. Reaktionszeit auf Kundenanfragen von zwei Tagen auf vier Stunden gefallen.</p>
+
+      <blockquote class="example-quote" data-i18n="ex.quote">„Drei Monate Vakanz hätten zwölf Aufträge gekostet."</blockquote>
+      <cite class="example-attribution" data-i18n="ex.attribution">— Armin, Geschäftsführer</cite>
+
+      <div class="example-stats">
+        <div class="example-stat">
+          <span class="stat-num">30</span>
+          <span class="stat-unit" data-i18n="ex.stat1.unit">Tage</span>
+          <span class="stat-label" data-i18n="ex.stat1.label">bis Go-Live</span>
+        </div>
+        <div class="example-stat">
+          <span class="stat-num">0</span>
+          <span class="stat-unit" data-i18n="ex.stat2.unit">Aufträge</span>
+          <span class="stat-label" data-i18n="ex.stat2.label">verloren seit Go-Live</span>
+        </div>
+        <div class="example-stat">
+          <span class="stat-num">4 h</span>
+          <span class="stat-unit" data-i18n="ex.stat3.unit">Reaktionszeit</span>
+          <span class="stat-label" data-i18n="ex.stat3.label">vorher 2 Tage</span>
+        </div>
+      </div>
+
+      <p class="example-context" data-i18n="ex.context">Senior-Disponent in Rente, kein Nachfolger zu finden. In 30 Tagen einen digitalen Disponenten aufgebaut — trainiert auf 18 Monate historische Auftragsdaten, integriert in Branchen-ERP, Fahrer-Kalender und Sondergenehmigungs-Portal.</p>
+
       <a class="example-link" href="blueprint-scholpp.html" data-i18n="ex.link">Den Blueprint lesen →</a>
     </div>
   </div>
@@ -461,16 +445,10 @@
     </div>
 
     <div class="atelier-card founder-card fade-up">
-      <div class="founder-portrait">F</div>
-      <div>
-        <h3 data-i18n="felipe.name">Felipe Holanda</h3>
-        <div class="founder-role" data-i18n="felipe.role">Gründer · DMA</div>
-        <p data-i18n="felipe.bio1">Bio folgt — kurz: Industriekaufmann, zehn Jahre Digitalisierung, CRM und E-Mail-zu-Case-Workshops in deutschen Industrieunternehmen. Operative Tiefe statt Berater-Slides.</p>
-        <p data-i18n="felipe.bio2">DMA ist die Konsequenz daraus: Mittelstand braucht keine KI-Tools, sondern Mitarbeiter, die die Arbeit machen. In Deutsch, mit DSGVO, in vorhandenen Systemen.</p>
-        <div class="founder-links">
-          <a href="#" data-i18n="felipe.linkedin">LinkedIn ↗</a>
-        </div>
-      </div>
+      <span class="founder-role" data-i18n="felipe.role">Gründer · DMA</span>
+      <h3 data-i18n="felipe.name">Felipe Holanda</h3>
+      <p data-i18n="felipe.bio">Industriekaufmann, zehn Jahre Digitalisierung, CRM und E-Mail-zu-Case-Workshops in deutschen Industrieunternehmen. Operative Tiefe statt Berater-Slides. DMA ist die Konsequenz daraus: Mittelstand braucht keine KI-Tools, sondern Mitarbeiter, die die Arbeit machen — in Deutsch, mit DSGVO, in vorhandenen Systemen.</p>
+      <a class="btn btn-ghost btn-sm" href="#" data-i18n="felipe.linkedin">LinkedIn ↗</a>
     </div>
   </div>
 </section>
@@ -780,6 +758,25 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('is-scrolled', window.scrollY > 8);
 });
 
+const navMobileToggle = document.getElementById('nav-mobile-toggle');
+const navMobilePanel = document.getElementById('nav-mobile-panel');
+function setMobilePanelOpen(open) {
+  navMobileToggle.classList.toggle('is-open', open);
+  navMobilePanel.classList.toggle('is-open', open);
+  navMobileToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  navMobilePanel.setAttribute('aria-hidden', open ? 'false' : 'true');
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+navMobileToggle.addEventListener('click', () => {
+  setMobilePanelOpen(!navMobilePanel.classList.contains('is-open'));
+});
+navMobilePanel.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => setMobilePanelOpen(false));
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && navMobilePanel.classList.contains('is-open')) setMobilePanelOpen(false);
+});
+
 // ─── Macro tabs (agents) ─────────────────────────────────────
 document.querySelectorAll('.macro-tabs button').forEach(b => {
   b.addEventListener('click', () => {
@@ -857,9 +854,12 @@ const io = new IntersectionObserver((entries) => {
       if (!c.dataset.fired) { c.dataset.fired = '1'; animateCounter(c); }
     });
 
-    // Fire ROI bars
-    e.target.querySelectorAll?.('[data-roi-width]').forEach(b => {
-      if (!b.dataset.fired) { b.dataset.fired = '1'; b.style.width = b.dataset.roiWidth + '%'; }
+    // Fire ROI bars sequentially — 200ms stagger between bars in same row block
+    e.target.querySelectorAll?.('[data-roi-width]').forEach((b, idx) => {
+      if (!b.dataset.fired) {
+        b.dataset.fired = '1';
+        setTimeout(() => { b.style.width = b.dataset.roiWidth + '%'; }, idx * 200);
+      }
     });
 
     io.unobserve(e.target);

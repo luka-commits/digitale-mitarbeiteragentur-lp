@@ -1,7 +1,8 @@
 /* ============================================================
    DMA — Digitale Mitarbeiter Agentur · Colors & Type
-   Atelier (verbindlich seit 2026-04-21, Brand-CI v3)
-   60/30/10-Regel: 60% Elfenbein/Papier · 30% Tiefsee · 10% Petrol max
+   Atelier-Palette · 60/30/10-Regel: 60% Elfenbein/Papier · 30% Tiefsee · 10% Petrol max
+
+   Brand-Spec (Source-of-Truth-Doku): ../brand-system.md
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
