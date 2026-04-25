@@ -584,7 +584,29 @@ section, header.hero {
 }
 
 /* ================== AGENTS (Macro-Tabs + Persona-Cards mit Activity-Feed) ================== */
-.macro-tabs-wrap { text-align: center; margin-bottom: 48px; }
+.macro-tabs-wrap { text-align: center; margin-bottom: 64px; }
+
+/* Tab-Subhead — pro Tab eigener Sub-Header zwischen Tabs und Cards */
+.tab-subhead {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+.tab-subhead h3 {
+  font-family: var(--dma-font-display);
+  font-weight: 600;
+  font-size: var(--dma-text-2xl);
+  letter-spacing: var(--dma-track-tight);
+  color: var(--dma-tiefsee);
+  margin-bottom: 12px;
+}
+.tab-subhead p {
+  font-size: var(--dma-text-md);
+  color: var(--dma-fg-muted);
+  line-height: var(--dma-lead-body);
+  text-wrap: balance;
+}
+@media (max-width: 720px) { .tab-subhead h3 { font-size: var(--dma-text-xl); } }
 .macro-tabs {
   display: inline-flex;
   background: var(--dma-papier);
@@ -620,28 +642,64 @@ section, header.hero {
 }
 @media (max-width: 880px) { .agents-grid { grid-template-columns: 1fr; } }
 
-/* Persona-Card */
-.persona-card { padding: 28px; }
-.persona-card .role-tag {
+/* Profile-Card — HR-Profilkarten-Look (Avatar + Header-Info + Body + Feed + CTA) */
+.profile-card { padding: 28px; }
+
+.profile-header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--dma-dunst);
+}
+
+.profile-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--dma-radius-md);
+  background: linear-gradient(160deg, var(--dma-nebel-hell) 0%, var(--dma-papier) 100%);
+  border: 1px solid var(--dma-dunst);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--dma-font-display);
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--dma-petrol-deep, var(--dma-petrol));
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+}
+/* Avatar-Image-Overrides (gefüllt sobald Higgsfield/GPT-Image-Bilder vorhanden) */
+.profile-avatar[data-persona="paula"][style*="background-image"],
+.profile-avatar[data-persona="martin"][style*="background-image"],
+.profile-avatar[data-persona="jonas"][style*="background-image"] { color: transparent; }
+
+.profile-meta {
+  flex: 1;
+  min-width: 0;
+}
+.profile-meta .role-tag {
   display: inline-block;
   font-family: var(--dma-font-mono);
   font-size: 11px;
   letter-spacing: var(--dma-track-eyebrow);
   text-transform: uppercase;
   color: var(--dma-petrol);
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
-.persona-card h3 {
+.profile-meta h3 {
   font-size: var(--dma-text-xl);
-  margin-bottom: 6px;
+  margin-bottom: 2px;
+  line-height: 1.1;
 }
-.persona-card .persona-role {
+.profile-meta .persona-role {
   font-size: 13px;
   color: var(--dma-fg-subtle);
-  margin-bottom: 14px;
   line-height: var(--dma-lead-small);
 }
-.persona-card .persona-body {
+.profile-card .persona-body {
   font-size: 14px;
   line-height: var(--dma-lead-body);
   color: var(--dma-fg-muted);
@@ -1145,64 +1203,58 @@ section, header.hero {
   line-height: 1.4;
 }
 
-/* ================== PROZESS (3 Schritte mit Indikator) ================== */
-.process-grid {
+/* ================== PROCESS CHART (V4 — Achse + 3 Anchor-Cells) ================== */
+.process-chart {
+  max-width: 880px;
+  margin: 0 auto;
+}
+.process-axis {
+  width: 100%;
+  height: 80px;
+  display: block;
+  margin-bottom: 32px;
+}
+.process-axis-line {
+  stroke: var(--dma-grau-mitte);
+  stroke-width: 2;
+}
+.process-marker {
+  fill: var(--dma-papier);
+  stroke: var(--dma-petrol);
+  stroke-width: 2.5;
+}
+.process-tick {
+  font-family: var(--dma-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  fill: var(--dma-grau-mitte);
+}
+
+.process-cells {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  position: relative;
+  gap: 32px;
 }
-@media (max-width: 720px) { .process-grid { grid-template-columns: 1fr; } }
+@media (max-width: 720px) { .process-cells { grid-template-columns: 1fr; gap: 16px; } }
 
-/* Schritt-Indikator-Linie zwischen Cards (Desktop) */
-.process-line {
-  display: none;
+.process-cell {
+  text-align: center;
+  padding: 0 12px;
 }
-@media (min-width: 721px) {
-  .process-line {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 16.66%;
-    right: 16.66%;
-    height: 2px;
-    background: var(--dma-dunst);
-    z-index: 0;
-  }
-  .process-line::before,
-  .process-line::after,
-  .process-line .midpoint {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--dma-papier);
-    border: 2px solid var(--dma-grau-mitte);
-    transform: translateY(-50%);
-  }
-  .process-line::before { left: 0; transform: translate(-50%, -50%); }
-  .process-line::after  { right: 0; transform: translate(50%, -50%); }
-  .process-line .midpoint { left: 50%; transform: translate(-50%, -50%); }
-}
-
-.process-step {
-  position: relative;
-  z-index: 1;
-  padding: 22px 24px;
-}
-.process-step .step-num {
+.process-cell .cell-eyebrow {
   font-family: var(--dma-font-mono);
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.06em;
   color: var(--dma-petrol);
+  margin-bottom: 10px;
+}
+.process-cell h4 {
+  font-size: var(--dma-text-md);
   margin-bottom: 8px;
 }
-.process-step h4 { font-size: 15px; margin-bottom: 6px; }
-.process-step p {
-  font-size: 13px;
+.process-cell p {
+  font-size: 14px;
   line-height: var(--dma-lead-small);
   color: var(--dma-fg-muted);
 }
@@ -1315,31 +1367,10 @@ section, header.hero {
 }
 .example-block .example-link:hover { color: var(--dma-tiefsee); border-bottom-color: var(--dma-tiefsee); }
 
-/* ================== FOUNDER (single-column, text-only bis Higgsfield-Photo) ================== */
-.founder-card {
+/* ================== FOUNDER PROFILE (Profilkarte analog Personas) ================== */
+.founder-profile {
   max-width: 600px;
   margin: 0 auto;
-  padding: 40px 36px;
-  text-align: left;
-}
-.founder-card .founder-role {
-  display: inline-block;
-  font-family: var(--dma-font-mono);
-  font-size: 11px;
-  letter-spacing: var(--dma-track-eyebrow);
-  text-transform: uppercase;
-  color: var(--dma-petrol);
-  margin-bottom: 12px;
-}
-.founder-card h3 {
-  margin-bottom: 16px;
-  font-size: var(--dma-text-xl);
-}
-.founder-card p {
-  font-size: 15px;
-  line-height: var(--dma-lead-body);
-  color: var(--dma-fg-muted);
-  margin-bottom: 24px;
 }
 
 /* ================== ROI — ANIMATED BARS ================== */

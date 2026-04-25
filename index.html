@@ -77,7 +77,8 @@
   </div>
 </header>
 
-<!-- ============ PROBLEM (Vakanz-Timeline) ============ -->
+<!-- ============ PROBLEM (Vakanz-Timeline) — V4 archiviert (Felipe-Decision 2026-04-25) ==========
+     Kann später reaktiviert werden — Markup intakt, nur kommentiert.
 <section id="problem">
   <div class="container">
     <div class="section-head fade-up">
@@ -120,14 +121,16 @@
     </div>
   </div>
 </section>
+================================================================ -->
 
 <!-- ============ AGENTS · PAULA / MARTIN / JONAS ============ -->
 <section id="agents" class="section--warm">
   <div class="container">
+
     <div class="section-head fade-up">
-      <span class="eyebrow" data-i18n="agents.eyebrow">Drei Rollen</span>
-      <h2 data-i18n="agents.headline">Paula, Martin, Jonas.</h2>
-      <p data-i18n="agents.lede">Auftrag rein. Material rein. Angebot raus. Drei Abteilungen, drei Entscheider, drei parallele Einstiegspfade ins selbe Unternehmen.</p>
+      <span class="eyebrow" data-i18n="agents.eyebrow">Sechs Agents · drei für Sie · drei für uns</span>
+      <h2 data-i18n="agents.headline">Agents im Einsatz.</h2>
+      <p data-i18n="agents.lede">Was wir für Sie bauen — und was wir täglich selbst nutzen, um die Agentur zu betreiben.</p>
     </div>
 
     <div class="macro-tabs-wrap fade-up">
@@ -139,12 +142,22 @@
 
     <!-- Tab 1: External (hireable) -->
     <div class="tab-panel active" id="tab-external">
+      <div class="tab-subhead fade-up">
+        <h3 data-i18n="ext.subhead">Paula, Martin, Jonas.</h3>
+        <p data-i18n="ext.sublede">Auftrag rein. Material rein. Angebot raus. Drei Abteilungen, drei Entscheider, drei parallele Einstiegspfade.</p>
+      </div>
+
       <div class="agents-grid">
 
-        <article class="atelier-card persona-card">
-          <span class="role-tag" data-i18n="ext.paula.tag">Auftrag rein</span>
-          <h3 data-i18n="ext.paula.name">Paula</h3>
-          <div class="persona-role" data-i18n="ext.paula.role">Digitale Auftragssachbearbeiterin</div>
+        <article class="atelier-card profile-card">
+          <div class="profile-header">
+            <div class="profile-avatar" data-persona="paula">P</div>
+            <div class="profile-meta">
+              <span class="role-tag" data-i18n="ext.paula.tag">Auftrag rein</span>
+              <h3 data-i18n="ext.paula.name">Paula</h3>
+              <div class="persona-role" data-i18n="ext.paula.role">Digitale Auftragssachbearbeiterin</div>
+            </div>
+          </div>
           <p class="persona-body" data-i18n="ext.paula.body">Paula übernimmt Ihre Auftragssachbearbeitung. Statt fünf Bewerbungen sichten: Paula startet nächste Woche.</p>
           <span class="feed-eyebrow" data-i18n="feed.live">↓ Heute live</span>
           <div class="activity-feed">
@@ -167,10 +180,15 @@
           <button class="persona-demo-cta" data-drawer="paula" data-i18n="ext.paula.demo">Paula in Action ansehen</button>
         </article>
 
-        <article class="atelier-card persona-card">
-          <span class="role-tag" data-i18n="ext.martin.tag">Material rein</span>
-          <h3 data-i18n="ext.martin.name">Martin</h3>
-          <div class="persona-role" data-i18n="ext.martin.role">Digitaler Einkaufssachbearbeiter</div>
+        <article class="atelier-card profile-card">
+          <div class="profile-header">
+            <div class="profile-avatar" data-persona="martin">M</div>
+            <div class="profile-meta">
+              <span class="role-tag" data-i18n="ext.martin.tag">Material rein</span>
+              <h3 data-i18n="ext.martin.name">Martin</h3>
+              <div class="persona-role" data-i18n="ext.martin.role">Digitaler Einkaufssachbearbeiter</div>
+            </div>
+          </div>
           <p class="persona-body" data-i18n="ext.martin.body">Martin übernimmt Ihren Einkauf. Ihr Einkaufsleiter braucht kein drittes Paar Hände — er hat Martin.</p>
           <span class="feed-eyebrow" data-i18n="feed.live">↓ Heute live</span>
           <div class="activity-feed">
@@ -192,10 +210,15 @@
           <button class="persona-demo-cta" data-drawer="martin" data-i18n="ext.martin.demo">Martin in Action ansehen</button>
         </article>
 
-        <article class="atelier-card persona-card">
-          <span class="role-tag" data-i18n="ext.jonas.tag">Angebot raus</span>
-          <h3 data-i18n="ext.jonas.name">Jonas</h3>
-          <div class="persona-role" data-i18n="ext.jonas.role">Digitaler Vertriebsinnendienst</div>
+        <article class="atelier-card profile-card">
+          <div class="profile-header">
+            <div class="profile-avatar" data-persona="jonas">J</div>
+            <div class="profile-meta">
+              <span class="role-tag" data-i18n="ext.jonas.tag">Angebot raus</span>
+              <h3 data-i18n="ext.jonas.name">Jonas</h3>
+              <div class="persona-role" data-i18n="ext.jonas.role">Digitaler Vertriebsinnendienst</div>
+            </div>
+          </div>
           <p class="persona-body" data-i18n="ext.jonas.body">Jonas übernimmt Ihren Vertriebsinnendienst. Ihre Verkäufer reden mit Kunden. Jonas schreibt das Angebot.</p>
           <span class="feed-eyebrow" data-i18n="feed.live">↓ Heute live</span>
           <div class="activity-feed">
@@ -222,6 +245,11 @@
 
     <!-- Tab 2: Internal (proof-of-self-use) -->
     <div class="tab-panel" id="tab-internal">
+      <div class="tab-subhead fade-up">
+        <h3 data-i18n="int.subhead">Drei interne Agents — proof-of-self-use.</h3>
+        <p data-i18n="int.sublede">Wir bauen die Technologie nicht nur für Sie. Wir nutzen sie täglich, um die Agentur selbst zu betreiben.</p>
+      </div>
+
       <div class="agents-grid">
 
         <article class="atelier-card showcase-card">
@@ -371,23 +399,33 @@
       <h2 data-i18n="process.headline">Drei Schritte. Maximal 30 Tage.</h2>
     </div>
 
-    <div class="process-grid fade-up">
-      <div class="process-line"><span class="midpoint"></span></div>
+    <div class="process-chart fade-up">
+      <svg class="process-axis" viewBox="0 0 880 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line class="process-axis-line" x1="60" y1="40" x2="820" y2="40" />
+        <circle class="process-marker" cx="60"  cy="40" r="8" />
+        <circle class="process-marker" cx="440" cy="40" r="8" />
+        <circle class="process-marker" cx="820" cy="40" r="8" />
+        <text class="process-tick" x="60"  y="22" text-anchor="start">TAG 0</text>
+        <text class="process-tick" x="440" y="22" text-anchor="middle">TAG 7</text>
+        <text class="process-tick" x="820" y="22" text-anchor="end">TAG 30</text>
+      </svg>
 
-      <div class="atelier-card process-step">
-        <div class="step-num" data-i18n="process.s1.num">01 · 30 MIN</div>
-        <h4 data-i18n="process.s1.head">Erstgespräch</h4>
-        <p data-i18n="process.s1.body">Welche Rolle fehlt am meisten. Kein Match → wir sagen es.</p>
-      </div>
-      <div class="atelier-card process-step">
-        <div class="step-num" data-i18n="process.s2.num">02 · 1 WOCHE</div>
-        <h4 data-i18n="process.s2.head">Scoping</h4>
-        <p data-i18n="process.s2.body">Prozess + Tools dokumentiert. Festes Angebot, kein Tagessatz.</p>
-      </div>
-      <div class="atelier-card process-step">
-        <div class="step-num" data-i18n="process.s3.num">03 · 3 WOCHEN</div>
-        <h4 data-i18n="process.s3.head">Onboarding</h4>
-        <p data-i18n="process.s3.body">Aufbau, Test mit echten Fällen, Schulung. Ab Tag 30 produktiv.</p>
+      <div class="process-cells">
+        <div class="process-cell">
+          <div class="cell-eyebrow" data-i18n="process.s1.num">01 · 30 MIN</div>
+          <h4 data-i18n="process.s1.head">Erstgespräch</h4>
+          <p data-i18n="process.s1.body">Welche Rolle fehlt am meisten. Kein Match → wir sagen es.</p>
+        </div>
+        <div class="process-cell">
+          <div class="cell-eyebrow" data-i18n="process.s2.num">02 · 1 WOCHE</div>
+          <h4 data-i18n="process.s2.head">Scoping</h4>
+          <p data-i18n="process.s2.body">Prozess + Tools dokumentiert. Festes Angebot, kein Tagessatz.</p>
+        </div>
+        <div class="process-cell">
+          <div class="cell-eyebrow" data-i18n="process.s3.num">03 · 3 WOCHEN</div>
+          <h4 data-i18n="process.s3.head">Onboarding</h4>
+          <p data-i18n="process.s3.body">Aufbau, Test mit echten Fällen, Schulung. Ab Tag 30 produktiv.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -444,82 +482,17 @@
       <h2 data-i18n="felipe.headline">Wer hinter DMA steht.</h2>
     </div>
 
-    <div class="atelier-card founder-card fade-up">
-      <span class="founder-role" data-i18n="felipe.role">Gründer · DMA</span>
-      <h3 data-i18n="felipe.name">Felipe Holanda</h3>
-      <p data-i18n="felipe.bio">Industriekaufmann, zehn Jahre Digitalisierung, CRM und E-Mail-zu-Case-Workshops in deutschen Industrieunternehmen. Operative Tiefe statt Berater-Slides. DMA ist die Konsequenz daraus: Mittelstand braucht keine KI-Tools, sondern Mitarbeiter, die die Arbeit machen — in Deutsch, mit DSGVO, in vorhandenen Systemen.</p>
+    <div class="atelier-card profile-card founder-profile fade-up">
+      <div class="profile-header">
+        <div class="profile-avatar" data-persona="felipe">F</div>
+        <div class="profile-meta">
+          <span class="role-tag" data-i18n="felipe.role">Gründer · DMA</span>
+          <h3 data-i18n="felipe.name">Felipe Holanda</h3>
+          <div class="persona-role" data-i18n="felipe.title">Industriekaufmann · 10 Jahre Industrie-Digitalisierung</div>
+        </div>
+      </div>
+      <p class="persona-body" data-i18n="felipe.bio">Zehn Jahre Digitalisierung, CRM und E-Mail-zu-Case-Workshops in deutschen Industrieunternehmen. Operative Tiefe statt Berater-Slides. DMA ist die Konsequenz daraus: Mittelstand braucht keine KI-Tools, sondern Mitarbeiter, die die Arbeit machen — in Deutsch, mit DSGVO, in vorhandenen Systemen.</p>
       <a class="btn btn-ghost btn-sm" href="#" data-i18n="felipe.linkedin">LinkedIn ↗</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ROI ============ -->
-<section id="roi">
-  <div class="container">
-    <div class="section-head fade-up">
-      <span class="eyebrow" data-i18n="roi.eyebrow">Vergleich</span>
-      <h2 data-i18n="roi.headline">Vollzeit-Mitarbeiter vs. digitaler Kollege.</h2>
-      <p data-i18n="roi.lede">Keine festen Preise auf der Seite — jeder Fall ist anders. Aber das Verhältnis hält für jede Rolle, die wir bisher gebaut haben.</p>
-    </div>
-
-    <div class="roi-table fade-up">
-      <div class="roi-bar-row">
-        <div class="roi-bar-label" data-i18n="roi.l1">Einarbeitung</div>
-        <div class="roi-bar-pair">
-          <span class="roi-source" data-i18n="roi.src.vollzeit">Vollzeit</span>
-          <div class="roi-bar-track"><div class="roi-bar-fill roi-bar-fill--baseline" data-roi-width="100"></div></div>
-          <span class="roi-bar-value">3-6 Monate</span>
-        </div>
-        <div class="roi-bar-pair">
-          <span class="roi-source" data-i18n="roi.src.dma">DMA</span>
-          <div class="roi-bar-track"><div class="roi-bar-fill roi-bar-fill--dma" data-roi-width="17"></div></div>
-          <span class="roi-bar-value">30 Tage</span>
-        </div>
-      </div>
-
-      <div class="roi-bar-row">
-        <div class="roi-bar-label" data-i18n="roi.l2">Verfügbarkeit</div>
-        <div class="roi-bar-pair">
-          <span class="roi-source" data-i18n="roi.src.vollzeit">Vollzeit</span>
-          <div class="roi-bar-track"><div class="roi-bar-fill roi-bar-fill--baseline" data-roi-width="23"></div></div>
-          <span class="roi-bar-value">38 h / Woche</span>
-        </div>
-        <div class="roi-bar-pair">
-          <span class="roi-source" data-i18n="roi.src.dma">DMA</span>
-          <div class="roi-bar-track"><div class="roi-bar-fill roi-bar-fill--dma" data-roi-width="100"></div></div>
-          <span class="roi-bar-value">24 / 7</span>
-        </div>
-      </div>
-
-      <div class="roi-bar-row">
-        <div class="roi-bar-label" data-i18n="roi.l3">Ausfalltage / Jahr</div>
-        <div class="roi-bar-pair">
-          <span class="roi-source" data-i18n="roi.src.vollzeit">Vollzeit</span>
-          <div class="roi-bar-track"><div class="roi-bar-fill roi-bar-fill--baseline" data-roi-width="100"></div></div>
-          <span class="roi-bar-value">~ 30</span>
-        </div>
-        <div class="roi-bar-pair">
-          <span class="roi-source" data-i18n="roi.src.dma">DMA</span>
-          <div class="roi-bar-track"><div class="roi-bar-fill roi-bar-fill--dma" data-roi-width="2"></div></div>
-          <span class="roi-bar-value">0</span>
-        </div>
-      </div>
-
-      <div class="roi-bar-row">
-        <div class="roi-bar-label" data-i18n="roi.l4">Kosten (% Brutto)</div>
-        <div class="roi-bar-pair">
-          <span class="roi-source" data-i18n="roi.src.vollzeit">Vollzeit</span>
-          <div class="roi-bar-track"><div class="roi-bar-fill roi-bar-fill--baseline" data-roi-width="100"></div></div>
-          <span class="roi-bar-value">100 %</span>
-        </div>
-        <div class="roi-bar-pair">
-          <span class="roi-source" data-i18n="roi.src.dma">DMA</span>
-          <div class="roi-bar-track"><div class="roi-bar-fill roi-bar-fill--dma" data-roi-width="33"></div></div>
-          <span class="roi-bar-value">~ 33 %</span>
-        </div>
-      </div>
-
-      <p class="roi-quote" data-i18n="roi.quote">Vergleichsbasis · Kaufm. Vollkraft 4 000–4 800 € / Mt. Vollkosten · Vakanz-Ø DACH 173 Tage</p>
     </div>
   </div>
 </section>
