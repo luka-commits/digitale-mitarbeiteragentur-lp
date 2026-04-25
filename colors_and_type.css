@@ -1,229 +1,233 @@
 /* ============================================================
-   Digitale Mitarbeiteragentur — Colors & Type
-   The single source of truth for the visual system.
-   Import this file into any surface (web, deck, doc, UI kit).
+   DMA — Digitale Mitarbeiteragentur · Colors & Type
+   Atelier palette: Tiefsee · Petrol · Elfenbein
+   Sierra.ai aesthetic — clean, weiß-dominant, glassy.
    ============================================================ */
 
-/* ---- Webfonts ----
-   General Sans and JetBrains Mono ship in /fonts and are loaded below.
-   Inter is loaded from Google Fonts (or substitute fonts/Inter-*.ttf).
+/* Webfonts:
+   - Inter (display + body)
+   - General Sans (display alt — kept for headline weight options)
+   - IBM Plex Mono (eyebrows, stats, slash-grid logo)
 */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
-@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap');
 
 :root {
-  /* ========== CORE PALETTE ==========
-     Matches the PDF-cover system exactly. */
-  --pc-navy:        #153AA1;  /* Signature — CTAs, stats, eyebrows, icons */
-  --pc-navy-deep:   #00185E;  /* Reserved for final-CTA sections / PDF cover */
-  --pc-orange:      #D7620F;  /* Ceremonial — one moment per page */
-  --pc-ink:         #0A0A0A;  /* Primary text */
-  --pc-off-white:   #FAFAF7;  /* Page background */
-  --pc-surface:     #F0EEE8;  /* Cards, elevated surfaces */
+  /* ========== ATELIER PALETTE ========== */
+  --dma-tiefsee:        #0B2545;  /* deep navy — text, headlines, primary CTA */
+  --dma-tiefsee-deep:   #061632;  /* hover/emphasis */
+  --dma-petrol:         #1B6D80;  /* signature accent — CTAs, eyebrows, key marks */
+  --dma-petrol-deep:    #144E5C;  /* petrol hover */
+  --dma-petrol-soft:    #DCE9EC;  /* petrol tint backgrounds */
+  --dma-elfenbein:      #FAF8F2;  /* page background — kein Beige, very subtle warm */
+  --dma-elfenbein-deep: #F1EEE6;  /* elevated surfaces */
+  --dma-white:          #FFFFFF;  /* dominant card / glass background */
+  --dma-ink:            #0A0A0A;  /* primary text */
 
-  /* Navy tints for UI states (opacities of navy on off-white) */
-  --pc-navy-12:     rgba(21, 58, 161, 0.12);
-  --pc-navy-08:     rgba(21, 58, 161, 0.08);
-  --pc-navy-04:     rgba(21, 58, 161, 0.04);
+  /* Tiefsee opacities (for borders, shadows, hairlines) */
+  --dma-tiefsee-12:     rgba(11, 37, 69, 0.12);
+  --dma-tiefsee-08:     rgba(11, 37, 69, 0.08);
+  --dma-tiefsee-06:     rgba(11, 37, 69, 0.06);
+  --dma-tiefsee-04:     rgba(11, 37, 69, 0.04);
 
-  /* Ink tints for secondary text / hairlines */
-  --pc-ink-72:      rgba(10, 10, 10, 0.72);
-  --pc-ink-56:      rgba(10, 10, 10, 0.56);
-  --pc-ink-40:      rgba(10, 10, 10, 0.40);
-  --pc-ink-12:      rgba(10, 10, 10, 0.12);
-  --pc-ink-08:      rgba(10, 10, 10, 0.08);
+  /* Ink opacities */
+  --dma-ink-72:         rgba(10, 10, 10, 0.72);
+  --dma-ink-56:         rgba(10, 10, 10, 0.56);
+  --dma-ink-40:         rgba(10, 10, 10, 0.40);
+  --dma-ink-12:         rgba(10, 10, 10, 0.12);
 
-  /* ========== SEMANTIC COLOR ROLES ========== */
-  --pc-bg:          var(--pc-off-white);
-  --pc-bg-alt:      var(--pc-surface);
-  --pc-bg-final:    var(--pc-navy-deep);  /* final CTA section only */
-  --pc-fg:          var(--pc-ink);
-  --pc-fg-muted:    var(--pc-ink-72);
-  --pc-fg-subtle:   var(--pc-ink-56);
-  --pc-fg-inverse:  var(--pc-off-white);
-  --pc-accent:      var(--pc-navy);        /* the 95% accent */
-  --pc-accent-rare: var(--pc-orange);      /* the 5% ceremonial accent */
-  --pc-border:      var(--pc-ink-12);
-  --pc-border-strong: var(--pc-ink-40);
-  --pc-eyebrow:     var(--pc-navy);
-  --pc-link:        var(--pc-navy);
-  --pc-link-hover:  var(--pc-navy-deep);
+  /* ========== SEMANTIC ROLES ========== */
+  --dma-bg:             var(--dma-white);
+  --dma-bg-warm:        var(--dma-elfenbein);
+  --dma-bg-surface:     var(--dma-elfenbein-deep);
+  --dma-bg-final:       var(--dma-tiefsee);
+  --dma-fg:             var(--dma-tiefsee);
+  --dma-fg-muted:       var(--dma-ink-72);
+  --dma-fg-subtle:      var(--dma-ink-56);
+  --dma-fg-inverse:     var(--dma-elfenbein);
+  --dma-accent:         var(--dma-petrol);
+  --dma-border:         var(--dma-tiefsee-08);
+  --dma-border-strong:  var(--dma-tiefsee-12);
+  --dma-eyebrow:        var(--dma-petrol);
+  --dma-link:           var(--dma-petrol);
+  --dma-link-hover:     var(--dma-petrol-deep);
+
+  /* Glass-morphism (Sierra-style cards) */
+  --dma-glass-bg:       rgba(255, 255, 255, 0.65);
+  --dma-glass-border:   rgba(11, 37, 69, 0.06);
+  --dma-glass-blur:     20px;
 
   /* ========== TYPE FAMILIES ========== */
-  --pc-font-display: "General Sans", "Satoshi", ui-sans-serif, system-ui, sans-serif;
-  --pc-font-body:    "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --pc-font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --dma-font-display:   "General Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --dma-font-body:      "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --dma-font-mono:      "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* ========== TYPE SCALE (1.25 major third, mildly compressed at top) ========== */
-  --pc-text-xs:   12px;
-  --pc-text-sm:   14px;
-  --pc-text-base: 16px;
-  --pc-text-md:   18px;
-  --pc-text-lg:   22px;   /* lead / quote body */
-  --pc-text-xl:   28px;   /* h4 */
-  --pc-text-2xl:  36px;   /* h3 */
-  --pc-text-3xl:  48px;   /* h2 */
-  --pc-text-4xl:  64px;   /* h1 */
-  --pc-text-5xl:  96px;   /* display / hero */
+  /* ========== TYPE SCALE ========== */
+  --dma-text-xs:        12px;
+  --dma-text-sm:        14px;
+  --dma-text-base:      16px;
+  --dma-text-md:        18px;
+  --dma-text-lg:        22px;
+  --dma-text-xl:        28px;
+  --dma-text-2xl:       36px;
+  --dma-text-3xl:       48px;
+  --dma-text-4xl:       64px;
+  --dma-text-5xl:       88px;
 
   /* Tracking */
-  --pc-track-display: -0.025em;
-  --pc-track-tight:   -0.015em;
-  --pc-track-normal:   0;
-  --pc-track-eyebrow:  0.12em;   /* mono eyebrows, ALL CAPS */
+  --dma-track-display:  -0.025em;
+  --dma-track-tight:    -0.015em;
+  --dma-track-normal:   0;
+  --dma-track-eyebrow:  0.14em;
 
   /* Leading */
-  --pc-lead-tight:   1.04;
-  --pc-lead-snug:    1.15;
-  --pc-lead-normal:  1.45;
-  --pc-lead-loose:   1.6;
+  --dma-lead-tight:     1.04;
+  --dma-lead-snug:      1.18;
+  --dma-lead-normal:    1.5;
+  --dma-lead-loose:     1.65;
 
-  /* ========== SPACING (4px base, geometric) ========== */
-  --pc-space-1:   4px;
-  --pc-space-2:   8px;
-  --pc-space-3:  12px;
-  --pc-space-4:  16px;
-  --pc-space-5:  24px;
-  --pc-space-6:  32px;
-  --pc-space-7:  48px;
-  --pc-space-8:  64px;
-  --pc-space-9:  96px;
-  --pc-space-10: 128px;
+  /* ========== SPACING ========== */
+  --dma-space-1:        4px;
+  --dma-space-2:        8px;
+  --dma-space-3:        12px;
+  --dma-space-4:        16px;
+  --dma-space-5:        24px;
+  --dma-space-6:        32px;
+  --dma-space-7:        48px;
+  --dma-space-8:        64px;
+  --dma-space-9:        96px;
+  --dma-space-10:       128px;
 
   /* ========== RADII ========== */
-  --pc-radius-xs:  4px;
-  --pc-radius-sm:  8px;
-  --pc-radius-md: 12px;
-  --pc-radius-lg: 16px;
-  --pc-radius-xl: 24px;
-  --pc-radius-pill: 999px;
+  --dma-radius-xs:      4px;
+  --dma-radius-sm:      8px;
+  --dma-radius-md:      12px;
+  --dma-radius-lg:      16px;
+  --dma-radius-xl:      24px;
+  --dma-radius-pill:    999px;
 
-  /* ========== ELEVATION (restrained — navy-tinted, not neutral) ========== */
-  --pc-shadow-xs: 0 1px 2px rgba(21, 58, 161, 0.06);
-  --pc-shadow-sm: 0 2px 6px rgba(21, 58, 161, 0.07), 0 1px 2px rgba(10, 10, 10, 0.04);
-  --pc-shadow-md: 0 8px 24px rgba(21, 58, 161, 0.09), 0 2px 6px rgba(10, 10, 10, 0.04);
-  --pc-shadow-lg: 0 24px 60px rgba(21, 58, 161, 0.14), 0 8px 18px rgba(10, 10, 10, 0.05);
+  /* ========== ELEVATION (Sierra-style: subtle, max 8% opacity) ========== */
+  --dma-shadow-xs:      0 1px 2px rgba(11, 37, 69, 0.04);
+  --dma-shadow-sm:      0 2px 8px rgba(11, 37, 69, 0.05);
+  --dma-shadow-md:      0 8px 28px rgba(11, 37, 69, 0.06), 0 2px 6px rgba(11, 37, 69, 0.04);
+  --dma-shadow-lg:      0 24px 60px rgba(11, 37, 69, 0.08), 0 6px 16px rgba(11, 37, 69, 0.04);
 
   /* ========== MOTION ========== */
-  --pc-ease-standard: cubic-bezier(0.2, 0.6, 0.2, 1);
-  --pc-ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);  /* OutExpo-ish */
-  --pc-dur-fast:    120ms;
-  --pc-dur-base:    200ms;
-  --pc-dur-slow:    320ms;
+  --dma-ease-standard:  cubic-bezier(0.2, 0.6, 0.2, 1);
+  --dma-ease-entrance:  cubic-bezier(0.16, 1, 0.3, 1);
+  --dma-dur-fast:       120ms;
+  --dma-dur-base:       220ms;
+  --dma-dur-slow:       360ms;
 }
 
 /* ============================================================
-   Semantic primitives — drop these in instead of per-page overrides.
+   Base + semantic primitives
    ============================================================ */
 
 html, body {
-  background: var(--pc-bg);
-  color: var(--pc-fg);
-  font-family: var(--pc-font-body);
-  font-size: var(--pc-text-base);
-  line-height: var(--pc-lead-normal);
+  background: var(--dma-bg);
+  color: var(--dma-fg);
+  font-family: var(--dma-font-body);
+  font-size: var(--dma-text-base);
+  line-height: var(--dma-lead-normal);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-h1, .pc-h1 {
-  font-family: var(--pc-font-display);
+h1, .dma-h1 {
+  font-family: var(--dma-font-display);
   font-weight: 600;
-  font-size: var(--pc-text-4xl);
-  line-height: var(--pc-lead-tight);
-  letter-spacing: var(--pc-track-display);
-  color: var(--pc-fg);
+  font-size: var(--dma-text-4xl);
+  line-height: var(--dma-lead-tight);
+  letter-spacing: var(--dma-track-display);
+  color: var(--dma-fg);
   margin: 0;
   text-wrap: balance;
 }
-h2, .pc-h2 {
-  font-family: var(--pc-font-display);
+h2, .dma-h2 {
+  font-family: var(--dma-font-display);
   font-weight: 600;
-  font-size: var(--pc-text-3xl);
-  line-height: var(--pc-lead-tight);
-  letter-spacing: var(--pc-track-display);
+  font-size: var(--dma-text-3xl);
+  line-height: var(--dma-lead-tight);
+  letter-spacing: var(--dma-track-display);
+  color: var(--dma-fg);
   margin: 0;
   text-wrap: balance;
 }
-h3, .pc-h3 {
-  font-family: var(--pc-font-display);
+h3, .dma-h3 {
+  font-family: var(--dma-font-display);
   font-weight: 600;
-  font-size: var(--pc-text-2xl);
-  line-height: var(--pc-lead-snug);
-  letter-spacing: var(--pc-track-tight);
+  font-size: var(--dma-text-2xl);
+  line-height: var(--dma-lead-snug);
+  letter-spacing: var(--dma-track-tight);
+  color: var(--dma-fg);
   margin: 0;
 }
-h4, .pc-h4 {
-  font-family: var(--pc-font-display);
+h4, .dma-h4 {
+  font-family: var(--dma-font-display);
   font-weight: 600;
-  font-size: var(--pc-text-xl);
-  line-height: var(--pc-lead-snug);
-  letter-spacing: var(--pc-track-tight);
+  font-size: var(--dma-text-xl);
+  line-height: var(--dma-lead-snug);
+  letter-spacing: var(--dma-track-tight);
+  color: var(--dma-fg);
   margin: 0;
 }
-.pc-display {
-  font-family: var(--pc-font-display);
+.dma-display {
+  font-family: var(--dma-font-display);
   font-weight: 600;
-  font-size: var(--pc-text-5xl);
-  line-height: 0.98;
+  font-size: var(--dma-text-5xl);
+  line-height: 1;
   letter-spacing: -0.03em;
+  color: var(--dma-fg);
 }
-p, .pc-p {
-  font-family: var(--pc-font-body);
-  font-size: var(--pc-text-base);
-  line-height: var(--pc-lead-normal);
-  color: var(--pc-fg-muted);
+p, .dma-p {
+  font-family: var(--dma-font-body);
+  font-size: var(--dma-text-base);
+  line-height: var(--dma-lead-normal);
+  color: var(--dma-fg-muted);
   text-wrap: pretty;
   margin: 0;
 }
-.pc-lead {
-  font-size: var(--pc-text-lg);
-  line-height: var(--pc-lead-normal);
-  color: var(--pc-fg-muted);
+.dma-lead {
+  font-size: var(--dma-text-lg);
+  line-height: var(--dma-lead-normal);
+  color: var(--dma-fg-muted);
   text-wrap: pretty;
 }
-.pc-eyebrow {
-  font-family: var(--pc-font-mono);
+.eyebrow, .dma-eyebrow {
+  display: inline-block;
+  font-family: var(--dma-font-mono);
   font-weight: 500;
-  font-size: var(--pc-text-xs);
-  letter-spacing: var(--pc-track-eyebrow);
+  font-size: var(--dma-text-xs);
+  letter-spacing: var(--dma-track-eyebrow);
   text-transform: uppercase;
-  color: var(--pc-eyebrow);
+  color: var(--dma-eyebrow);
 }
-.pc-stat {
-  font-family: var(--pc-font-mono);
+.dma-stat {
+  font-family: var(--dma-font-mono);
   font-weight: 500;
-  font-size: var(--pc-text-4xl);
+  font-size: var(--dma-text-3xl);
   letter-spacing: -0.02em;
-  color: var(--pc-navy);
+  color: var(--dma-tiefsee);
   line-height: 1;
   font-feature-settings: "tnum" 1;
 }
-code, .pc-code {
-  font-family: var(--pc-font-mono);
+code, .dma-code {
+  font-family: var(--dma-font-mono);
   font-size: 0.92em;
-  background: var(--pc-navy-08);
-  color: var(--pc-navy);
+  background: var(--dma-petrol-soft);
+  color: var(--dma-petrol-deep);
   padding: 0.08em 0.35em;
-  border-radius: var(--pc-radius-xs);
+  border-radius: var(--dma-radius-xs);
 }
-a, .pc-link {
-  color: var(--pc-link);
+a, .dma-link {
+  color: var(--dma-link);
   text-decoration: none;
-  border-bottom: 1px solid var(--pc-navy-12);
-  transition: border-color var(--pc-dur-fast) var(--pc-ease-standard),
-              color     var(--pc-dur-fast) var(--pc-ease-standard);
+  transition: color var(--dma-dur-fast) var(--dma-ease-standard);
 }
-a:hover, .pc-link:hover {
-  color: var(--pc-link-hover);
-  border-bottom-color: currentColor;
-}
-hr, .pc-rule {
-  border: 0;
-  border-top: 1px solid var(--pc-border);
-  margin: var(--pc-space-6) 0;
-}
+a:hover, .dma-link:hover { color: var(--dma-link-hover); }
+
 ::selection {
-  background: var(--pc-navy);
-  color: var(--pc-off-white);
+  background: var(--dma-petrol);
+  color: var(--dma-white);
 }
