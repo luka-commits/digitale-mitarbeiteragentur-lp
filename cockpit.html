@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Agent Cockpit</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #153AA1;
+    --navy-deep: #00185E;
+    --ink: #0A0A0A;
+    --bg: #FAFAF7;
+    --surface: #F0EEE8;
+    --border: rgba(10,10,10,.1);
+    --muted: rgba(10,10,10,.6);
+    --success: #16a34a;
+  }
+  html, body {
+    height: 100%;
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 13px;
+    overflow: hidden;
+  }
+  .cockpit {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+  .cock-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    background: #fff;
+  }
+  .cock-title {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .cock-title .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--success);
+    box-shadow: 0 0 0 3px rgba(22,163,74,.2);
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse { 50% { opacity: .5; } }
+  .cock-meta {
+    font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .cock-body {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 0;
+    overflow: hidden;
+  }
+  .call-pane {
+    padding: 16px;
+    background: var(--navy-deep);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow: hidden;
+    position: relative;
+  }
+  .call-pane::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 70% 30%, rgba(21,58,161,.5), transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(21,58,161,.3), transparent 60%);
+    pointer-events: none;
+  }
+  .call-head {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.6);
+    position: relative;
+    z-index: 1;
+  }
+  .call-head .live {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: #fff;
+  }
+  .call-head .live::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: #ef4444;
+    animation: pulse 1.4s infinite;
+  }
+  .waveform {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 24px 12px;
+    position: relative;
+    z-index: 1;
+  }
+  .waveform .bar {
+    width: 3px;
+    background: #fff;
+    border-radius: 2px;
+    opacity: 0.85;
+    animation: wave 1.2s ease-in-out infinite;
+  }
+  @keyframes wave {
+    0%, 100% { height: 8px; }
+    50% { height: var(--h, 24px); }
+  }
+  .transcript {
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 12px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-height: 92px;
+    overflow: hidden;
+  }
+  .transcript .speaker {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.6);
+    margin-bottom: 4px;
+    display: block;
+  }
+  .transcript .line { color: rgba(255,255,255,.95); }
+  .transcript .line .cursor {
+    display: inline-block;
+    width: 2px; height: 1em;
+    background: #fff;
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .side-pane {
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .side-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .side-tabs .tab {
+    flex: 1;
+    padding: 10px 12px;
+    text-align: center;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: color 150ms, border-color 150ms;
+  }
+  .side-tabs .tab.active { color: var(--navy); border-bottom-color: var(--navy); }
+  .side-content {
+    padding: 14px;
+    flex: 1;
+    overflow: hidden;
+  }
+  .kv {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 8px 10px;
+    margin-bottom: 14px;
+    font-size: 11px;
+  }
+  .kv dt {
+    color: var(--muted);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .kv dd { color: var(--ink); font-weight: 500; }
+  .kv dd.found { color: var(--success); }
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: #fff;
+    border: 1px solid var(--border);
+    font-size: 11px;
+  }
+  .action .check {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--success);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px;
+    flex-shrink: 0;
+  }
+  .action .spinner {
+    width: 14px; height: 14px;
+    border: 1.5px solid var(--border);
+    border-top-color: var(--navy);
+    border-radius: 50%;
+    animation: spin 700ms linear infinite;
+    flex-shrink: 0;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .action .pending {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    border: 1.5px dashed var(--border);
+    flex-shrink: 0;
+  }
+  .action .time {
+    margin-left: auto;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  .cock-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 18px;
+    border-top: 1px solid var(--border);
+    background: #fff;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .cock-foot .stat { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="cockpit">
+  <div class="cock-head">
+    <div class="cock-title">
+      <span class="dot"></span>
+      <span>Lead · Voice agent</span>
+    </div>
+    <div class="cock-meta">
+      <span id="clock">Session 14:32</span>
+    </div>
+  </div>
+
+  <div class="cock-body">
+    <div class="call-pane">
+      <div class="call-head">
+        <span>Call · inbound</span>
+        <span class="live">Live · <span id="dur">0:42</span></span>
+      </div>
+      <div class="waveform" id="wave"></div>
+      <div class="transcript">
+        <span class="speaker">Agent →</span>
+        <span class="line" id="typed"></span>
+      </div>
+    </div>
+
+    <div class="side-pane">
+      <div class="side-tabs">
+        <div class="tab active">Lead</div>
+        <div class="tab">Actions</div>
+        <div class="tab">CRM</div>
+      </div>
+      <div class="side-content">
+        <dl class="kv">
+          <dt>Name</dt><dd>Thomas M.</dd>
+          <dt>Intent</dt><dd class="found">Appointment</dd>
+          <dt>Score</dt><dd>8.4 / 10</dd>
+          <dt>Source</dt><dd>Google Ads</dd>
+        </dl>
+        <div class="actions">
+          <div class="action">
+            <span class="check">✓</span>
+            <span>CRM entry created</span>
+            <span class="time">0:12</span>
+          </div>
+          <div class="action">
+            <span class="check">✓</span>
+            <span>Intent classified</span>
+            <span class="time">0:28</span>
+          </div>
+          <div class="action">
+            <span class="spinner"></span>
+            <span>Booking calendar slot…</span>
+            <span class="time">now</span>
+          </div>
+          <div class="action">
+            <span class="pending"></span>
+            <span>Send confirmation SMS</span>
+            <span class="time">queued</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cock-foot">
+    <span>This week · <span class="stat">84</span> calls</span>
+    <span>Booked · <span class="stat">61</span></span>
+    <span>Response · <span class="stat">&lt; 2s</span></span>
+  </div>
+</div>
+
+<script>
+  // waveform bars
+  const wave = document.getElementById('wave');
+  for (let i = 0; i < 28; i++) {
+    const b = document.createElement('div');
+    b.className = 'bar';
+    const h = 8 + Math.random() * 32;
+    b.style.setProperty('--h', h + 'px');
+    b.style.animationDelay = (Math.random() * 1.2) + 's';
+    wave.appendChild(b);
+  }
+  // typewriter
+  const lines = [
+    "Perfect, I can book you for Thursday at 11. Does that work for you?",
+    "Got it — I'll send a confirmation to your email as well.",
+    "Thanks for calling. One moment while I check availability…",
+  ];
+  const typed = document.getElementById('typed');
+  let li = 0, ci = 0;
+  function tick() {
+    const line = lines[li];
+    if (ci <= line.length) {
+      typed.innerHTML = line.slice(0, ci) + '<span class="cursor"></span>';
+      ci++;
+      setTimeout(tick, 35 + Math.random() * 40);
+    } else {
+      setTimeout(() => {
+        li = (li + 1) % lines.length;
+        ci = 0;
+        tick();
+      }, 2400);
+    }
+  }
+  tick();
+  // duration counter
+  let dur = 42;
+  setInterval(() => {
+    dur++;
+    const m = Math.floor(dur / 60), s = dur % 60;
+    document.getElementById('dur').textContent = m + ':' + String(s).padStart(2, '0');
+  }, 1000);
+</script>
+</body>
+</html>

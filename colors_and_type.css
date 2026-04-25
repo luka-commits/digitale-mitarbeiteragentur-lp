@@ -1,0 +1,229 @@
+/* ============================================================
+   Digitale Mitarbeiteragentur — Colors & Type
+   The single source of truth for the visual system.
+   Import this file into any surface (web, deck, doc, UI kit).
+   ============================================================ */
+
+/* ---- Webfonts ----
+   General Sans and JetBrains Mono ship in /fonts and are loaded below.
+   Inter is loaded from Google Fonts (or substitute fonts/Inter-*.ttf).
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap');
+
+:root {
+  /* ========== CORE PALETTE ==========
+     Matches the PDF-cover system exactly. */
+  --pc-navy:        #153AA1;  /* Signature — CTAs, stats, eyebrows, icons */
+  --pc-navy-deep:   #00185E;  /* Reserved for final-CTA sections / PDF cover */
+  --pc-orange:      #D7620F;  /* Ceremonial — one moment per page */
+  --pc-ink:         #0A0A0A;  /* Primary text */
+  --pc-off-white:   #FAFAF7;  /* Page background */
+  --pc-surface:     #F0EEE8;  /* Cards, elevated surfaces */
+
+  /* Navy tints for UI states (opacities of navy on off-white) */
+  --pc-navy-12:     rgba(21, 58, 161, 0.12);
+  --pc-navy-08:     rgba(21, 58, 161, 0.08);
+  --pc-navy-04:     rgba(21, 58, 161, 0.04);
+
+  /* Ink tints for secondary text / hairlines */
+  --pc-ink-72:      rgba(10, 10, 10, 0.72);
+  --pc-ink-56:      rgba(10, 10, 10, 0.56);
+  --pc-ink-40:      rgba(10, 10, 10, 0.40);
+  --pc-ink-12:      rgba(10, 10, 10, 0.12);
+  --pc-ink-08:      rgba(10, 10, 10, 0.08);
+
+  /* ========== SEMANTIC COLOR ROLES ========== */
+  --pc-bg:          var(--pc-off-white);
+  --pc-bg-alt:      var(--pc-surface);
+  --pc-bg-final:    var(--pc-navy-deep);  /* final CTA section only */
+  --pc-fg:          var(--pc-ink);
+  --pc-fg-muted:    var(--pc-ink-72);
+  --pc-fg-subtle:   var(--pc-ink-56);
+  --pc-fg-inverse:  var(--pc-off-white);
+  --pc-accent:      var(--pc-navy);        /* the 95% accent */
+  --pc-accent-rare: var(--pc-orange);      /* the 5% ceremonial accent */
+  --pc-border:      var(--pc-ink-12);
+  --pc-border-strong: var(--pc-ink-40);
+  --pc-eyebrow:     var(--pc-navy);
+  --pc-link:        var(--pc-navy);
+  --pc-link-hover:  var(--pc-navy-deep);
+
+  /* ========== TYPE FAMILIES ========== */
+  --pc-font-display: "General Sans", "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  --pc-font-body:    "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --pc-font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ========== TYPE SCALE (1.25 major third, mildly compressed at top) ========== */
+  --pc-text-xs:   12px;
+  --pc-text-sm:   14px;
+  --pc-text-base: 16px;
+  --pc-text-md:   18px;
+  --pc-text-lg:   22px;   /* lead / quote body */
+  --pc-text-xl:   28px;   /* h4 */
+  --pc-text-2xl:  36px;   /* h3 */
+  --pc-text-3xl:  48px;   /* h2 */
+  --pc-text-4xl:  64px;   /* h1 */
+  --pc-text-5xl:  96px;   /* display / hero */
+
+  /* Tracking */
+  --pc-track-display: -0.025em;
+  --pc-track-tight:   -0.015em;
+  --pc-track-normal:   0;
+  --pc-track-eyebrow:  0.12em;   /* mono eyebrows, ALL CAPS */
+
+  /* Leading */
+  --pc-lead-tight:   1.04;
+  --pc-lead-snug:    1.15;
+  --pc-lead-normal:  1.45;
+  --pc-lead-loose:   1.6;
+
+  /* ========== SPACING (4px base, geometric) ========== */
+  --pc-space-1:   4px;
+  --pc-space-2:   8px;
+  --pc-space-3:  12px;
+  --pc-space-4:  16px;
+  --pc-space-5:  24px;
+  --pc-space-6:  32px;
+  --pc-space-7:  48px;
+  --pc-space-8:  64px;
+  --pc-space-9:  96px;
+  --pc-space-10: 128px;
+
+  /* ========== RADII ========== */
+  --pc-radius-xs:  4px;
+  --pc-radius-sm:  8px;
+  --pc-radius-md: 12px;
+  --pc-radius-lg: 16px;
+  --pc-radius-xl: 24px;
+  --pc-radius-pill: 999px;
+
+  /* ========== ELEVATION (restrained — navy-tinted, not neutral) ========== */
+  --pc-shadow-xs: 0 1px 2px rgba(21, 58, 161, 0.06);
+  --pc-shadow-sm: 0 2px 6px rgba(21, 58, 161, 0.07), 0 1px 2px rgba(10, 10, 10, 0.04);
+  --pc-shadow-md: 0 8px 24px rgba(21, 58, 161, 0.09), 0 2px 6px rgba(10, 10, 10, 0.04);
+  --pc-shadow-lg: 0 24px 60px rgba(21, 58, 161, 0.14), 0 8px 18px rgba(10, 10, 10, 0.05);
+
+  /* ========== MOTION ========== */
+  --pc-ease-standard: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --pc-ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);  /* OutExpo-ish */
+  --pc-dur-fast:    120ms;
+  --pc-dur-base:    200ms;
+  --pc-dur-slow:    320ms;
+}
+
+/* ============================================================
+   Semantic primitives — drop these in instead of per-page overrides.
+   ============================================================ */
+
+html, body {
+  background: var(--pc-bg);
+  color: var(--pc-fg);
+  font-family: var(--pc-font-body);
+  font-size: var(--pc-text-base);
+  line-height: var(--pc-lead-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .pc-h1 {
+  font-family: var(--pc-font-display);
+  font-weight: 600;
+  font-size: var(--pc-text-4xl);
+  line-height: var(--pc-lead-tight);
+  letter-spacing: var(--pc-track-display);
+  color: var(--pc-fg);
+  margin: 0;
+  text-wrap: balance;
+}
+h2, .pc-h2 {
+  font-family: var(--pc-font-display);
+  font-weight: 600;
+  font-size: var(--pc-text-3xl);
+  line-height: var(--pc-lead-tight);
+  letter-spacing: var(--pc-track-display);
+  margin: 0;
+  text-wrap: balance;
+}
+h3, .pc-h3 {
+  font-family: var(--pc-font-display);
+  font-weight: 600;
+  font-size: var(--pc-text-2xl);
+  line-height: var(--pc-lead-snug);
+  letter-spacing: var(--pc-track-tight);
+  margin: 0;
+}
+h4, .pc-h4 {
+  font-family: var(--pc-font-display);
+  font-weight: 600;
+  font-size: var(--pc-text-xl);
+  line-height: var(--pc-lead-snug);
+  letter-spacing: var(--pc-track-tight);
+  margin: 0;
+}
+.pc-display {
+  font-family: var(--pc-font-display);
+  font-weight: 600;
+  font-size: var(--pc-text-5xl);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+p, .pc-p {
+  font-family: var(--pc-font-body);
+  font-size: var(--pc-text-base);
+  line-height: var(--pc-lead-normal);
+  color: var(--pc-fg-muted);
+  text-wrap: pretty;
+  margin: 0;
+}
+.pc-lead {
+  font-size: var(--pc-text-lg);
+  line-height: var(--pc-lead-normal);
+  color: var(--pc-fg-muted);
+  text-wrap: pretty;
+}
+.pc-eyebrow {
+  font-family: var(--pc-font-mono);
+  font-weight: 500;
+  font-size: var(--pc-text-xs);
+  letter-spacing: var(--pc-track-eyebrow);
+  text-transform: uppercase;
+  color: var(--pc-eyebrow);
+}
+.pc-stat {
+  font-family: var(--pc-font-mono);
+  font-weight: 500;
+  font-size: var(--pc-text-4xl);
+  letter-spacing: -0.02em;
+  color: var(--pc-navy);
+  line-height: 1;
+  font-feature-settings: "tnum" 1;
+}
+code, .pc-code {
+  font-family: var(--pc-font-mono);
+  font-size: 0.92em;
+  background: var(--pc-navy-08);
+  color: var(--pc-navy);
+  padding: 0.08em 0.35em;
+  border-radius: var(--pc-radius-xs);
+}
+a, .pc-link {
+  color: var(--pc-link);
+  text-decoration: none;
+  border-bottom: 1px solid var(--pc-navy-12);
+  transition: border-color var(--pc-dur-fast) var(--pc-ease-standard),
+              color     var(--pc-dur-fast) var(--pc-ease-standard);
+}
+a:hover, .pc-link:hover {
+  color: var(--pc-link-hover);
+  border-bottom-color: currentColor;
+}
+hr, .pc-rule {
+  border: 0;
+  border-top: 1px solid var(--pc-border);
+  margin: var(--pc-space-6) 0;
+}
+::selection {
+  background: var(--pc-navy);
+  color: var(--pc-off-white);
+}

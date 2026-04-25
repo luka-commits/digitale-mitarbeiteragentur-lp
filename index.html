@@ -1,0 +1,1479 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DMA — Digitale Mitarbeiter für eure Rollen</title>
+<meta name="description" content="DMA · Digitale Mitarbeiteragentur. Digitale Mitarbeiter für Mittelstand — Ops, Marketing, Backend, Support, Sales, Spezialist. Einsatzbereit ab Tag 1, DSGVO-konform." />
+<link rel="stylesheet" href="colors_and_type.css" />
+<link rel="stylesheet" href="styles/site.css" />
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <div style="display:flex; align-items:center; gap:32px;">
+      <a class="brand" href="#" title="DMA · Digitale Mitarbeiteragentur">
+        <img class="brand-mark" src="assets/logomark-placeholder.png" alt="DMA" />
+        <span class="brand-wordmark">DMA</span>
+        <span class="brand-sub" data-i18n="brand.sub">Digitale Mitarbeiteragentur</span>
+      </a>
+      <div class="nav-center">
+        <a href="#build" data-i18n="nav.build">Rollen</a>
+        <a href="#assessment" data-i18n="nav.assessment">Einschätzung</a>
+        <a href="#process" data-i18n="nav.process">Prozess</a>
+        <a href="#team" data-i18n="nav.team">Über uns</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Sprache">
+        <button data-lang="en">EN</button>
+        <button class="active" data-lang="de">DE</button>
+      </div>
+      <a class="btn btn-ghost btn-sm" href="#final" data-i18n="nav.cta">Termin buchen →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow" data-i18n="hero.eyebrow">Digitale Mitarbeiter · für Mittelstand · DSGVO-konform</span>
+      <h1 class="display-xl hero-headline">
+        <span class="hero-line"><span data-i18n="hero.h1">Digitale Mitarbeiter.</span></span>
+        <span class="hero-line"><span data-i18n="hero.h2">Für eure Rollen.</span></span>
+        <span class="hero-line"><span data-i18n="hero.h3">Einsatzbereit ab Tag 1.</span></span>
+      </h1>
+      <p class="lede" data-i18n="hero.lede">
+        Statt monatelang eine neue Assistenz zu suchen oder einen Entwickler einzustellen, bekommt ihr einen digitalen Mitarbeiter, der den Job ab Tag 1 macht — trainiert auf eure Prozesse, integriert in eure Tools, verfügbar rund um die Uhr.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#assessment" data-i18n="hero.cta1">Kostenlose Einschätzung</a>
+        <a class="btn btn-text" href="#build" data-i18n="hero.cta2">Rollen ansehen</a>
+      </div>
+      <div class="hero-metrics">
+        <div class="metric">
+          <span class="metric-num">5</span>
+          <span class="metric-label" data-i18n="hero.m1">Rollen verfügbar</span>
+        </div>
+        <div class="metric-sep"></div>
+        <div class="metric">
+          <span class="metric-num">DSGVO</span>
+          <span class="metric-label" data-i18n="hero.m2">EU-Deployment</span>
+        </div>
+        <div class="metric-sep"></div>
+        <div class="metric">
+          <span class="metric-num">24/7</span>
+          <span class="metric-label" data-i18n="hero.m3">ohne Krankheitstage</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-cockpit">
+      <div class="hero-cockpit-chip" data-i18n="hero.chip">Live · digitaler Mitarbeiter bei der Arbeit</div>
+      <iframe src="cockpit.html" title="Digitaler Mitarbeiter Demo" loading="lazy"></iframe>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PROBLEM (Variant C — strike-through list) ============ -->
+<section class="section section-alt" id="problem">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="problem.eyebrow">Das Problem</span>
+      <h2 class="display-lg" data-i18n="problem.headline">
+        Die Rolle ist offen.<br />Keiner bewirbt sich.
+      </h2>
+      <p class="lede" data-i18n="problem.lede">
+        Die Stellenanzeige läuft seit vier Monaten. Die wenigen Kandidaten springen nach drei Wochen ab. Euer Team fängt jeden Tag auf, was der fehlende Kollege eigentlich machen sollte — Anrufe, Tickets, Angebote, Reporting.
+      </p>
+    </div>
+
+    <div class="problem-grid reveal">
+      <div class="problem-col">
+        <h4 data-i18n="problem.not">Nicht das</h4>
+        <ul class="strike-list">
+          <li>
+            <svg class="gap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M10 18v2M14 18v2"/><path d="M7 9h10M7 13h6"/></svg>
+            <span data-i18n="problem.not1">Noch eine Stellenanzeige schalten — und hoffen</span>
+          </li>
+          <li>
+            <svg class="gap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h12M6 22h12"/><path d="M6 2v4c0 3 6 4 6 6s-6 3-6 6v4"/><path d="M18 2v4c0 3-6 4-6 6s6 3 6 6v4"/></svg>
+            <span data-i18n="problem.not2">Werkstudenten, die nach 6 Monaten wieder weg sind</span>
+          </li>
+          <li>
+            <svg class="gap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12c3-6 15-6 18 0"/><path d="M3 12c3 6 15 6 18 0"/><path d="M12 4v2M12 18v2"/><circle cx="12" cy="12" r="2"/></svg>
+            <span data-i18n="problem.not3">KI-Tools kaufen, die keiner im Team benutzt</span>
+          </li>
+          <li>
+            <svg class="gap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 9h16"/><circle cx="8" cy="7" r=".5" fill="currentColor"/><path d="M9 13h6M9 16h4"/></svg>
+            <span data-i18n="problem.not4">Überstunden im Team, bis jemand Neues gefunden ist</span>
+          </li>
+        </ul>
+      </div>
+      <div class="problem-col problem-right">
+        <h4 data-i18n="problem.this">Sondern das</h4>
+        <ul class="this-list">
+          <li>
+            <svg class="gap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg>
+            <span data-i18n="problem.this1">Ein digitaler Mitarbeiter, der die Rolle ab Tag 1 übernimmt</span>
+          </li>
+          <li>
+            <svg class="gap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-3 2a11 11 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+            <span data-i18n="problem.this2">Trainiert auf eure Prozesse, integriert in eure Tools</span>
+          </li>
+          <li>
+            <svg class="gap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4V8z"/><path d="M9 11l2 2 4-4"/></svg>
+            <span data-i18n="problem.this3">Rund um die Uhr verfügbar, keine Krankheitstage, kein Urlaub</span>
+          </li>
+          <li>
+            <svg class="gap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><circle cx="7" cy="7" r=".8" fill="currentColor"/><circle cx="7" cy="17" r=".8" fill="currentColor"/><path d="M11 7h6M11 17h6"/></svg>
+            <span data-i18n="problem.this4">DSGVO-konform, eure Daten bleiben in eurem Haus</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT WE BUILD (Variant B — toggle) ============ -->
+<section class="section" id="build">
+  <div class="container">
+    <div class="section-head reveal" style="text-align:center; margin-left:auto; margin-right:auto;">
+      <span class="eyebrow" data-i18n="build.eyebrow" style="justify-content:center;">Rollen &amp; Demos</span>
+      <h2 class="display-lg" data-i18n="build.headline">
+        Sechs Rollen. Fünf Standards plus ein Spezialist.
+      </h2>
+      <p class="lede" data-i18n="build.lede">
+        Fünf Standard-Rollen für die Aufgaben, die jeder Mittelständler kennt. Plus ein Spezialist für alles, was nicht ins Schema passt. Klickt durch — links die Rolle, rechts die Demo.
+      </p>
+    </div>
+
+    <div class="build-tabs reveal" role="tablist">
+      <button class="build-tab active" data-cap="voice" role="tab" aria-selected="true" data-i18n="build.tab.voice">Support-Mitarbeiter</button>
+      <button class="build-tab" data-cap="auto" role="tab" data-i18n="build.tab.auto">Ops-Mitarbeiter</button>
+      <button class="build-tab" data-cap="rag" role="tab" data-i18n="build.tab.rag">Backend-Mitarbeiter</button>
+      <button class="build-tab" data-cap="int" role="tab" data-i18n="build.tab.int">Sales-Mitarbeiter</button>
+      <button class="build-tab" data-cap="prem" role="tab" data-i18n="build.tab.prem">Marketing-Mitarbeiter</button>
+      <button class="build-tab build-tab-accent" data-cap="spec" role="tab" data-i18n="build.tab.spec">Spezialist</button>
+    </div>
+
+    <!-- Support-Mitarbeiter -->
+    <div class="cap-panel active reveal" data-cap="voice">
+      <div class="cap-text">
+        <h3 class="display-md" data-i18n="build.voice.title">Der Support-Mitarbeiter, der um 2 Uhr nachts ans Telefon geht.</h3>
+        <p class="panel-body" data-i18n="build.voice.body">Inbound-Anrufe, Tickets, FAQ — trainiert auf eure Antworten und Systeme. Übergibt an einen Menschen nur, wenn er muss. Klassischer Ersatz: Empfangskraft, Support-Werkstudent, Call-Center-Agent.</p>
+        <ul class="cap-points">
+          <li data-i18n="build.voice.p1">Deutscher Muttersprachler-Sound, geringe Latenz</li>
+          <li data-i18n="build.voice.p2">Schreibt jeden Fall ins CRM / Ticket-System</li>
+          <li data-i18n="build.voice.p3">Transkripte + Intent-Tagging für eure Ops</li>
+        </ul>
+        <a class="btn btn-ghost" href="#final" data-i18n="build.cta">Rolle anfragen →</a>
+      </div>
+      <!-- TODO-felipe: Demo-Link auf eigene Demo-App umstellen -->
+      <div class="cap-demo" data-fn="cs">
+        <div class="cap-demo-thumb" data-fn="cs" aria-hidden="true">
+          <svg class="case-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 14h28a4 4 0 014 4v14a4 4 0 01-4 4H22l-8 6v-6h-4a4 4 0 01-4-4V18a4 4 0 014-4z"/>
+            <path d="M18 24h12M18 30h8"/>
+          </svg>
+          <span class="demo-badge soon" data-i18n="demos.soon">Bald</span>
+        </div>
+        <div class="cap-demo-body">
+          <div class="case-meta">
+            <span data-i18n="demos.d5.ind">Kunden-Support</span>
+          </div>
+          <div class="case-result" data-i18n="demos.d5.result">Vom Ticket zur Lösung, 24/7.</div>
+          <div class="case-client" data-i18n="demos.d5.client">Er übernimmt Tier-1 über E-Mail und Chat, eskaliert nur, was wirklich zählt.</div>
+          <span class="case-link muted" data-i18n="demos.d5.link">Demo kommt bald</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ops-Mitarbeiter -->
+    <div class="cap-panel reveal" data-cap="auto">
+      <div class="cap-text">
+        <h3 class="display-md" data-i18n="build.auto.title">Der Ops-Mitarbeiter, der den Laden zusammenhält.</h3>
+        <p class="panel-body" data-i18n="build.auto.body">Termine koordinieren, Reporting zusammenbauen, zwischen Tools hin- und hertragen, Eskalationen raushauen. Gebaut für echtes Volumen, geloggt, überwacht — und ihr seht live, was er tut. Klassischer Ersatz: Assistenz, Office-Manager, Junior-Operations.</p>
+        <ul class="cap-points">
+          <li data-i18n="build.auto.p1">Läuft in eurer Cloud oder auf eurem Server</li>
+          <li data-i18n="build.auto.p2">Fehlerbehandlung, Retry und Alerts eingebaut</li>
+          <li data-i18n="build.auto.p3">Jeder Prozess dokumentiert — euer Team übernimmt</li>
+        </ul>
+        <a class="btn btn-ghost" href="#final" data-i18n="build.cta">Rolle anfragen →</a>
+      </div>
+      <!-- TODO-felipe: Demo-Link auf eigene Demo-App umstellen -->
+      <a class="cap-demo is-live" data-fn="operations" href="TODO-felipe-demo-url">
+        <div class="cap-demo-thumb" data-fn="operations" aria-hidden="true">
+          <svg class="case-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 6c-5 0-9 4-9 9 0 7 9 18 9 18s9-11 9-18c0-5-4-9-9-9z"/>
+            <circle cx="24" cy="15" r="3"/>
+            <path d="M10 38h28M14 42h20"/>
+          </svg>
+          <span class="demo-badge live" data-i18n="demos.live">● Live</span>
+        </div>
+        <div class="cap-demo-body">
+          <div class="case-meta">
+            <span data-i18n="demos.d1.ind">Reise-Koordination</span>
+          </div>
+          <div class="case-result" data-i18n="demos.d1.result">Geschäftsreise komplett geplant in 2 Minuten.</div>
+          <div class="case-client" data-i18n="demos.d1.client">Er plant Routen, bucht Hotels, stellt das Team — ihr gebt frei, er schickt raus.</div>
+          <span class="case-link" data-i18n="demos.d1.link">Demo öffnen →</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Backend-Mitarbeiter -->
+    <div class="cap-panel reveal" data-cap="rag">
+      <div class="cap-text">
+        <h3 class="display-md" data-i18n="build.rag.title">Der Backend-Mitarbeiter, der eure Daten zusammenhält.</h3>
+        <p class="panel-body" data-i18n="build.rag.body">Datenchaos zwischen CRM, Ticket-System, Drive, Excel. Der Backend-Mitarbeiter konsolidiert, beantwortet Rückfragen eures Teams mit Quellenangabe, hält SOPs aktuell. Klassischer Ersatz: Data-Analyst-Werkstudent, „der eine, der sich auskennt“.</p>
+        <ul class="cap-points">
+          <li data-i18n="build.rag.p1">Indexiert Dokumente, Tickets, SOPs, alte Projekte</li>
+          <li data-i18n="build.rag.p2">Jede Antwort zitiert die Quelle — nachprüfbar</li>
+          <li data-i18n="build.rag.p3">Auto-Sync aus Drive, Notion, Sharepoint, DATEV</li>
+        </ul>
+        <a class="btn btn-ghost" href="#final" data-i18n="build.cta">Rolle anfragen →</a>
+      </div>
+      <!-- TODO-felipe: Demo-Link auf eigene Demo-App umstellen -->
+      <div class="cap-demo" data-fn="backend">
+        <div class="cap-demo-thumb" data-fn="backend" aria-hidden="true">
+          <svg class="case-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <ellipse cx="24" cy="12" rx="14" ry="4"/>
+            <path d="M10 12v10c0 2.2 6.3 4 14 4s14-1.8 14-4V12"/>
+            <path d="M10 22v10c0 2.2 6.3 4 14 4s14-1.8 14-4V22"/>
+            <path d="M10 32v6c0 2.2 6.3 4 14 4s14-1.8 14-4v-6"/>
+          </svg>
+          <span class="demo-badge soon" data-i18n="demos.soon">Bald</span>
+        </div>
+        <div class="cap-demo-body">
+          <div class="case-meta">
+            <span data-i18n="demos.dB.ind">Interne Wissens-Suche</span>
+          </div>
+          <div class="case-result" data-i18n="demos.dB.result">Die richtige Antwort — mit Quellenangabe, in Sekunden.</div>
+          <div class="case-client" data-i18n="demos.dB.client">Er zieht aus Drive, Notion und euren SOPs die eine richtige Antwort — und sagt, wo sie steht.</div>
+          <span class="case-link muted" data-i18n="demos.dB.link">Demo kommt bald</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sales-Mitarbeiter -->
+    <div class="cap-panel reveal" data-cap="int">
+      <div class="cap-text">
+        <h3 class="display-md" data-i18n="build.int.title">Der Sales-Mitarbeiter, der Leads nicht liegen lässt.</h3>
+        <p class="panel-body" data-i18n="build.int.body">Recherchiert Firmen, personalisiert Outreach, folgt drei Mal nach, bucht Discovery-Termine direkt im Kalender, pflegt das CRM sauber. Euer Sales-Team redet nur mit warmen Leads. Klassischer Ersatz: SDR, Vertriebsassistenz, Freelancer-Lead-Gen.</p>
+        <ul class="cap-points">
+          <li data-i18n="build.int.p1">LinkedIn, Apollo, E-Mail — kanalübergreifend</li>
+          <li data-i18n="build.int.p2">CRM-Pflege in Echtzeit (HubSpot, Pipedrive, GHL)</li>
+          <li data-i18n="build.int.p3">Kalender-Buchung ohne Reibung</li>
+        </ul>
+        <a class="btn btn-ghost" href="#final" data-i18n="build.cta">Rolle anfragen →</a>
+      </div>
+      <!-- TODO-felipe: Demo-Link auf eigene Demo-App umstellen -->
+      <div class="cap-demo" data-fn="sales">
+        <div class="cap-demo-thumb" data-fn="sales" aria-hidden="true">
+          <svg class="case-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 32l8-8 6 6 12-12"/>
+            <path d="M26 18h8v8"/>
+            <path d="M8 40h32"/>
+          </svg>
+          <span class="demo-badge soon" data-i18n="demos.soon">Bald</span>
+        </div>
+        <div class="cap-demo-body">
+          <div class="case-meta">
+            <span data-i18n="demos.d3.ind">B2B-Outbound</span>
+          </div>
+          <div class="case-result" data-i18n="demos.d3.result">Vom Lead zum qualifizierten Call, auf Autopilot.</div>
+          <div class="case-client" data-i18n="demos.d3.client">Er recherchiert, personalisiert, folgt drei Mal nach — euer Team spricht nur mit warmen Replies.</div>
+          <span class="case-link muted" data-i18n="demos.d3.link">Demo kommt bald</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marketing-Mitarbeiter -->
+    <div class="cap-panel reveal" data-cap="prem">
+      <div class="cap-text">
+        <h3 class="display-md" data-i18n="build.prem.title">Der Marketing-Mitarbeiter, der Content ausliefert.</h3>
+        <p class="panel-body" data-i18n="build.prem.body">Schreibt in eurer Brand-Voice, plant über alle Kanäle (LinkedIn, Newsletter, Blog), misst Performance und lernt daraus. Ihr gebt einmal frei, er hält den Kanal warm. Klassischer Ersatz: Content-Werkstudent, Social-Media-Praktikant, externe Agentur.</p>
+        <ul class="cap-points">
+          <li data-i18n="build.prem.p1">Schreibt nach eurer Tonalität — nicht nach ChatGPT-Default</li>
+          <li data-i18n="build.prem.p2">Plant über Kanäle, mit Redaktionskalender</li>
+          <li data-i18n="build.prem.p3">Reporting, das ihr versteht — keine Vanity-Metrics</li>
+        </ul>
+        <a class="btn btn-ghost" href="#final" data-i18n="build.cta">Rolle anfragen →</a>
+      </div>
+      <!-- TODO-felipe: Demo-Link auf eigene Demo-App umstellen -->
+      <div class="cap-demo" data-fn="marketing">
+        <div class="cap-demo-thumb" data-fn="marketing" aria-hidden="true">
+          <svg class="case-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 22l24-10v24L10 26z"/>
+            <path d="M14 26v6a4 4 0 008 0v-4"/>
+            <path d="M38 16v16"/>
+          </svg>
+          <span class="demo-badge soon" data-i18n="demos.soon">Bald</span>
+        </div>
+        <div class="cap-demo-body">
+          <div class="case-meta">
+            <span data-i18n="demos.d4.ind">Content-Ops</span>
+          </div>
+          <div class="case-result" data-i18n="demos.d4.result">Vom Briefing bis veröffentlicht, in einem Durchgang.</div>
+          <div class="case-client" data-i18n="demos.d4.client">Er schreibt in eurer Tonalität, plant über alle Kanäle — ihr gebt einmal frei.</div>
+          <span class="case-link muted" data-i18n="demos.d4.link">Demo kommt bald</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spezialist -->
+    <div class="cap-panel reveal" data-cap="spec">
+      <div class="cap-text">
+        <span class="cap-badge" data-i18n="build.spec.badge">Sonderfall · Custom</span>
+        <h3 class="display-md" data-i18n="build.spec.title">Der Spezialist für alles, was nicht ins Schema passt.</h3>
+        <p class="panel-body" data-i18n="build.spec.body">Euer Prozess ist speziell. Eine Maschine spricht nur Modbus, eine Legacy-Datenbank hat ihre eigenen Regeln, ein Branchen-Workflow existiert so nur bei euch. Der Spezialist wird für genau diesen Fall gebaut — kein Schubladen-Mitarbeiter. Klassischer Ersatz: freiberuflicher Entwickler, interne IT-Abteilung, Unternehmensberater mit Excel-Makros.</p>
+        <ul class="cap-points">
+          <li data-i18n="build.spec.p1">Scoping mit Engineering-Tiefe — wir sagen euch vorher, ob's geht</li>
+          <li data-i18n="build.spec.p2">Auch on-premise, auch mit alten Systemen (SAP, DATEV, Modbus, OPC-UA)</li>
+          <li data-i18n="build.spec.p3">Fixer Scope, fixer Preis — keine Berater-Tagessätze</li>
+        </ul>
+        <a class="btn btn-ghost" href="#final" data-i18n="build.cta">Rolle anfragen →</a>
+      </div>
+      <!-- TODO-felipe: Demo ersetzen, sobald erste Custom-Referenz live -->
+      <div class="cap-demo" data-fn="spec">
+        <div class="cap-demo-thumb" data-fn="spec" aria-hidden="true">
+          <svg class="case-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 6L30 14H38L33 22L38 30H30L24 38L18 30H10L15 22L10 14H18L24 6Z"/>
+            <circle cx="24" cy="22" r="4"/>
+          </svg>
+          <span class="demo-badge soon" data-i18n="demos.soon">Bald</span>
+        </div>
+        <div class="cap-demo-body">
+          <div class="case-meta">
+            <span data-i18n="demos.dS.ind">Custom · Branchenlösung</span>
+          </div>
+          <div class="case-result" data-i18n="demos.dS.result">Gebaut für euren Prozess — nicht für 1.000 andere.</div>
+          <div class="case-client" data-i18n="demos.dS.client">Wenn Standard nicht reicht: Integration in Legacy-Systeme, branchenspezifische Logik, physische Maschinen. Wir sagen vorab, ob's machbar ist.</div>
+          <span class="case-link muted" data-i18n="demos.dS.link">Custom-Scoping anfragen →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ USP Stepper — 5 Standards, click-through ============ -->
+<section class="section section-alt" id="usp">
+  <div class="container">
+    <div class="section-head reveal" style="text-align:center; margin-left:auto; margin-right:auto;">
+      <span class="eyebrow" data-i18n="usp.eyebrow" style="justify-content:center;">Was jeder digitale Mitarbeiter mitbringt</span>
+      <h2 class="display-lg" data-i18n="usp.headline">Fünf Standards. Klickt euch durch.</h2>
+      <p class="lede" data-i18n="usp.lede">Keine Upsells. Keine Add-ons. Standard — denn ohne diese fünf Dinge hält euer digitaler Mitarbeiter den ersten Monat nicht durch.</p>
+    </div>
+
+    <div class="usp-stepper reveal">
+      <div class="usp-rail" role="tablist">
+        <button class="usp-dot active" data-step="1" role="tab" aria-selected="true">
+          <span class="usp-dot-num">01</span>
+          <span class="usp-dot-label" data-i18n="usp.1.t">Integration</span>
+        </button>
+        <button class="usp-dot" data-step="2" role="tab">
+          <span class="usp-dot-num">02</span>
+          <span class="usp-dot-label" data-i18n="usp.2.t">Dashboard</span>
+        </button>
+        <button class="usp-dot" data-step="3" role="tab">
+          <span class="usp-dot-num">03</span>
+          <span class="usp-dot-label" data-i18n="usp.3.t">Team-Eigenständigkeit</span>
+        </button>
+        <button class="usp-dot" data-step="4" role="tab">
+          <span class="usp-dot-num">04</span>
+          <span class="usp-dot-label" data-i18n="usp.4.t">Lernt weiter</span>
+        </button>
+        <button class="usp-dot" data-step="5" role="tab">
+          <span class="usp-dot-num">05</span>
+          <span class="usp-dot-label" data-i18n="usp.5.t">DSGVO</span>
+        </button>
+      </div>
+
+      <!-- Step 1 — Integration -->
+      <div class="usp-step active" data-step="1">
+        <div class="usp-copy">
+          <span class="usp-step-num">01 · <span data-i18n="usp.count">von 5</span></span>
+          <h3 class="display-md" data-i18n="usp.1.t">Integration in eure Tools</h3>
+          <p class="usp-desc" data-i18n="usp.1.d">Er arbeitet in dem Stack, den ihr schon habt — CRM, Ticket-System, Kalender, DATEV. Kein Rip-and-Replace, keine Parallel-Systeme.</p>
+          <ul class="usp-bullets">
+            <li data-i18n="usp.1.b1">HubSpot, Pipedrive, Zendesk, DATEV, Sharepoint, Notion</li>
+            <li data-i18n="usp.1.b2">Alles über APIs und Webhooks — kein Ingest-Script</li>
+            <li data-i18n="usp.1.b3">Neue Tools in 1–2 Wochen nachintegriert</li>
+          </ul>
+        </div>
+        <div class="usp-visual" aria-hidden="true">
+          <!-- TODO-felipe: durch Screenshot/Illustration ersetzen — aktuell Platzhalter-Schema -->
+          <svg viewBox="0 0 420 280" class="usp-svg">
+            <g class="usp-hub"><circle cx="210" cy="140" r="48"/><text x="210" y="138" text-anchor="middle" class="usp-hub-label">Digitaler</text><text x="210" y="154" text-anchor="middle" class="usp-hub-label">Mitarbeiter</text></g>
+            <g class="usp-chip" transform="translate(40,40)"><rect width="96" height="36" rx="8"/><text x="48" y="22" text-anchor="middle">CRM</text></g>
+            <g class="usp-chip" transform="translate(284,40)"><rect width="96" height="36" rx="8"/><text x="48" y="22" text-anchor="middle">Ticket-System</text></g>
+            <g class="usp-chip" transform="translate(20,124)"><rect width="90" height="36" rx="8"/><text x="45" y="22" text-anchor="middle">Kalender</text></g>
+            <g class="usp-chip" transform="translate(310,124)"><rect width="90" height="36" rx="8"/><text x="45" y="22" text-anchor="middle">DATEV</text></g>
+            <g class="usp-chip" transform="translate(40,208)"><rect width="96" height="36" rx="8"/><text x="48" y="22" text-anchor="middle">Drive</text></g>
+            <g class="usp-chip" transform="translate(284,208)"><rect width="96" height="36" rx="8"/><text x="48" y="22" text-anchor="middle">Sharepoint</text></g>
+            <path class="usp-line" d="M136 76 L180 120"/>
+            <path class="usp-line" d="M332 76 L240 120"/>
+            <path class="usp-line" d="M110 142 L162 140"/>
+            <path class="usp-line" d="M310 142 L258 140"/>
+            <path class="usp-line" d="M136 216 L180 170"/>
+            <path class="usp-line" d="M332 216 L240 170"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Step 2 — Dashboard -->
+      <div class="usp-step" data-step="2">
+        <div class="usp-copy">
+          <span class="usp-step-num">02 · <span data-i18n="usp.count">von 5</span></span>
+          <h3 class="display-md" data-i18n="usp.2.t">Dashboard, das ihr versteht</h3>
+          <p class="usp-desc" data-i18n="usp.2.d">Ihr seht live, was er tut, warum er es tut, und wo er an einen Menschen übergeben hat. Kein Monats-PDF.</p>
+          <ul class="usp-bullets">
+            <li data-i18n="usp.2.b1">Live-Feed: jede Aktion nachvollziehbar</li>
+            <li data-i18n="usp.2.b2">Handoff-Log: wann und warum an Menschen übergeben</li>
+            <li data-i18n="usp.2.b3">Kein Monats-PDF — echte Zahlen, heute</li>
+          </ul>
+        </div>
+        <div class="usp-visual" aria-hidden="true">
+          <!-- TODO-felipe: durch echten Dashboard-Screenshot ersetzen -->
+          <svg viewBox="0 0 420 280" class="usp-svg">
+            <rect x="20" y="20" width="380" height="240" rx="12" class="usp-frame"/>
+            <rect x="40" y="50" width="120" height="70" rx="8" class="usp-panel"/>
+            <text x="100" y="78" text-anchor="middle" class="usp-kpi">147</text>
+            <text x="100" y="100" text-anchor="middle" class="usp-kpi-label">Fälle heute</text>
+            <rect x="170" y="50" width="120" height="70" rx="8" class="usp-panel"/>
+            <text x="230" y="78" text-anchor="middle" class="usp-kpi">94%</text>
+            <text x="230" y="100" text-anchor="middle" class="usp-kpi-label">gelöst</text>
+            <rect x="300" y="50" width="80" height="70" rx="8" class="usp-panel usp-panel-accent"/>
+            <text x="340" y="78" text-anchor="middle" class="usp-kpi usp-kpi-accent">9</text>
+            <text x="340" y="100" text-anchor="middle" class="usp-kpi-label">Handoffs</text>
+            <rect x="40" y="140" width="340" height="100" rx="8" class="usp-panel"/>
+            <path d="M60 220 L100 200 L140 210 L180 180 L220 190 L260 165 L300 175 L340 150 L370 160" class="usp-spark"/>
+            <circle cx="370" cy="160" r="3" class="usp-spark-dot"/>
+            <text x="60" y="165" class="usp-chart-label">Auslastung · 7 Tage</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Step 3 — Team eigenständig -->
+      <div class="usp-step" data-step="3">
+        <div class="usp-copy">
+          <span class="usp-step-num">03 · <span data-i18n="usp.count">von 5</span></span>
+          <h3 class="display-md" data-i18n="usp.3.t">Euer Team bleibt eigenständig</h3>
+          <p class="usp-desc" data-i18n="usp.3.d">Anleitungen, Schulung und Übergaben — damit euer Team den Mitarbeiter führt, nicht wir. Keine Agentur-Abhängigkeit.</p>
+          <ul class="usp-bullets">
+            <li data-i18n="usp.3.b1">Runbook auf Deutsch, Schritt für Schritt</li>
+            <li data-i18n="usp.3.b2">2-3 Schulungen mit eurem Team beim Go-Live</li>
+            <li data-i18n="usp.3.b3">Ihr kündigt uns, der Mitarbeiter läuft weiter</li>
+          </ul>
+        </div>
+        <div class="usp-visual" aria-hidden="true">
+          <!-- TODO-felipe: durch Runbook-/Team-Foto ersetzen -->
+          <svg viewBox="0 0 420 280" class="usp-svg">
+            <rect x="30" y="40" width="170" height="210" rx="10" class="usp-panel"/>
+            <text x="115" y="68" text-anchor="middle" class="usp-chart-label">Runbook.md</text>
+            <path d="M50 90 H180" class="usp-doc-line"/>
+            <path d="M50 110 H160" class="usp-doc-line"/>
+            <path d="M50 130 H180" class="usp-doc-line"/>
+            <path d="M50 150 H140" class="usp-doc-line"/>
+            <path d="M50 170 H170" class="usp-doc-line"/>
+            <path d="M50 190 H155" class="usp-doc-line"/>
+            <path d="M50 210 H180" class="usp-doc-line"/>
+            <path d="M50 230 H130" class="usp-doc-line"/>
+            <path d="M215 145 L250 145" class="usp-handoff-arrow"/>
+            <polygon points="250,138 262,145 250,152" class="usp-arrow-head"/>
+            <g transform="translate(280,110)">
+              <circle cx="30" cy="12" r="10" class="usp-person"/>
+              <circle cx="60" cy="12" r="10" class="usp-person"/>
+              <circle cx="90" cy="12" r="10" class="usp-person"/>
+              <text x="60" y="45" text-anchor="middle" class="usp-chart-label">Euer Team</text>
+              <rect x="0" y="60" width="120" height="40" rx="6" class="usp-panel usp-panel-accent"/>
+              <text x="60" y="85" text-anchor="middle" class="usp-kpi-label">führt den digitalen Mitarbeiter</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Step 4 — Lernt weiter -->
+      <div class="usp-step" data-step="4">
+        <div class="usp-copy">
+          <span class="usp-step-num">04 · <span data-i18n="usp.count">von 5</span></span>
+          <h3 class="display-md" data-i18n="usp.4.t">Er lernt weiter — wie jeder Mitarbeiter</h3>
+          <p class="usp-desc" data-i18n="usp.4.d">Monatliche Weiterentwicklung — neue Prozesse, Edge-Cases, bessere Antworten. Er wird besser, nicht älter.</p>
+          <ul class="usp-bullets">
+            <li data-i18n="usp.4.b1">Monatlicher Review: was wurde gelernt, was als nächstes</li>
+            <li data-i18n="usp.4.b2">Edge-Cases aus echtem Betrieb in die Wissensbasis</li>
+            <li data-i18n="usp.4.b3">Kleine Prozess-Erweiterungen im Retainer, keine Extra-Rechnung</li>
+          </ul>
+        </div>
+        <div class="usp-visual" aria-hidden="true">
+          <!-- TODO-felipe: durch Reporting-Vergleich Monat-X ersetzen -->
+          <svg viewBox="0 0 420 280" class="usp-svg">
+            <rect x="30" y="30" width="360" height="220" rx="12" class="usp-frame"/>
+            <text x="50" y="60" class="usp-chart-label">Performance · Monat für Monat</text>
+            <g class="usp-bars" transform="translate(50,80)">
+              <rect x="0"   y="120" width="36" height="40"  rx="3" class="usp-bar"/>
+              <rect x="52"  y="100" width="36" height="60"  rx="3" class="usp-bar"/>
+              <rect x="104" y="80"  width="36" height="80"  rx="3" class="usp-bar"/>
+              <rect x="156" y="60"  width="36" height="100" rx="3" class="usp-bar"/>
+              <rect x="208" y="40"  width="36" height="120" rx="3" class="usp-bar"/>
+              <rect x="260" y="20"  width="36" height="140" rx="3" class="usp-bar usp-bar-accent"/>
+              <text x="18"  y="180" text-anchor="middle" class="usp-axis">M1</text>
+              <text x="70"  y="180" text-anchor="middle" class="usp-axis">M2</text>
+              <text x="122" y="180" text-anchor="middle" class="usp-axis">M3</text>
+              <text x="174" y="180" text-anchor="middle" class="usp-axis">M4</text>
+              <text x="226" y="180" text-anchor="middle" class="usp-axis">M5</text>
+              <text x="278" y="180" text-anchor="middle" class="usp-axis">M6</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Step 5 — DSGVO -->
+      <div class="usp-step" data-step="5">
+        <div class="usp-copy">
+          <span class="usp-step-num">05 · <span data-i18n="usp.count">von 5</span></span>
+          <h3 class="display-md" data-i18n="usp.5.t">DSGVO-konform von Tag 1</h3>
+          <p class="usp-desc" data-i18n="usp.5.d">EU-Datenresidenz, AV-Vertrag, keine Daten an Modell-Training. Auf Wunsch On-Premise — bei euch im Haus, nichts nach draußen.</p>
+          <ul class="usp-bullets">
+            <li data-i18n="usp.5.b1">EU-Datenresidenz (Frankfurt), AV-Vertrag vorhanden</li>
+            <li data-i18n="usp.5.b2">Kein Training auf euren Daten, minimale Retention</li>
+            <li data-i18n="usp.5.b3">On-Premise-Option für regulierte Branchen</li>
+          </ul>
+        </div>
+        <div class="usp-visual" aria-hidden="true">
+          <!-- TODO-felipe: durch DSGVO-Zertifikat oder Hosting-Abbildung ersetzen -->
+          <svg viewBox="0 0 420 280" class="usp-svg">
+            <rect x="60" y="40" width="300" height="200" rx="14" class="usp-frame"/>
+            <text x="210" y="70" text-anchor="middle" class="usp-chart-label">Eure Infrastruktur · EU-Hosting</text>
+            <g class="usp-shield" transform="translate(210,165)">
+              <path d="M0 -58 L52 -38 L52 16 C52 46 26 64 0 72 C-26 64 -52 46 -52 16 L-52 -38 Z" class="usp-shield-body"/>
+              <path d="M-16 4 L-4 16 L20 -12" class="usp-shield-check"/>
+            </g>
+            <g transform="translate(80,210)">
+              <rect x="0" y="0" width="70" height="22" rx="11" class="usp-pill"/>
+              <text x="35" y="15" text-anchor="middle" class="usp-pill-label">DSGVO</text>
+            </g>
+            <g transform="translate(175,210)">
+              <rect x="0" y="0" width="70" height="22" rx="11" class="usp-pill"/>
+              <text x="35" y="15" text-anchor="middle" class="usp-pill-label">AV-Vertrag</text>
+            </g>
+            <g transform="translate(270,210)">
+              <rect x="0" y="0" width="70" height="22" rx="11" class="usp-pill"/>
+              <text x="35" y="15" text-anchor="middle" class="usp-pill-label">On-Prem</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="usp-nav">
+        <button class="usp-nav-btn usp-prev" aria-label="Zurück">←</button>
+        <span class="usp-counter" aria-live="polite"><span class="usp-counter-now">1</span> / 5</span>
+        <button class="usp-nav-btn usp-next" aria-label="Weiter">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEMOS — merged into #build (role tabs show inline demo) ============ -->
+
+<!-- ============ ASSESSMENT (lead magnet — human-delivered first read) ============ -->
+<section class="section" id="assessment">
+  <div class="container">
+    <div class="section-head reveal" style="text-align:center; margin-left:auto; margin-right:auto;">
+      <span class="eyebrow" data-i18n="assess.eyebrow" style="justify-content:center;">Kostenlose Einschätzung · Antwort in 48h</span>
+      <h2 class="display-lg" data-i18n="assess.headline">
+        Unsicher, welche Rolle passt?<br />Schickt uns eure Situation.
+      </h2>
+      <p class="lede" data-i18n="assess.lede">
+        3 Minuten ausfüllen. Wir lesen es selbst und schicken eine ehrliche Antwort: welche Rolle passt, wie wir sie umsetzen würden, grober Preisrahmen — oder wir sagen, dass wir nicht der richtige Fit sind. Kein Pitch-Deck, kein Sales-Nachfass.
+      </p>
+    </div>
+
+    <!-- TODO-felipe: Formspree-Endpoint durch eigenen ersetzen (Account auf felipes Email anlegen). Aktuell läuft Form ins Pocket-CEO-Postfach. -->
+    <form class="assessment-form reveal" id="assessment-form" action="https://formspree.io/f/TODO-felipe-formspree-id" method="POST" novalidate>
+      <div class="form-grid">
+        <label class="form-field">
+          <span class="form-label" data-i18n="assess.f.name">Name</span>
+          <input type="text" name="name" required autocomplete="name" />
+        </label>
+        <label class="form-field">
+          <span class="form-label" data-i18n="assess.f.email">Geschäftliche E-Mail</span>
+          <input type="email" name="email" required autocomplete="email" />
+        </label>
+        <label class="form-field">
+          <span class="form-label" data-i18n="assess.f.company">Unternehmen</span>
+          <input type="text" name="company" required autocomplete="organization" />
+        </label>
+        <label class="form-field">
+          <span class="form-label" data-i18n="assess.f.teamsize">Teamgröße</span>
+          <select name="team_size">
+            <option value="1-10">1–10</option>
+            <option value="11-50" selected>11–50</option>
+            <option value="51-200">51–200</option>
+            <option value="200+">200+</option>
+          </select>
+        </label>
+        <label class="form-field form-field-full">
+          <span class="form-label" data-i18n="assess.f.friction">Welche Rolle wollt ihr zuerst digitalisieren — und warum?</span>
+          <textarea name="friction" rows="4" required data-i18n-attr="placeholder" data-i18n-ph="assess.f.friction.ph" placeholder="Z.B.: 'Wir finden keine Support-Mitarbeiterin seit 6 Monaten — jeder im Team macht 10 Stunden/Woche Tickets mit.' Konkret: welche Rolle, welcher Schmerz, wie oft."></textarea>
+        </label>
+        <label class="form-field">
+          <span class="form-label" data-i18n="assess.f.stack">Aktuelle Tools</span>
+          <input type="text" name="stack" data-i18n-attr="placeholder" data-i18n-ph="assess.f.stack.ph" placeholder="CRM, Ticket-System, Kalender, DATEV…" />
+        </label>
+        <label class="form-field">
+          <span class="form-label" data-i18n="assess.f.timeline">Zeitrahmen</span>
+          <select name="timeline">
+            <option value="now" data-i18n="assess.timeline.now">Jetzt — Budget steht im Quartal</option>
+            <option value="soon" selected data-i18n="assess.timeline.soon">In 1–3 Monaten</option>
+            <option value="explore" data-i18n="assess.timeline.explore">Wir schauen erstmal</option>
+          </select>
+        </label>
+      </div>
+
+      <input type="hidden" name="_subject" value="Neue Einschätzungs-Anfrage — DMA" />
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+      <div class="form-cta-row">
+        <button type="submit" class="btn btn-primary" data-i18n="assess.submit">Einschätzung anfordern →</button>
+        <span class="form-micro" data-i18n="assess.micro">Antwort innerhalb 48h · kein Nachfass, außer ihr wollt es</span>
+      </div>
+      <div class="form-error hidden" id="assessment-error" data-i18n="assess.error">
+        Etwas ist schiefgelaufen. Schreibt uns direkt an TODO-felipe@domain.tld.
+      </div>
+    </form>
+
+    <div class="assessment-success hidden reveal" id="assessment-success">
+      <div class="success-mark">✓</div>
+      <h3 class="display-md" data-i18n="assess.success.headline">Angekommen. Wir melden uns innerhalb 48h.</h3>
+      <p data-i18n="assess.success.body">Wir lesen jede Einreichung selbst. Wollt ihr noch Kontext ergänzen — TODO-felipe@domain.tld.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS (Variant C — Gantt) ============ -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="process.eyebrow">So läuft das Onboarding</span>
+      <h2 class="display-lg" data-i18n="process.headline">
+        Vier Phasen. 8–12 Wochen. Ein digitaler Mitarbeiter im Einsatz.
+      </h2>
+      <p class="lede" data-i18n="process.lede">
+        Kein Theater. Hier ist die echte Form eines Projekts — Phasen, Überlappungen, Dauer.
+      </p>
+    </div>
+
+    <div class="gantt reveal">
+      <div class="gantt-row">
+        <div class="gantt-label">
+          01 · Rolle finden
+          <span class="duration" data-i18n="process.p1.dur">~2 weeks</span>
+        </div>
+        <div class="gantt-track"><div class="gantt-bar" style="left:0%; width:15%;">Rolle finden</div></div>
+      </div>
+      <div class="gantt-row">
+        <div class="gantt-label">
+          02 · Job-Beschreibung
+          <span class="duration" data-i18n="process.p2.dur">~1–2 weeks</span>
+        </div>
+        <div class="gantt-track"><div class="gantt-bar muted" style="left:10%; width:15%;">Job-Beschreibung</div></div>
+      </div>
+      <div class="gantt-row">
+        <div class="gantt-label">
+          03 · Onboarding
+          <span class="duration" data-i18n="process.p3.dur">4–8 weeks</span>
+        </div>
+        <div class="gantt-track"><div class="gantt-bar" style="left:22%; width:45%;">Onboarding</div></div>
+      </div>
+      <div class="gantt-row">
+        <div class="gantt-label">
+          04 · Einarbeitung
+          <span class="duration" data-i18n="process.p4.dur">Ongoing</span>
+        </div>
+        <div class="gantt-track"><div class="gantt-bar light" style="left:65%; width:35%;">Einarbeitung →</div></div>
+      </div>
+      <div class="gantt-axis">
+        <div></div>
+        <div class="ticks">
+          <span>Wk 0</span><span>Wk 2</span><span>Wk 4</span><span>Wk 8</span><span>Wk 12</span><span>→</span>
+        </div>
+      </div>
+
+      <div class="gantt-steps">
+        <div class="gantt-step">
+          <span class="step-num">01 · Rolle finden</span>
+          <span class="step-name" data-i18n="process.p1.name">Welche Rolle hat die meisten Reibungspunkte?</span>
+          <span class="step-duration" data-i18n="process.p1.dur">~2 Wochen</span>
+          <span class="step-body" data-i18n="process.p1.body">
+            Wir setzen uns mit eurem Team zusammen, gehen durch eure Prozesse und finden die Rolle, bei der ein digitaler Mitarbeiter am meisten bewegt — und welche wir in Ruhe lassen.
+          </span>
+        </div>
+        <div class="gantt-step">
+          <span class="step-num">02 · Job-Beschreibung</span>
+          <span class="step-name" data-i18n="process.p2.name">Was genau macht euer digitaler Mitarbeiter?</span>
+          <span class="step-duration" data-i18n="process.p2.dur">~1–2 Wochen</span>
+          <span class="step-body" data-i18n="process.p2.body">
+            Klare Aufgabenliste, Integrationsplan, Erfolgsmetriken. Ihr gebt frei, was genau live geht — wie bei einer neuen Stelle.
+          </span>
+        </div>
+        <div class="gantt-step">
+          <span class="step-num">03 · Onboarding</span>
+          <span class="step-name" data-i18n="process.p3.name">Integration in eure Tools, Training auf eure Prozesse</span>
+          <span class="step-duration" data-i18n="process.p3.dur">4–8 Wochen</span>
+          <span class="step-body" data-i18n="process.p3.body">
+            Gründer-geführtes Engineering. Wöchentliche Demos. Schrittweiser Rollout, bis der digitale Mitarbeiter den Job beherrscht.
+          </span>
+        </div>
+        <div class="gantt-step">
+          <span class="step-num">04 · Einarbeitung</span>
+          <span class="step-name" data-i18n="process.p4.name">Er lernt weiter — wie jeder Mitarbeiter</span>
+          <span class="step-duration" data-i18n="process.p4.dur">Laufend</span>
+          <span class="step-body" data-i18n="process.p4.body">
+            Wir halten ihn scharf. Monatliche Weiterentwicklung, neue Edge-Cases, neue Aufgaben — so wie ihr es mit einem menschlichen Mitarbeiter auch machen würdet.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOUNDERS (Variant B — two paired) ============ -->
+<section class="section" id="team">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="team.eyebrow">Mit wem ihr arbeitet</span>
+      <h2 class="display-lg" data-i18n="team.headline">
+        Gegründet in Deutschland. Spezialisiert auf Mittelstand.
+      </h2>
+      <p class="lede" data-i18n="team.lede">
+        Wer mit euch den Scoping-Call macht, baut auch den digitalen Mitarbeiter. Kein Handoff an ein Junior-Team nach dem Kickoff.
+      </p>
+    </div>
+
+    <!-- TODO-felipe: Foto, LinkedIn-URL und finale Credentials ergänzen. Bio-Text überschreiben. -->
+    <div class="founders">
+      <div class="founder-card reveal">
+        <span class="founder-role" data-i18n="team.f1.role">Gründer · Sales &amp; Delivery</span>
+        <h3 class="founder-name" data-i18n="team.f1.name">Felipe</h3>
+        <p style="font-size:15px; color:var(--pc-fg-muted); line-height:1.55; margin:0;" data-i18n="team.f1.bio">
+          Gründer von DMA (Digitale Mitarbeiteragentur). Jahrelang Automatisierungs-Projekte für deutsche Unternehmen aufgesetzt — von Handwerkern bis Agenturen. Bio folgt.
+        </p>
+        <div class="founder-creds">
+          <span class="cred" data-i18n="team.f1.cred1">Automation</span>
+          <span class="cred" data-i18n="team.f1.cred2">Mittelstand</span>
+          <span class="cred" data-i18n="team.f1.cred3">DACH-Markt</span>
+        </div>
+        <div class="founder-footer">
+          <span data-i18n="team.f1.loc">Deutschland</span>
+          <a href="#" data-i18n="team.f1.link">LinkedIn →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ (Variant C — tabs) ============ -->
+<section class="section section-alt" id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="faq.eyebrow">Häufige Fragen</span>
+      <h2 class="display-lg" data-i18n="faq.headline">
+        Was Unternehmer fragen, bevor sie buchen.
+      </h2>
+    </div>
+
+    <div class="faq-tabs reveal" role="tablist">
+      <button class="active" data-cat="scope" data-i18n="faq.tab.scope">Umfang</button>
+      <button data-cat="pricing" data-i18n="faq.tab.pricing">Preis</button>
+      <button data-cat="stack" data-i18n="faq.tab.stack">Technik</button>
+      <button data-cat="geo" data-i18n="faq.tab.geo">DSGVO &amp; Recht</button>
+    </div>
+
+    <ul class="faq-list reveal">
+      <li class="faq-item" data-cat="scope">
+        <button class="faq-q"><span data-i18n="faq.q1">Ersetzt der digitale Mitarbeiter unsere Leute komplett?</span><span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a1">In der Regel nicht. Er übernimmt die wiederholbaren 70 % einer Rolle — Standard-Anfragen, Copy-Paste-Arbeit, Routine-Reporting. Eure Leute machen das, was Urteilsvermögen braucht: Eskalationen, Beziehung, Ausnahmen. Er augmentiert, er ersetzt selten komplett.</div></div>
+      </li>
+      <li class="faq-item" data-cat="scope">
+        <button class="faq-q"><span data-i18n="faq.q10">Wie lange dauert das Onboarding?</span><span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a10">8 bis 12 Wochen vom Kickoff bis der digitale Mitarbeiter die Rolle beherrscht. Einfache Rollen (Support-Tier-1, Reporting) eher am kürzeren Ende. Komplexe Rollen (Sales mit mehreren Kanälen) am längeren. Im Scoping-Call bekommt ihr ein scharfes Datum — keine Spanne zum Verstecken.</div></div>
+      </li>
+      <li class="faq-item" data-cat="scope">
+        <button class="faq-q"><span data-i18n="faq.q11">Wie schnell können wir nach dem Scoping-Call starten?</span><span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a11">Meistens in 1–2 Wochen. Wir nehmen bewusst nur eine begrenzte Anzahl paralleler Projekte an — wenn wir voll sind, sagen wir den nächsten Slot, statt euch hinzuhalten.</div></div>
+      </li>
+      <li class="faq-item" data-cat="scope">
+        <button class="faq-q"><span data-i18n="faq.q12">Wer baut unseren digitalen Mitarbeiter?</span><span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a12">Gründer-geführt. Die Person im Scoping-Call ist die Person, die euren Mitarbeiter baut. Für größere Rollen holen wir Spezialisten dazu — aber Ansprechpartner und technischer Owner bleiben gleich.</div></div>
+      </li>
+      <li class="faq-item" data-cat="pricing">
+        <button class="faq-q"><span data-i18n="faq.q3">Was kostet ein digitaler Mitarbeiter?</span><span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a3">Einmaliges Setup für die Rolle (nach Phase 02 scope-locked) plus monatlicher Betriebs-Retainer. Kein Per-Seat-Modell, keine Stundenabrechnung. Die Rechnung steht transparent im Angebot. Günstiger als eine Vollzeitkraft — und ohne Abfindung.</div></div>
+      </li>
+      <li class="faq-item" data-cat="pricing">
+        <button class="faq-q"><span data-i18n="faq.q4">Was ist ein realistischer Startrahmen?</span><span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a4">Projekte starten typischerweise im mittleren vierstelligen Setup plus monatlichem Retainer — je nach Rolle und Komplexität. Im Scoping-Call sagen wir euch offen, ob wir der richtige Fit sind, bevor etwas auf Papier kommt.</div></div>
+      </li>
+      <li class="faq-item" data-cat="pricing">
+        <button class="faq-q"><span data-i18n="faq.q13">Was deckt der monatliche Retainer ab?</span><span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a13">Monitoring, Fixes, Edge-Case-Anpassungen, kleine Prozess-Erweiterungen und ein monatlicher Review, was euer digitaler Mitarbeiter als nächstes lernen sollte. Große neue Rollen werden separat gescoped — kein Scope-Creep im Retainer.</div></div>
+      </li>
+      <li class="faq-item" data-cat="stack">
+        <button class="faq-q"><span data-i18n="faq.q5">Welche Tools braucht unser Unternehmen?</span><span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a5">Im Prinzip keine neuen. Wir arbeiten mit dem Stack, den ihr schon habt — HubSpot, Pipedrive, DATEV, Sharepoint, Zendesk, eigene interne Tools. Wenn es eine API oder einen Webhook hat, haben wir dagegen gebaut.</div></div>
+      </li>
+      <li class="faq-item" data-cat="stack">
+        <button class="faq-q"><span data-i18n="faq.q6">Was passiert, wenn wir nicht mehr mit euch arbeiten?</span><span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a6">Der digitale Mitarbeiter läuft weiter. Ihr besitzt den Code, die Accounts, die Daten. Wir übergeben ein Runbook — euer IT-Team oder ein anderer Dienstleister kann übernehmen. Genau das ist der Sinn von „euch gehört es, wir halten es am Laufen.“</div></div>
+      </li>
+      <li class="faq-item" data-cat="stack">
+        <button class="faq-q"><span data-i18n="faq.q9">Wie arbeitet er mit unserem Team zusammen?</span><span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a9">Wie ein Kollege, der euren Tools gehört. Euer Team sieht live, was er tut, kann eingreifen, Antworten korrigieren, Eskalationen übernehmen. Er hat ein eigenes Dashboard, eigene Logins in euren Systemen — so wie ein neuer Mitarbeiter auch.</div></div>
+      </li>
+      <li class="faq-item" data-cat="stack">
+        <button class="faq-q"><span data-i18n="faq.q14">Welche KI-Modelle nutzt ihr?</span><span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a14">Das richtige Modell für den Job. Für Sprache + Reasoning nutzen wir Anbieter wie Anthropic (Claude) oder OpenAI; für On-Prem / DSGVO-kritische Deployments Open-Weight-Modelle (Llama, Mistral) auf eurer Hardware. Wir entscheiden pro Rolle — nicht pro Vendor.</div></div>
+      </li>
+      <li class="faq-item" data-cat="geo">
+        <button class="faq-q"><span data-i18n="faq.q15">Wie sieht das DSGVO-rechtlich aus?</span><span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a15">DSGVO-first by default. EU-Datenresidenz, Auftragsverarbeitungsvertrag (AV) vorhanden, minimale Retention. Keine Daten werden für Modell-Training genutzt. Für regulierte Branchen (Gesundheit, Legal, Finance) deployen wir auf Wunsch komplett on-premise — bei euch im Haus, nichts nach draußen.</div></div>
+      </li>
+      <li class="faq-item" data-cat="geo">
+        <button class="faq-q"><span data-i18n="faq.q7">Was passiert mit unseren Kundendaten?</span><span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a7">Sie gehören euch und bleiben bei euch. Standard-Setup: EU-Cloud, kein Training auf euren Daten, Retention nach eurer Policy (typisch 30–90 Tage). Bei On-Premise-Deployment verlassen sie euer Netzwerk nicht.</div></div>
+      </li>
+      <li class="faq-item" data-cat="geo">
+        <button class="faq-q"><span data-i18n="faq.q8">Wie ist das mit dem Betriebsrat?</span><span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a8">Wir arbeiten mit euch und dem Betriebsrat gemeinsam. Weil wir Rollen digitalisieren statt Leute ersetzen, ist die Gesprächsebene meist konstruktiv — es geht darum, eurem Team die Routine abzunehmen, damit sie sich auf das Wesentliche konzentrieren können. Dokumentation für Betriebsvereinbarungen stellen wir bereit.</div></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA (Variant B — split · copy + calendar) ============ -->
+<section class="final" id="final">
+  <div class="container final-grid">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="final.eyebrow">Termin buchen</span>
+      <h2 class="display-lg" style="margin-top:20px;" data-i18n="final.headline">
+        30 Minuten. Welche Rolle soll euer erster digitaler Mitarbeiter übernehmen?
+      </h2>
+      <p class="lede" style="margin-top:20px;" data-i18n="final.lede">
+        Wir mappen live, wie wir die Rolle umsetzen würden — oder wir sagen euch, dass ihr uns noch nicht braucht. Beide Antworten sparen ein Quartal.
+      </p>
+      <div class="final-ctas">
+        <a class="btn btn-primary" href="mailto:TODO-felipe@domain.tld" data-i18n="final.cta1">E-Mail schreiben →</a>
+        <a class="btn btn-ghost" href="#" data-i18n="final.cta2">Alle Slots ansehen</a>
+      </div>
+      <div class="final-micro" data-i18n="final.micro">Antwort innerhalb 24h · kein Kalt-Nachfass</div>
+    </div>
+
+    <div class="calendar-card reveal">
+      <div class="cal-pitch">
+        <span class="cal-kicker" data-i18n="final.cal.kicker">30 Minuten · kostenlos · direkt mit Felipe</span>
+        <h3 class="cal-headline" data-i18n="final.cal.headline">Termin buchen</h3>
+        <p class="cal-body" data-i18n="final.cal.body">Erzählt mir in 30 Sekunden, welche Rolle euch am meisten fehlt. Wir haben entweder einen konkreten Weg — oder ich sage euch, warum ihr uns noch nicht braucht.</p>
+      </div>
+      <a class="cal-cta btn btn-primary" href="mailto:TODO-felipe@domain.tld?subject=Kennenlern-Termin%20Digitale%20Mitarbeiteragentur" data-i18n="final.cal.cta">Termin buchen →</a>
+      <div class="cal-meta" data-i18n="final.cal.meta">Antwort innerhalb 24h · keine Sales-Pipeline</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER (Variant C — tall · big wordmark) ============ -->
+<!-- TODO-felipe: Brand-Name, Social-Links, Standort, Impressum/Privacy/AGB einfügen. Jahr ggf. updaten. -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-wordmark reveal">
+      <span class="footer-mark">DMA</span>
+      <span class="footer-sub" data-i18n="brand.sub">Digitale Mitarbeiteragentur</span>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h5 data-i18n="foot.menu">Menü</h5>
+        <ul>
+          <li><a href="#build" data-i18n="nav.build">Rollen</a></li>
+          <li><a href="#assessment" data-i18n="nav.assessment">Einschätzung</a></li>
+          <li><a href="#process" data-i18n="nav.process">Prozess</a></li>
+          <li><a href="#team" data-i18n="nav.team">Über uns</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="foot.offices">Standort</h5>
+        <ul>
+          <li>Deutschland</li>
+          <li>TODO-felipe@domain.tld</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="foot.connect">Folgen</h5>
+        <ul>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="foot.legal">Rechtliches</h5>
+        <ul>
+          <li><a href="#">Impressum</a></li>
+          <li><a href="#">Datenschutz</a></li>
+          <li><a href="#">AGB</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DMA · Digitale Mitarbeiteragentur</span>
+      <span class="legal">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ======================================================
+// i18n — EN / DE
+// ======================================================
+const I18N = {
+  de: {
+    "brand.sub": "Digitale Mitarbeiteragentur",
+    "nav.build": "Rollen", "nav.assessment": "Einschätzung", "nav.process": "Prozess", "nav.team": "Über uns", "nav.cta": "Termin buchen →",
+    "hero.eyebrow": "Digitale Mitarbeiter · für Mittelstand · DSGVO-konform",
+    "hero.h1": "Digitale Mitarbeiter.", "hero.h2": "Für eure Rollen.", "hero.h3": "Einsatzbereit ab Tag 1.",
+    "hero.lede": "Statt monatelang eine neue Assistenz zu suchen oder einen Entwickler einzustellen, bekommt ihr einen digitalen Mitarbeiter, der den Job ab Tag 1 macht — trainiert auf eure Prozesse, integriert in eure Tools, verfügbar rund um die Uhr.",
+    "hero.cta1": "Kostenlose Einschätzung", "hero.cta2": "Rollen ansehen",
+    "hero.m1": "Rollen verfügbar", "hero.m2": "EU-Deployment", "hero.m3": "ohne Krankheitstage",
+    "hero.chip": "Live · digitaler Mitarbeiter bei der Arbeit",
+    "problem.eyebrow": "Das Problem",
+    "problem.headline": "Die Rolle ist offen.<br />Keiner bewirbt sich.",
+    "problem.lede": "Die Stellenanzeige läuft seit vier Monaten. Die wenigen Kandidaten springen nach drei Wochen ab. Euer Team fängt jeden Tag auf, was der fehlende Kollege eigentlich machen sollte — Anrufe, Tickets, Angebote, Reporting.",
+    "problem.not": "Nicht das",
+    "problem.not1": "Noch eine Stellenanzeige schalten — und hoffen",
+    "problem.not2": "Werkstudenten, die nach 6 Monaten wieder weg sind",
+    "problem.not3": "KI-Tools kaufen, die keiner im Team benutzt",
+    "problem.not4": "Überstunden im Team, bis jemand Neues gefunden ist",
+    "problem.this": "Sondern das",
+    "problem.this1": "Ein digitaler Mitarbeiter, der die Rolle ab Tag 1 übernimmt",
+    "problem.this2": "Trainiert auf eure Prozesse, integriert in eure Tools",
+    "problem.this3": "Rund um die Uhr verfügbar, keine Krankheitstage, kein Urlaub",
+    "problem.this4": "DSGVO-konform, eure Daten bleiben in eurem Haus",
+    "build.eyebrow": "Rollen & Demos",
+    "build.headline": "Sechs Rollen. Fünf Standards plus ein Spezialist.",
+    "build.lede": "Fünf Standard-Rollen für die Aufgaben, die jeder Mittelständler kennt. Plus ein Spezialist für alles, was nicht ins Schema passt. Klickt durch — links die Rolle, rechts die Demo.",
+    "build.cta": "Rolle anfragen →",
+    "build.tab.voice": "Support-Mitarbeiter",
+    "build.tab.auto": "Ops-Mitarbeiter",
+    "build.tab.rag": "Backend-Mitarbeiter",
+    "build.tab.int": "Sales-Mitarbeiter",
+    "build.tab.prem": "Marketing-Mitarbeiter",
+    "build.tab.spec": "Spezialist",
+    "build.voice.title": "Der Support-Mitarbeiter, der um 2 Uhr nachts ans Telefon geht.",
+    "build.voice.body": "Inbound-Anrufe, Tickets, FAQ — trainiert auf eure Antworten und Systeme. Übergibt an einen Menschen nur, wenn er muss. Klassischer Ersatz: Empfangskraft, Support-Werkstudent, Call-Center-Agent.",
+    "build.voice.p1": "Deutscher Muttersprachler-Sound, geringe Latenz",
+    "build.voice.p2": "Schreibt jeden Fall ins CRM / Ticket-System",
+    "build.voice.p3": "Transkripte + Intent-Tagging für eure Ops",
+    "build.auto.title": "Der Ops-Mitarbeiter, der den Laden zusammenhält.",
+    "build.auto.body": "Termine koordinieren, Reporting zusammenbauen, zwischen Tools hin- und hertragen, Eskalationen raushauen. Gebaut für echtes Volumen, geloggt, überwacht — und ihr seht live, was er tut. Klassischer Ersatz: Assistenz, Office-Manager, Junior-Operations.",
+    "build.auto.p1": "Läuft in eurer Cloud oder auf eurem Server",
+    "build.auto.p2": "Fehlerbehandlung, Retry und Alerts eingebaut",
+    "build.auto.p3": "Jeder Prozess dokumentiert — euer Team übernimmt",
+    "build.rag.title": "Der Backend-Mitarbeiter, der eure Daten zusammenhält.",
+    "build.rag.body": "Datenchaos zwischen CRM, Ticket-System, Drive, Excel. Der Backend-Mitarbeiter konsolidiert, beantwortet Rückfragen eures Teams mit Quellenangabe, hält SOPs aktuell. Klassischer Ersatz: Data-Analyst-Werkstudent, „der eine, der sich auskennt“.",
+    "build.rag.p1": "Indexiert Dokumente, Tickets, SOPs, alte Projekte",
+    "build.rag.p2": "Jede Antwort zitiert die Quelle — nachprüfbar",
+    "build.rag.p3": "Auto-Sync aus Drive, Notion, Sharepoint, DATEV",
+    "build.int.title": "Der Sales-Mitarbeiter, der Leads nicht liegen lässt.",
+    "build.int.body": "Recherchiert Firmen, personalisiert Outreach, folgt drei Mal nach, bucht Discovery-Termine direkt im Kalender, pflegt das CRM sauber. Euer Sales-Team redet nur mit warmen Leads. Klassischer Ersatz: SDR, Vertriebsassistenz, Freelancer-Lead-Gen.",
+    "build.int.p1": "LinkedIn, Apollo, E-Mail — kanalübergreifend",
+    "build.int.p2": "CRM-Pflege in Echtzeit (HubSpot, Pipedrive, GHL)",
+    "build.int.p3": "Kalender-Buchung ohne Reibung",
+    "build.prem.title": "Der Marketing-Mitarbeiter, der Content ausliefert.",
+    "build.prem.body": "Schreibt in eurer Brand-Voice, plant über alle Kanäle (LinkedIn, Newsletter, Blog), misst Performance und lernt daraus. Ihr gebt einmal frei, er hält den Kanal warm. Klassischer Ersatz: Content-Werkstudent, Social-Media-Praktikant, externe Agentur.",
+    "build.prem.p1": "Schreibt nach eurer Tonalität — nicht nach ChatGPT-Default",
+    "build.prem.p2": "Plant über Kanäle, mit Redaktionskalender",
+    "build.prem.p3": "Reporting, das ihr versteht — keine Vanity-Metrics",
+    "build.spec.badge": "Sonderfall · Custom",
+    "build.spec.title": "Der Spezialist für alles, was nicht ins Schema passt.",
+    "build.spec.body": "Euer Prozess ist speziell. Eine Maschine spricht nur Modbus, eine Legacy-Datenbank hat ihre eigenen Regeln, ein Branchen-Workflow existiert so nur bei euch. Der Spezialist wird für genau diesen Fall gebaut — kein Schubladen-Mitarbeiter. Klassischer Ersatz: freiberuflicher Entwickler, interne IT-Abteilung, Unternehmensberater mit Excel-Makros.",
+    "build.spec.p1": "Scoping mit Engineering-Tiefe — wir sagen euch vorher, ob's geht",
+    "build.spec.p2": "Auch on-premise, auch mit alten Systemen (SAP, DATEV, Modbus, OPC-UA)",
+    "build.spec.p3": "Fixer Scope, fixer Preis — keine Berater-Tagessätze",
+    "usp.eyebrow": "Was jeder digitale Mitarbeiter mitbringt",
+    "usp.headline": "Fünf Standards. Klickt euch durch.",
+    "usp.lede": "Keine Upsells. Keine Add-ons. Standard — denn ohne diese fünf Dinge hält euer digitaler Mitarbeiter den ersten Monat nicht durch.",
+    "usp.count": "von 5",
+    "usp.1.t": "Integration in eure Tools",
+    "usp.1.d": "Er arbeitet in dem Stack, den ihr schon habt — CRM, Ticket-System, Kalender, DATEV. Kein Rip-and-Replace, keine Parallel-Systeme.",
+    "usp.1.b1": "HubSpot, Pipedrive, Zendesk, DATEV, Sharepoint, Notion",
+    "usp.1.b2": "Alles über APIs und Webhooks — kein Ingest-Script",
+    "usp.1.b3": "Neue Tools in 1–2 Wochen nachintegriert",
+    "usp.2.t": "Dashboard, das ihr versteht",
+    "usp.2.d": "Ihr seht live, was er tut, warum er es tut, und wo er an einen Menschen übergeben hat. Kein Monats-PDF.",
+    "usp.2.b1": "Live-Feed: jede Aktion nachvollziehbar",
+    "usp.2.b2": "Handoff-Log: wann und warum an Menschen übergeben",
+    "usp.2.b3": "Kein Monats-PDF — echte Zahlen, heute",
+    "usp.3.t": "Euer Team bleibt eigenständig",
+    "usp.3.d": "Anleitungen, Schulung und Übergaben — damit euer Team den Mitarbeiter führt, nicht wir. Keine Agentur-Abhängigkeit.",
+    "usp.3.b1": "Runbook auf Deutsch, Schritt für Schritt",
+    "usp.3.b2": "2-3 Schulungen mit eurem Team beim Go-Live",
+    "usp.3.b3": "Ihr kündigt uns, der Mitarbeiter läuft weiter",
+    "usp.4.t": "Er lernt weiter — wie jeder Mitarbeiter",
+    "usp.4.d": "Monatliche Weiterentwicklung — neue Prozesse, Edge-Cases, bessere Antworten. Er wird besser, nicht älter.",
+    "usp.4.b1": "Monatlicher Review: was wurde gelernt, was als nächstes",
+    "usp.4.b2": "Edge-Cases aus echtem Betrieb in die Wissensbasis",
+    "usp.4.b3": "Kleine Prozess-Erweiterungen im Retainer, keine Extra-Rechnung",
+    "usp.5.t": "DSGVO-konform von Tag 1",
+    "usp.5.d": "EU-Datenresidenz, AV-Vertrag, keine Daten an Modell-Training. Auf Wunsch On-Premise — bei euch im Haus, nichts nach draußen.",
+    "usp.5.b1": "EU-Datenresidenz (Frankfurt), AV-Vertrag vorhanden",
+    "usp.5.b2": "Kein Training auf euren Daten, minimale Retention",
+    "usp.5.b3": "On-Premise-Option für regulierte Branchen",
+    "demos.live": "● Live",
+    "demos.soon": "Bald",
+    "demos.d1.ind": "Reise-Koordination",
+    "demos.d1.result": "Geschäftsreise komplett geplant in 2 Minuten.",
+    "demos.d1.client": "Er plant Routen, bucht Hotels, stellt das Team — ihr gebt frei, er schickt raus.",
+    "demos.d1.link": "Demo öffnen →",
+    "demos.d3.ind": "B2B-Outbound",
+    "demos.d3.result": "Vom Lead zum qualifizierten Call, auf Autopilot.",
+    "demos.d3.client": "Er recherchiert, personalisiert, folgt drei Mal nach — euer Team spricht nur mit warmen Replies.",
+    "demos.d3.link": "Demo kommt bald",
+    "demos.d4.ind": "Content-Ops",
+    "demos.d4.result": "Vom Briefing bis veröffentlicht, in einem Durchgang.",
+    "demos.d4.client": "Er schreibt in eurer Tonalität, plant über alle Kanäle — ihr gebt einmal frei.",
+    "demos.d4.link": "Demo kommt bald",
+    "demos.d5.ind": "Kunden-Support",
+    "demos.d5.result": "Vom Ticket zur Lösung, 24/7.",
+    "demos.d5.client": "Er übernimmt Tier-1 über E-Mail und Chat, eskaliert nur, was wirklich zählt.",
+    "demos.d5.link": "Demo kommt bald",
+    "demos.dB.ind": "Interne Wissens-Suche",
+    "demos.dB.result": "Die richtige Antwort — mit Quellenangabe, in Sekunden.",
+    "demos.dB.client": "Er zieht aus Drive, Notion und euren SOPs die eine richtige Antwort — und sagt, wo sie steht.",
+    "demos.dB.link": "Demo kommt bald",
+    "demos.dS.ind": "Custom · Branchenlösung",
+    "demos.dS.result": "Gebaut für euren Prozess — nicht für 1.000 andere.",
+    "demos.dS.client": "Wenn Standard nicht reicht: Integration in Legacy-Systeme, branchenspezifische Logik, physische Maschinen. Wir sagen vorab, ob's machbar ist.",
+    "demos.dS.link": "Custom-Scoping anfragen →",
+    "assess.eyebrow": "Kostenlose Einschätzung · Antwort in 48h",
+    "assess.headline": "Unsicher, welche Rolle passt?<br />Schickt uns eure Situation.",
+    "assess.lede": "3 Minuten ausfüllen. Wir lesen es selbst und schicken eine ehrliche Antwort: welche Rolle passt, wie wir sie umsetzen würden, grober Preisrahmen — oder wir sagen, dass wir nicht der richtige Fit sind. Kein Pitch-Deck, kein Sales-Nachfass.",
+    "assess.f.name": "Name",
+    "assess.f.email": "Geschäftliche E-Mail",
+    "assess.f.company": "Unternehmen",
+    "assess.f.teamsize": "Teamgröße",
+    "assess.f.friction": "Welche Rolle wollt ihr zuerst digitalisieren — und warum?",
+    "assess.f.friction.ph": "Z.B.: 'Wir finden keine Support-Mitarbeiterin seit 6 Monaten — jeder im Team macht 10 Stunden/Woche Tickets mit.' Konkret: welche Rolle, welcher Schmerz, wie oft.",
+    "assess.f.stack": "Aktuelle Tools",
+    "assess.f.stack.ph": "CRM, Ticket-System, Kalender, DATEV…",
+    "assess.f.timeline": "Zeitrahmen",
+    "assess.timeline.now": "Jetzt — Budget steht im Quartal",
+    "assess.timeline.soon": "In 1–3 Monaten",
+    "assess.timeline.explore": "Wir schauen erstmal",
+    "assess.submit": "Einschätzung anfordern →",
+    "assess.micro": "Antwort innerhalb 48h · kein Nachfass, außer ihr wollt es",
+    "assess.error": "Etwas ist schiefgelaufen. Schreibt uns direkt an TODO-felipe@domain.tld.",
+    "assess.success.headline": "Angekommen. Wir melden uns innerhalb 48h.",
+    "assess.success.body": "Wir lesen jede Einreichung selbst. Wollt ihr noch Kontext ergänzen — TODO-felipe@domain.tld.",
+    "process.eyebrow": "So läuft das Onboarding",
+    "process.headline": "Vier Phasen. 8–12 Wochen. Ein digitaler Mitarbeiter im Einsatz.",
+    "process.lede": "Kein Theater. Hier ist die echte Form eines Projekts — Phasen, Überlappungen, Dauer.",
+    "process.p1.name": "Welche Rolle hat die meisten Reibungspunkte?", "process.p1.dur": "~2 Wochen",
+    "process.p1.body": "Wir setzen uns mit eurem Team zusammen, gehen durch eure Prozesse und finden die Rolle, bei der ein digitaler Mitarbeiter am meisten bewegt — und welche wir in Ruhe lassen.",
+    "process.p2.name": "Was genau macht euer digitaler Mitarbeiter?", "process.p2.dur": "~1–2 Wochen",
+    "process.p2.body": "Klare Aufgabenliste, Integrationsplan, Erfolgsmetriken. Ihr gebt frei, was genau live geht — wie bei einer neuen Stelle.",
+    "process.p3.name": "Integration in eure Tools, Training auf eure Prozesse", "process.p3.dur": "4–8 Wochen",
+    "process.p3.body": "Gründer-geführtes Engineering. Wöchentliche Demos. Schrittweiser Rollout, bis der digitale Mitarbeiter den Job beherrscht.",
+    "process.p4.name": "Er lernt weiter — wie jeder Mitarbeiter", "process.p4.dur": "Laufend",
+    "process.p4.body": "Wir halten ihn scharf. Monatliche Weiterentwicklung, neue Edge-Cases, neue Aufgaben — so wie ihr es mit einem menschlichen Mitarbeiter auch machen würdet.",
+    "team.eyebrow": "Mit wem ihr arbeitet",
+    "team.headline": "Gegründet in Deutschland. Spezialisiert auf Mittelstand.",
+    "team.lede": "Wer mit euch den Scoping-Call macht, baut auch den digitalen Mitarbeiter. Kein Handoff an ein Junior-Team nach dem Kickoff.",
+    "team.f1.role": "Gründer · Sales & Delivery",
+    "team.f1.name": "Felipe",
+    "team.f1.bio": "Gründer von DMA (Digitale Mitarbeiteragentur). Jahrelang Automatisierungs-Projekte für deutsche Unternehmen aufgesetzt — von Handwerkern bis Agenturen. Bio folgt.",
+    "team.f1.cred1": "Automation", "team.f1.cred2": "Mittelstand", "team.f1.cred3": "DACH-Markt",
+    "team.f1.loc": "Deutschland",
+    "team.f1.link": "LinkedIn →",
+    "faq.eyebrow": "Häufige Fragen", "faq.headline": "Was Unternehmer fragen, bevor sie buchen.",
+    "faq.tab.scope": "Umfang", "faq.tab.pricing": "Preis", "faq.tab.stack": "Technik", "faq.tab.geo": "DSGVO & Recht",
+    "faq.q1": "Ersetzt der digitale Mitarbeiter unsere Leute komplett?",
+    "faq.a1": "In der Regel nicht. Er übernimmt die wiederholbaren 70 % einer Rolle — Standard-Anfragen, Copy-Paste-Arbeit, Routine-Reporting. Eure Leute machen das, was Urteilsvermögen braucht: Eskalationen, Beziehung, Ausnahmen. Er augmentiert, er ersetzt selten komplett.",
+    "faq.q10": "Wie lange dauert das Onboarding?",
+    "faq.a10": "8 bis 12 Wochen vom Kickoff bis der digitale Mitarbeiter die Rolle beherrscht. Einfache Rollen (Support-Tier-1, Reporting) eher am kürzeren Ende. Komplexe Rollen (Sales mit mehreren Kanälen) am längeren. Im Scoping-Call bekommt ihr ein scharfes Datum — keine Spanne zum Verstecken.",
+    "faq.q11": "Wie schnell können wir nach dem Scoping-Call starten?",
+    "faq.a11": "Meistens in 1–2 Wochen. Wir nehmen bewusst nur eine begrenzte Anzahl paralleler Projekte an — wenn wir voll sind, sagen wir den nächsten Slot, statt euch hinzuhalten.",
+    "faq.q12": "Wer baut unseren digitalen Mitarbeiter?",
+    "faq.a12": "Gründer-geführt. Die Person im Scoping-Call ist die Person, die euren Mitarbeiter baut. Für größere Rollen holen wir Spezialisten dazu — aber Ansprechpartner und technischer Owner bleiben gleich.",
+    "faq.q3": "Was kostet ein digitaler Mitarbeiter?",
+    "faq.a3": "Einmaliges Setup für die Rolle (nach Phase 02 scope-locked) plus monatlicher Betriebs-Retainer. Kein Per-Seat-Modell, keine Stundenabrechnung. Die Rechnung steht transparent im Angebot. Günstiger als eine Vollzeitkraft — und ohne Abfindung.",
+    "faq.q4": "Was ist ein realistischer Startrahmen?",
+    "faq.a4": "Projekte starten typischerweise im mittleren vierstelligen Setup plus monatlichem Retainer — je nach Rolle und Komplexität. Im Scoping-Call sagen wir euch offen, ob wir der richtige Fit sind, bevor etwas auf Papier kommt.",
+    "faq.q13": "Was deckt der monatliche Retainer ab?",
+    "faq.a13": "Monitoring, Fixes, Edge-Case-Anpassungen, kleine Prozess-Erweiterungen und ein monatlicher Review, was euer digitaler Mitarbeiter als nächstes lernen sollte. Große neue Rollen werden separat gescoped — kein Scope-Creep im Retainer.",
+    "faq.q5": "Welche Tools braucht unser Unternehmen?",
+    "faq.a5": "Im Prinzip keine neuen. Wir arbeiten mit dem Stack, den ihr schon habt — HubSpot, Pipedrive, DATEV, Sharepoint, Zendesk, eigene interne Tools. Wenn es eine API oder einen Webhook hat, haben wir dagegen gebaut.",
+    "faq.q6": "Was passiert, wenn wir nicht mehr mit euch arbeiten?",
+    "faq.a6": "Der digitale Mitarbeiter läuft weiter. Ihr besitzt den Code, die Accounts, die Daten. Wir übergeben ein Runbook — euer IT-Team oder ein anderer Dienstleister kann übernehmen. Genau das ist der Sinn von „euch gehört es, wir halten es am Laufen.“",
+    "faq.q9": "Wie arbeitet er mit unserem Team zusammen?",
+    "faq.a9": "Wie ein Kollege, der euren Tools gehört. Euer Team sieht live, was er tut, kann eingreifen, Antworten korrigieren, Eskalationen übernehmen. Er hat ein eigenes Dashboard, eigene Logins in euren Systemen — so wie ein neuer Mitarbeiter auch.",
+    "faq.q14": "Welche KI-Modelle nutzt ihr?",
+    "faq.a14": "Das richtige Modell für den Job. Für Sprache + Reasoning nutzen wir Anbieter wie Anthropic (Claude) oder OpenAI; für On-Prem / DSGVO-kritische Deployments Open-Weight-Modelle (Llama, Mistral) auf eurer Hardware. Wir entscheiden pro Rolle — nicht pro Vendor.",
+    "faq.q15": "Wie sieht das DSGVO-rechtlich aus?",
+    "faq.a15": "DSGVO-first by default. EU-Datenresidenz, Auftragsverarbeitungsvertrag (AV) vorhanden, minimale Retention. Keine Daten werden für Modell-Training genutzt. Für regulierte Branchen (Gesundheit, Legal, Finance) deployen wir auf Wunsch komplett on-premise — bei euch im Haus, nichts nach draußen.",
+    "faq.q7": "Was passiert mit unseren Kundendaten?",
+    "faq.a7": "Sie gehören euch und bleiben bei euch. Standard-Setup: EU-Cloud, kein Training auf euren Daten, Retention nach eurer Policy (typisch 30–90 Tage). Bei On-Premise-Deployment verlassen sie euer Netzwerk nicht.",
+    "faq.q8": "Wie ist das mit dem Betriebsrat?",
+    "faq.a8": "Wir arbeiten mit euch und dem Betriebsrat gemeinsam. Weil wir Rollen digitalisieren statt Leute ersetzen, ist die Gesprächsebene meist konstruktiv — es geht darum, eurem Team die Routine abzunehmen, damit sie sich auf das Wesentliche konzentrieren können. Dokumentation für Betriebsvereinbarungen stellen wir bereit.",
+    "final.eyebrow": "Termin buchen",
+    "final.headline": "30 Minuten. Welche Rolle soll euer erster digitaler Mitarbeiter übernehmen?",
+    "final.lede": "Wir mappen live, wie wir die Rolle umsetzen würden — oder wir sagen euch, dass ihr uns noch nicht braucht. Beide Antworten sparen ein Quartal.",
+    "final.cta1": "E-Mail schreiben →", "final.cta2": "Alle Slots ansehen",
+    "final.micro": "Antwort innerhalb 24h · kein Kalt-Nachfass",
+    "final.cal.kicker": "30 Minuten · kostenlos · direkt mit Felipe",
+    "final.cal.headline": "Termin buchen",
+    "final.cal.body": "Erzählt mir in 30 Sekunden, welche Rolle euch am meisten fehlt. Wir haben entweder einen konkreten Weg — oder ich sage euch, warum ihr uns noch nicht braucht.",
+    "final.cal.cta": "Termin buchen →",
+    "final.cal.meta": "Antwort innerhalb 24h · keine Sales-Pipeline",
+    "foot.menu": "Menü", "foot.offices": "Standort", "foot.connect": "Folgen", "foot.legal": "Rechtliches",
+  },
+  en: {
+    "brand.sub": "Digital Employee Agency",
+    "nav.build": "Roles", "nav.assessment": "Assessment", "nav.process": "Process", "nav.team": "About", "nav.cta": "Book a call →",
+    "hero.eyebrow": "Digital employees · for SMBs · GDPR-compliant",
+    "hero.h1": "Digital employees.", "hero.h2": "For your open roles.", "hero.h3": "Productive from day one.",
+    "hero.lede": "Instead of spending months hiring an assistant or a developer, you get a digital employee who does the job from day one — trained on your processes, integrated with your tools, available around the clock.",
+    "hero.cta1": "Free assessment", "hero.cta2": "See the roles",
+    "hero.m1": "Roles available", "hero.m2": "EU deployment", "hero.m3": "no sick days",
+    "hero.chip": "Live · digital employee at work",
+    "problem.eyebrow": "The problem",
+    "problem.headline": "The role is open.<br />Nobody's applying.",
+    "problem.lede": "The job listing has been up for four months. The few candidates you find quit after three weeks. Your team picks up the slack every day — calls, tickets, quotes, reports.",
+    "problem.not": "Not this",
+    "problem.not1": "Posting yet another job ad and hoping",
+    "problem.not2": "Working students who leave after 6 months",
+    "problem.not3": "Buying AI tools nobody on the team uses",
+    "problem.not4": "Overtime for your team until someone is hired",
+    "problem.this": "This instead",
+    "problem.this1": "A digital employee who takes the role from day one",
+    "problem.this2": "Trained on your processes, integrated with your tools",
+    "problem.this3": "Available 24/7, no sick days, no holidays",
+    "problem.this4": "GDPR-compliant, your data stays in your house",
+    "build.eyebrow": "Roles & demos",
+    "build.headline": "Six roles. Five standards plus one specialist.",
+    "build.lede": "Five standard roles for the work every SMB has. Plus one specialist for everything that doesn't fit the template. Click through — role on the left, demo on the right.",
+    "build.cta": "Request this role →",
+    "build.tab.voice": "Support employee",
+    "build.tab.auto": "Ops employee",
+    "build.tab.rag": "Backend employee",
+    "build.tab.int": "Sales employee",
+    "build.tab.prem": "Marketing employee",
+    "build.tab.spec": "Specialist",
+    "build.voice.title": "The support employee who answers the phone at 2 a.m.",
+    "build.voice.body": "Inbound calls, tickets, FAQ — trained on your answers and systems. Hands off to a human only when it has to. Typical replacement: receptionist, support working-student, call-center agent.",
+    "build.voice.p1": "Native-sounding voices, low latency",
+    "build.voice.p2": "Writes every case back to your CRM / ticket system",
+    "build.voice.p3": "Transcripts + intent tagging for your ops review",
+    "build.auto.title": "The ops employee who keeps the place running.",
+    "build.auto.body": "Coordinates schedules, compiles reports, moves data between tools, fires off escalations. Built for real volume, logged, monitored — you see what it does live. Typical replacement: assistant, office manager, junior operations.",
+    "build.auto.p1": "Runs in your cloud or on your server",
+    "build.auto.p2": "Error-handling, retry, and alerts built in",
+    "build.auto.p3": "Every process documented — your team takes over",
+    "build.rag.title": "The backend employee who holds your data together.",
+    "build.rag.body": "Data scattered across CRM, ticketing, Drive, Excel. The backend employee consolidates it, answers your team's questions with citations, keeps SOPs up to date. Typical replacement: data-analyst working-student, \"the one person who knows where everything is.\"",
+    "build.rag.p1": "Indexes docs, tickets, SOPs, past projects",
+    "build.rag.p2": "Every answer cites its source — auditable",
+    "build.rag.p3": "Auto-sync from Drive, Notion, Sharepoint, DATEV",
+    "build.int.title": "The sales employee who never lets a lead slip.",
+    "build.int.body": "Researches companies, personalizes outreach, follows up three times, books discovery calls straight to the calendar, keeps the CRM clean. Your sales team only talks to warm leads. Typical replacement: SDR, sales assistant, freelance lead-gen.",
+    "build.int.p1": "LinkedIn, Apollo, email — multi-channel",
+    "build.int.p2": "Real-time CRM hygiene (HubSpot, Pipedrive, GHL)",
+    "build.int.p3": "Frictionless calendar booking",
+    "build.prem.title": "The marketing employee who actually ships content.",
+    "build.prem.body": "Writes in your brand voice, plans across all channels (LinkedIn, newsletter, blog), measures performance and learns from it. You approve once, it keeps the channel warm. Typical replacement: content working-student, social-media intern, outside agency.",
+    "build.prem.p1": "Writes in your tone — not ChatGPT default",
+    "build.prem.p2": "Plans across channels with an editorial calendar",
+    "build.prem.p3": "Reporting you understand — no vanity metrics",
+    "build.spec.badge": "Custom · non-standard",
+    "build.spec.title": "The specialist for anything that doesn't fit the template.",
+    "build.spec.body": "Your process is unusual. A machine speaks only Modbus, a legacy database has its own rules, an industry workflow exists only at your company. The specialist is built for exactly that — not a cookie-cutter role. Typical replacement: freelance developer, internal IT, consultant with Excel macros.",
+    "build.spec.p1": "Engineering-deep scoping — we tell you upfront whether it's feasible",
+    "build.spec.p2": "On-premise capable, legacy-system friendly (SAP, DATEV, Modbus, OPC-UA)",
+    "build.spec.p3": "Fixed scope, fixed price — no consultant day-rates",
+    "usp.eyebrow": "What every digital employee ships with",
+    "usp.headline": "Five standards. Click through them.",
+    "usp.lede": "No upsells. No add-ons. Defaults — because without these five, your digital employee doesn't survive the first month.",
+    "usp.count": "of 5",
+    "usp.1.t": "Integration with your tools",
+    "usp.1.d": "Works in the stack you already have — CRM, ticketing, calendar, DATEV. No rip-and-replace, no parallel systems.",
+    "usp.1.b1": "HubSpot, Pipedrive, Zendesk, DATEV, Sharepoint, Notion",
+    "usp.1.b2": "Everything via APIs and webhooks — no ingest scripts",
+    "usp.1.b3": "New tools integrated in 1–2 weeks",
+    "usp.2.t": "Dashboards you actually understand",
+    "usp.2.d": "You see live what it's doing, why, and where it handed off to a human. Not a monthly PDF.",
+    "usp.2.b1": "Live feed: every action traceable",
+    "usp.2.b2": "Handoff log: when and why it escalated",
+    "usp.2.b3": "No monthly PDF — real numbers, today",
+    "usp.3.t": "Your team stays in control",
+    "usp.3.d": "Runbooks, training, and handoffs so your team drives the employee — not us. No agency lock-in.",
+    "usp.3.b1": "German-language runbook, step by step",
+    "usp.3.b2": "2-3 team training sessions at go-live",
+    "usp.3.b3": "You fire us, the employee keeps running",
+    "usp.4.t": "Keeps learning — like any employee",
+    "usp.4.d": "Monthly evolution — new processes, edge cases, better answers. It gets better, not older.",
+    "usp.4.b1": "Monthly review: what it learned, what's next",
+    "usp.4.b2": "Real edge cases folded back into the knowledge base",
+    "usp.4.b3": "Small process additions in the retainer — no extra invoice",
+    "usp.5.t": "GDPR-compliant from day one",
+    "usp.5.d": "EU data residency, DPA in place, no model training on your data. On-premise on request — in your house, nothing leaves.",
+    "usp.5.b1": "EU data residency (Frankfurt), DPA in place",
+    "usp.5.b2": "No training on your data, minimal retention",
+    "usp.5.b3": "On-premise option for regulated industries",
+    "demos.live": "● Live",
+    "demos.soon": "Soon",
+    "demos.d1.ind": "Travel coordination",
+    "demos.d1.result": "Business trip fully planned in 2 minutes.",
+    "demos.d1.client": "Plans routes, books hotels, assembles the team — you approve, it ships.",
+    "demos.d1.link": "Open the demo →",
+    "demos.d3.ind": "B2B outbound",
+    "demos.d3.result": "Lead to qualified call, on autopilot.",
+    "demos.d3.client": "Researches, personalizes, follows up three times — your team only talks to warm replies.",
+    "demos.d3.link": "Demo coming soon",
+    "demos.d4.ind": "Content ops",
+    "demos.d4.result": "Brief to published, in one pass.",
+    "demos.d4.client": "Writes in your brand voice, schedules across channels — you approve once.",
+    "demos.d4.link": "Demo coming soon",
+    "demos.d5.ind": "Customer support",
+    "demos.d5.result": "Ticket to resolution, 24/7.",
+    "demos.d5.client": "Handles tier-1 across email and chat, escalates only what matters.",
+    "demos.d5.link": "Demo coming soon",
+    "demos.dB.ind": "Internal knowledge lookup",
+    "demos.dB.result": "The right answer — with source, in seconds.",
+    "demos.dB.client": "Pulls from Drive, Notion, and your SOPs to give the one right answer — and tells you where it lives.",
+    "demos.dB.link": "Demo coming soon",
+    "demos.dS.ind": "Custom · industry solution",
+    "demos.dS.result": "Built for your process — not for 1,000 others.",
+    "demos.dS.client": "When the standard isn't enough: legacy-system integration, industry-specific logic, physical machines. We tell you upfront whether it's feasible.",
+    "demos.dS.link": "Request custom scoping →",
+    "assess.eyebrow": "Free assessment · 48h turnaround",
+    "assess.headline": "Not sure which role fits?<br />Send us your situation.",
+    "assess.lede": "Fill this out in 3 minutes. We read it ourselves and send back an honest answer: which role fits, how we'd build it, rough price range — or we tell you we're not the right fit. No pitch deck, no sales follow-up.",
+    "assess.f.name": "Name",
+    "assess.f.email": "Work email",
+    "assess.f.company": "Company",
+    "assess.f.teamsize": "Team size",
+    "assess.f.friction": "Which role do you want to digitize first — and why?",
+    "assess.f.friction.ph": "E.g. 'We've been trying to hire a support lead for 6 months — everyone on the team is burning 10 hrs/week on tickets.' Specific: which role, what hurts, how often.",
+    "assess.f.stack": "Current tools",
+    "assess.f.stack.ph": "CRM, ticket system, calendar, DATEV…",
+    "assess.f.timeline": "Timeline",
+    "assess.timeline.now": "Now — budget this quarter",
+    "assess.timeline.soon": "In 1–3 months",
+    "assess.timeline.explore": "Just exploring",
+    "assess.submit": "Request assessment →",
+    "assess.micro": "Response within 48h · no follow-up unless you want one",
+    "assess.error": "Something went wrong. Email us directly at TODO-felipe@domain.tld.",
+    "assess.success.headline": "Got it. We'll reply within 48h.",
+    "assess.success.body": "We read every one ourselves. If you want to add context — TODO-felipe@domain.tld.",
+    "process.eyebrow": "How the onboarding works",
+    "process.headline": "Four phases. 8–12 weeks. One digital employee, on the job.",
+    "process.lede": "No theater. Here's the real shape of a project — phases, overlaps, duration.",
+    "process.p1.name": "Which role has the most friction?", "process.p1.dur": "~2 weeks",
+    "process.p1.body": "We sit down with your team, walk your processes, and pinpoint the role where a digital employee moves the most — and which to leave alone.",
+    "process.p2.name": "What exactly does your digital employee do?", "process.p2.dur": "~1–2 weeks",
+    "process.p2.body": "Clear job description, integration plan, success metrics. You sign off on exactly what ships — just like for a new hire.",
+    "process.p3.name": "Integration with your tools, training on your processes", "process.p3.dur": "4–8 weeks",
+    "process.p3.body": "Founder-led engineering. Weekly demos. Staged rollout until the digital employee owns the role.",
+    "process.p4.name": "Keeps learning — like any employee", "process.p4.dur": "Ongoing",
+    "process.p4.body": "We keep it sharp. Monthly evolution, new edge cases, new tasks — just like you'd do with a human hire.",
+    "team.eyebrow": "Who you work with",
+    "team.headline": "Founded in Germany. Focused on Mittelstand.",
+    "team.lede": "Whoever runs the scoping call also builds your digital employee. No handoff to a junior team after kickoff.",
+    "team.f1.role": "Founder · Sales & Delivery",
+    "team.f1.name": "Felipe",
+    "team.f1.bio": "Founder of DMA (Digitale Mitarbeiteragentur). Years of automation projects for German companies — from trades to agencies. Full bio coming soon.",
+    "team.f1.cred1": "Automation", "team.f1.cred2": "Mittelstand", "team.f1.cred3": "DACH market",
+    "team.f1.loc": "Germany",
+    "team.f1.link": "LinkedIn →",
+    "faq.eyebrow": "FAQ", "faq.headline": "What business owners ask before they book.",
+    "faq.tab.scope": "Scope", "faq.tab.pricing": "Pricing", "faq.tab.stack": "Tech", "faq.tab.geo": "GDPR & Law",
+    "faq.q1": "Does the digital employee fully replace our people?",
+    "faq.a1": "Usually not. It takes over the repeatable 70% of a role — standard requests, copy-paste work, routine reporting. Your people handle anything that needs judgment: escalations, relationships, exceptions. It augments; it rarely fully replaces.",
+    "faq.q10": "How long does onboarding take?",
+    "faq.a10": "8 to 12 weeks from kickoff to the digital employee owning the role. Simpler roles (support tier-1, reporting) on the shorter end. More complex roles (multi-channel sales) on the longer. In the scoping call you get a sharp date — no range to hide behind.",
+    "faq.q11": "How fast can we start after the scoping call?",
+    "faq.a11": "Usually 1–2 weeks. We only take on a limited number of parallel projects — if we're full, we'll tell you the next slot rather than string you along.",
+    "faq.q12": "Who builds our digital employee?",
+    "faq.a12": "Founder-led. The person in the scoping call is the person building your employee. For larger roles we pull in specialists — but your point of contact and technical owner stay the same.",
+    "faq.q3": "What does a digital employee cost?",
+    "faq.a3": "One-time setup for the role (scope-locked after Phase 02) plus a monthly operations retainer. No per-seat pricing, no hourly billing. The math is on the proposal. Cheaper than a full-time hire — and no severance.",
+    "faq.q4": "What's a realistic starting budget?",
+    "faq.a4": "Projects typically start in the mid four-figure setup plus a monthly retainer — depending on role and complexity. In the scoping call we'll tell you openly whether we're the right fit before anything goes on paper.",
+    "faq.q13": "What does the monthly retainer cover?",
+    "faq.a13": "Monitoring, fixes, edge-case tuning, small process additions, and a monthly review of what your digital employee should learn next. Large new roles are scoped separately — no scope creep in the retainer.",
+    "faq.q5": "What tools do we need?",
+    "faq.a5": "None new, as a rule. We work with the stack you already have — HubSpot, Pipedrive, DATEV, Sharepoint, Zendesk, internal tools. If it has an API or a webhook, we've built against it.",
+    "faq.q6": "What happens if we stop working with you?",
+    "faq.a6": "The digital employee keeps running. You own the code, the accounts, the data. We hand over a runbook — your IT team or another vendor can take over. That's the point of \"you own it, we keep it running.\"",
+    "faq.q9": "How does it work alongside our team?",
+    "faq.a9": "Like a colleague your tools belong to. Your team sees live what it's doing, can step in, correct answers, take over escalations. It has its own dashboard, its own logins in your systems — just like a new hire.",
+    "faq.q14": "Which AI models do you use?",
+    "faq.a14": "The right model for the job. For language + reasoning we use providers like Anthropic (Claude) or OpenAI; for on-prem / GDPR-critical deployments, open-weight models (Llama, Mistral) on your hardware. Per role, not per vendor.",
+    "faq.q15": "How does this look under GDPR?",
+    "faq.a15": "GDPR-first by default. EU data residency, DPA in place, minimal retention. No data used for model training. For regulated verticals (health, legal, finance) we deploy on-premise on request — in your house, nothing leaves.",
+    "faq.q7": "What happens to our customer data?",
+    "faq.a7": "It belongs to you and stays with you. Default setup: EU cloud, no training on your data, retention per your policy (typically 30–90 days). With on-premise deployment it doesn't leave your network.",
+    "faq.q8": "What about the works council (Betriebsrat)?",
+    "faq.a8": "We work with you and the works council together. Because we digitize roles rather than replace people, the conversation usually goes smoothly — it's about taking routine off your team so they can focus on what matters. We provide documentation for works-council agreements.",
+    "final.eyebrow": "Book a call",
+    "final.headline": "30 minutes. Which role should your first digital employee take over?",
+    "final.lede": "We'll map the role live — or tell you you don't need us yet. Either answer saves you a quarter.",
+    "final.cta1": "Email us →", "final.cta2": "See all slots",
+    "final.micro": "Response within 24h · no cold follow-up",
+    "final.cal.kicker": "30 minutes · free · direct with Felipe",
+    "final.cal.headline": "Book a call",
+    "final.cal.body": "Tell me in 30 seconds which role you're missing most. Either we'll have a concrete path — or I'll tell you why you don't need us yet.",
+    "final.cal.cta": "Book a call →",
+    "final.cal.meta": "Reply within 24h · no sales pipeline",
+    "foot.menu": "Menu", "foot.offices": "Location", "foot.connect": "Follow", "foot.legal": "Legal",
+  }
+};
+
+function applyLang(lang) {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.getAttribute('data-i18n');
+    const v = I18N[lang] && I18N[lang][k];
+    if (v != null) el.innerHTML = v;
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const k = el.getAttribute('data-i18n-ph');
+    const v = I18N[lang] && I18N[lang][k];
+    if (v != null) el.setAttribute('placeholder', v);
+  });
+  document.querySelectorAll('.lang-toggle button').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  try { localStorage.setItem('pc_lang', lang); } catch(e){}
+}
+document.querySelectorAll('.lang-toggle button').forEach(b => {
+  b.addEventListener('click', () => applyLang(b.dataset.lang));
+});
+try {
+  const saved = localStorage.getItem('pc_lang');
+  if (saved === 'de' || saved === 'en') applyLang(saved);
+  else applyLang('de');
+} catch(e){ applyLang('de'); }
+
+// Nav scroll state
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('is-scrolled', window.scrollY > 8);
+});
+
+// What we build — capability tabs
+document.querySelectorAll('.build-tab').forEach(b => {
+  b.addEventListener('click', () => {
+    const cap = b.dataset.cap;
+    document.querySelectorAll('.build-tab').forEach(x => {
+      x.classList.toggle('active', x === b);
+      x.setAttribute('aria-selected', x === b ? 'true' : 'false');
+    });
+    document.querySelectorAll('.cap-panel').forEach(p => {
+      p.classList.toggle('active', p.dataset.cap === cap);
+    });
+  });
+});
+
+// USP Stepper — click-through 5 standards
+(function(){
+  const dots = document.querySelectorAll('.usp-dot');
+  const steps = document.querySelectorAll('.usp-step');
+  const prev = document.querySelector('.usp-prev');
+  const next = document.querySelector('.usp-next');
+  const counter = document.querySelector('.usp-counter-now');
+  if (!dots.length || !steps.length) return;
+  const total = steps.length;
+  let current = 1;
+  function goTo(n) {
+    current = Math.max(1, Math.min(total, n));
+    dots.forEach(d => {
+      const active = Number(d.dataset.step) === current;
+      d.classList.toggle('active', active);
+      d.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    steps.forEach(s => {
+      s.classList.toggle('active', Number(s.dataset.step) === current);
+    });
+    if (counter) counter.textContent = String(current);
+  }
+  dots.forEach(d => d.addEventListener('click', () => goTo(Number(d.dataset.step))));
+  if (prev) prev.addEventListener('click', () => goTo(current === 1 ? total : current - 1));
+  if (next) next.addEventListener('click', () => goTo(current === total ? 1 : current + 1));
+})();
+
+// FAQ tabs + accordion
+document.querySelectorAll('.faq-tabs button').forEach(b => {
+  b.addEventListener('click', () => {
+    const cat = b.dataset.cat;
+    document.querySelectorAll('.faq-tabs button').forEach(x => x.classList.toggle('active', x === b));
+    document.querySelectorAll('.faq-item').forEach(it => {
+      it.classList.toggle('hidden', it.dataset.cat !== cat);
+      it.classList.remove('open');
+    });
+  });
+});
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    q.closest('.faq-item').classList.toggle('open');
+  });
+});
+// Hide all but first tab's items initially
+document.querySelectorAll('.faq-item').forEach(it => {
+  if (it.dataset.cat !== 'scope') it.classList.add('hidden');
+});
+
+// Assessment form AJAX submit
+const assessForm = document.getElementById('assessment-form');
+if (assessForm) {
+  assessForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const err = document.getElementById('assessment-error');
+    err.classList.add('hidden');
+    const submitBtn = assessForm.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    try {
+      const data = new FormData(assessForm);
+      const res = await fetch(assessForm.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (!res.ok) throw new Error('submit failed');
+      assessForm.classList.add('hidden');
+      document.getElementById('assessment-success').classList.remove('hidden');
+      document.getElementById('assessment-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } catch (_) {
+      err.classList.remove('hidden');
+      submitBtn.disabled = false;
+    }
+  });
+}
+
+// Reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('is-visible');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
