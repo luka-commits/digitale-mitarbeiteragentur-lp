@@ -1,90 +1,89 @@
 /* ============================================================
-   DMA — Digitale Mitarbeiteragentur · Colors & Type
-   Atelier palette: Tiefsee · Petrol · Elfenbein
-   Sierra.ai aesthetic — clean, weiß-dominant, glassy.
+   DMA — Digitale Mitarbeiter Agentur · Colors & Type
+   Atelier (verbindlich seit 2026-04-21, Brand-CI v3)
+   60/30/10-Regel: 60% Elfenbein/Papier · 30% Tiefsee · 10% Petrol max
    ============================================================ */
 
-/* Webfonts:
-   - Inter (display + body)
-   - General Sans (display alt — kept for headline weight options)
-   - IBM Plex Mono (eyebrows, stats, slash-grid logo)
-*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
-@import url('https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 
 :root {
-  /* ========== ATELIER PALETTE ========== */
-  --dma-tiefsee:        #0B2545;  /* deep navy — text, headlines, primary CTA */
-  --dma-tiefsee-deep:   #061632;  /* hover/emphasis */
-  --dma-petrol:         #1B6D80;  /* signature accent — CTAs, eyebrows, key marks */
-  --dma-petrol-deep:    #144E5C;  /* petrol hover */
-  --dma-petrol-soft:    #DCE9EC;  /* petrol tint backgrounds */
-  --dma-elfenbein:      #FAF8F2;  /* page background — kein Beige, very subtle warm */
-  --dma-elfenbein-deep: #F1EEE6;  /* elevated surfaces */
-  --dma-white:          #FFFFFF;  /* dominant card / glass background */
-  --dma-ink:            #0A0A0A;  /* primary text */
+  /* ========== ATELIER PRIMÄR ========== */
+  --dma-tiefsee:        #1A2E3A;  /* Text auf hell, Logo, Dark-Surfaces */
+  --dma-grafit:         #44525E;  /* Body-Text-Alternative */
+  --dma-petrol:         #2F7680;  /* CTAs, Links, KPI-Highlights (max 10%) */
+  --dma-petrol-hell:    #6FA6AE;  /* Slash-Akzent auf Tiefsee, Hover-States */
 
-  /* Tiefsee opacities (for borders, shadows, hairlines) */
-  --dma-tiefsee-12:     rgba(11, 37, 69, 0.12);
-  --dma-tiefsee-08:     rgba(11, 37, 69, 0.08);
-  --dma-tiefsee-06:     rgba(11, 37, 69, 0.06);
-  --dma-tiefsee-04:     rgba(11, 37, 69, 0.04);
+  /* ========== ATELIER NEUTRAL & HINTERGRUND ========== */
+  --dma-papier:         #F0EDE3;  /* Section-BGs, Karten */
+  --dma-elfenbein:      #FAF7F0;  /* Page-BG (Haupt-Fläche) */
+  --dma-nebel-hell:     #CDE0DE;  /* Info-Flächen, Quote-Boxen, Sekundär-Cards */
+  --dma-nebel:          #AECDC9;  /* Footer-Akzent, Dividing-Flächen */
+  --dma-dunst:          #D8E3E1;  /* Trennlinien, Input-Rahmen, Card-Border */
+  --dma-tinte:          #0F1A22;  /* Body-Text auf hell */
+  --dma-grau-mitte:     #7A8893;  /* Captions, Labels, Eyebrow */
 
-  /* Ink opacities */
-  --dma-ink-72:         rgba(10, 10, 10, 0.72);
-  --dma-ink-56:         rgba(10, 10, 10, 0.56);
-  --dma-ink-40:         rgba(10, 10, 10, 0.40);
-  --dma-ink-12:         rgba(10, 10, 10, 0.12);
+  /* ========== ATELIER SEMANTIK ========== */
+  --dma-moos:           #3E8171;  /* Success */
+  --dma-sand-tief:      #B89243;  /* Warning */
+  --dma-terra:          #B8503E;  /* Error */
 
-  /* ========== SEMANTIC ROLES ========== */
-  --dma-bg:             var(--dma-white);
-  --dma-bg-warm:        var(--dma-elfenbein);
-  --dma-bg-surface:     var(--dma-elfenbein-deep);
+  /* ========== Tinte / Tiefsee Opacities ========== */
+  --dma-tinte-72:       rgba(15, 26, 34, 0.72);
+  --dma-tinte-56:       rgba(15, 26, 34, 0.56);
+  --dma-tinte-12:       rgba(15, 26, 34, 0.12);
+  --dma-tinte-08:       rgba(15, 26, 34, 0.08);
+  --dma-tinte-06:       rgba(15, 26, 34, 0.06);
+  --dma-tinte-04:       rgba(15, 26, 34, 0.04);
+
+  --dma-tiefsee-12:     rgba(26, 46, 58, 0.12);
+  --dma-tiefsee-08:     rgba(26, 46, 58, 0.08);
+  --dma-tiefsee-04:     rgba(26, 46, 58, 0.04);
+
+  /* ========== SEMANTISCHE ROLLEN ========== */
+  --dma-bg:             var(--dma-elfenbein);
+  --dma-bg-warm:        var(--dma-papier);
+  --dma-bg-cool:        var(--dma-nebel-hell);
   --dma-bg-final:       var(--dma-tiefsee);
-  --dma-fg:             var(--dma-tiefsee);
-  --dma-fg-muted:       var(--dma-ink-72);
-  --dma-fg-subtle:      var(--dma-ink-56);
+  --dma-fg:             var(--dma-tinte);
+  --dma-fg-muted:       var(--dma-grafit);
+  --dma-fg-subtle:      var(--dma-grau-mitte);
   --dma-fg-inverse:     var(--dma-elfenbein);
   --dma-accent:         var(--dma-petrol);
-  --dma-border:         var(--dma-tiefsee-08);
+  --dma-border:         var(--dma-dunst);
   --dma-border-strong:  var(--dma-tiefsee-12);
-  --dma-eyebrow:        var(--dma-petrol);
+  --dma-eyebrow:        var(--dma-grau-mitte);
   --dma-link:           var(--dma-petrol);
-  --dma-link-hover:     var(--dma-petrol-deep);
-
-  /* Glass-morphism (Sierra-style cards) */
-  --dma-glass-bg:       rgba(255, 255, 255, 0.65);
-  --dma-glass-border:   rgba(11, 37, 69, 0.06);
-  --dma-glass-blur:     20px;
+  --dma-link-hover:     var(--dma-tiefsee);
 
   /* ========== TYPE FAMILIES ========== */
-  --dma-font-display:   "General Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
-  --dma-font-body:      "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --dma-font-display:   "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --dma-font-body:      "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --dma-font-mono:      "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* ========== TYPE SCALE ========== */
+  /* ========== TYPE SCALE (aus Brand-CI Section 4) ========== */
   --dma-text-xs:        12px;
   --dma-text-sm:        14px;
   --dma-text-base:      16px;
   --dma-text-md:        18px;
-  --dma-text-lg:        22px;
-  --dma-text-xl:        28px;
-  --dma-text-2xl:       36px;
-  --dma-text-3xl:       48px;
-  --dma-text-4xl:       64px;
-  --dma-text-5xl:       88px;
+  --dma-text-lg:        20px;
+  --dma-text-xl:        24px;
+  --dma-text-2xl:       32px;
+  --dma-text-3xl:       40px;
+  --dma-text-4xl:       56px;
+  --dma-text-5xl:       72px;
+  --dma-text-6xl:       96px;
 
   /* Tracking */
   --dma-track-display:  -0.025em;
   --dma-track-tight:    -0.015em;
-  --dma-track-normal:   0;
-  --dma-track-eyebrow:  0.14em;
+  --dma-track-h2:       -0.01em;
+  --dma-track-eyebrow:  0.08em;
 
   /* Leading */
-  --dma-lead-tight:     1.04;
-  --dma-lead-snug:      1.18;
-  --dma-lead-normal:    1.5;
-  --dma-lead-loose:     1.65;
+  --dma-lead-tight:     1.1;     /* Display-Stufen */
+  --dma-lead-snug:      1.2;     /* H1–H3 */
+  --dma-lead-body:      1.55;    /* Body */
+  --dma-lead-small:     1.45;    /* Small */
 
   /* ========== SPACING ========== */
   --dma-space-1:        4px;
@@ -94,8 +93,8 @@
   --dma-space-5:        24px;
   --dma-space-6:        32px;
   --dma-space-7:        48px;
-  --dma-space-8:        64px;
-  --dma-space-9:        96px;
+  --dma-space-8:        56px;   /* Section-Padding Mobile */
+  --dma-space-9:        80px;   /* Section-Padding Desktop */
   --dma-space-10:       128px;
 
   /* ========== RADII ========== */
@@ -104,130 +103,172 @@
   --dma-radius-md:      12px;
   --dma-radius-lg:      16px;
   --dma-radius-xl:      24px;
+  --dma-radius-2xl:     32px;
   --dma-radius-pill:    999px;
 
-  /* ========== ELEVATION (Sierra-style: subtle, max 8% opacity) ========== */
-  --dma-shadow-xs:      0 1px 2px rgba(11, 37, 69, 0.04);
-  --dma-shadow-sm:      0 2px 8px rgba(11, 37, 69, 0.05);
-  --dma-shadow-md:      0 8px 28px rgba(11, 37, 69, 0.06), 0 2px 6px rgba(11, 37, 69, 0.04);
-  --dma-shadow-lg:      0 24px 60px rgba(11, 37, 69, 0.08), 0 6px 16px rgba(11, 37, 69, 0.04);
+  /* ========== ELEVATION (Brand-CI Section 6.4: Schatten sparsam, max 0 2px 8px rgba(15,26,34,0.06)) ========== */
+  --dma-shadow-xs:      0 1px 2px var(--dma-tinte-04);
+  --dma-shadow-sm:      0 2px 8px var(--dma-tinte-06);
+  --dma-shadow-md:      0 4px 16px var(--dma-tinte-08);
 
-  /* ========== MOTION ========== */
+  /* ========== MOTION (Brand-CI Section 6.6: 180ms ease-out, keine Spring) ========== */
   --dma-ease-standard:  cubic-bezier(0.2, 0.6, 0.2, 1);
   --dma-ease-entrance:  cubic-bezier(0.16, 1, 0.3, 1);
   --dma-dur-fast:       120ms;
-  --dma-dur-base:       220ms;
-  --dma-dur-slow:       360ms;
+  --dma-dur-base:       180ms;
+  --dma-dur-slow:       240ms;
 }
 
 /* ============================================================
-   Base + semantic primitives
+   Body + Atelier Radial-Gradient-Background (MLG-Pattern, Atelier-übersetzt)
    ============================================================ */
-
 html, body {
-  background: var(--dma-bg);
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--dma-elfenbein);
+  background-image:
+    radial-gradient(ellipse 70% 55% at 15% 20%, rgba(47, 118, 128, 0.06), transparent 55%),
+    radial-gradient(ellipse 60% 45% at 90% 10%, rgba(26, 46, 58, 0.05), transparent 60%),
+    radial-gradient(ellipse 80% 50% at 80% 90%, rgba(205, 224, 222, 0.55), transparent 55%),
+    linear-gradient(180deg, var(--dma-elfenbein) 0%, var(--dma-papier) 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
   color: var(--dma-fg);
   font-family: var(--dma-font-body);
   font-size: var(--dma-text-base);
-  line-height: var(--dma-lead-normal);
+  line-height: var(--dma-lead-body);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
+/* ============================================================
+   Type primitives — Brand-CI Section 4
+   Display = Plex Sans Bold 700
+   ============================================================ */
+
 h1, .dma-h1 {
   font-family: var(--dma-font-display);
-  font-weight: 600;
-  font-size: var(--dma-text-4xl);
-  line-height: var(--dma-lead-tight);
-  letter-spacing: var(--dma-track-display);
+  font-weight: 700;
+  font-size: var(--dma-text-3xl);  /* 40 desktop / 30 mobile via media-query */
+  line-height: var(--dma-lead-snug);
+  letter-spacing: var(--dma-track-tight);
   color: var(--dma-fg);
   margin: 0;
   text-wrap: balance;
 }
+
 h2, .dma-h2 {
   font-family: var(--dma-font-display);
   font-weight: 600;
-  font-size: var(--dma-text-3xl);
-  line-height: var(--dma-lead-tight);
-  letter-spacing: var(--dma-track-display);
+  font-size: var(--dma-text-2xl);  /* 32 / 24 */
+  line-height: var(--dma-lead-snug);
+  letter-spacing: var(--dma-track-h2);
   color: var(--dma-fg);
   margin: 0;
   text-wrap: balance;
 }
+
 h3, .dma-h3 {
   font-family: var(--dma-font-display);
   font-weight: 600;
-  font-size: var(--dma-text-2xl);
+  font-size: var(--dma-text-xl);  /* 24 / 20 */
   line-height: var(--dma-lead-snug);
-  letter-spacing: var(--dma-track-tight);
   color: var(--dma-fg);
   margin: 0;
 }
+
 h4, .dma-h4 {
   font-family: var(--dma-font-display);
   font-weight: 600;
-  font-size: var(--dma-text-xl);
+  font-size: var(--dma-text-md);  /* 18 / 16 */
+  line-height: var(--dma-lead-snug);
+  color: var(--dma-fg);
+  margin: 0;
+}
+
+.dma-display-xl {
+  font-family: var(--dma-font-display);
+  font-weight: 700;
+  font-size: var(--dma-text-6xl);  /* 96 / 56 */
+  line-height: var(--dma-lead-tight);
+  letter-spacing: var(--dma-track-display);
+  color: var(--dma-fg);
+}
+
+.dma-display-l {
+  font-family: var(--dma-font-display);
+  font-weight: 700;
+  font-size: var(--dma-text-5xl);  /* 72 / 44 */
+  line-height: var(--dma-lead-tight);
+  letter-spacing: var(--dma-track-display);
+  color: var(--dma-fg);
+}
+
+.dma-display-m {
+  font-family: var(--dma-font-display);
+  font-weight: 600;
+  font-size: var(--dma-text-4xl);  /* 56 / 36 */
   line-height: var(--dma-lead-snug);
   letter-spacing: var(--dma-track-tight);
   color: var(--dma-fg);
-  margin: 0;
 }
-.dma-display {
-  font-family: var(--dma-font-display);
-  font-weight: 600;
-  font-size: var(--dma-text-5xl);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  color: var(--dma-fg);
-}
+
 p, .dma-p {
   font-family: var(--dma-font-body);
   font-size: var(--dma-text-base);
-  line-height: var(--dma-lead-normal);
+  line-height: var(--dma-lead-body);
   color: var(--dma-fg-muted);
   text-wrap: pretty;
   margin: 0;
 }
-.dma-lead {
-  font-size: var(--dma-text-lg);
-  line-height: var(--dma-lead-normal);
+
+.dma-body-l {
+  font-size: var(--dma-text-md);
+  line-height: var(--dma-lead-body);
   color: var(--dma-fg-muted);
   text-wrap: pretty;
 }
+
 .eyebrow, .dma-eyebrow {
   display: inline-block;
   font-family: var(--dma-font-mono);
-  font-weight: 500;
+  font-weight: 400;
   font-size: var(--dma-text-xs);
   letter-spacing: var(--dma-track-eyebrow);
   text-transform: uppercase;
   color: var(--dma-eyebrow);
 }
-.dma-stat {
+
+.dma-data {
   font-family: var(--dma-font-mono);
-  font-weight: 500;
-  font-size: var(--dma-text-3xl);
-  letter-spacing: -0.02em;
-  color: var(--dma-tiefsee);
-  line-height: 1;
+  font-weight: 400;
   font-feature-settings: "tnum" 1;
+  color: var(--dma-petrol);
 }
-code, .dma-code {
-  font-family: var(--dma-font-mono);
-  font-size: 0.92em;
-  background: var(--dma-petrol-soft);
-  color: var(--dma-petrol-deep);
-  padding: 0.08em 0.35em;
-  border-radius: var(--dma-radius-xs);
-}
+
 a, .dma-link {
   color: var(--dma-link);
   text-decoration: none;
-  transition: color var(--dma-dur-fast) var(--dma-ease-standard);
+  transition: color var(--dma-dur-base) var(--dma-ease-standard);
 }
 a:hover, .dma-link:hover { color: var(--dma-link-hover); }
 
 ::selection {
   background: var(--dma-petrol);
-  color: var(--dma-white);
+  color: var(--dma-elfenbein);
+}
+
+/* Mobile Type-Scale */
+@media (max-width: 720px) {
+  h1, .dma-h1 { font-size: var(--dma-text-2xl); }       /* 30 */
+  h2, .dma-h2 { font-size: var(--dma-text-xl); }        /* 24 */
+  h3, .dma-h3 { font-size: var(--dma-text-lg); }        /* 20 */
+  h4, .dma-h4 { font-size: var(--dma-text-base); }      /* 16 */
+
+  .dma-display-xl { font-size: var(--dma-text-4xl); }   /* 56 */
+  .dma-display-l  { font-size: var(--dma-text-3xl); }   /* 40 (Brand-CI 44, gerundet) */
+  .dma-display-m  { font-size: var(--dma-text-2xl); }   /* 32 (Brand-CI 36, gerundet) */
 }

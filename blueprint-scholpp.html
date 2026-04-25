@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>DMA — Blueprint · Schwerlast-Disposition</title>
 <meta name="description" content="DMA Blueprint: digitaler Disponent für Schwerlast-Logistik. Wie wir den Mitarbeiter in 30 Tagen aufgebaut haben — Architektur, Tool-Stack, Schulung, Übergabe." />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <link rel="stylesheet" href="colors_and_type.css" />
 <link rel="stylesheet" href="styles/site.css" />
 </head>
@@ -13,7 +14,7 @@
 <nav class="nav" id="nav">
   <div class="container nav-inner">
     <div class="nav-left">
-      <a class="dma-logo dma-logo--sm" href="index.html" aria-label="DMA">D<span class="slash">/</span>M<span class="slash">/</span>A</a>
+      <a class="dma-shortform" href="index.html" aria-label="DMA · Digitale Mitarbeiter Agentur"><span class="slash">/////</span>DMA</a>
     </div>
     <div class="nav-right">
       <a class="btn btn-primary btn-sm" href="index.html#lead">Erstgespräch</a>
@@ -54,5 +55,11 @@
   </div>
 </footer>
 
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('is-scrolled', window.scrollY > 8);
+});
+</script>
 </body>
 </html>

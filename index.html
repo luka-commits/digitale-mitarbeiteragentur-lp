@@ -4,19 +4,18 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>DMA — Ihr neuer Kollege ist digital.</title>
-<meta name="description" content="DMA · Digitale Mitarbeiteragentur. Digitale Mitarbeiter für Industrie-Mittelstand — Marketing, Sales, Operations. In 30 Tagen besetzt. DSGVO-konform." />
+<meta name="description" content="DMA · Digitale Mitarbeiter Agentur. Personaldienstleister für digitale Mitarbeiter im deutschen Industrie-Mittelstand. Paula, Martin, Jonas — in 30 Tagen besetzt." />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <link rel="stylesheet" href="colors_and_type.css" />
 <link rel="stylesheet" href="styles/site.css" />
 </head>
 <body>
 
-<!-- ============ 1. NAV ============ -->
+<!-- ============ NAV ============ -->
 <nav class="nav" id="nav">
   <div class="container nav-inner">
     <div class="nav-left">
-      <a class="dma-logo dma-logo--sm" href="#" aria-label="DMA · Digitale Mitarbeiteragentur">
-        D<span class="slash">/</span>M<span class="slash">/</span>A
-      </a>
+      <a class="dma-shortform" href="#" aria-label="DMA · Digitale Mitarbeiter Agentur"><span class="slash">/////</span>DMA</a>
       <div class="nav-center">
         <a href="#agents" data-i18n="nav.agents">Rollen</a>
         <a href="#example" data-i18n="nav.example">Beispiel</a>
@@ -34,57 +33,95 @@
   </div>
 </nav>
 
-<!-- ============ 2. HERO ============ -->
+<!-- ============ HERO ============ -->
 <header class="hero">
   <div class="container">
     <span class="eyebrow hero-eyebrow fade-up" data-i18n="hero.eyebrow">Digitale Mitarbeiter · Industrie-Mittelstand · DSGVO-konform</span>
     <h1 class="hero-headline fade-up delay-1" data-i18n="hero.h1">Ihr neuer Kollege ist digital.</h1>
-    <p class="hero-sub fade-up delay-2" data-i18n="hero.sub">Digitale Mitarbeiter für Industrie-Mittelstand. In 30 Tagen besetzt — und nie krank.</p>
+    <p class="hero-sub fade-up delay-2" data-i18n="hero.sub">In 30 Tagen besetzt — mit digitalen Mitarbeitern, die nie krank werden.</p>
+    <p class="hero-body fade-up delay-2" data-i18n="hero.body">Wir besetzen offene Büro- und Innendienst-Rollen im deutschen Industrie-Mittelstand.</p>
     <div class="hero-ctas fade-up delay-3">
       <a class="btn btn-primary" href="#lead" data-i18n="hero.cta1">Erstgespräch buchen</a>
-      <a class="btn btn-text" href="#agents" data-i18n="hero.cta2">Rollen ansehen</a>
+      <a class="btn btn-text" href="#agents" data-i18n="hero.cta2">Digitale Kollegen kennenlernen</a>
+    </div>
+    <div class="hero-pills fade-up delay-3">
+      <span class="hero-pill glass glass-hover"><span class="pill-dot"></span><span data-i18n="hero.pill1">In 30 Tagen besetzt</span></span>
+      <span class="hero-pill glass glass-hover"><span class="pill-dot"></span><span data-i18n="hero.pill2">DSGVO · EU-Rechenzentrum</span></span>
+      <span class="hero-pill glass glass-hover"><span class="pill-dot"></span><span data-i18n="hero.pill3">24 / 7 verfügbar</span></span>
     </div>
   </div>
 </header>
 
-<!-- ============ 3. PROBLEM ============ -->
+<!-- ============ PROBLEM (Vakanz-Timeline) ============ -->
 <section id="problem">
   <div class="container">
     <div class="section-head fade-up">
       <span class="eyebrow" data-i18n="problem.eyebrow">Die Lage</span>
       <h2 data-i18n="problem.headline">Die Stelle ist offen. Niemand bewirbt sich.</h2>
-      <p data-i18n="problem.lede">Vier Monate Ausschreibung, vier qualifizierte Bewerbungen, drei davon springen wieder ab. Ihr Team fängt die Arbeit jeden Tag mit auf — und die Liste der unerledigten Vorgänge wird länger.</p>
+      <p data-i18n="problem.lede">Vier Monate Ausschreibung, vier qualifizierte Bewerbungen, drei davon springen wieder ab. Ihr Innendienst fängt die Arbeit jeden Tag mit auf.</p>
     </div>
-    <div class="problem-grid fade-up">
+
+    <div class="timeline-wrap fade-up">
+      <svg class="timeline-svg" viewBox="0 0 880 80" xmlns="http://www.w3.org/2000/svg" aria-label="Vakanz-Timeline">
+        <line class="timeline-bg-line" x1="40" y1="40" x2="840" y2="40" />
+        <line class="timeline-vacancy-line" x1="180" y1="40" x2="840" y2="40" />
+        <line class="timeline-dma-line" x1="40" y1="40" x2="180" y2="40" />
+        <circle class="timeline-dot timeline-dot--rest" cx="40"  cy="40" r="6" />
+        <circle class="timeline-dot timeline-dot--dma"  cx="180" cy="40" r="7" />
+        <circle class="timeline-dot timeline-dot--rest" cx="840" cy="40" r="6" />
+        <text class="timeline-label" x="40"  y="20" text-anchor="start">TAG 0</text>
+        <text class="timeline-label timeline-label--dma" x="180" y="20" text-anchor="middle">TAG 30 · DMA besetzt</text>
+        <text class="timeline-label" x="840" y="20" text-anchor="end">TAG 173 · Ø DACH-VAKANZ</text>
+      </svg>
+
+      <div class="timeline-counters">
+        <div class="timeline-counter">
+          <span class="counter-num" data-counter-target="173">0</span>
+          <span class="counter-label" data-i18n="timeline.c1">Tage durchschnittliche Vakanz im DACH-Innendienst</span>
+        </div>
+        <div class="timeline-counter">
+          <span class="counter-num" data-counter-target="48">0</span>
+          <span class="counter-label" data-i18n="timeline.c2">Aufträge, die in dieser Zeit liegen bleiben</span>
+        </div>
+        <div class="timeline-counter">
+          <span class="counter-num" data-counter-target="380">0</span>
+          <span class="counter-label" data-i18n="timeline.c3">Überstunden im Team pro offener Stelle</span>
+        </div>
+      </div>
+
+      <p class="timeline-quote" data-i18n="timeline.quote">Vakanz-Ø DACH 173 Tage · DMA: 30 Tage</p>
+    </div>
+
+    <div class="problem-bullets fade-up">
       <div class="problem-col problem-col--negative">
         <h4 data-i18n="problem.not.head">Nicht das</h4>
         <ul>
-          <li><span data-i18n="problem.not.1">Noch eine Stellenanzeige schalten — und auf den nächsten guten Bewerber warten.</span></li>
-          <li><span data-i18n="problem.not.2">Werkstudenten einarbeiten, die nach sechs Monaten wieder kündigen.</span></li>
-          <li><span data-i18n="problem.not.3">Dem Team noch mehr Überstunden zumuten, bis jemand Neues da ist.</span></li>
-          <li><span data-i18n="problem.not.4">Eine externe Agentur beauftragen, die nach Monatspaketen abrechnet.</span></li>
+          <li><svg class="bullet-icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5 l8 8 M13 5 l-8 8" stroke-linecap="round"/></svg><span data-i18n="problem.not.1">Noch eine Stellenanzeige schalten.</span></li>
+          <li><svg class="bullet-icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5 l8 8 M13 5 l-8 8" stroke-linecap="round"/></svg><span data-i18n="problem.not.2">Werkstudenten einarbeiten, die wieder kündigen.</span></li>
+          <li><svg class="bullet-icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5 l8 8 M13 5 l-8 8" stroke-linecap="round"/></svg><span data-i18n="problem.not.3">Dem Team mehr Überstunden zumuten.</span></li>
+          <li><svg class="bullet-icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5 l8 8 M13 5 l-8 8" stroke-linecap="round"/></svg><span data-i18n="problem.not.4">Eine Agentur in Monatspaketen abrechnen lassen.</span></li>
         </ul>
       </div>
       <div class="problem-col problem-col--positive">
         <h4 data-i18n="problem.this.head">Sondern das</h4>
         <ul>
-          <li><span data-i18n="problem.this.1">Ein digitaler Mitarbeiter, der die Rolle ab Tag 30 übernimmt.</span></li>
-          <li><span data-i18n="problem.this.2">Trainiert auf Ihre Prozesse, integriert in Ihre vorhandenen Systeme.</span></li>
-          <li><span data-i18n="problem.this.3">Verfügbar rund um die Uhr — keine Krankheitstage, kein Urlaub.</span></li>
-          <li><span data-i18n="problem.this.4">DSGVO-konform, EU-Rechenzentrum, Sie behalten die Datenhoheit.</span></li>
+          <li><svg class="bullet-icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9 l3.5 3.5 L14 6" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="problem.this.1">Ein digitaler Mitarbeiter, der die Rolle übernimmt.</span></li>
+          <li><svg class="bullet-icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9 l3.5 3.5 L14 6" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="problem.this.2">Trainiert auf Ihre Prozesse, integriert in Ihre Tools.</span></li>
+          <li><svg class="bullet-icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9 l3.5 3.5 L14 6" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="problem.this.3">Verfügbar rund um die Uhr — keine Krankheitstage.</span></li>
+          <li><svg class="bullet-icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9 l3.5 3.5 L14 6" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="problem.this.4">DSGVO-konform, EU-Rechenzentrum, Datenhoheit bei Ihnen.</span></li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 4. AGENTS · MACRO TABS ============ -->
+<!-- ============ AGENTS · PAULA / MARTIN / JONAS ============ -->
 <section id="agents" class="section--warm">
   <div class="container">
     <div class="section-head fade-up">
       <span class="eyebrow" data-i18n="agents.eyebrow">Drei Rollen</span>
-      <h2 data-i18n="agents.headline">Marketing. Sales. Operations.</h2>
-      <p data-i18n="agents.lede">Drei Standard-Rollen, die in jedem Industrie-Mittelständler offen sind. Wir bauen den passenden digitalen Mitarbeiter — und nutzen die gleiche Technologie selbst, um unsere Agentur zu betreiben.</p>
+      <h2 data-i18n="agents.headline">Paula, Martin, Jonas.</h2>
+      <p data-i18n="agents.lede">Auftrag rein. Material rein. Angebot raus. Drei Abteilungen, drei Entscheider, drei parallele Einstiegspfade ins selbe Unternehmen.</p>
     </div>
 
     <div class="macro-tabs-wrap fade-up">
@@ -98,46 +135,98 @@
     <div class="tab-panel active" id="tab-external">
       <div class="agents-grid">
 
-        <article class="glass-card persona-card">
-          <div class="persona-portrait">L</div>
-          <span class="role-tag" data-i18n="ext.lena.tag">Marketing</span>
-          <h3 data-i18n="ext.lena.name">Lena</h3>
-          <p data-i18n="ext.lena.body">Schreibt in Ihrer Tonalität, plant LinkedIn, Newsletter und Blog, misst Resonanz und lernt mit. Sie geben einmal frei — sie hält den Kanal warm.</p>
-          <div class="skills">
-            <span class="skill">LinkedIn</span>
-            <span class="skill">Newsletter</span>
-            <span class="skill">SEO</span>
-            <span class="skill">Reporting</span>
-            <span class="skill">Brand-Voice</span>
-          </div>
-        </article>
-
-        <article class="glass-card persona-card">
-          <div class="persona-portrait">J</div>
-          <span class="role-tag" data-i18n="ext.jonas.tag">Sales</span>
-          <h3 data-i18n="ext.jonas.name">Jonas</h3>
-          <p data-i18n="ext.jonas.body">Recherchiert Zielfirmen, schreibt persönliche Outreach, folgt drei Mal nach, bucht Discovery-Termine direkt in Ihren Kalender. Ihr Vertrieb redet nur mit warmen Leads.</p>
-          <div class="skills">
-            <span class="skill">LinkedIn</span>
-            <span class="skill">Cold-Email</span>
-            <span class="skill">CRM</span>
-            <span class="skill">Discovery</span>
-            <span class="skill">Follow-Up</span>
-          </div>
-        </article>
-
-        <article class="glass-card persona-card">
-          <div class="persona-portrait">P</div>
-          <span class="role-tag" data-i18n="ext.paula.tag">Operations</span>
+        <article class="atelier-card persona-card">
+          <span class="role-tag" data-i18n="ext.paula.tag">Auftrag rein</span>
           <h3 data-i18n="ext.paula.name">Paula</h3>
-          <p data-i18n="ext.paula.body">Termine, Reporting, Eskalationen, Tool-zu-Tool-Übergaben. Geloggt, überwacht — Sie sehen jederzeit, was sie tut und warum.</p>
+          <div class="persona-role" data-i18n="ext.paula.role">Digitale Auftragssachbearbeiterin</div>
+          <p class="persona-body" data-i18n="ext.paula.body">Paula übernimmt Ihre Auftragssachbearbeitung. Statt fünf Bewerbungen sichten: Paula startet nächste Woche.</p>
           <div class="skills">
-            <span class="skill">Termine</span>
-            <span class="skill">Reporting</span>
-            <span class="skill">Eskalationen</span>
-            <span class="skill">Integrationen</span>
-            <span class="skill">Audit-Log</span>
+            <span class="skill">Auftragsannahme</span>
+            <span class="skill">ERP-Pflege</span>
+            <span class="skill">Liefertermine</span>
+            <span class="skill">Kundenrückfragen</span>
+            <span class="skill">Reklamation</span>
           </div>
+          <div class="activity-feed">
+            <div class="activity-feed-track" data-feed="paula">
+              <div class="activity-item"><span class="time">09:14</span><span class="desc">Auftrag #4521 angelegt</span></div>
+              <div class="activity-item"><span class="time">09:21</span><span class="desc">3 Lieferantenanfragen versendet</span></div>
+              <div class="activity-item"><span class="time">09:26</span><span class="desc">Status-Mail an Vertrieb</span></div>
+              <div class="activity-item"><span class="time">09:38</span><span class="desc">Reklamation #221 dokumentiert</span></div>
+              <div class="activity-item"><span class="time">09:47</span><span class="desc">Liefertermin-Abgleich CRM</span></div>
+              <div class="activity-item"><span class="time">10:02</span><span class="desc">Auftragsbestätigung Müller GmbH</span></div>
+              <!-- duplicate for seamless loop -->
+              <div class="activity-item"><span class="time">09:14</span><span class="desc">Auftrag #4521 angelegt</span></div>
+              <div class="activity-item"><span class="time">09:21</span><span class="desc">3 Lieferantenanfragen versendet</span></div>
+              <div class="activity-item"><span class="time">09:26</span><span class="desc">Status-Mail an Vertrieb</span></div>
+              <div class="activity-item"><span class="time">09:38</span><span class="desc">Reklamation #221 dokumentiert</span></div>
+              <div class="activity-item"><span class="time">09:47</span><span class="desc">Liefertermin-Abgleich CRM</span></div>
+              <div class="activity-item"><span class="time">10:02</span><span class="desc">Auftragsbestätigung Müller GmbH</span></div>
+            </div>
+          </div>
+          <button class="persona-demo-cta" data-drawer="paula" data-i18n="ext.paula.demo">Paula in Action ansehen</button>
+        </article>
+
+        <article class="atelier-card persona-card">
+          <span class="role-tag" data-i18n="ext.martin.tag">Material rein</span>
+          <h3 data-i18n="ext.martin.name">Martin</h3>
+          <div class="persona-role" data-i18n="ext.martin.role">Digitaler Einkaufssachbearbeiter</div>
+          <p class="persona-body" data-i18n="ext.martin.body">Martin übernimmt Ihren Einkauf. Ihr Einkaufsleiter braucht kein drittes Paar Hände — er hat Martin.</p>
+          <div class="skills">
+            <span class="skill">Bedarfsmeldungen</span>
+            <span class="skill">Lieferanten-Abfragen</span>
+            <span class="skill">Bestellung</span>
+            <span class="skill">Wareneingang</span>
+            <span class="skill">Mahn-Vorlauf</span>
+          </div>
+          <div class="activity-feed">
+            <div class="activity-feed-track" data-feed="martin">
+              <div class="activity-item"><span class="time">08:42</span><span class="desc">Bedarfsmeldung Stahlprofile geprüft</span></div>
+              <div class="activity-item"><span class="time">09:03</span><span class="desc">Lieferanten-Vergleich Top-3</span></div>
+              <div class="activity-item"><span class="time">09:18</span><span class="desc">Bestellung #B-3382 freigegeben</span></div>
+              <div class="activity-item"><span class="time">09:34</span><span class="desc">Wareneingang verbucht (DATEV)</span></div>
+              <div class="activity-item"><span class="time">09:51</span><span class="desc">Rahmenvertrag-Mahnung an Schmidt KG</span></div>
+              <div class="activity-item"><span class="time">10:06</span><span class="desc">Verbrauchs-Forecast Q3 aktualisiert</span></div>
+              <div class="activity-item"><span class="time">08:42</span><span class="desc">Bedarfsmeldung Stahlprofile geprüft</span></div>
+              <div class="activity-item"><span class="time">09:03</span><span class="desc">Lieferanten-Vergleich Top-3</span></div>
+              <div class="activity-item"><span class="time">09:18</span><span class="desc">Bestellung #B-3382 freigegeben</span></div>
+              <div class="activity-item"><span class="time">09:34</span><span class="desc">Wareneingang verbucht (DATEV)</span></div>
+              <div class="activity-item"><span class="time">09:51</span><span class="desc">Rahmenvertrag-Mahnung an Schmidt KG</span></div>
+              <div class="activity-item"><span class="time">10:06</span><span class="desc">Verbrauchs-Forecast Q3 aktualisiert</span></div>
+            </div>
+          </div>
+          <button class="persona-demo-cta" data-drawer="martin" data-i18n="ext.martin.demo">Martin in Action ansehen</button>
+        </article>
+
+        <article class="atelier-card persona-card">
+          <span class="role-tag" data-i18n="ext.jonas.tag">Angebot raus</span>
+          <h3 data-i18n="ext.jonas.name">Jonas</h3>
+          <div class="persona-role" data-i18n="ext.jonas.role">Digitaler Vertriebsinnendienst</div>
+          <p class="persona-body" data-i18n="ext.jonas.body">Jonas übernimmt Ihren Vertriebsinnendienst. Ihre Verkäufer reden mit Kunden. Jonas schreibt das Angebot.</p>
+          <div class="skills">
+            <span class="skill">Anfragen</span>
+            <span class="skill">Angebot</span>
+            <span class="skill">CRM-Pflege</span>
+            <span class="skill">Follow-Up</span>
+            <span class="skill">Auftragsbestätigung</span>
+          </div>
+          <div class="activity-feed">
+            <div class="activity-feed-track" data-feed="jonas">
+              <div class="activity-item"><span class="time">08:55</span><span class="desc">Angebot Müller GmbH versendet</span></div>
+              <div class="activity-item"><span class="time">09:11</span><span class="desc">Follow-Up Schmidt KG</span></div>
+              <div class="activity-item"><span class="time">09:24</span><span class="desc">Anfrage Wagner Werke bewertet</span></div>
+              <div class="activity-item"><span class="time">09:38</span><span class="desc">CRM-Sync HubSpot</span></div>
+              <div class="activity-item"><span class="time">09:52</span><span class="desc">Auftragsbestätigung #A-7841</span></div>
+              <div class="activity-item"><span class="time">10:09</span><span class="desc">Discovery-Termin Klein AG vorbereitet</span></div>
+              <div class="activity-item"><span class="time">08:55</span><span class="desc">Angebot Müller GmbH versendet</span></div>
+              <div class="activity-item"><span class="time">09:11</span><span class="desc">Follow-Up Schmidt KG</span></div>
+              <div class="activity-item"><span class="time">09:24</span><span class="desc">Anfrage Wagner Werke bewertet</span></div>
+              <div class="activity-item"><span class="time">09:38</span><span class="desc">CRM-Sync HubSpot</span></div>
+              <div class="activity-item"><span class="time">09:52</span><span class="desc">Auftragsbestätigung #A-7841</span></div>
+              <div class="activity-item"><span class="time">10:09</span><span class="desc">Discovery-Termin Klein AG vorbereitet</span></div>
+            </div>
+          </div>
+          <button class="persona-demo-cta" data-drawer="jonas" data-i18n="ext.jonas.demo">Jonas in Action ansehen</button>
         </article>
 
       </div>
@@ -147,21 +236,21 @@
     <div class="tab-panel" id="tab-internal">
       <div class="agents-grid">
 
-        <article class="glass-card showcase-card">
+        <article class="atelier-card showcase-card">
           <div class="showcase-mark">OR</div>
           <h3 data-i18n="int.outreach.head">Outbound, der nie schläft.</h3>
           <p data-i18n="int.outreach.body">Recherchiert tagsüber Zielfirmen, schreibt nachts persönliche Erst-Nachrichten, übergibt warme Antworten an Felipe. Läuft seit Monaten in unseren eigenen Systemen.</p>
           <span class="meta">Stack · Apollo · Heyreach · Notion</span>
         </article>
 
-        <article class="glass-card showcase-card">
+        <article class="atelier-card showcase-card">
           <div class="showcase-mark">BH</div>
           <h3 data-i18n="int.buchhaltung.head">Rechnungen, Mahnungen, Reporting.</h3>
-          <p data-i18n="int.buchhaltung.body">Eingehende Belege werden klassifiziert, gebucht und an die Steuerberatung übergeben. Monats-Reporting steht am 5. — ohne einen einzigen Klick von uns.</p>
+          <p data-i18n="int.buchhaltung.body">Eingehende Belege werden klassifiziert, gebucht und an die Steuerberatung übergeben. Monats-Reporting steht am 5. — ohne einen Klick von uns.</p>
           <span class="meta">Stack · DATEV · Lexoffice · Sevdesk</span>
         </article>
 
-        <article class="glass-card showcase-card">
+        <article class="atelier-card showcase-card">
           <div class="showcase-mark">EC</div>
           <h3 data-i18n="int.email.head">Aus Inbox-Chaos werden CRM-Cases.</h3>
           <p data-i18n="int.email.body">Jede Mail an info@ wird gelesen, klassifiziert, einem Vorgang zugeordnet und mit Vorschlagsantwort an den richtigen Menschen übergeben.</p>
@@ -174,7 +263,7 @@
   </div>
 </section>
 
-<!-- ============ 5. USP ============ -->
+<!-- ============ USP — FEATURE-SWITCHER ============ -->
 <section id="usp">
   <div class="container">
     <div class="section-head fade-up">
@@ -183,32 +272,135 @@
       <p data-i18n="usp.lede">Keine Upsells. Ohne diese fünf Punkte hält ein digitaler Mitarbeiter keinen Monat im echten Betrieb durch.</p>
     </div>
 
-    <div class="usp-grid fade-up">
-      <div class="usp-item">
-        <h4 data-i18n="usp.1.head">Integration in Ihren Stack</h4>
-        <p data-i18n="usp.1.body">Er arbeitet in den Tools, die Sie bereits einsetzen — CRM, Ticket-System, Kalender, ERP, DATEV. Kein Rip-and-Replace, keine Parallel-Systeme.</p>
+    <div class="usp-switcher fade-up">
+      <div class="usp-tabs" role="tablist">
+        <button class="usp-tab active" data-usp="integration">
+          <svg class="tab-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="12" y="3" width="7" height="7" rx="1"/><rect x="3" y="12" width="7" height="7" rx="1"/><rect x="12" y="12" width="7" height="7" rx="1"/></svg>
+          <span><span class="tab-title" data-i18n="usp.t1.title">Integration in Ihren Stack</span><span class="tab-sub" data-i18n="usp.t1.sub">CRM, Ticket-System, Kalender, ERP, DATEV.</span></span>
+        </button>
+        <button class="usp-tab" data-usp="dsgvo">
+          <svg class="tab-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 2 L4 5 V11 C4 15 7 19 11 20 C15 19 18 15 18 11 V5 Z"/><path d="M8 11 l2 2 l4-5"/></svg>
+          <span><span class="tab-title" data-i18n="usp.t2.title">DSGVO von Tag 1</span><span class="tab-sub" data-i18n="usp.t2.sub">EU-Rechenzentrum, AV-Vertrag, kein Modell-Training.</span></span>
+        </button>
+        <button class="usp-tab" data-usp="dashboard">
+          <svg class="tab-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="16" height="16" rx="1"/><line x1="3" y1="8" x2="19" y2="8"/><line x1="9" y1="8" x2="9" y2="19"/></svg>
+          <span><span class="tab-title" data-i18n="usp.t3.title">Dashboard, das Sie verstehen</span><span class="tab-sub" data-i18n="usp.t3.sub">Live-Feed, Handoff-Log, Audit-Trail.</span></span>
+        </button>
+        <button class="usp-tab" data-usp="learning">
+          <svg class="tab-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="3"/><circle cx="4" cy="4" r="2"/><circle cx="18" cy="4" r="2"/><circle cx="4" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><line x1="6" y1="6" x2="9" y2="9"/><line x1="16" y1="6" x2="13" y2="9"/><line x1="6" y1="16" x2="9" y2="13"/><line x1="16" y1="16" x2="13" y2="13"/></svg>
+          <span><span class="tab-title" data-i18n="usp.t4.title">Lernt weiter — wie ein Kollege</span><span class="tab-sub" data-i18n="usp.t4.sub">Monatlicher Review, neue Edge-Cases.</span></span>
+        </button>
+        <button class="usp-tab" data-usp="lockin">
+          <svg class="tab-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 11 L18 11 M11 4 L18 11 L11 18"/></svg>
+          <span><span class="tab-title" data-i18n="usp.t5.title">Kein Vendor-Lock</span><span class="tab-sub" data-i18n="usp.t5.sub">Runbook, Schulung, dokumentierte Übergabe.</span></span>
+        </button>
       </div>
-      <div class="usp-item">
-        <h4 data-i18n="usp.2.head">DSGVO-konform von Tag 1</h4>
-        <p data-i18n="usp.2.body">EU-Rechenzentrum, Auftragsverarbeitungsvertrag, kein Modell-Training mit Ihren Daten. Auf Wunsch komplett on-premise — bei Ihnen im Haus.</p>
-      </div>
-      <div class="usp-item">
-        <h4 data-i18n="usp.3.head">Dashboard, das Sie verstehen</h4>
-        <p data-i18n="usp.3.body">Live-Feed jeder Aktion, Handoff-Log, Audit-Trail. Kein Black-Box-Reporting, keine Monats-PDFs ohne Substanz.</p>
-      </div>
-      <div class="usp-item">
-        <h4 data-i18n="usp.4.head">Er lernt weiter — wie jeder Mitarbeiter</h4>
-        <p data-i18n="usp.4.body">Monatlicher Review, neue Edge-Cases, bessere Antworten. Im Retainer enthalten — keine Extra-Rechnung für Verbesserungen.</p>
-      </div>
-      <div class="usp-item">
-        <h4 data-i18n="usp.5.head">Kein Vendor-Lock</h4>
-        <p data-i18n="usp.5.body">Runbook auf Deutsch, Schulung Ihres Teams, dokumentierte Übergabe. Wenn Sie kündigen, läuft der Mitarbeiter weiter — bei Ihnen.</p>
+
+      <div class="usp-stage">
+        <!-- Integration -->
+        <div class="usp-stage-panel active" data-panel="integration">
+          <h4 data-i18n="usp.s1.head">Er arbeitet in dem Stack, den Sie schon haben.</h4>
+          <p data-i18n="usp.s1.body">Kein Rip-and-Replace, keine Parallel-Systeme. Wenn ein Tool fehlt, sagen wir es im Scoping — keine Vorab-Investition in zehn neue SaaS-Lizenzen.</p>
+          <div class="tool-grid">
+            <div class="tool-cell">HubSpot</div>
+            <div class="tool-cell">Pipedrive</div>
+            <div class="tool-cell">DATEV</div>
+            <div class="tool-cell">Lexoffice</div>
+            <div class="tool-cell">SAP B1</div>
+            <div class="tool-cell">Notion</div>
+            <div class="tool-cell">Sharepoint</div>
+            <div class="tool-cell">+ Custom</div>
+          </div>
+        </div>
+
+        <!-- DSGVO -->
+        <div class="usp-stage-panel" data-panel="dsgvo">
+          <h4 data-i18n="usp.s2.head">DSGVO ist kein Add-On. Es ist Tag 1.</h4>
+          <p data-i18n="usp.s2.body">Auf Wunsch komplett on-premise — Ihre Daten verlassen Ihr Netzwerk nicht.</p>
+          <div class="dsgvo-map">
+            <svg width="120" height="160" viewBox="0 0 120 160" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--dma-tiefsee);">
+              <!-- simplified Germany silhouette -->
+              <path d="M30 20 L40 15 L55 18 L65 12 L80 15 L92 25 L95 40 L92 55 L98 70 L94 90 L88 105 L92 125 L80 140 L62 145 L48 142 L35 130 L28 115 L22 95 L18 75 L20 55 L25 35 Z" fill="var(--dma-papier)"/>
+              <!-- Frankfurt pin -->
+              <circle cx="50" cy="75" r="5" fill="var(--dma-petrol)"/>
+              <circle cx="50" cy="75" r="11" fill="none" stroke="var(--dma-petrol)" stroke-opacity="0.3"/>
+              <text x="50" y="98" text-anchor="middle" font-family="IBM Plex Mono" font-size="8" fill="var(--dma-petrol)">FRANKFURT</text>
+            </svg>
+            <div class="dsgvo-map-text">
+              <div class="map-label">Datenresidenz</div>
+              <h5>Frankfurt am Main · EU-Rechenzentrum</h5>
+              <ul>
+                <li>Auftragsverarbeitungsvertrag standardisiert</li>
+                <li>Kein Modell-Training mit Ihren Daten</li>
+                <li>On-premise auf Wunsch — bei Ihnen im Haus</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard -->
+        <div class="usp-stage-panel" data-panel="dashboard">
+          <h4 data-i18n="usp.s3.head">Live-Feed, Handoff-Log, Audit-Trail.</h4>
+          <p data-i18n="usp.s3.body">Sie sehen jede Aktion in dem Moment, in dem sie passiert. Kein Black-Box-Reporting, keine Monats-PDFs ohne Substanz.</p>
+          <div class="dashboard-mock" id="dashboard-mock">
+            <div class="dashboard-row"><span class="row-time">10:14</span><span class="row-desc">Paula · Auftrag #4521 angelegt</span><span class="row-status">erledigt</span></div>
+            <div class="dashboard-row"><span class="row-time">10:11</span><span class="row-desc">Jonas · Angebot Müller GmbH versendet</span><span class="row-status">erledigt</span></div>
+            <div class="dashboard-row"><span class="row-time">10:08</span><span class="row-desc">Martin · Bestellung #B-3382 freigegeben</span><span class="row-status">erledigt</span></div>
+            <div class="dashboard-row"><span class="row-time">10:03</span><span class="row-desc">Paula · Reklamation #221 → Vertrieb</span><span class="row-status">handoff</span></div>
+            <div class="dashboard-row"><span class="row-time">09:58</span><span class="row-desc">Jonas · CRM-Sync HubSpot</span><span class="row-status">erledigt</span></div>
+            <div class="dashboard-row"><span class="row-time">09:52</span><span class="row-desc">Martin · Lieferanten-Vergleich Top-3</span><span class="row-status">erledigt</span></div>
+          </div>
+        </div>
+
+        <!-- Learning -->
+        <div class="usp-stage-panel" data-panel="learning">
+          <h4 data-i18n="usp.s4.head">Er wird besser, nicht älter.</h4>
+          <p data-i18n="usp.s4.body">Monatlicher Review, neue Edge-Cases aus echtem Betrieb in die Wissensbasis. Im Retainer enthalten — keine Extra-Rechnung für Verbesserungen.</p>
+          <div class="graph-mock" id="graph-mock">
+            <!-- Nodes positioniert -->
+            <div class="graph-node large" style="left: 48%; top: 45%;"></div>
+            <div class="graph-node" style="left: 22%; top: 25%;"></div>
+            <div class="graph-node" style="left: 75%; top: 22%;"></div>
+            <div class="graph-node" style="left: 18%; top: 65%;"></div>
+            <div class="graph-node" style="left: 78%; top: 70%;"></div>
+            <div class="graph-node" style="left: 35%; top: 78%;"></div>
+            <div class="graph-node" style="left: 60%; top: 78%;"></div>
+            <div class="graph-node" style="left: 30%; top: 12%;"></div>
+            <div class="graph-node" style="left: 65%; top: 12%;"></div>
+            <div class="graph-node" style="left: 12%; top: 45%;"></div>
+            <div class="graph-node" style="left: 88%; top: 45%;"></div>
+            <p class="graph-caption" data-i18n="usp.s4.caption">47 neue Edge-Cases im April · 12 Wissens-Nodes ergänzt</p>
+          </div>
+        </div>
+
+        <!-- Lock-in -->
+        <div class="usp-stage-panel" data-panel="lockin">
+          <h4 data-i18n="usp.s5.head">Wenn Sie kündigen, läuft er weiter.</h4>
+          <p data-i18n="usp.s5.body">Quellcode, Dokumentation, Runbook und Schulung gehen an Sie über. Ihr Team kann ihn weiter betreiben — oder einen Wettbewerber damit beauftragen.</p>
+          <div class="handover-grid">
+            <div class="handover-cell">
+              <div class="cell-mark">01</div>
+              <div class="cell-title">Runbook DE</div>
+              <div class="cell-sub">Step-by-Step, was er macht und warum</div>
+            </div>
+            <div class="handover-cell">
+              <div class="cell-mark">02</div>
+              <div class="cell-title">Schulung</div>
+              <div class="cell-sub">Ihr Team in 2-3 Sessions on-boardet</div>
+            </div>
+            <div class="handover-cell">
+              <div class="cell-mark">03</div>
+              <div class="cell-title">Übergabe</div>
+              <div class="cell-sub">Code, Logins, Daten — alles bei Ihnen</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 6. WIE / PROZESS ============ -->
+<!-- ============ WIE / PROZESS ============ -->
 <section id="process" class="section--warm">
   <div class="container">
     <div class="section-head fade-up">
@@ -217,17 +409,19 @@
     </div>
 
     <div class="process-grid fade-up">
-      <div class="process-step">
+      <div class="process-line"><span class="midpoint"></span></div>
+
+      <div class="atelier-card process-step">
         <div class="step-num" data-i18n="process.s1.num">01 · 30 Min</div>
         <h4 data-i18n="process.s1.head">Erstgespräch</h4>
         <p data-i18n="process.s1.body">Wir hören zu, welche Rolle Ihnen am meisten fehlt. Wenn wir nicht der richtige Partner sind, sagen wir das — keine Sales-Pipeline.</p>
       </div>
-      <div class="process-step">
+      <div class="atelier-card process-step">
         <div class="step-num" data-i18n="process.s2.num">02 · 1 Woche</div>
         <h4 data-i18n="process.s2.head">Scoping</h4>
         <p data-i18n="process.s2.body">Wir schreiben Ihren Prozess auf, identifizieren Tools und Daten, fixieren Scope und Preis. Festes Angebot, kein Tagessatz-Modell.</p>
       </div>
-      <div class="process-step">
+      <div class="atelier-card process-step">
         <div class="step-num" data-i18n="process.s3.num">03 · 3 Wochen</div>
         <h4 data-i18n="process.s3.head">Onboarding</h4>
         <p data-i18n="process.s3.body">Aufbau, Test mit echten Fällen, Schulung Ihres Teams, Go-Live mit Begleitung. Ab Tag 30 produktiv.</p>
@@ -236,11 +430,11 @@
   </div>
 </section>
 
-<!-- ============ 7. BEISPIEL ============ -->
+<!-- ============ BEISPIEL ============ -->
 <section id="example">
   <div class="container">
     <div class="section-head fade-up">
-      <span class="eyebrow" data-i18n="ex.eyebrow">Beispiel · Industrie-Mittelstand</span>
+      <span class="eyebrow" data-i18n="ex.eyebrow">Lösungs-Blueprint · Industrie-Mittelstand</span>
       <h2 data-i18n="ex.headline">Wie ein Schwerlast-Logistiker seinen Disponenten in 30 Tagen besetzt hat.</h2>
     </div>
 
@@ -252,13 +446,13 @@
       </div>
       <p data-i18n="ex.p1">Der Senior-Disponent ging in Rente. Nachfolger: nicht zu finden. Disposition für Sondertransporte ist Spezialwissen — Routen, Achslast, Behörden, Wochen-Vorausplanung. Drei Monate Vakanz hätten zwölf Aufträge gekostet.</p>
       <p data-i18n="ex.p2">Mit Armin, dem Geschäftsführer, haben wir in 30 Tagen einen digitalen Disponenten aufgebaut. Trainiert auf 18 Monate historischer Auftragsdaten, integriert in das Branchen-ERP, verbunden mit dem Fahrer-Kalender und dem Sondergenehmigungs-Portal.</p>
-      <p data-i18n="ex.p3">Ergebnis: Kein Auftrag mehr verloren. Zwei Disponenten arbeiten heute mit dem digitalen Kollegen statt drei. Reaktionszeit auf Kundenanfragen von zwei Tagen auf vier Stunden gefallen. Einarbeitung neuer Spediteure in zwei statt sechs Wochen — weil das Wissen jetzt sauber dokumentiert ist.</p>
+      <p data-i18n="ex.p3">Ergebnis: Kein Auftrag mehr verloren. Zwei Disponenten arbeiten heute mit dem digitalen Kollegen statt drei. Reaktionszeit auf Kundenanfragen von zwei Tagen auf vier Stunden gefallen.</p>
       <a class="example-link" href="blueprint-scholpp.html" data-i18n="ex.link">Den Blueprint lesen →</a>
     </div>
   </div>
 </section>
 
-<!-- ============ 8. FELIPE ============ -->
+<!-- ============ FELIPE ============ -->
 <section id="felipe" class="section--warm">
   <div class="container">
     <div class="section-head fade-up">
@@ -266,12 +460,12 @@
       <h2 data-i18n="felipe.headline">Wer hinter DMA steht.</h2>
     </div>
 
-    <div class="founder-card fade-up">
+    <div class="atelier-card founder-card fade-up">
       <div class="founder-portrait">F</div>
       <div>
-        <h3 data-i18n="felipe.name">Felipe</h3>
+        <h3 data-i18n="felipe.name">Felipe Holanda</h3>
         <div class="founder-role" data-i18n="felipe.role">Gründer · DMA</div>
-        <p data-i18n="felipe.bio1">Bio folgt — kurz: Mehrere Jahre Operations-Automation für deutschen Mittelstand. Hat unter anderem X-Press, ein deutsches Logistik-Startup, mit aufgebaut und produktionskritische Prozesse automatisiert.</p>
+        <p data-i18n="felipe.bio1">Bio folgt — kurz: Industriekaufmann, zehn Jahre Digitalisierung, CRM und E-Mail-zu-Case-Workshops in deutschen Industrieunternehmen. Operative Tiefe statt Berater-Slides.</p>
         <p data-i18n="felipe.bio2">DMA ist die Konsequenz daraus: Mittelstand braucht keine KI-Tools, sondern Mitarbeiter, die die Arbeit machen. In Deutsch, mit DSGVO, in vorhandenen Systemen.</p>
         <div class="founder-links">
           <a href="#" data-i18n="felipe.linkedin">LinkedIn ↗</a>
@@ -281,7 +475,7 @@
   </div>
 </section>
 
-<!-- ============ 9. ROI ============ -->
+<!-- ============ ROI ============ -->
 <section id="roi">
   <div class="container">
     <div class="section-head fade-up">
@@ -290,32 +484,69 @@
       <p data-i18n="roi.lede">Keine festen Preise auf der Seite — jeder Fall ist anders. Aber das Verhältnis hält für jede Rolle, die wir bisher gebaut haben.</p>
     </div>
 
-    <div class="roi-grid fade-up">
-      <div class="roi-card roi-card--baseline">
-        <div class="roi-label" data-i18n="roi.base.label">Vollzeit · 100 % Brutto</div>
-        <h4 data-i18n="roi.base.title">Klassischer Mitarbeiter</h4>
-        <div class="roi-row"><span class="roi-key" data-i18n="roi.k.einarbeitung">Einarbeitung</span><span class="roi-val" data-i18n="roi.base.einarbeitung">3 – 6 Monate</span></div>
-        <div class="roi-row"><span class="roi-key" data-i18n="roi.k.verfuegbarkeit">Verfügbarkeit</span><span class="roi-val" data-i18n="roi.base.verfuegbarkeit">38 h / Woche</span></div>
-        <div class="roi-row"><span class="roi-key" data-i18n="roi.k.ausfall">Ausfalltage</span><span class="roi-val" data-i18n="roi.base.ausfall">~ 30 / Jahr</span></div>
-        <div class="roi-row"><span class="roi-key" data-i18n="roi.k.skalierung">Skalierung</span><span class="roi-val" data-i18n="roi.base.skalierung">Recruiting + Probezeit</span></div>
-        <div class="roi-row"><span class="roi-key" data-i18n="roi.k.wissen">Wissen bei Abgang</span><span class="roi-val" data-i18n="roi.base.wissen">Geht mit</span></div>
-        <div class="roi-row"><span class="roi-key" data-i18n="roi.k.kosten">Kosten</span><span class="roi-val" data-i18n="roi.base.kosten">100 % Brutto</span></div>
+    <div class="roi-table fade-up">
+      <div class="roi-bar-row">
+        <div class="roi-bar-label" data-i18n="roi.l1">Einarbeitung</div>
+        <div class="roi-bar-pair">
+          <span class="roi-source" data-i18n="roi.src.vollzeit">Vollzeit</span>
+          <div class="roi-bar-track"><div class="roi-bar-fill roi-bar-fill--baseline" data-roi-width="100"></div></div>
+          <span class="roi-bar-value">3-6 Monate</span>
+        </div>
+        <div class="roi-bar-pair">
+          <span class="roi-source" data-i18n="roi.src.dma">DMA</span>
+          <div class="roi-bar-track"><div class="roi-bar-fill roi-bar-fill--dma" data-roi-width="17"></div></div>
+          <span class="roi-bar-value">30 Tage</span>
+        </div>
       </div>
-      <div class="roi-card roi-card--digital">
-        <div class="roi-label" data-i18n="roi.dig.label">Digitaler Kollege</div>
-        <h4 data-i18n="roi.dig.title">DMA-Mitarbeiter</h4>
-        <div class="roi-row"><span class="roi-key" data-i18n="roi.k.einarbeitung">Einarbeitung</span><span class="roi-val" data-i18n="roi.dig.einarbeitung">30 Tage</span></div>
-        <div class="roi-row"><span class="roi-key" data-i18n="roi.k.verfuegbarkeit">Verfügbarkeit</span><span class="roi-val" data-i18n="roi.dig.verfuegbarkeit">24 / 7</span></div>
-        <div class="roi-row"><span class="roi-key" data-i18n="roi.k.ausfall">Ausfalltage</span><span class="roi-val" data-i18n="roi.dig.ausfall">0</span></div>
-        <div class="roi-row"><span class="roi-key" data-i18n="roi.k.skalierung">Skalierung</span><span class="roi-val" data-i18n="roi.dig.skalierung">Sofort, ohne Recruiting</span></div>
-        <div class="roi-row"><span class="roi-key" data-i18n="roi.k.wissen">Wissen bei Abgang</span><span class="roi-val" data-i18n="roi.dig.wissen">Dokumentiert, übertragbar</span></div>
-        <div class="roi-row"><span class="roi-key" data-i18n="roi.k.kosten">Kosten</span><span class="roi-val" data-i18n="roi.dig.kosten">~ ein Drittel der Brutto</span></div>
+
+      <div class="roi-bar-row">
+        <div class="roi-bar-label" data-i18n="roi.l2">Verfügbarkeit</div>
+        <div class="roi-bar-pair">
+          <span class="roi-source" data-i18n="roi.src.vollzeit">Vollzeit</span>
+          <div class="roi-bar-track"><div class="roi-bar-fill roi-bar-fill--baseline" data-roi-width="23"></div></div>
+          <span class="roi-bar-value">38 h / Woche</span>
+        </div>
+        <div class="roi-bar-pair">
+          <span class="roi-source" data-i18n="roi.src.dma">DMA</span>
+          <div class="roi-bar-track"><div class="roi-bar-fill roi-bar-fill--dma" data-roi-width="100"></div></div>
+          <span class="roi-bar-value">24 / 7</span>
+        </div>
       </div>
+
+      <div class="roi-bar-row">
+        <div class="roi-bar-label" data-i18n="roi.l3">Ausfalltage / Jahr</div>
+        <div class="roi-bar-pair">
+          <span class="roi-source" data-i18n="roi.src.vollzeit">Vollzeit</span>
+          <div class="roi-bar-track"><div class="roi-bar-fill roi-bar-fill--baseline" data-roi-width="100"></div></div>
+          <span class="roi-bar-value">~ 30</span>
+        </div>
+        <div class="roi-bar-pair">
+          <span class="roi-source" data-i18n="roi.src.dma">DMA</span>
+          <div class="roi-bar-track"><div class="roi-bar-fill roi-bar-fill--dma" data-roi-width="2"></div></div>
+          <span class="roi-bar-value">0</span>
+        </div>
+      </div>
+
+      <div class="roi-bar-row">
+        <div class="roi-bar-label" data-i18n="roi.l4">Kosten (% Brutto)</div>
+        <div class="roi-bar-pair">
+          <span class="roi-source" data-i18n="roi.src.vollzeit">Vollzeit</span>
+          <div class="roi-bar-track"><div class="roi-bar-fill roi-bar-fill--baseline" data-roi-width="100"></div></div>
+          <span class="roi-bar-value">100 %</span>
+        </div>
+        <div class="roi-bar-pair">
+          <span class="roi-source" data-i18n="roi.src.dma">DMA</span>
+          <div class="roi-bar-track"><div class="roi-bar-fill roi-bar-fill--dma" data-roi-width="33"></div></div>
+          <span class="roi-bar-value">~ 33 %</span>
+        </div>
+      </div>
+
+      <p class="roi-quote" data-i18n="roi.quote">Vergleichsbasis · Kaufm. Vollkraft 4 000–4 800 € / Mt. Vollkosten · Vakanz-Ø DACH 173 Tage</p>
     </div>
   </div>
 </section>
 
-<!-- ============ 10. FAQ ============ -->
+<!-- ============ FAQ ============ -->
 <section id="faq" class="section--warm">
   <div class="container">
     <div class="section-head fade-up">
@@ -323,32 +554,36 @@
       <h2 data-i18n="faq.headline">Was Geschäftsführer in der Regel zuerst fragen.</h2>
     </div>
 
-    <div class="faq-list fade-up">
+    <div class="faq-wrap glass fade-up">
       <div class="faq-item">
         <button class="faq-q" type="button"><span data-i18n="faq.q1">Was kostet ein digitaler Mitarbeiter?</span><span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a1">In der Regel etwa ein Drittel der Bruttokosten eines vergleichbaren Vollzeit-Mitarbeiters — als Setup-Pauschale plus Monatsretainer. Genauer wird es im Scoping. Wir nennen Ihnen den Preis vor dem Onboarding, kein Tagessatz-Modell.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a1">Sprechen Sie uns an — wir kalkulieren gemeinsam auf Basis der ersetzten Rolle. Üblich liegen wir bei rund einem Drittel der Bruttokosten einer vergleichbaren Vollzeit-Stelle, als Setup-Pauschale plus Monatsretainer. Genauer wird es im Scoping.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" type="button"><span data-i18n="faq.q2">Wie lange dauert der Aufbau wirklich?</span><span class="plus">+</span></button>
         <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a2">30 Tage von der Auftragsbestätigung bis zum Go-Live mit echten Fällen. Eine Woche Scoping, drei Wochen Build inklusive Tests und Schulung. Bei Spezial-Fällen mit eigener Hardware-Anbindung kann es länger werden — wir sagen das vor dem Angebot, nicht währenddessen.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" type="button"><span data-i18n="faq.q3">Welche Tools brauchen wir dafür?</span><span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a3">Was Sie schon haben. Wir integrieren in Ihr CRM, Ticket-System, Kalender, ERP, DATEV. Wenn ein Tool fehlt, sagen wir es im Scoping — keine Vorab-Investitionen in zehn neue SaaS-Lizenzen.</div></div>
+        <button class="faq-q" type="button"><span data-i18n="faq.q3">Welche Technologie steckt dahinter?</span><span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a3">Wir kombinieren marktführende KI-Modelle mit Ihren bestehenden Tools — CRM, Ticket-System, Kalender, ERP, DATEV. Welche Modelle wir konkret nutzen, hängt vom Use-Case und den DSGVO-Anforderungen ab. Auf der Landing Page ist der Tech-Stack bewusst kein Thema; im Erstgespräch machen wir das transparent.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" type="button"><span data-i18n="faq.q4">Wie ist das mit DSGVO?</span><span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a4">DSGVO-first by default. EU-Datenresidenz, Auftragsverarbeitungsvertrag vorhanden, kein Modell-Training mit Ihren Daten, minimale Retention. Für regulierte Branchen deployen wir auf Wunsch komplett on-premise — Ihre Daten verlassen Ihr Netzwerk nicht.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a4">DSGVO-first by default. EU-Datenresidenz (Frankfurt), Auftragsverarbeitungsvertrag, kein Modell-Training mit Ihren Daten, minimale Retention. Für regulierte Branchen deployen wir auf Wunsch komplett on-premise — Ihre Daten verlassen Ihr Netzwerk nicht.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" type="button"><span data-i18n="faq.q5">Was passiert, wenn wir kündigen wollen?</span><span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a5">Sie behalten den Mitarbeiter. Quellcode, Dokumentation, Runbook und Schulung gehen an Sie über. Ihr Team kann ihn weiter betreiben — oder einen Wettbewerber damit beauftragen. Kein Vendor-Lock, keine Strafgebühr.</div></div>
+        <button class="faq-q" type="button"><span data-i18n="faq.q5">Wie ist das mit dem Betriebsrat?</span><span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a5">Wir arbeiten mit Ihnen und dem Betriebsrat gemeinsam. Weil wir offene Rollen besetzen statt bestehende Mitarbeiter ersetzen, ist die Gesprächsebene meist konstruktiv. Dokumentation für Betriebsvereinbarungen stellen wir bereit.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span data-i18n="faq.q6">Was passiert, wenn wir kündigen wollen?</span><span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a6">Sie behalten den Mitarbeiter. Quellcode, Dokumentation, Runbook und Schulung gehen an Sie über. Ihr Team kann ihn weiter betreiben — oder einen Wettbewerber damit beauftragen. Kein Vendor-Lock, keine Strafgebühr.</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 11. LEAD MAGNET ============ -->
+<!-- ============ LEAD MAGNET ============ -->
 <section id="lead">
   <div class="container">
     <div class="section-head fade-up">
@@ -357,7 +592,7 @@
       <p data-i18n="lead.lede">Wir schicken Ihnen binnen 24 Stunden ein persönliches Loom-Video — wie wir die Rolle bauen würden, was wir brauchen, und ob es ein Match ist. Kein automatisches PDF, kein Sales-Funnel.</p>
     </div>
 
-    <div class="lead-form-wrap fade-up">
+    <div class="atelier-card lead-form-wrap fade-up">
       <form class="lead-form" id="lead-form" action="https://formspree.io/f/TODO-felipe-formspree-id" method="POST" novalidate>
         <div>
           <label for="lead-website" data-i18n="lead.f.website">Unternehmens-Website</label>
@@ -367,9 +602,9 @@
           <label for="lead-role" data-i18n="lead.f.role">Welche Rolle ist offen?</label>
           <select id="lead-role" name="role" required>
             <option value="" data-i18n="lead.f.role.placeholder">Bitte wählen</option>
-            <option value="marketing" data-i18n="lead.f.role.marketing">Marketing</option>
-            <option value="sales" data-i18n="lead.f.role.sales">Sales</option>
-            <option value="operations" data-i18n="lead.f.role.operations">Operations</option>
+            <option value="auftragssachbearbeitung" data-i18n="lead.f.role.paula">Auftragssachbearbeitung (Paula)</option>
+            <option value="einkauf" data-i18n="lead.f.role.martin">Einkauf (Martin)</option>
+            <option value="vertriebsinnendienst" data-i18n="lead.f.role.jonas">Vertriebsinnendienst (Jonas)</option>
             <option value="other" data-i18n="lead.f.role.other">Andere</option>
           </select>
         </div>
@@ -385,7 +620,7 @@
           </select>
         </div>
         <div>
-          <label for="lead-pain" data-i18n="lead.f.pain">Was ist die Stelle, die Ihnen am meisten weh tut?</label>
+          <label for="lead-pain" data-i18n="lead.f.pain">Welche Rolle kostet Sie am meisten Zeit?</label>
           <textarea id="lead-pain" name="pain" rows="3" required data-i18n-ph="lead.f.pain.placeholder" placeholder="Kurz in eigenen Worten — wir antworten persönlich."></textarea>
         </div>
         <div class="form-error hidden" id="lead-error" data-i18n="lead.error">Hat nicht funktioniert. Bitte erneut versuchen.</div>
@@ -401,13 +636,15 @@
   </div>
 </section>
 
-<!-- ============ 12. FOOTER ============ -->
+<!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="container">
     <div class="footer-top">
       <div>
-        <span class="dma-logo dma-logo--lg">D<span class="slash">/</span>M<span class="slash">/</span>A</span>
-        <p class="footer-tagline" data-i18n="foot.tagline">Digitale Mitarbeiteragentur — digitale Kollegen für Industrie-Mittelstand.</p>
+        <pre class="dma-lockup dma-lockup--md dma-lockup--invers" aria-label="DIGITALE MITARBEITER AGENTUR"><span class="slash">////</span>DIGITALE
+<span class="slash">/</span>MITARBEITER
+<span class="slash">/////</span>AGENTUR</pre>
+        <p class="footer-tagline" data-i18n="foot.tagline">Personaldienstleister für digitale Mitarbeiter im deutschen Industrie-Mittelstand.</p>
         <span class="footer-teaser" data-i18n="foot.teaser">Weitere Rollen auf Anfrage</span>
       </div>
       <div>
@@ -422,8 +659,8 @@
       <div>
         <h5 data-i18n="foot.standort">Standort</h5>
         <ul>
-          <li>München</li>
           <li>Stuttgart</li>
+          <li>München</li>
         </ul>
       </div>
       <div>
@@ -441,22 +678,63 @@
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span data-i18n="foot.copy">© 2026 DMA · Digitale Mitarbeiteragentur</span>
+    <div class="footer-divider">
+      <span data-i18n="foot.copy">© 2026 DMA · Digitale Mitarbeiter Agentur</span>
+      <span class="dma-signet dma-signet--md">/////</span>
       <span data-i18n="foot.crafted">Made in Stuttgart</span>
     </div>
   </div>
 </footer>
 
+<!-- ============ DRAWER ============ -->
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<aside class="drawer glass-strong" id="drawer" aria-hidden="true">
+  <div class="drawer-header">
+    <div>
+      <div class="drawer-tag" id="drawer-tag">Auftrag rein</div>
+      <h3 id="drawer-name">Paula</h3>
+      <div class="drawer-role" id="drawer-role">Digitale Auftragssachbearbeiterin</div>
+    </div>
+    <button class="drawer-close" id="drawer-close" aria-label="Schließen">×</button>
+  </div>
+  <div class="drawer-tabs" role="tablist">
+    <button class="active" data-drawer-tab="workflow" data-i18n="drawer.t1">Live-Workflow</button>
+    <button data-drawer-tab="video" data-i18n="drawer.t2">Video</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-panel active" data-drawer-panel="workflow">
+      <h4 style="margin-bottom: 16px;" data-i18n="drawer.workflow.head">So sieht ein typischer Vormittag aus.</h4>
+      <div class="drawer-feed" id="drawer-feed"></div>
+      <div class="drawer-stats">
+        <div class="drawer-stat">
+          <div class="stat-num" id="drawer-stat-1">47</div>
+          <span class="stat-label" data-i18n="drawer.stat1">Vorgänge heute bearbeitet</span>
+        </div>
+        <div class="drawer-stat">
+          <div class="stat-num" id="drawer-stat-2">3.2 h</div>
+          <span class="stat-label" data-i18n="drawer.stat2">Ø Reaktionszeit</span>
+        </div>
+      </div>
+      <h5 style="font-family: var(--dma-font-display); font-weight: 600; font-size: 14px; margin-bottom: 12px; color: var(--dma-tinte);" data-i18n="drawer.tools.head">Integriert in</h5>
+      <div class="drawer-tools" id="drawer-tools"></div>
+    </div>
+    <div class="drawer-panel" data-drawer-panel="video" hidden>
+      <div class="drawer-video">
+        <span class="video-caption" data-i18n="drawer.video.caption">Video</span>
+        <p data-i18n="drawer.video.body">Loom-Walkthrough mit Felipe kommt in Kürze. Bis dahin: Erstgespräch buchen — wir zeigen Ihnen den Workflow live.</p>
+      </div>
+    </div>
+  </div>
+</aside>
+
 <script>
-// DE markup ships as the default in HTML; EN keys override at lang switch,
-// missing keys fall back to the captured DE original on the element.
+// ─── i18n ────────────────────────────────────────────────────
 const I18N = {
   de: {},
   en: {
     "nav.cta": "Book a call",
     "hero.cta1": "Book a call",
-    "hero.cta2": "View roles"
+    "hero.cta2": "Meet your digital colleagues"
   }
 };
 
@@ -485,12 +763,8 @@ function applyLang(lang) {
   try { localStorage.setItem('dma_lang', lang); } catch(e){}
 }
 
-document.querySelectorAll('[data-i18n]').forEach(el => {
-  el.dataset.i18nOrig = el.innerHTML;
-});
-document.querySelectorAll('[data-i18n-ph]').forEach(el => {
-  el.dataset.i18nPhOrig = el.getAttribute('placeholder') || '';
-});
+document.querySelectorAll('[data-i18n]').forEach(el => { el.dataset.i18nOrig = el.innerHTML; });
+document.querySelectorAll('[data-i18n-ph]').forEach(el => { el.dataset.i18nPhOrig = el.getAttribute('placeholder') || ''; });
 
 document.querySelectorAll('.lang-toggle button').forEach(b => {
   b.addEventListener('click', () => applyLang(b.dataset.lang));
@@ -500,29 +774,36 @@ try {
   if (saved === 'en') applyLang('en');
 } catch(e) {}
 
+// ─── Nav scroll ──────────────────────────────────────────────
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('is-scrolled', window.scrollY > 8);
 });
 
+// ─── Macro tabs (agents) ─────────────────────────────────────
 document.querySelectorAll('.macro-tabs button').forEach(b => {
   b.addEventListener('click', () => {
     const target = b.dataset.tab;
-    document.querySelectorAll('.macro-tabs button').forEach(x => {
-      x.classList.toggle('active', x === b);
-    });
-    document.querySelectorAll('.tab-panel').forEach(p => {
-      p.classList.toggle('active', p.id === 'tab-' + target);
-    });
+    document.querySelectorAll('.macro-tabs button').forEach(x => x.classList.toggle('active', x === b));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === 'tab-' + target));
   });
 });
 
+// ─── USP feature switcher ────────────────────────────────────
+document.querySelectorAll('.usp-tab').forEach(t => {
+  t.addEventListener('click', () => {
+    const target = t.dataset.usp;
+    document.querySelectorAll('.usp-tab').forEach(x => x.classList.toggle('active', x === t));
+    document.querySelectorAll('.usp-stage-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === target));
+  });
+});
+
+// ─── FAQ accordion ───────────────────────────────────────────
 document.querySelectorAll('.faq-q').forEach(q => {
-  q.addEventListener('click', () => {
-    q.closest('.faq-item').classList.toggle('open');
-  });
+  q.addEventListener('click', () => q.closest('.faq-item').classList.toggle('open'));
 });
 
+// ─── Form submit ─────────────────────────────────────────────
 const leadForm = document.getElementById('lead-form');
 const leadSuccess = document.getElementById('lead-success');
 const leadError = document.getElementById('lead-error');
@@ -549,15 +830,174 @@ if (leadForm) {
   });
 }
 
+// ─── Reveal on scroll + ROI bars + Counter ───────────────────
+const counters = document.querySelectorAll('[data-counter-target]');
+const roiBars = document.querySelectorAll('[data-roi-width]');
+
+function animateCounter(el) {
+  const target = parseInt(el.dataset.counterTarget, 10);
+  const duration = 1500;
+  const start = performance.now();
+  function tick(now) {
+    const t = Math.min(1, (now - start) / duration);
+    const eased = 1 - Math.pow(1 - t, 3); // ease-out cubic
+    el.textContent = Math.round(target * eased).toLocaleString('de-DE');
+    if (t < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('is-visible');
-      io.unobserve(e.target);
-    }
+    if (!e.isIntersecting) return;
+    e.target.classList.add('is-visible');
+
+    // Fire counters inside this element (or itself)
+    e.target.querySelectorAll?.('[data-counter-target]').forEach(c => {
+      if (!c.dataset.fired) { c.dataset.fired = '1'; animateCounter(c); }
+    });
+
+    // Fire ROI bars
+    e.target.querySelectorAll?.('[data-roi-width]').forEach(b => {
+      if (!b.dataset.fired) { b.dataset.fired = '1'; b.style.width = b.dataset.roiWidth + '%'; }
+    });
+
+    io.unobserve(e.target);
   });
 }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
 document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+// ─── Drawer ──────────────────────────────────────────────────
+const drawer = document.getElementById('drawer');
+const drawerOverlay = document.getElementById('drawer-overlay');
+const drawerClose = document.getElementById('drawer-close');
+
+const drawerData = {
+  paula: {
+    tag: 'Auftrag rein',
+    name: 'Paula',
+    role: 'Digitale Auftragssachbearbeiterin',
+    feed: [
+      ['08:48', 'Auftrag #4517 angelegt — Wagner Werke, 12 Positionen'],
+      ['08:55', 'ERP-Sync — Verfügbarkeit Stahlprofil 80×80 geprüft'],
+      ['09:14', 'Auftrag #4521 angelegt — Müller GmbH'],
+      ['09:21', '3 Lieferantenanfragen versendet (Heinz, Kraus, Schmidt)'],
+      ['09:26', 'Status-Mail an Vertrieb · Hr. Meier'],
+      ['09:38', 'Reklamation #221 dokumentiert · Foto + Lieferschein'],
+      ['09:47', 'Liefertermin-Abgleich CRM (HubSpot)'],
+      ['10:02', 'Auftragsbestätigung Müller GmbH versendet'],
+      ['10:14', 'Eskalation an Vertriebsleiter — Liefertermin-Konflikt'],
+      ['10:22', 'Auftrag #4523 angelegt — Klein AG'],
+    ],
+    stat1: '47',
+    stat1Label: 'Vorgänge heute bearbeitet',
+    stat2: '3,2 h',
+    stat2Label: 'Ø Reaktionszeit auf Rückfragen',
+    tools: ['SAP B1', 'HubSpot', 'Microsoft 365', 'DocuWare']
+  },
+  martin: {
+    tag: 'Material rein',
+    name: 'Martin',
+    role: 'Digitaler Einkaufssachbearbeiter',
+    feed: [
+      ['08:32', 'Bedarfsmeldung Stahlprofile · Werkstatt 2'],
+      ['08:42', 'Lieferanten-Pool gefiltert (Mindestmenge, Lieferzeit)'],
+      ['09:03', 'Lieferanten-Vergleich Top-3 erstellt'],
+      ['09:18', 'Bestellung #B-3382 freigegeben (Heinz Stahl)'],
+      ['09:34', 'Wareneingang #WE-2104 verbucht (DATEV)'],
+      ['09:51', 'Rahmenvertrag-Mahnung an Schmidt KG'],
+      ['10:06', 'Verbrauchs-Forecast Q3 aktualisiert'],
+      ['10:18', 'Bedarfsmeldung Schrauben M6 · Lager auf Mindest'],
+      ['10:24', 'Reklamation Lieferung WE-2098 erfasst'],
+      ['10:36', 'Bestellung #B-3383 vorbereitet'],
+    ],
+    stat1: '34',
+    stat1Label: 'Bestellungen diesen Monat',
+    stat2: '12 %',
+    stat2Label: 'Ø Einsparung Lieferantenwechsel',
+    tools: ['SAP B1', 'DATEV', 'Lexoffice', 'E-Mail']
+  },
+  jonas: {
+    tag: 'Angebot raus',
+    name: 'Jonas',
+    role: 'Digitaler Vertriebsinnendienst',
+    feed: [
+      ['08:42', 'Anfrage Wagner Werke bewertet (A-Kunde)'],
+      ['08:55', 'Angebot Müller GmbH versendet — €18 240'],
+      ['09:11', 'Follow-Up Schmidt KG (3. Mail seit Erstkontakt)'],
+      ['09:24', 'CRM-Sync HubSpot — 4 Kontakte aktualisiert'],
+      ['09:38', 'Auftragsbestätigung #A-7841 versendet'],
+      ['09:52', 'Discovery-Termin Klein AG vorbereitet'],
+      ['10:09', 'Anfrage Heinrich Bau bewertet (B-Kunde)'],
+      ['10:18', 'Angebot Wagner Werke versendet — €34 100'],
+      ['10:26', 'Follow-Up Müller GmbH (Frage Liefertermin)'],
+      ['10:34', 'Angebot Klein AG vorbereitet · Wartet Freigabe'],
+    ],
+    stat1: '23',
+    stat1Label: 'Angebote diesen Monat',
+    stat2: '4 h',
+    stat2Label: 'Ø Time-to-Quote'
+    , tools: ['HubSpot', 'Pipedrive', 'Microsoft 365', 'CRM-Sync']
+  }
+};
+
+function openDrawer(persona) {
+  const data = drawerData[persona];
+  if (!data) return;
+  document.getElementById('drawer-tag').textContent = data.tag;
+  document.getElementById('drawer-name').textContent = data.name;
+  document.getElementById('drawer-role').textContent = data.role;
+  document.getElementById('drawer-stat-1').textContent = data.stat1;
+  document.getElementById('drawer-stat-2').textContent = data.stat2;
+
+  const feed = document.getElementById('drawer-feed');
+  feed.innerHTML = data.feed.map(([time, desc]) =>
+    `<div class="activity-item"><span class="time">${time}</span><span class="desc">${desc}</span></div>`
+  ).join('');
+
+  const tools = document.getElementById('drawer-tools');
+  tools.innerHTML = data.tools.map(t => `<span class="tool-pill">${t}</span>`).join('');
+
+  drawer.classList.add('is-open');
+  drawerOverlay.classList.add('is-open');
+  drawer.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+
+  // Reset to workflow tab
+  document.querySelectorAll('.drawer-tabs button').forEach(b => b.classList.toggle('active', b.dataset.drawerTab === 'workflow'));
+  document.querySelectorAll('[data-drawer-panel]').forEach(p => {
+    const isActive = p.dataset.drawerPanel === 'workflow';
+    p.classList.toggle('active', isActive);
+    p.toggleAttribute('hidden', !isActive);
+  });
+}
+
+function closeDrawer() {
+  drawer.classList.remove('is-open');
+  drawerOverlay.classList.remove('is-open');
+  drawer.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('[data-drawer]').forEach(b => {
+  b.addEventListener('click', () => openDrawer(b.dataset.drawer));
+});
+drawerClose.addEventListener('click', closeDrawer);
+drawerOverlay.addEventListener('click', closeDrawer);
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer(); });
+
+document.querySelectorAll('.drawer-tabs button').forEach(b => {
+  b.addEventListener('click', () => {
+    const target = b.dataset.drawerTab;
+    document.querySelectorAll('.drawer-tabs button').forEach(x => x.classList.toggle('active', x === b));
+    document.querySelectorAll('[data-drawer-panel]').forEach(p => {
+      const isActive = p.dataset.drawerPanel === target;
+      p.classList.toggle('active', isActive);
+      p.toggleAttribute('hidden', !isActive);
+    });
+  });
+});
 </script>
 </body>
 </html>
