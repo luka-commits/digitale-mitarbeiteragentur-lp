@@ -1,0 +1,17 @@
+# Backups + legacy
+assets/hero/_backup/
+*.bak
+*.bak-*
+*.original.md
+
+# Build tooling (not meant for deployment)
+cv/generate.sh
+cv/template.html
+
+# Preview / dev artifacts
+brand-v5-preview.html
+design-system.md
+page-plan.md
+
+# Dotfiles + os
+.DS_Store

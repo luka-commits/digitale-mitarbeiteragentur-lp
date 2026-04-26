@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>DMA · Lebenslauf</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --tiefsee: #1A2E3A;
+    --tinte: #0F172A;
+    --grafit: #475569;
+    --petrol: #1E3A8A;
+    --petrol-hell: #5A7FE5;
+    --papier: #F4F5F8;
+    --elfenbein: #FAFAFC;
+    --dunst: #E2E8F0;
+    --grau-mitte: #94A3B8;
+    --moos: #3E8171;
+    --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  }
+
+  @page { size: A4; margin: 18mm 20mm; }
+  @page :first { margin: 0; }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--font-sans);
+    color: var(--tinte);
+    background: #fff;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  a { color: var(--tiefsee); text-decoration: none; }
+
+  /* ─────────── COVER (full bleed) ─────────── */
+  .cover {
+    width: 210mm;
+    height: 297mm;
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+  }
+
+  .cover-band {
+    background: var(--tiefsee);
+    color: #fff;
+    padding: 22px 40px;
+    font-family: var(--font-mono);
+    font-size: 9pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .cover-band .left {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cover-band .left .signet {
+    color: var(--petrol-hell);
+    letter-spacing: 0;
+    font-weight: 700;
+  }
+  .cover-band .right {
+    color: rgba(255, 255, 255, 0.78);
+    font-weight: 400;
+  }
+
+  .cover-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 60px;
+    text-align: center;
+    background:
+      radial-gradient(80% 50% at 50% 0%, rgba(90, 127, 229, 0.06) 0%, transparent 60%),
+      var(--elfenbein);
+  }
+
+  .role-tag {
+    background: var(--tiefsee);
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 8pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    margin-bottom: 32px;
+    font-weight: 600;
+  }
+
+  .cover-portrait-wrap {
+    position: relative;
+    margin-bottom: 32px;
+  }
+  .cover-portrait {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--tiefsee);
+    background: var(--papier);
+  }
+  .cover-portrait-mark {
+    position: absolute;
+    bottom: -6px;
+    right: -6px;
+    width: 44px;
+    height: 44px;
+    background: var(--tiefsee);
+    color: #fff;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 12pt;
+    letter-spacing: -0.02em;
+  }
+
+  .cover-label {
+    font-family: var(--font-mono);
+    font-size: 9pt;
+    color: var(--grau-mitte);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .cover h1 {
+    font-family: var(--font-sans);
+    font-size: 56pt;
+    font-weight: 700;
+    color: var(--tiefsee);
+    letter-spacing: -0.035em;
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+  .cover-role {
+    font-family: var(--font-sans);
+    font-size: 13pt;
+    font-weight: 500;
+    color: var(--grafit);
+    letter-spacing: 0.02em;
+    margin-bottom: 48px;
+  }
+
+  .cover-for {
+    margin-bottom: 0;
+    padding: 24px 32px;
+    border: 1px solid var(--dunst);
+    background: #fff;
+    max-width: 380px;
+  }
+  .cover-for .line-small {
+    font-family: var(--font-mono);
+    font-size: 8pt;
+    color: var(--grau-mitte);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .cover-for .position {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 14pt;
+    color: var(--tiefsee);
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+  .cover-for .scope {
+    font-size: 10pt;
+    color: var(--grafit);
+  }
+
+  .cover-footer {
+    background: var(--tiefsee);
+    color: rgba(255, 255, 255, 0.78);
+    padding: 20px 40px;
+    font-family: var(--font-mono);
+    font-size: 8.5pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .cover-footer span { color: #fff; }
+
+  /* ─────────── CV PAGES (flow via @page margins) ─────────── */
+  .cv-header {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--tiefsee);
+    margin-bottom: 22px;
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
+  .cv-portrait {
+    width: 88px;
+    height: 110px;
+    object-fit: cover;
+    border: 1px solid var(--dunst);
+    flex-shrink: 0;
+  }
+  .cv-name-col { flex: 1; }
+  .cv-name-col h1 {
+    font-family: var(--font-sans);
+    font-size: 24pt;
+    font-weight: 700;
+    color: var(--tiefsee);
+    line-height: 1;
+    margin-bottom: 4px;
+    letter-spacing: -0.025em;
+  }
+  .cv-name-col .cv-title {
+    font-size: 11pt;
+    color: var(--tinte);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .ai-inline {
+    display: inline-block;
+    background: var(--papier);
+    color: var(--tiefsee);
+    font-family: var(--font-mono);
+    font-size: 7.5pt;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border: 1px solid var(--tiefsee);
+    margin-bottom: 10px;
+  }
+  .cv-contact {
+    font-size: 9pt;
+    color: var(--grafit);
+    line-height: 1.8;
+  }
+  .cv-contact span { margin-right: 18px; }
+  .cv-contact strong {
+    color: var(--tiefsee);
+    font-weight: 600;
+    font-family: var(--font-mono);
+    font-size: 8pt;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-right: 4px;
+  }
+
+  .cv-section {
+    margin-bottom: 18px;
+    page-break-inside: avoid;
+  }
+  .cv-section h2 {
+    font-family: var(--font-mono);
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: var(--petrol);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--dunst);
+    margin-bottom: 11px;
+    page-break-after: avoid;
+  }
+
+  .profile p {
+    font-size: 10pt;
+    color: var(--tinte);
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+
+  .details-table,
+  .skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10pt;
+  }
+  .details-table td,
+  .skills-table td {
+    padding: 5px 0;
+    vertical-align: top;
+  }
+  .details-table td.label,
+  .skills-table td.label {
+    width: 165px;
+    color: var(--grafit);
+    font-family: var(--font-mono);
+    font-size: 8.5pt;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .details-table td.value,
+  .skills-table td.value {
+    color: var(--tinte);
+  }
+  .details-table td.value strong,
+  .skills-table td.value strong {
+    color: var(--tiefsee);
+    font-weight: 600;
+  }
+
+  .competency-row {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 11px;
+    font-size: 10pt;
+    page-break-inside: avoid;
+  }
+  .competency-marker {
+    width: 6px;
+    flex-shrink: 0;
+    background: var(--petrol);
+    border-radius: 1px;
+    margin-top: 4px;
+    height: 14px;
+  }
+  .competency-body { flex: 1; }
+  .competency-body h3 {
+    font-size: 10.5pt;
+    font-weight: 600;
+    color: var(--tiefsee);
+    margin-bottom: 2px;
+  }
+  .competency-body p {
+    font-size: 9.5pt;
+    color: var(--grafit);
+    line-height: 1.5;
+  }
+
+  .tools-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tool-pill {
+    font-family: var(--font-mono);
+    font-size: 8pt;
+    color: var(--tiefsee);
+    background: var(--papier);
+    border: 1px solid var(--dunst);
+    border-radius: 999px;
+    padding: 4px 12px;
+    line-height: 1.2;
+  }
+
+  .compliance-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.8;
+    color: var(--tinte);
+  }
+  .compliance-list li::before {
+    content: "✓ ";
+    color: var(--moos);
+    font-weight: 700;
+    margin-right: 8px;
+  }
+
+  .cv-footer {
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px solid var(--dunst);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 8pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--grau-mitte);
+  }
+  .cv-footer strong {
+    color: var(--tiefsee);
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ PAGE 1 — DECKBLATT ═══════════ -->
+<div class="cover">
+
+  <div class="cover-band">
+    <div class="left">
+      <span class="signet">/////</span>
+      <span>DMA · Digitale Mitarbeiter Agentur</span>
+    </div>
+    <div class="right">Lebenslauf · 2026</div>
+  </div>
+
+  <div class="cover-body">
+    <div class="role-tag" id="cover-role-tag">Operations · Innendienst</div>
+
+    <div class="cover-portrait-wrap">
+      <img class="cover-portrait" id="cover-portrait" src="../assets/personas/paula-poster.jpg" alt="Paula" />
+      <div class="cover-portrait-mark" id="cover-mark">P</div>
+    </div>
+
+    <div class="cover-label">Digitaler Mitarbeiter</div>
+    <h1 id="cover-name">Paula</h1>
+    <div class="cover-role" id="cover-role">Digitale Auftragssachbearbeiterin</div>
+
+    <div class="cover-for">
+      <div class="line-small">Verfügbar für</div>
+      <div class="position" id="cover-scope-position">Industrie-Mittelstand · DACH</div>
+      <div class="scope" id="cover-scope-detail">Innendienst-Rollen · 50–500 Mitarbeiter</div>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <div>Erstgespräch · <span>dma-agentur.de</span></div>
+    <div>Stuttgart · München</div>
+    <div>Profil-Code · <span id="cover-code">DMA-PAULA-01</span></div>
+  </div>
+
+</div>
+
+<!-- ═══════════ PAGE 2+ — LEBENSLAUF ═══════════ -->
+
+<div class="cv-header">
+  <img class="cv-portrait" id="cv-portrait" src="../assets/personas/paula-poster.jpg" alt="Paula" />
+  <div class="cv-name-col">
+    <h1 id="cv-name">Paula</h1>
+    <div class="cv-title" id="cv-title">Digitale Auftragssachbearbeiterin</div>
+    <div class="ai-inline">Digitaler Mitarbeiter · DMA</div>
+    <div class="cv-contact">
+      <span><strong>Erstgespräch</strong> dma-agentur.de</span>
+      <span><strong>Standort</strong> Stuttgart · München</span>
+      <br>
+      <span><strong>Verfügbarkeit</strong> 24 / 7 · keine Ausfälle</span>
+      <span><strong>Einsatz</strong> ab Tag 30</span>
+    </div>
+  </div>
+</div>
+
+<div class="cv-section profile">
+  <h2>Profil</h2>
+  <p id="cv-profile"></p>
+</div>
+
+<div class="cv-section">
+  <h2>Persönliche Daten</h2>
+  <table class="details-table">
+    <tr><td class="label">Name</td><td class="value"><strong id="cv-d-name">Paula</strong></td></tr>
+    <tr><td class="label">Typ</td><td class="value">Digitaler Mitarbeiter (Software)</td></tr>
+    <tr><td class="label">Betrieben von</td><td class="value">DMA · Digitale Mitarbeiter Agentur</td></tr>
+    <tr><td class="label">Im Einsatz seit</td><td class="value">2026</td></tr>
+    <tr><td class="label">Arbeitsmodell</td><td class="value">Personaldienstleistung · 24 / 7</td></tr>
+    <tr><td class="label">Sprachen</td><td class="value">Deutsch (Sie-Form), Englisch</td></tr>
+    <tr><td class="label">Standort</td><td class="value">EU-Rechenzentrum Frankfurt · On-Premise auf Wunsch</td></tr>
+  </table>
+</div>
+
+<div class="cv-section">
+  <h2>Kernkompetenzen</h2>
+  <div id="cv-competencies"></div>
+</div>
+
+<div class="cv-section">
+  <h2>Tool-Stack</h2>
+  <div class="tools-row" id="cv-tools"></div>
+</div>
+
+<div class="cv-section">
+  <h2>Trainings-Grundlage</h2>
+  <p style="font-size: 10pt; color: var(--tinte); line-height: 1.55;" id="cv-training"></p>
+</div>
+
+<div class="cv-section">
+  <h2>Compliance &amp; Sicherheit</h2>
+  <ul class="compliance-list">
+    <li>DSGVO-konform · AV-Vertrag standardisiert</li>
+    <li>EU-Rechenzentrum Frankfurt · kein Modell-Training mit Ihren Daten</li>
+    <li>On-Premise auf Wunsch · Ihre Daten verlassen Ihr Netzwerk nicht</li>
+    <li>Audit-Trail · jede Aktion dokumentiert</li>
+  </ul>
+</div>
+
+<div class="cv-section">
+  <h2>Nächster Schritt</h2>
+  <table class="details-table">
+    <tr><td class="label">Erstgespräch (30 min)</td><td class="value"><a href="https://dma-agentur.de#lead">dma-agentur.de</a></td></tr>
+    <tr><td class="label">Live-Demo</td><td class="value">Auf Anfrage — wir zeigen den Workflow im Erstgespräch</td></tr>
+    <tr><td class="label">Ansprechpartner</td><td class="value">Felipe · DMA · <a href="mailto:felipe@dma-agentur.de">felipe@dma-agentur.de</a></td></tr>
+  </table>
+</div>
+
+<div class="cv-footer">
+  <div><strong>DMA</strong> · Digitale Mitarbeiter Agentur</div>
+  <div>Profil-Code · <span id="cv-code">DMA-PAULA-01</span></div>
+</div>
+
+<script>
+  const personas = {
+    paula: {
+      name: "Paula",
+      mark: "P",
+      role: "Digitale Auftragssachbearbeiterin",
+      roleTag: "Operations · Innendienst",
+      code: "DMA-PAULA-01",
+      portrait: "../assets/personas/paula-poster.jpg",
+      scopePosition: "Industrie-Mittelstand · DACH",
+      scopeDetail: "Innendienst-Rollen · 50–500 Mitarbeiter",
+      profile: "Übernimmt Auftragsannahme, Auftragsbestätigungen und Liefertermin-Verfolgung in Industrie-Mittelstands-Innendiensten. Trainiert auf Ihre historischen Auftragsdaten — versteht Branchen-Sprache, Fachbegriffe und Standard-Reklamations-Patterns.",
+      competencies: [
+        ["Auftragsannahme", "Eingehende Anfragen klassifizieren, Auftragsstammdaten anlegen, ERP-Eingabe."],
+        ["Liefertermin-Verfolgung", "Status-Updates an Kunden, Eskalationen an den Vertrieb, Termin-Konflikt-Management."],
+        ["Reklamations-Erstaufnahme", "Foto- und Lieferschein-Doku, Ticket-Erstellung, Routing an Service."],
+        ["Kundenrückfragen", "Erste Antwort-Drafts in Sie-Form, Wissens-Lookup, Übergabe an Mensch wenn nötig."],
+        ["ERP-Pflege", "Stammdaten-Korrekturen, Status-Sync, CRM-Konsistenz."],
+        ["Eskalations-Routing", "Erkennt komplexe Fälle, übergibt sauber dokumentiert an verantwortliche Kollegen."]
+      ],
+      tools: ["SAP Business One", "HubSpot", "Microsoft 365", "DocuWare", "DATEV", "Lexware Office"],
+      training: "Trainiert auf Ihre historischen Auftragsdaten und ERP-Stammdaten · branchenspezifische SOPs aus Maschinen- und Anlagenbau, Metallverarbeitung, Elektroindustrie · iterative Korrektur durch den verantwortlichen Sachbearbeiter in den ersten 30 Tagen."
+    },
+    martin: {
+      name: "Martin",
+      mark: "M",
+      role: "Digitaler Einkaufssachbearbeiter",
+      roleTag: "Einkauf · Beschaffung",
+      code: "DMA-MARTIN-01",
+      portrait: "../assets/personas/martin-poster.jpg",
+      scopePosition: "Industrie-Mittelstand · DACH",
+      scopeDetail: "Einkaufs- und Beschaffungs-Rollen · 50–500 Mitarbeiter",
+      profile: "Übernimmt Bedarfsmeldungen, Lieferanten-Anfragen, Bestellabwicklung und Mahn-Vorlauf für Industrie-Einkaufsabteilungen. Trainiert auf Ihre Bestelldaten und Lieferanten-Stammdaten — kennt Ihre Rahmenverträge und Konditionen.",
+      competencies: [
+        ["Bedarfsmeldungen", "Werkstatt-Anfragen filtern, Mengen prüfen, Lieferzeit-Window kalkulieren."],
+        ["Lieferanten-Vergleich", "Top-3-Auswahl auf Basis von Preis, Lieferzeit und Rahmenvertrags-Status."],
+        ["Bestellabwicklung", "PO-Erstellung, Auftragsbestätigung-Tracking, ERP-Sync."],
+        ["Wareneingang", "DATEV-Buchung, Reklamations-Vorab-Filter, Lager-Update."],
+        ["Mahn-Vorlauf", "Verzögerungs-Detection, Lieferanten-Mahn-Mails, Eskalations-Routing."],
+        ["Rahmenvertrags-Pflege", "Konditionen tracken, Renewal-Hinweise, Compliance-Check."]
+      ],
+      tools: ["SAP Business One", "DATEV", "Lexware Office", "Microsoft 365", "E-Mail-Integration"],
+      training: "Trainiert auf Ihre Bestelldaten und Lieferanten-Stammdaten · branchenspezifische Material-Kataloge aus Stahl, Kunststoff, Elektronik-Komponenten · iterative Freigabe-Schwelle, ab der ein Mensch gegenzeichnen muss."
+    },
+    jonas: {
+      name: "Jonas",
+      mark: "J",
+      role: "Digitaler Vertriebsinnendienst",
+      roleTag: "Vertrieb · Innendienst",
+      code: "DMA-JONAS-01",
+      portrait: "../assets/personas/jonas-poster.jpg",
+      scopePosition: "Industrie-Mittelstand · DACH",
+      scopeDetail: "Vertriebs-Innendienst-Rollen · 50–500 Mitarbeiter",
+      profile: "Übernimmt Anfragen-Bewertung, Angebots-Erstellung, CRM-Pflege und Follow-Up für Industrie-Vertriebsteams. Trainiert auf Ihre Angebots- und Auftragsdaten — kennt Ihre Konfigurations-Logik und Preis-Mechanik.",
+      competencies: [
+        ["Anfragen-Bewertung", "A/B/C-Kunden-Klassifizierung, technische Machbarkeits-Prüfung, Routing."],
+        ["Angebots-Erstellung", "Standardangebote auf Basis Ihrer Konfigurations-Bibliothek und Preis-Kalkulation."],
+        ["CRM-Pflege", "Kontakt-Updates nach Calls, Opportunity-Stage-Sync, Aktivitäts-Logging."],
+        ["Follow-Up", "Sequence-Management mit 3-Mail-Cadence, Reaktivierungs-Outreach für Cold-Leads."],
+        ["Auftragsbestätigung", "Order-to-Cash-Übergabe an Operations, Vertrags-Standard-Doku."],
+        ["Pipeline-Reporting", "Wöchentliches Stage-Update für Vertriebsleitung, Forecast-Hinweise."]
+      ],
+      tools: ["HubSpot", "Pipedrive", "Microsoft 365", "Salesforce", "E-Mail-Integration"],
+      training: "Trainiert auf Ihre Angebots- und Auftragsdaten · branchenspezifische Konfigurations-Bibliothek · iterative Korrektur durch den Vertriebsleiter in den ersten 30 Tagen, bevor selbstständig gearbeitet wird."
+    }
+  };
+
+  function getPersonaKey() {
+    const params = new URLSearchParams(window.location.search);
+    const key = (params.get("persona") || "paula").toLowerCase();
+    return personas[key] ? key : "paula";
+  }
+
+  function render() {
+    const key = getPersonaKey();
+    const p = personas[key];
+
+    document.title = `DMA · Lebenslauf · ${p.name}`;
+
+    // Cover
+    document.getElementById("cover-name").textContent = p.name;
+    document.getElementById("cover-role").textContent = p.role;
+    document.getElementById("cover-role-tag").textContent = p.roleTag;
+    document.getElementById("cover-mark").textContent = p.mark;
+    document.getElementById("cover-code").textContent = p.code;
+    document.getElementById("cover-portrait").src = p.portrait;
+    document.getElementById("cover-portrait").alt = p.name;
+    document.getElementById("cover-scope-position").textContent = p.scopePosition;
+    document.getElementById("cover-scope-detail").textContent = p.scopeDetail;
+
+    // CV header
+    document.getElementById("cv-name").textContent = p.name;
+    document.getElementById("cv-title").textContent = p.role;
+    document.getElementById("cv-portrait").src = p.portrait;
+    document.getElementById("cv-portrait").alt = p.name;
+    document.getElementById("cv-d-name").textContent = p.name;
+    document.getElementById("cv-code").textContent = p.code;
+
+    // Profile + training
+    document.getElementById("cv-profile").textContent = p.profile;
+    document.getElementById("cv-training").textContent = p.training;
+
+    // Competencies
+    document.getElementById("cv-competencies").innerHTML = p.competencies.map(([title, body]) =>
+      `<div class="competency-row"><div class="competency-marker"></div><div class="competency-body"><h3>${title}</h3><p>${body}</p></div></div>`
+    ).join("");
+
+    // Tools
+    document.getElementById("cv-tools").innerHTML = p.tools.map(t =>
+      `<span class="tool-pill">${t}</span>`
+    ).join("");
+  }
+
+  render();
+</script>
+
+</body>
+</html>

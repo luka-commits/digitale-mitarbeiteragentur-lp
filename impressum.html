@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Impressum · DMA · Digitale Mitarbeiter Agentur</title>
+<meta name="description" content="Impressum der Digitale Mitarbeiter Agentur — DMA. Anbieterkennzeichnung gemäß § 5 TMG." />
+<meta name="robots" content="noindex,follow" />
+<link rel="canonical" href="https://lp-theta-lac.vercel.app/impressum.html" />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="stylesheet" href="colors_and_type.css" />
+<link rel="stylesheet" href="styles/site.css" />
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <div class="nav-left">
+      <a class="dma-nav-logo" href="index.html" aria-label="DMA · Digitale Mitarbeiter Agentur">
+        <pre class="dma-lockup dma-lockup--nav" aria-hidden="true"><span class="slash">////</span>DIGITALE
+<span class="slash">/</span>MITARBEITER
+<span class="slash">/////</span>AGENTUR</pre>
+      </a>
+      <div class="nav-center">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="artikel/index.html" data-i18n="nav.newsletter">Newsletter</a>
+        <a href="live-demo/index.html" data-i18n="nav.demos">Live Demos</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Sprache">
+        <button class="active" data-lang="de">DE</button>
+        <button data-lang="en" title="Englisch in Vorbereitung">EN</button>
+      </div>
+      <a class="btn btn-primary btn-sm" href="index.html#lead" data-i18n="nav.cta">Jetzt rekrutieren</a>
+      <button class="nav-mobile-toggle" id="nav-mobile-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-mobile-panel">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="nav-mobile-panel" id="nav-mobile-panel" aria-hidden="true">
+  <div class="container">
+    <div class="nav-mobile-links">
+      <a href="index.html">Home</a>
+      <a href="artikel/index.html">Newsletter</a>
+      <a href="live-demo/index.html">Live Demos</a>
+    </div>
+    <div class="nav-mobile-foot">
+      <a class="btn btn-primary btn-sm" href="index.html#lead">Jetzt rekrutieren</a>
+    </div>
+  </div>
+</div>
+
+<section class="legal-page">
+  <div class="container">
+    <div class="legal-wrap">
+      <a class="legal-back" href="index.html">← Zur Startseite</a>
+      <span class="eyebrow">Rechtliches</span>
+      <h1>Impressum</h1>
+
+      <p class="legal-note"><strong>Hinweis:</strong> Dieses Impressum ist ein <em>Platzhalter</em>. Die rechtsverbindlichen Angaben werden vor öffentlichem Launch durch Felipe ergänzt — Empfehlung: <a href="https://www.e-recht24.de/impressum-generator.html" target="_blank" rel="noopener">eRecht24-Impressum-Generator</a> oder Anwaltsprüfung.</p>
+
+      <h2>Anbieter</h2>
+      <p>
+        <strong>[Firmenname laut HRB]</strong><br />
+        [Straße + Hausnummer]<br />
+        [PLZ Ort]<br />
+        Deutschland
+      </p>
+
+      <h2>Vertretungsberechtigt</h2>
+      <p>Felipe Holanda — Geschäftsführer</p>
+
+      <h2>Kontakt</h2>
+      <p>
+        Telefon: [TODO]<br />
+        E-Mail: [TODO@dma-agentur.de]
+      </p>
+
+      <h2>Registereintrag</h2>
+      <p>
+        Eintragung im Handelsregister<br />
+        Registergericht: [Amtsgericht Stuttgart]<br />
+        Registernummer: [HRB TODO]
+      </p>
+
+      <h2>Umsatzsteuer-ID</h2>
+      <p>
+        Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
+        [DE TODO]
+      </p>
+
+      <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+      <p>
+        Felipe Holanda<br />
+        [Adresse wie oben]
+      </p>
+
+      <h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+      <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+      <h2>Haftungshinweis</h2>
+      <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom footer-bottom--bare">
+      <span>© 2026 DMA · Digitale Mitarbeiter Agentur · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('is-scrolled', window.scrollY > 8);
+});
+
+const navMobileToggle = document.getElementById('nav-mobile-toggle');
+const navMobilePanel = document.getElementById('nav-mobile-panel');
+function setMobilePanelOpen(open) {
+  navMobileToggle.classList.toggle('is-open', open);
+  navMobilePanel.classList.toggle('is-open', open);
+  navMobileToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  navMobilePanel.setAttribute('aria-hidden', open ? 'false' : 'true');
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+navMobileToggle.addEventListener('click', () => {
+  setMobilePanelOpen(!navMobilePanel.classList.contains('is-open'));
+});
+navMobilePanel.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => setMobilePanelOpen(false));
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && navMobilePanel.classList.contains('is-open')) setMobilePanelOpen(false);
+});
+</script>
+</body>
+</html>

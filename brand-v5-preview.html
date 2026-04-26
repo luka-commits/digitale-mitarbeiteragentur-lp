@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DMA Brand v5 Preview — Clean-Cool-Cobalt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Brand v5 Tokens — Clean-Cool-Cobalt */
+      --tiefsee:     #1A2E3A;
+      --tinte:       #0F172A;
+      --grafit:      #475569;
+      --grau-mitte:  #94A3B8;
+      --cobalt:      #1E3A8A;
+      --cobalt-hell: #5A7FE5;
+      --papier:      #F4F5F8;
+      --weiss:       #FAFAFC;
+      --nebel-hell:  #DBEAFE;
+      --nebel:       #BFDBFE;
+      --dunst:       #E2E8F0;
+
+      --font-sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+      --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-pill: 999px;
+
+      --ease-std: cubic-bezier(0.2, 0.6, 0.2, 1);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--weiss);
+      /* Brand v5 BG — kontinuierlicher Cobalt + Slate Gradient, no section breaks */
+      background-image:
+        radial-gradient(ellipse 80% 60% at 12% 8%,  rgba(30, 58, 138, 0.10), transparent 55%),
+        radial-gradient(ellipse 70% 55% at 92% 18%, rgba(15, 23, 42, 0.06),  transparent 60%),
+        radial-gradient(ellipse 90% 50% at 50% 100%, rgba(90, 127, 229, 0.14), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 85% 70%, rgba(30, 58, 138, 0.06), transparent 60%),
+        linear-gradient(180deg, var(--weiss) 0%, var(--papier) 100%);
+      background-attachment: fixed;
+      color: var(--tinte);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+    /* ============ PREVIEW HEADER ============ */
+    .preview-header {
+      padding: 80px 0 48px;
+      border-bottom: 1px solid var(--dunst);
+    }
+    .preview-eyebrow {
+      font-family: var(--font-mono); font-size: 12px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--grau-mitte); margin-bottom: 14px;
+    }
+    .preview-h1 {
+      font-size: 64px; font-weight: 700;
+      letter-spacing: -0.025em; line-height: 1.05;
+      margin: 0 0 16px; color: var(--tinte);
+    }
+    .preview-sub {
+      font-size: 18px; line-height: 1.55;
+      color: var(--grafit); margin: 0; max-width: 720px;
+    }
+
+    section.preview-section {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--dunst);
+    }
+    .section-title {
+      font-family: var(--font-mono); font-size: 12px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--cobalt); margin-bottom: 28px;
+    }
+
+    /* ============ COLOR PALETTE ============ */
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+    }
+    .swatch {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--dunst);
+      background: white;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+    }
+    .swatch-color {
+      aspect-ratio: 16/9;
+      border-bottom: 1px solid var(--dunst);
+    }
+    .swatch-meta { padding: 12px 14px; }
+    .swatch-name {
+      font-family: var(--font-mono); font-size: 11px;
+      font-weight: 500; color: var(--tinte); margin: 0 0 4px;
+    }
+    .swatch-hex {
+      font-family: var(--font-mono); font-size: 11px;
+      color: var(--cobalt); margin: 0;
+    }
+    .swatch-role {
+      font-size: 11px; color: var(--grau-mitte); margin: 6px 0 0;
+    }
+
+    /* ============ TYPOGRAPHY ============ */
+    .type-row {
+      margin-bottom: 28px; padding-bottom: 28px;
+      border-bottom: 1px dashed var(--dunst);
+    }
+    .type-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .type-label {
+      font-family: var(--font-mono); font-size: 11px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--grau-mitte); margin-bottom: 12px;
+    }
+    .type-display-xl { font-size: 96px; font-weight: 700; line-height: 1.05; letter-spacing: -0.025em; color: var(--tinte); margin: 0; text-wrap: balance; }
+    .type-display-l { font-size: 56px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: var(--tinte); margin: 0; }
+    .type-h2 { font-size: 32px; font-weight: 600; line-height: 1.2; color: var(--tinte); margin: 0; }
+    .type-h3 { font-size: 24px; font-weight: 600; color: var(--tinte); margin: 0; }
+    .type-body-l { font-size: 18px; line-height: 1.55; color: var(--grafit); margin: 0; max-width: 640px; }
+    .type-body { font-size: 16px; line-height: 1.55; color: var(--grafit); margin: 0; max-width: 640px; }
+    .type-eyebrow {
+      display: inline-block; font-family: var(--font-mono);
+      font-size: 12px; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--grau-mitte);
+    }
+
+    /* ============ BUTTONS ============ */
+    .button-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 24px; border-radius: var(--radius-sm);
+      font-family: var(--font-sans); font-weight: 500; font-size: 16px;
+      border: 1px solid transparent; cursor: pointer;
+      white-space: nowrap; text-decoration: none;
+      transition: all 180ms var(--ease-std);
+    }
+
+    /* Primary — Cobalt Liquid-Glass-Style */
+    .btn-primary {
+      background: linear-gradient(180deg, rgba(30, 58, 138, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
+      color: var(--weiss);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.18),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.20),
+        0 1px 0 rgba(15, 23, 42, 0.10),
+        0 4px 12px -2px rgba(30, 58, 138, 0.30),
+        0 0 24px -8px rgba(30, 58, 138, 0.20);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(180deg, rgba(30, 58, 138, 1) 0%, rgba(15, 23, 42, 1) 100%);
+      transform: translateY(-1px);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.22),
+        0 6px 16px -2px rgba(30, 58, 138, 0.40),
+        0 0 32px -8px rgba(30, 58, 138, 0.30);
+    }
+
+    /* Ghost */
+    .btn-ghost { background: transparent; color: var(--tiefsee); border-color: var(--tiefsee); }
+    .btn-ghost:hover { color: var(--cobalt); border-color: var(--cobalt); }
+
+    /* Text */
+    .btn-text {
+      background: transparent; color: var(--cobalt);
+      padding: 12px 0; border-bottom: 2px solid var(--cobalt);
+      border-radius: 0;
+    }
+    .btn-text:hover { color: var(--tiefsee); border-bottom-color: var(--tiefsee); }
+
+    /* ============ GLASS SURFACES (Premium-Glassmorphism v4.4 mit v5 Tokens) ============ */
+    .glass {
+      position: relative; isolation: isolate;
+      background: rgba(250, 250, 252, 0.62);
+      -webkit-backdrop-filter: blur(24px) saturate(180%) brightness(108%);
+              backdrop-filter: blur(24px) saturate(180%) brightness(108%);
+      border: 1px solid rgba(250, 250, 252, 0.55);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 1),
+        inset 1px 0 0 rgba(255, 255, 255, 0.5),
+        inset -1px 0 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(15, 23, 42, 0.06),
+        0 0 0 0.5px rgba(15, 23, 42, 0.04),
+        0 8px 32px -8px rgba(15, 23, 42, 0.10),
+        0 2px 8px -2px rgba(15, 23, 42, 0.05),
+        0 0 24px -8px rgba(30, 58, 138, 0.06);
+    }
+    .glass::before {
+      content: ""; position: absolute; inset: 0;
+      border-radius: inherit; pointer-events: none; z-index: -1;
+      background: linear-gradient(165deg, rgba(255, 255, 255, 0.14), transparent 60%);
+    }
+
+    .glass-strong {
+      position: relative; isolation: isolate;
+      background: rgba(250, 250, 252, 0.78);
+      -webkit-backdrop-filter: blur(40px) saturate(200%) brightness(108%);
+              backdrop-filter: blur(40px) saturate(200%) brightness(108%);
+      border: 1px solid rgba(250, 250, 252, 0.7);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 1),
+        inset 1px 0 0 rgba(255, 255, 255, 0.6),
+        inset -1px 0 0 rgba(255, 255, 255, 0.6),
+        inset 0 -1px 0 rgba(15, 23, 42, 0.08),
+        0 0 0 0.5px rgba(15, 23, 42, 0.05),
+        0 16px 48px -12px rgba(15, 23, 42, 0.18),
+        0 4px 16px -4px rgba(15, 23, 42, 0.08),
+        0 0 32px -8px rgba(30, 58, 138, 0.08);
+    }
+    .glass-strong::before {
+      content: ""; position: absolute; inset: 0;
+      border-radius: inherit; pointer-events: none; z-index: -1;
+      background: linear-gradient(165deg, rgba(255, 255, 255, 0.16), transparent 60%);
+    }
+
+    .glass-dark {
+      position: relative; isolation: isolate;
+      background: linear-gradient(165deg, rgba(26, 46, 58, 0.85) 0%, rgba(15, 23, 42, 0.92) 100%);
+      -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(108%);
+              backdrop-filter: blur(40px) saturate(180%) brightness(108%);
+      border: 1px solid rgba(90, 127, 229, 0.20);
+      color: var(--weiss);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        inset 1px 0 0 rgba(90, 127, 229, 0.12),
+        inset -1px 0 0 rgba(90, 127, 229, 0.12),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.20),
+        0 0 0 0.5px rgba(0, 0, 0, 0.20),
+        0 16px 48px -12px rgba(0, 0, 0, 0.45),
+        0 4px 16px -4px rgba(0, 0, 0, 0.20),
+        0 0 32px -8px rgba(30, 58, 138, 0.30);
+    }
+    .glass-dark::before {
+      content: ""; position: absolute; inset: 0;
+      border-radius: inherit; pointer-events: none; z-index: -1;
+      background: linear-gradient(165deg, rgba(90, 127, 229, 0.10), transparent 60%);
+    }
+
+    /* Pills */
+    .pill-row { display: flex; gap: 12px; flex-wrap: wrap; perspective: 600px; }
+    .pill {
+      display: inline-flex; align-items: center;
+      padding: 9px 16px; border-radius: var(--radius-pill);
+      font-family: var(--font-mono); font-size: 12px;
+      font-weight: 500; letter-spacing: 0.02em; color: var(--tiefsee);
+      transition: all 240ms var(--ease-std);
+      will-change: transform;
+    }
+    .pill:hover {
+      background: rgba(250, 250, 252, 0.55);
+      transform: translateY(-1px) rotateX(0.6deg);
+    }
+
+    .glass-panel {
+      padding: 32px;
+      border-radius: var(--radius-lg);
+    }
+    .glass-panel h3 {
+      font-size: 20px; font-weight: 600;
+      margin: 0 0 10px; color: var(--tinte);
+    }
+    .glass-panel p {
+      font-size: 14px; line-height: 1.55;
+      color: var(--grafit); margin: 0;
+    }
+    .glass-dark.glass-panel h3 { color: var(--weiss); }
+    .glass-dark.glass-panel p { color: var(--nebel-hell); }
+
+    .glass-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 720px) {
+      .glass-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============ NAV MOCK ============ */
+    .nav-mock-wrap { padding: 32px 0; }
+    .nav-mock {
+      padding: 16px 24px;
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-mock-logo {
+      font-family: var(--font-mono); font-weight: 700; font-size: 16px;
+      color: var(--tiefsee);
+    }
+    .nav-mock-logo span { color: var(--cobalt); }
+    .nav-mock-links { display: flex; gap: 4px; }
+    .nav-mock-links a {
+      padding: 8px 14px; font-size: 14px; color: var(--grafit);
+      border-radius: 6px; text-decoration: none;
+      transition: color 150ms, background 150ms;
+    }
+    .nav-mock-links a:hover { color: var(--tinte); background: rgba(15, 23, 42, 0.04); }
+
+    /* ============ MINI HERO MOCKUP ============ */
+    .hero-mock {
+      padding: 96px 32px 80px;
+      text-align: center;
+    }
+    .hero-mock-eyebrow {
+      display: inline-block; margin-bottom: 24px;
+    }
+    .hero-mock-headline {
+      font-size: 88px; font-weight: 700;
+      line-height: 1.05; letter-spacing: -0.025em;
+      color: var(--tinte); margin: 0 0 20px;
+      text-wrap: balance;
+    }
+    .hero-mock-sub {
+      font-size: 20px; line-height: 1.5;
+      color: var(--grafit); max-width: 680px;
+      margin: 0 auto 36px;
+    }
+    .hero-mock-ctas {
+      display: flex; gap: 16px; justify-content: center;
+      flex-wrap: wrap; margin-bottom: 48px;
+    }
+    .hero-mock-pills {
+      display: flex; gap: 12px; justify-content: center;
+      flex-wrap: wrap; perspective: 600px;
+    }
+
+    @media (max-width: 720px) {
+      .preview-h1 { font-size: 36px; }
+      .type-display-xl { font-size: 48px; }
+      .type-display-l { font-size: 36px; }
+      .type-h2 { font-size: 24px; }
+      .hero-mock-headline { font-size: 44px; }
+      .hero-mock-sub { font-size: 17px; }
+    }
+
+    /* ============ FOOTER ============ */
+    .preview-footer {
+      padding: 48px 32px 80px;
+      text-align: center;
+      color: var(--grau-mitte);
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ====== HEADER ====== -->
+<header class="preview-header">
+  <div class="container">
+    <div class="preview-eyebrow">DMA Brand · Designsystem · v5</div>
+    <h1 class="preview-h1">Clean-Cool-Cobalt</h1>
+    <p class="preview-sub">Pivot von warm Atelier (Cream + Petrol-Teal) zu cool Apple/Sierra-Style mit Cobalt-Tiefblau als Hauptfarbe. Kontinuierlicher Body-Gradient (kein Section-Break), Premium-Glassmorphism, IBM Plex Sans.</p>
+  </div>
+</header>
+
+<!-- ====== COLOR PALETTE ====== -->
+<section class="preview-section">
+  <div class="container">
+    <div class="section-title">Color · 11 Tokens</div>
+    <div class="palette-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#FAFAFC;"></div><div class="swatch-meta"><div class="swatch-name">--dma-elfenbein</div><div class="swatch-hex">#FAFAFC</div><div class="swatch-role">Page BG</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F4F5F8;"></div><div class="swatch-meta"><div class="swatch-name">--dma-papier</div><div class="swatch-hex">#F4F5F8</div><div class="swatch-role">Section BG, Cards</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#1E3A8A;"></div><div class="swatch-meta"><div class="swatch-name">--dma-petrol (Cobalt)</div><div class="swatch-hex">#1E3A8A</div><div class="swatch-role">CTAs, Links, Accents</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#5A7FE5;"></div><div class="swatch-meta"><div class="swatch-name">--dma-petrol-hell</div><div class="swatch-hex">#5A7FE5</div><div class="swatch-role">Hover, dark-surf accents</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#1A2E3A;"></div><div class="swatch-meta"><div class="swatch-name">--dma-tiefsee</div><div class="swatch-hex">#1A2E3A</div><div class="swatch-role">Dark text, dark surfaces</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#0F172A;"></div><div class="swatch-meta"><div class="swatch-name">--dma-tinte</div><div class="swatch-hex">#0F172A</div><div class="swatch-role">Body text</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#475569;"></div><div class="swatch-meta"><div class="swatch-name">--dma-grafit</div><div class="swatch-hex">#475569</div><div class="swatch-role">Body alt</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#94A3B8;"></div><div class="swatch-meta"><div class="swatch-name">--dma-grau-mitte</div><div class="swatch-hex">#94A3B8</div><div class="swatch-role">Captions, eyebrows</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#E2E8F0;"></div><div class="swatch-meta"><div class="swatch-name">--dma-dunst</div><div class="swatch-hex">#E2E8F0</div><div class="swatch-role">Borders, dividers</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#DBEAFE;"></div><div class="swatch-meta"><div class="swatch-name">--dma-nebel-hell</div><div class="swatch-hex">#DBEAFE</div><div class="swatch-role">Info surfaces</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#BFDBFE;"></div><div class="swatch-meta"><div class="swatch-name">--dma-nebel</div><div class="swatch-hex">#BFDBFE</div><div class="swatch-role">Footer accents</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== TYPOGRAPHY ====== -->
+<section class="preview-section">
+  <div class="container">
+    <div class="section-title">Typography · IBM Plex Sans</div>
+
+    <div class="type-row">
+      <div class="type-label">Display XL · 96 / 700 / -0.025em</div>
+      <p class="type-display-xl">Ihr neuer Kollege ist digital.</p>
+    </div>
+
+    <div class="type-row">
+      <div class="type-label">Display L · 56 / 700</div>
+      <p class="type-display-l">Section Headline</p>
+    </div>
+
+    <div class="type-row">
+      <div class="type-label">H2 · 32 / 600</div>
+      <h2 class="type-h2">Personaldienstleister für digitale Mitarbeiter</h2>
+    </div>
+
+    <div class="type-row">
+      <div class="type-label">H3 · 24 / 600</div>
+      <h3 class="type-h3">Karten-Titel</h3>
+    </div>
+
+    <div class="type-row">
+      <div class="type-label">Body L · 18 / 400</div>
+      <p class="type-body-l">In 30 Tagen besetzt — mit digitalen Mitarbeitern, die nie krank werden. Speziell für Industrie-Mittelstand 50–500 MA, DSGVO-konform, EU-Rechenzentrum.</p>
+    </div>
+
+    <div class="type-row">
+      <div class="type-label">Body · 16 / 400</div>
+      <p class="type-body">Standard-Fließtext. Ihr neuer Kollege übernimmt Auftragsannahme, Materialprüfung und Angebotsversand — vollautomatisch, jederzeit verfügbar.</p>
+    </div>
+
+    <div class="type-row">
+      <div class="type-label">Eyebrow Mono · 12 / 0.08em uppercase</div>
+      <span class="type-eyebrow">Industrie-Mittelstand · DSGVO · EU-Rechenzentrum</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== BUTTONS ====== -->
+<section class="preview-section">
+  <div class="container">
+    <div class="section-title">Buttons · CTA-System</div>
+    <div class="button-row">
+      <a href="#" class="btn btn-primary">Erstgespräch buchen</a>
+      <a href="#" class="btn btn-ghost">CV ansehen</a>
+      <a href="#" class="btn btn-text">Digitale Kollegen kennenlernen</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== GLASS SURFACES ====== -->
+<section class="preview-section">
+  <div class="container">
+    <div class="section-title">Glass · Premium-Glassmorphism v4.4 mit v5 Tokens</div>
+
+    <div style="margin-bottom: 36px;">
+      <div class="type-label">Hero-Pills · .glass + Hover Micro-Tilt 0.6°</div>
+      <div class="pill-row">
+        <span class="pill glass">30 Tage besetzt</span>
+        <span class="pill glass">DSGVO · EU-Rechenzentrum</span>
+        <span class="pill glass">24 / 7 verfügbar</span>
+      </div>
+      <p style="font-size: 13px; color: var(--grau-mitte); margin: 12px 0 0;">Hover über die Pills → 1px Lift + 0.6° Tilt. Multi-stop specular sichtbar an allen 4 Kanten.</p>
+    </div>
+
+    <div style="margin-bottom: 36px;">
+      <div class="type-label">Nav-Bar · .glass auf Body-Gradient</div>
+      <div class="nav-mock-wrap">
+        <div class="nav-mock glass">
+          <div class="nav-mock-logo">/////<span>DMA</span></div>
+          <div class="nav-mock-links">
+            <a href="#">Lösung</a>
+            <a href="#">Kollegen</a>
+            <a href="#">Prozess</a>
+            <a href="#">FAQ</a>
+          </div>
+          <a href="#" class="btn btn-primary" style="padding: 9px 16px; font-size: 14px;">Erstgespräch</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 36px;">
+      <div class="type-label">Light Glass · .glass + .glass-strong</div>
+      <div class="glass-grid">
+        <div class="glass glass-panel">
+          <h3>.glass — Standard Surface</h3>
+          <p>Backdrop blur 24px + saturate 180% + brightness 108%. Multi-stop specular insets auf 4 Kanten, inner gradient-wash via ::before, material depth glow. Verwendung: FAQ-Wrapper, Hero-Pills, Nav-on-Scroll.</p>
+        </div>
+        <div class="glass-strong glass-panel">
+          <h3>.glass-strong — Modal/Drawer</h3>
+          <p>Stronger blur 40px + saturate 200% + brightness 108%. Kräftigere Insets, satterer Inner-Wash. Verwendung: Demo-Drawer, große Statement-Surfaces.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="type-label">Dark Glass · .glass-dark mit Cobalt-Hell Side-Rims</div>
+      <div class="glass-dark glass-panel">
+        <h3>.glass-dark — Apple-Vision-Pro Style mit v5 Cobalt</h3>
+        <p>Tiefsee-zu-Tinte Vertical-Gradient mit Cobalt-Hell-getönten Side-Rims (vorher Petrol-Hell), Cobalt-Glow im Outer-Shadow. Verwendung: CV-Drawer, Statement-Surfaces auf hellem BG.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== HERO MOCKUP — APPLICATION ====== -->
+<section style="border-bottom: none;">
+  <div class="container">
+    <div class="hero-mock">
+      <span class="type-eyebrow hero-mock-eyebrow">Digitale Mitarbeiter · Industrie-Mittelstand · DSGVO-konform</span>
+      <h1 class="hero-mock-headline">Ihr neuer Kollege<br>ist digital.</h1>
+      <p class="hero-mock-sub">In 30 Tagen besetzt — mit digitalen Mitarbeitern, die nie krank werden.</p>
+      <div class="hero-mock-ctas">
+        <a href="#" class="btn btn-primary">Erstgespräch buchen</a>
+        <a href="#" class="btn btn-text">Digitale Kollegen kennenlernen</a>
+      </div>
+      <div class="hero-mock-pills">
+        <span class="pill glass">30 Tage besetzt</span>
+        <span class="pill glass">DSGVO · EU-Rechenzentrum</span>
+        <span class="pill glass">24 / 7 verfügbar</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="preview-footer">
+  DMA Brand v5 · Clean-Cool-Cobalt Preview · 2026-04-25
+</footer>
+
+</body>
+</html>

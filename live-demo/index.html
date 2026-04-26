@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Live-Demos · DMA — Drei digitale Mitarbeiter im Einsatz</title>
+<meta name="description" content="Drei interaktive Live-Demos der digitalen Mitarbeiter Paula, Martin und Jonas. Cockpit, Workflow und Tool-Integration zum Selbst-Durchklicken." />
+<link rel="canonical" href="https://lp-theta-lac.vercel.app/live-demo/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="DMA · Digitale Mitarbeiter Agentur" />
+<meta property="og:title" content="Live-Demos · DMA — Drei digitale Mitarbeiter im Einsatz" />
+<meta property="og:description" content="Cockpit, Workflow und Tool-Integration der digitalen Mitarbeiter Paula, Martin und Jonas — zum Selbst-Durchklicken." />
+<meta property="og:url" content="https://lp-theta-lac.vercel.app/live-demo/" />
+<meta property="og:image" content="https://lp-theta-lac.vercel.app/assets/og-image.png" />
+<meta property="og:locale" content="de_DE" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Live-Demos · DMA" />
+<meta name="twitter:description" content="Drei digitale Mitarbeiter im Einsatz — Cockpit, Workflow, Stats." />
+<meta name="twitter:image" content="https://lp-theta-lac.vercel.app/assets/og-image.png" />
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+<link rel="stylesheet" href="../colors_and_type.css" />
+<link rel="stylesheet" href="../styles/site.css" />
+<style>
+  /* ================== LIVE-DEMO HUB ================== */
+  .demo-hub {
+    padding: 96px 0 48px;
+    background: var(--dma-papier);
+  }
+  .demo-hub .section-head {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 40px;
+  }
+  .demo-hub h1 {
+    font-size: var(--dma-text-3xl);
+    margin-bottom: 16px;
+  }
+  .demo-hub .lede {
+    font-size: var(--dma-text-md);
+    color: var(--dma-fg-muted);
+    line-height: var(--dma-lead-body);
+  }
+
+  .demo-anchor-nav {
+    position: sticky;
+    top: 56px;
+    z-index: 40;
+    margin: 0 auto 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 0;
+    background: rgba(250, 250, 252, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--dma-dunst);
+  }
+  .demo-anchor-nav a {
+    font-family: var(--dma-font-mono);
+    font-size: 12px;
+    letter-spacing: var(--dma-track-eyebrow);
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: var(--dma-radius-sm);
+    color: var(--dma-fg-muted);
+    text-decoration: none;
+    transition: color 150ms, background 150ms;
+  }
+  .demo-anchor-nav a:hover,
+  .demo-anchor-nav a.is-active {
+    color: var(--dma-tiefsee);
+    background: var(--dma-nebel-hell);
+  }
+
+  /* Persona-Card — full-width, Media + Meta */
+  .demo-section {
+    padding: 80px 0;
+    border-top: 1px solid var(--dma-dunst);
+    scroll-margin-top: 120px;
+  }
+  .demo-section:first-of-type { border-top: none; }
+
+  .demo-section-head {
+    margin-bottom: 32px;
+    max-width: 720px;
+  }
+  .demo-section-head .demo-tag {
+    display: inline-block;
+    font-family: var(--dma-font-mono);
+    font-size: 11px;
+    letter-spacing: var(--dma-track-eyebrow);
+    text-transform: uppercase;
+    color: var(--dma-petrol);
+    margin-bottom: 12px;
+  }
+  .demo-section-head h2 {
+    font-size: var(--dma-text-2xl);
+    margin-bottom: 6px;
+  }
+  .demo-section-head .demo-role {
+    font-size: var(--dma-text-md);
+    color: var(--dma-fg-muted);
+  }
+
+  .demo-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: 40px;
+    align-items: start;
+  }
+  @media (max-width: 980px) {
+    .demo-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  /* ── Preview-Spalte: Mockup + Video ── */
+  .demo-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .demo-mockup {
+    background: var(--dma-elfenbein);
+    border: 1px solid var(--dma-dunst);
+    border-radius: var(--dma-radius-md);
+    overflow: hidden;
+    box-shadow: 0 12px 32px -16px rgba(26, 46, 58, 0.18);
+  }
+  .demo-mockup-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: var(--dma-papier);
+    border-bottom: 1px solid var(--dma-dunst);
+  }
+  .demo-mockup-bar .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--dma-dunst);
+  }
+  .demo-mockup-bar .demo-mockup-url {
+    margin-left: 8px;
+    font-family: var(--dma-font-mono);
+    font-size: 11px;
+    color: var(--dma-fg-subtle);
+    letter-spacing: 0.04em;
+  }
+  .demo-mockup-body {
+    aspect-ratio: 16 / 10;
+    background: linear-gradient(135deg, var(--dma-papier) 0%, var(--dma-nebel-hell) 100%);
+    background-image:
+      linear-gradient(135deg, transparent 0%, rgba(47, 118, 128, 0.03) 100%),
+      repeating-linear-gradient(
+        0deg,
+        transparent 0px,
+        transparent 23px,
+        rgba(26, 46, 58, 0.05) 23px,
+        rgba(26, 46, 58, 0.05) 24px
+      );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+    position: relative;
+  }
+  .demo-mockup-body::after {
+    content: "";
+    position: absolute;
+    inset: 16px;
+    border: 1px dashed var(--dma-dunst);
+    border-radius: var(--dma-radius-sm);
+    pointer-events: none;
+  }
+  .demo-mockup-label {
+    position: relative;
+    font-family: var(--dma-font-mono);
+    font-size: 11px;
+    letter-spacing: var(--dma-track-eyebrow);
+    text-transform: uppercase;
+    color: var(--dma-petrol);
+    background: var(--dma-elfenbein);
+    padding: 6px 14px;
+    border-radius: var(--dma-radius-sm);
+    border: 1px solid var(--dma-dunst);
+  }
+
+  .demo-video-wrap {
+    background: var(--dma-elfenbein);
+    border: 1px solid var(--dma-dunst);
+    border-radius: var(--dma-radius-md);
+    padding: 20px;
+  }
+  .demo-video-wrap .video-caption {
+    display: block;
+    font-family: var(--dma-font-mono);
+    font-size: 11px;
+    letter-spacing: var(--dma-track-eyebrow);
+    text-transform: uppercase;
+    color: var(--dma-petrol);
+    margin-bottom: 12px;
+  }
+  .demo-video-frame {
+    aspect-ratio: 16 / 9;
+    background: var(--dma-papier);
+    border: 1px dashed var(--dma-dunst);
+    border-radius: var(--dma-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+  }
+  .demo-video-frame p {
+    color: var(--dma-fg-subtle);
+    font-size: 14px;
+    max-width: 360px;
+  }
+  .demo-video-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: calc(var(--dma-radius-sm) - 1px);
+  }
+
+  /* ── Meta-Spalte: Summary + Stats + Tools + CTA ── */
+  .demo-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .demo-summary {
+    font-size: var(--dma-text-md);
+    line-height: var(--dma-lead-body);
+    color: var(--dma-fg);
+    margin: 0;
+  }
+  .demo-meta h4 {
+    font-family: var(--dma-font-display);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--dma-tinte);
+    margin: 0 0 12px;
+  }
+  .demo-meta .demo-meta-block { margin: 0; }
+
+  .demo-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .demo-cta-row .btn { flex: 0 0 auto; }
+  @media (max-width: 520px) {
+    .demo-cta-row { flex-direction: column; align-items: stretch; }
+    .demo-cta-row .btn { justify-content: center; width: 100%; }
+  }
+
+  .demo-cta-block {
+    margin: 96px 0 0;
+    padding: 64px 32px;
+    text-align: center;
+    background: var(--dma-tiefsee);
+    color: var(--dma-elfenbein);
+    border-radius: var(--dma-radius-lg);
+  }
+  .demo-cta-block h3 {
+    font-size: var(--dma-text-2xl);
+    color: var(--dma-elfenbein);
+    margin-bottom: 12px;
+  }
+  .demo-cta-block p {
+    color: rgba(250, 250, 252, 0.75);
+    margin-bottom: 24px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <div class="nav-left">
+      <a class="dma-nav-logo" href="../index.html" aria-label="DMA · Digitale Mitarbeiter Agentur">
+        <pre class="dma-lockup dma-lockup--nav" aria-hidden="true"><span class="slash">////</span>DIGITALE
+<span class="slash">/</span>MITARBEITER
+<span class="slash">/////</span>AGENTUR</pre>
+      </a>
+      <div class="nav-center">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+        <a href="../artikel/index.html" data-i18n="nav.newsletter">Newsletter</a>
+        <a href="index.html" data-i18n="nav.demos" aria-current="page">Live Demos</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Sprache">
+        <button class="active" data-lang="de">DE</button>
+        <button data-lang="en" title="Englisch in Vorbereitung">EN</button>
+      </div>
+      <a class="btn btn-primary btn-sm" href="../index.html#lead" data-i18n="nav.cta">Erstgespräch</a>
+      <button class="nav-mobile-toggle" id="nav-mobile-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-mobile-panel">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="nav-mobile-panel" id="nav-mobile-panel" aria-hidden="true">
+  <div class="container">
+    <div class="nav-mobile-links">
+      <a href="../index.html" data-i18n="nav.home">Home</a>
+      <a href="../artikel/index.html" data-i18n="nav.newsletter">Newsletter</a>
+      <a href="index.html" data-i18n="nav.demos">Live Demos</a>
+    </div>
+    <div class="nav-mobile-foot">
+      <div class="lang-toggle" role="group" aria-label="Sprache">
+        <button class="active" data-lang="de">DE</button>
+        <button data-lang="en" title="Englisch in Vorbereitung">EN</button>
+      </div>
+      <a class="btn btn-primary btn-sm" href="../index.html#lead" data-i18n="nav.cta">Erstgespräch</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HUB HEAD ============ -->
+<section class="demo-hub">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow" data-i18n="livedemo.eyebrow">Live-Demos · Drei Rollen zum Durchklicken</span>
+      <h1 data-i18n="livedemo.headline">Drei digitale Mitarbeiter. Selbst durchklicken.</h1>
+      <p class="lede" data-i18n="livedemo.lede">Vorschau, kurzer Video-Walkthrough und ein Klick in die echte Demo-Anwendung. So sehen Paula, Martin und Jonas im Tagesgeschäft aus — bevor wir gemeinsam das Erstgespräch führen.</p>
+    </div>
+  </div>
+
+  <nav class="demo-anchor-nav" aria-label="Demo-Auswahl">
+    <a href="#paula" data-anchor="paula">Paula · Aufträge</a>
+    <a href="#martin" data-anchor="martin">Martin · Einkauf</a>
+    <a href="#jonas" data-anchor="jonas">Jonas · Vertrieb</a>
+  </nav>
+</section>
+
+<main class="container">
+
+  <!-- ============ PAULA ============ -->
+  <section class="demo-section" id="paula">
+    <div class="demo-section-head fade-up">
+      <span class="demo-tag" data-i18n="ext.paula.tag">Auftrag rein</span>
+      <h2 data-i18n="ext.paula.name">Paula</h2>
+      <div class="demo-role" data-i18n="ext.paula.role">Digitale Auftragssachbearbeiterin</div>
+    </div>
+
+    <div class="demo-grid fade-up">
+      <div class="demo-preview">
+        <div class="demo-mockup" aria-label="Vorschau Paula-Cockpit">
+          <div class="demo-mockup-bar">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="demo-mockup-url">demo.dma.de/paula</span>
+          </div>
+          <div class="demo-mockup-body">
+            <span class="demo-mockup-label" data-i18n="livedemo.mockup.label">Cockpit-Vorschau · Screenshot folgt</span>
+          </div>
+        </div>
+        <div class="demo-video-wrap">
+          <span class="video-caption" data-i18n="livedemo.video.caption">Video-Tour · 90 Sek.</span>
+          <div class="demo-video-frame">
+            <!-- Loom-Embed: <iframe src="TODO-felipe-loom-paula" allow="fullscreen"></iframe> -->
+            <p data-i18n="livedemo.video.body">Loom-Walkthrough mit Felipe folgt. Bis dahin: Demo öffnen oder Erstgespräch buchen.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-meta">
+        <p class="demo-summary" data-i18n="livedemo.paula.summary">Paula liest eingehende E-Mails, prüft Stammdaten, legt Aufträge im SAP an und versendet Bestätigungen. Sie sehen jeden Schritt im Cockpit — und greifen ein, wenn Paula einen Konflikt eskaliert.</p>
+
+        <div>
+          <h4 data-i18n="livedemo.stats.head">Was Paula heute geleistet hat</h4>
+          <div class="drawer-stats">
+            <div class="drawer-stat">
+              <div class="stat-num">47</div>
+              <span class="stat-label" data-i18n="livedemo.paula.stat1">Vorgänge bearbeitet</span>
+            </div>
+            <div class="drawer-stat">
+              <div class="stat-num">3,2 h</div>
+              <span class="stat-label" data-i18n="livedemo.paula.stat2">Ø Reaktionszeit</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 data-i18n="livedemo.tools.head">Integriert in</h4>
+          <div class="drawer-tools" id="tools-paula"></div>
+        </div>
+
+        <div class="demo-cta-row">
+          <a class="btn btn-primary" href="TODO-felipe-demo-paula" target="_blank" rel="noopener" data-i18n="livedemo.cta.open">Demo öffnen</a>
+          <a class="btn btn-ghost" href="../index.html#lead" data-i18n="livedemo.cta.book">Erstgespräch buchen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARTIN ============ -->
+  <section class="demo-section" id="martin">
+    <div class="demo-section-head fade-up">
+      <span class="demo-tag" data-i18n="ext.martin.tag">Material rein</span>
+      <h2 data-i18n="ext.martin.name">Martin</h2>
+      <div class="demo-role" data-i18n="ext.martin.role">Digitaler Einkaufssachbearbeiter</div>
+    </div>
+
+    <div class="demo-grid fade-up">
+      <div class="demo-preview">
+        <div class="demo-mockup" aria-label="Vorschau Martin-Cockpit">
+          <div class="demo-mockup-bar">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="demo-mockup-url">demo.dma.de/martin</span>
+          </div>
+          <div class="demo-mockup-body">
+            <span class="demo-mockup-label" data-i18n="livedemo.mockup.label">Cockpit-Vorschau · Screenshot folgt</span>
+          </div>
+        </div>
+        <div class="demo-video-wrap">
+          <span class="video-caption" data-i18n="livedemo.video.caption">Video-Tour · 90 Sek.</span>
+          <div class="demo-video-frame">
+            <p data-i18n="livedemo.video.body">Loom-Walkthrough mit Felipe folgt. Bis dahin: Demo öffnen oder Erstgespräch buchen.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-meta">
+        <p class="demo-summary" data-i18n="livedemo.martin.summary">Martin nimmt Bedarfsmeldungen aus der Werkstatt entgegen, vergleicht Lieferanten, gibt Bestellungen frei und verbucht Wareneingänge. Reklamationen, Mahnungen und Forecast laufen sauber im Hintergrund mit.</p>
+
+        <div>
+          <h4 data-i18n="livedemo.stats.head">Was Martin diesen Monat geleistet hat</h4>
+          <div class="drawer-stats">
+            <div class="drawer-stat">
+              <div class="stat-num">34</div>
+              <span class="stat-label" data-i18n="livedemo.martin.stat1">Bestellungen ausgelöst</span>
+            </div>
+            <div class="drawer-stat">
+              <div class="stat-num">12 %</div>
+              <span class="stat-label" data-i18n="livedemo.martin.stat2">Ø Einsparung Lieferantenwechsel</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 data-i18n="livedemo.tools.head">Integriert in</h4>
+          <div class="drawer-tools" id="tools-martin"></div>
+        </div>
+
+        <div class="demo-cta-row">
+          <a class="btn btn-primary" href="TODO-felipe-demo-martin" target="_blank" rel="noopener" data-i18n="livedemo.cta.open">Demo öffnen</a>
+          <a class="btn btn-ghost" href="../index.html#lead" data-i18n="livedemo.cta.book">Erstgespräch buchen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ JONAS ============ -->
+  <section class="demo-section" id="jonas">
+    <div class="demo-section-head fade-up">
+      <span class="demo-tag" data-i18n="ext.jonas.tag">Angebot raus</span>
+      <h2 data-i18n="ext.jonas.name">Jonas</h2>
+      <div class="demo-role" data-i18n="ext.jonas.role">Digitaler Vertriebsinnendienst</div>
+    </div>
+
+    <div class="demo-grid fade-up">
+      <div class="demo-preview">
+        <div class="demo-mockup" aria-label="Vorschau Jonas-Cockpit">
+          <div class="demo-mockup-bar">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="demo-mockup-url">demo.dma.de/jonas</span>
+          </div>
+          <div class="demo-mockup-body">
+            <span class="demo-mockup-label" data-i18n="livedemo.mockup.label">Cockpit-Vorschau · Screenshot folgt</span>
+          </div>
+        </div>
+        <div class="demo-video-wrap">
+          <span class="video-caption" data-i18n="livedemo.video.caption">Video-Tour · 90 Sek.</span>
+          <div class="demo-video-frame">
+            <p data-i18n="livedemo.video.body">Loom-Walkthrough mit Felipe folgt. Bis dahin: Demo öffnen oder Erstgespräch buchen.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-meta">
+        <p class="demo-summary" data-i18n="livedemo.jonas.summary">Jonas qualifiziert eingehende Anfragen, schreibt Angebote, hält Follow-Ups nach und pflegt das CRM sauber. Vom ersten Kontakt bis zur unterschriebenen Bestellung — ohne dass jemand klicken muss.</p>
+
+        <div>
+          <h4 data-i18n="livedemo.stats.head">Was Jonas diesen Monat geleistet hat</h4>
+          <div class="drawer-stats">
+            <div class="drawer-stat">
+              <div class="stat-num">23</div>
+              <span class="stat-label" data-i18n="livedemo.jonas.stat1">Angebote versendet</span>
+            </div>
+            <div class="drawer-stat">
+              <div class="stat-num">4 h</div>
+              <span class="stat-label" data-i18n="livedemo.jonas.stat2">Ø Time-to-Quote</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 data-i18n="livedemo.tools.head">Integriert in</h4>
+          <div class="drawer-tools" id="tools-jonas"></div>
+        </div>
+
+        <div class="demo-cta-row">
+          <a class="btn btn-primary" href="TODO-felipe-demo-jonas" target="_blank" rel="noopener" data-i18n="livedemo.cta.open">Demo öffnen</a>
+          <a class="btn btn-ghost" href="../index.html#lead" data-i18n="livedemo.cta.book">Erstgespräch buchen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <div class="demo-cta-block fade-up">
+    <h3 data-i18n="livedemo.cta.head">Welche Rolle passt in Ihren Innendienst?</h3>
+    <p data-i18n="livedemo.cta.body">15 Minuten, keine Folien. Wir gehen Ihren Vormittag durch und zeigen, wo ein digitaler Mitarbeiter sofort entlastet.</p>
+    <a class="btn btn-primary" href="../index.html#lead" data-i18n="livedemo.cta.btn">Erstgespräch buchen</a>
+  </div>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <pre class="dma-lockup dma-lockup--md dma-lockup--invers" aria-label="DIGITALE MITARBEITER AGENTUR"><span class="slash">////</span>DIGITALE
+<span class="slash">/</span>MITARBEITER
+<span class="slash">/////</span>AGENTUR</pre>
+        <p class="footer-tagline" data-i18n="foot.tagline">Personaldienstleister für digitale Mitarbeiter im deutschen Industrie-Mittelstand.</p>
+        <span class="footer-teaser" data-i18n="foot.teaser">Weitere Rollen auf Anfrage</span>
+      </div>
+      <div>
+        <h5 data-i18n="foot.menu">Menü</h5>
+        <ul>
+          <li><a href="../index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="../artikel/index.html" data-i18n="nav.newsletter">Newsletter</a></li>
+          <li><a href="index.html" data-i18n="nav.demos">Live Demos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-i18n="foot.standort">Standort</h5>
+        <ul>
+          <li>Stuttgart</li>
+          <li>München</li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-i18n="foot.folgen">Folgen</h5>
+        <ul>
+          <li><a href="#" data-i18n="foot.linkedin">LinkedIn</a></li>
+          <li><a href="#" data-i18n="foot.felipe">Felipe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-i18n="foot.recht">Recht</h5>
+        <ul>
+          <li><a href="../impressum.html" data-i18n="foot.impressum">Impressum</a></li>
+          <li><a href="../datenschutz.html" data-i18n="foot.datenschutz">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-divider">
+      <span data-i18n="foot.copy">© 2026 DMA · Digitale Mitarbeiter Agentur</span>
+      <span class="dma-signet dma-signet--md">/////</span>
+      <span data-i18n="foot.crafted">Made in Stuttgart</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─── Tools per Persona (rendered into pill rows) ───────────────
+const TOOLS = {
+  paula:  ['SAP B1', 'HubSpot', 'Microsoft 365', 'DocuWare'],
+  martin: ['SAP B1', 'DATEV', 'Lexoffice', 'E-Mail'],
+  jonas:  ['HubSpot', 'Pipedrive', 'Microsoft 365', 'CRM-Sync']
+};
+Object.entries(TOOLS).forEach(([persona, tools]) => {
+  const el = document.getElementById('tools-' + persona);
+  if (el) el.innerHTML = tools.map(t => `<span class="tool-pill">${t}</span>`).join('');
+});
+
+// ─── i18n ────────────────────────────────────────────────────
+const I18N = {
+  de: {},
+  en: {
+    "nav.home": "Home",
+    "nav.newsletter": "Newsletter",
+    "nav.demos": "Live Demos",
+    "nav.cta": "Book a call",
+
+    "ext.paula.tag": "Order in",
+    "ext.paula.name": "Paula",
+    "ext.paula.role": "Digital order-processing colleague",
+    "ext.martin.tag": "Material in",
+    "ext.martin.name": "Martin",
+    "ext.martin.role": "Digital procurement colleague",
+    "ext.jonas.tag": "Quote out",
+    "ext.jonas.name": "Jonas",
+    "ext.jonas.role": "Digital inside-sales colleague",
+
+    "livedemo.eyebrow": "Live demos · Three roles to click through",
+    "livedemo.headline": "Three digital colleagues. Click through yourself.",
+    "livedemo.lede": "Preview, a short video walkthrough and one click into the live demo. This is what Paula, Martin and Jonas look like on the job — before we sit down for an intro call.",
+    "livedemo.mockup.label": "Cockpit preview · screenshot coming",
+    "livedemo.video.caption": "Video tour · 90 sec.",
+    "livedemo.video.body": "Loom walkthrough with Felipe is on its way. Until then: open the demo or book a call.",
+
+    "livedemo.paula.summary": "Paula reads incoming emails, checks master data, creates orders in SAP and sends confirmations. You see every step in the cockpit — and step in when Paula escalates a conflict.",
+    "livedemo.martin.summary": "Martin handles requisitions from the workshop, compares suppliers, releases orders and posts goods receipts. Complaints, dunning and forecasts run cleanly in the background.",
+    "livedemo.jonas.summary": "Jonas qualifies incoming requests, drafts quotes, follows up on time and keeps the CRM clean. From first contact to signed order — without anyone clicking.",
+
+    "livedemo.stats.head": "What they delivered today",
+    "livedemo.tools.head": "Integrated with",
+
+    "livedemo.paula.stat1": "Cases handled",
+    "livedemo.paula.stat2": "Avg. response time",
+    "livedemo.martin.stat1": "Orders placed",
+    "livedemo.martin.stat2": "Avg. saving on supplier switch",
+    "livedemo.jonas.stat1": "Quotes sent",
+    "livedemo.jonas.stat2": "Avg. time-to-quote",
+
+    "livedemo.cta.open": "Open the demo",
+    "livedemo.cta.book": "Book a call",
+    "livedemo.cta.head": "Which role fits your back office?",
+    "livedemo.cta.body": "15 minutes, no slides. We walk through your morning and show where a digital colleague would relieve the load right away.",
+    "livedemo.cta.btn": "Book a call",
+
+    "foot.tagline": "Staffing for digital colleagues — industrial mid-market, DACH.",
+    "foot.menu": "Menu",
+    "foot.legal": "Legal",
+    "foot.impressum": "Imprint",
+    "foot.datenschutz": "Privacy",
+    "foot.copy": "© 2026 DMA · Digitale Mitarbeiter Agentur",
+    "foot.crafted": "Made in Stuttgart"
+  }
+};
+
+function applyLang(lang) {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const original = el.dataset.i18nOrig;
+    if (lang === 'de') {
+      if (original != null) el.innerHTML = original;
+      return;
+    }
+    const v = I18N[lang] && I18N[lang][key];
+    if (v != null && v !== '') el.innerHTML = v;
+    else if (original != null) el.innerHTML = original;
+  });
+  document.querySelectorAll('.lang-toggle button').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  try { localStorage.setItem('dma_lang', lang); } catch(e){}
+}
+document.querySelectorAll('[data-i18n]').forEach(el => { el.dataset.i18nOrig = el.innerHTML; });
+document.querySelectorAll('.lang-toggle button').forEach(b => {
+  b.addEventListener('click', () => applyLang(b.dataset.lang));
+});
+try {
+  const saved = localStorage.getItem('dma_lang');
+  if (saved === 'en') applyLang('en');
+} catch(e) {}
+
+// ─── Nav scroll + mobile ─────────────────────────────────────
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('is-scrolled', window.scrollY > 8);
+});
+
+const navMobileToggle = document.getElementById('nav-mobile-toggle');
+const navMobilePanel = document.getElementById('nav-mobile-panel');
+function setMobilePanelOpen(open) {
+  navMobileToggle.classList.toggle('is-open', open);
+  navMobilePanel.classList.toggle('is-open', open);
+  navMobileToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  navMobilePanel.setAttribute('aria-hidden', open ? 'false' : 'true');
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+navMobileToggle.addEventListener('click', () => {
+  setMobilePanelOpen(!navMobilePanel.classList.contains('is-open'));
+});
+navMobilePanel.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => setMobilePanelOpen(false));
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && navMobilePanel.classList.contains('is-open')) setMobilePanelOpen(false);
+});
+
+// ─── Anchor-Pill active state on scroll ──────────────────────
+const anchorLinks = document.querySelectorAll('.demo-anchor-nav a[data-anchor]');
+const sections = ['paula', 'martin', 'jonas'].map(id => document.getElementById(id));
+const anchorObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const id = e.target.id;
+    anchorLinks.forEach(a => a.classList.toggle('is-active', a.dataset.anchor === id));
+  });
+}, { rootMargin: '-40% 0px -55% 0px' });
+sections.forEach(s => s && anchorObserver.observe(s));
+
+// ─── Reveal on scroll ────────────────────────────────────────
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('is-visible');
+    io.unobserve(e.target);
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
