@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Martin · Digitaler Buchhalter — DMA Demo</title>
+<meta name="robots" content="noindex" />
+<link rel="stylesheet" href="../_shared/demo.css" />
+</head>
+<body>
+
+<div class="demo-stage-wrap">
+
+  <header class="demo-header">
+    <div class="demo-header-persona">
+      <div class="demo-header-avatar" aria-hidden="true">
+        <video poster="../../assets/personas/martin-poster.jpg" autoplay muted loop playsinline preload="metadata">
+          <source src="../../assets/personas/martin-anim.webm" type="video/webm">
+          <source src="../../assets/personas/martin-anim.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="demo-header-text">
+        <p class="persona-name">Martin</p>
+        <span class="persona-role">Digitaler Buchhalter · Werner-Antriebssysteme GmbH</span>
+      </div>
+    </div>
+    <div class="demo-header-meta">
+      <span class="live-dot" aria-hidden="true"></span>
+      <span>Live · Mo 27.04. · 09:14</span>
+    </div>
+  </header>
+
+  <div class="demo-cockpit">
+
+    <div class="demo-cockpit-bar">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="url">buchhaltung.werner-antriebssysteme.de/cockpit</span>
+      <div class="autoplay-progress"><span data-autoplay-progress></span></div>
+      <span class="step-indicator" data-step-indicator>Schritt <b>1</b> · von 5</span>
+    </div>
+
+    <div class="demo-cockpit-body">
+
+      <!-- ════════════════════════ STATE 1 · INBOX ════════════════════════ -->
+      <section class="demo-state" data-state="1">
+        <span class="state-eyebrow">Schritt 1 · Eingang</span>
+        <h2 class="state-title">Neue Eingangsrechnung — automatisch übernommen.</h2>
+
+        <div class="state-grid">
+          <article class="ticket">
+            <div class="ticket-head">
+              <div class="left">
+                <span class="new-pill">Neu</span>
+                <span>Beleg ER-2026-04891</span>
+                <span>·</span>
+                <span>DocuWare → Cockpit</span>
+              </div>
+              <span class="timestamp">Mo 27.04. · 09:14:22</span>
+            </div>
+            <div class="ticket-body">
+              <div class="ticket-from">
+                <div>
+                  <div class="from-name">Schmidt Stahl GmbH</div>
+                  <div class="from-org">Lieferant · Stahlguss · Stuttgart</div>
+                </div>
+                <div class="from-channel">PDF-Anhang · rechnungen@schmidt-stahl.de</div>
+              </div>
+              <div class="ticket-subject">RE-2026-04891 · Stahlguss-Komponenten · 4.872,40 € netto</div>
+              <p class="ticket-message">
+                Sehr geehrte Damen und Herren,<br><br>
+                anbei unsere Rechnung RE-2026-04891 zu Ihrer Bestellung PO-2026-217 vom 11.04.2026. Lieferung erfolgt heute (Lieferschein LS-26-1102).<br><br>
+                Zahlungsziel: 30 Tage netto, 2 % Skonto bei Zahlung innerhalb 14 Tagen.<br><br>
+                Mit freundlichen Grüßen<br>
+                Schmidt Stahl GmbH · Buchhaltung
+              </p>
+            </div>
+          </article>
+
+          <aside class="inbox-side">
+            <div class="inbox-meta">
+              <div class="inbox-meta-row">
+                <span class="label">Klassifikation</span>
+                <span class="value">Eingangsrechnung · Material</span>
+              </div>
+              <div class="inbox-meta-row">
+                <span class="label">Lieferant</span>
+                <span class="value">Stamm-Lieferant seit 2018</span>
+              </div>
+              <div class="inbox-meta-row">
+                <span class="label">Bestellbezug</span>
+                <span class="value">PO-2026-217 · vorhanden</span>
+              </div>
+              <div class="inbox-meta-row">
+                <span class="label">Skonto-Frist</span>
+                <span class="value">bis 11.05. · −97,45 €</span>
+              </div>
+            </div>
+
+            <div class="card card--inset">
+              <span class="card-eyebrow">Heute im Eingang</span>
+              <div class="queue-list">
+                <div class="queue-row is-active">
+                  <span class="id">ER-04891</span>
+                  <span class="label-text">Schmidt Stahl · Material</span>
+                  <span class="age">jetzt</span>
+                </div>
+                <div class="queue-row">
+                  <span class="id">ER-04890</span>
+                  <span class="label-text">EnBW · Energie 04/26</span>
+                  <span class="age">3 min</span>
+                </div>
+                <div class="queue-row">
+                  <span class="id">ER-04889</span>
+                  <span class="label-text">DHL Spedition · Frachten</span>
+                  <span class="age">11 min</span>
+                </div>
+                <div class="queue-row">
+                  <span class="id">ER-04888</span>
+                  <span class="label-text">Telekom · Mobilfunk</span>
+                  <span class="age">19 min</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ════════════════════════ STATE 2 · WORKING ════════════════════════ -->
+      <section class="demo-state" data-state="2">
+        <span class="state-eyebrow">Schritt 2 · Prüfung</span>
+        <h2 class="state-title">Martin extrahiert, gleicht ab und kontiert.</h2>
+
+        <div class="state-grid">
+          <div class="reasoning-log" data-reasoning>
+            <div class="reasoning-step">
+              <span class="marker"></span>
+              <div class="text">
+                <div class="head">Beleg-OCR · Rechnungsdaten extrahieren</div>
+                <div class="detail">Lieferant · Beleg-Nr · Belegdatum · Netto · USt · Bestellbezug PO-2026-217 sauber erkannt.</div>
+              </div>
+            </div>
+            <div class="reasoning-step">
+              <span class="marker"></span>
+              <div class="text">
+                <div class="head">Bestellabgleich in SAP B1</div>
+                <div class="detail">PO-2026-217 vorhanden · Netto 4.872,40 € passt · Lieferschein LS-26-1102 zugeordnet.</div>
+              </div>
+            </div>
+            <div class="reasoning-step">
+              <span class="marker"></span>
+              <div class="text">
+                <div class="head">Kontierung nach SKR03</div>
+                <div class="detail">Material vom Lieferant · Soll 3400 Roh-/Hilfsstoffe · Haben 70010 Schmidt Stahl GmbH.</div>
+              </div>
+            </div>
+            <div class="reasoning-step">
+              <span class="marker"></span>
+              <div class="text">
+                <div class="head">USt-Schlüssel prüfen</div>
+                <div class="detail">Inland · 19 % VSt · USt-Schlüssel 9 · stimmt mit Lieferanten-Stammdaten überein.</div>
+              </div>
+            </div>
+            <div class="reasoning-step">
+              <span class="marker"></span>
+              <div class="text">
+                <div class="head">DATEV-Übergabe vorbereiten</div>
+                <div class="detail">Buchungssatz formatieren · Belegbild verlinken · Skonto-Hinweis als OP-Notiz.</div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="work-side" data-tool-calls>
+            <div class="tool-call" data-tool="docu">
+              <div class="tool-name">DocuWare · Beleg-Eingang</div>
+              <div class="tool-result">RE-2026-04891 · 1 Seite · OCR-Konfidenz 99,2 % · Belegbild hinterlegt</div>
+            </div>
+            <div class="tool-call" data-tool="sap">
+              <div class="tool-name">SAP B1 → Bestellung</div>
+              <div class="tool-result">PO-2026-217 · 4.872,40 € netto · Lieferschein LS-26-1102 · Wareneingang heute gebucht</div>
+            </div>
+            <div class="tool-call" data-tool="kb">
+              <div class="tool-name">Kontierungsregel · SKR03</div>
+              <div class="tool-result">Material-Lieferant · Soll 3400 Roh-/Hilfsstoffe · Skonto 2 % unter Konto 3736</div>
+            </div>
+            <div class="tool-call" data-tool="datev">
+              <div class="tool-name">DATEV · Mandant 12847</div>
+              <div class="tool-result">Buchungsperiode 04/2026 offen · Stapel „Eingangsrechnungen 04" bereit · Übergabe vorbereitet</div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ════════════════════════ STATE 3 · OUTPUT ════════════════════════ -->
+      <section class="demo-state" data-state="3">
+        <span class="state-eyebrow">Schritt 3 · Buchungsvorschlag</span>
+        <h2 class="state-title">Martin schreibt den Buchungssatz — mit Beleg-Verknüpfung.</h2>
+
+        <div class="state-grid">
+          <div class="compose">
+            <div class="compose-head">
+              <div class="compose-head-row">
+                <span class="label">Beleg</span>
+                <span class="value">RE-2026-04891 · Schmidt Stahl GmbH</span>
+              </div>
+              <div class="compose-head-row">
+                <span class="label">Periode</span>
+                <span class="value">04/2026 · Stapel „Eingangsrechnungen 04"</span>
+              </div>
+              <div class="compose-head-row">
+                <span class="label">Bezug</span>
+                <span class="value">PO-2026-217 · LS-26-1102</span>
+              </div>
+            </div>
+            <div class="compose-body" data-typewriter><span class="typing-cursor"></span></div>
+          </div>
+
+          <aside class="work-side">
+            <div class="card">
+              <span class="card-eyebrow">Buchungs-Sicherheit</span>
+              <h3 class="card-title">Hohe Konfidenz</h3>
+              <div class="confidence-bar"><span data-confidence-bar></span></div>
+              <div class="confidence-meta">
+                <span>Belegte Datenquellen</span>
+                <span class="pct" data-confidence-pct>0%</span>
+              </div>
+            </div>
+
+            <div class="card card--inset">
+              <span class="card-eyebrow">Plausibilitätscheck</span>
+              <ul class="sources-list">
+                <li><span class="src-icon">SAP</span> Bestellung PO-2026-217 · Betrag stimmt</li>
+                <li><span class="src-icon">SAP</span> Lieferschein LS-26-1102 · zugeordnet</li>
+                <li><span class="src-icon">KB</span> SKR03-Regel „Material-Lieferant"</li>
+                <li><span class="src-icon">DOC</span> Belegbild RE-2026-04891 · verlinkt</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ════════════════════════ STATE 4 · APPROVAL / SEND ════════════════════════ -->
+      <section class="demo-state" data-state="4">
+        <div class="approval-shell">
+          <div class="approval-icon" aria-hidden="true"></div>
+          <h2 class="approval-title">Gebucht & an DATEV übergeben.</h2>
+          <p class="approval-subtitle">
+            Buchungssatz im Stapel 04/2026 abgelegt, Belegbild verknüpft, OP mit Skonto-Frist hinterlegt. Steuerberater sieht den Vorgang im DATEV-Mandanten.
+          </p>
+          <div class="approval-receipt">
+            <span><span class="key">Beleg</span> <span class="val">RE-2026-04891</span></span>
+            <span class="sep" aria-hidden="true"></span>
+            <span><span class="key">Bearbeitungszeit</span> <span class="val">42 s</span></span>
+            <span class="sep" aria-hidden="true"></span>
+            <span><span class="key">Periode</span> <span class="val">04/2026</span></span>
+            <span class="sep" aria-hidden="true"></span>
+            <span><span class="key">Status</span> <span class="val">DATEV-Sync · 09:15:08</span></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════ STATE 5 · IMPACT ════════════════════════ -->
+      <section class="demo-state" data-state="5">
+        <div class="impact-shell">
+          <span class="impact-eyebrow">Schritt 5 · Wochenbilanz · Kalenderwoche 17</span>
+          <h2 class="impact-title">Martin in der Praxis — diese Woche bei Werner-Antriebssysteme.</h2>
+
+          <div class="kpi-grid">
+            <div class="kpi-tile">
+              <div class="kpi-num" data-kpi="187">0</div>
+              <span class="kpi-label">Belege verarbeitet</span>
+              <span class="kpi-delta">+18 % vs. Vorwoche</span>
+            </div>
+            <div class="kpi-tile">
+              <div class="kpi-num" data-kpi="82" data-suffix=" %">0</div>
+              <span class="kpi-label">Automatisierungs-Quote</span>
+              <span class="kpi-delta">35 Belege zur Klärung</span>
+            </div>
+            <div class="kpi-tile">
+              <div class="kpi-num" data-kpi="2.8" data-decimals="1" data-suffix=" h">0</div>
+              <span class="kpi-label">Review-Zeit Buchhaltung</span>
+              <span class="kpi-delta">−86 % vs. Manuell</span>
+            </div>
+            <div class="kpi-tile">
+              <div class="kpi-num" data-kpi="1" data-suffix=" Klick">0</div>
+              <span class="kpi-label">Steuerberater-Übergabe</span>
+              <span class="kpi-delta is-warn">Sauber · ohne Nacharbeit</span>
+            </div>
+          </div>
+
+          <div class="compare-strip">
+            <div class="compare-block">
+              <span class="label">Vorher · ohne Martin</span>
+              <div class="value">2 Tage Erfassungs-Aufwand</div>
+              <div class="sub">2-köpfige Buchhaltung · 200 Belege/Woche · Monatsabschluss rutscht regelmäßig nach hinten</div>
+            </div>
+            <div class="compare-arrow">→</div>
+            <div class="compare-block">
+              <span class="label">Mit Martin · seit Tag 30</span>
+              <div class="value">3 Stunden Review pro Woche</div>
+              <div class="sub">Buchhaltung prüft nur noch Klärfälle · DATEV-Übergabe per Klick · Skonto wird konsequent gezogen</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<script src="../_shared/demo.js"></script>
+<script>
+  // ============================================================
+  // Martin — Demo-Konfiguration
+  // ============================================================
+  window.DemoConfig = {
+    durations: [9000, 22000, 21000, 8000, 14000],
+
+    onState: [
+      // ── State 1: Inbox ────────────────────────────────────
+      function (root) {
+        // Beleg-Eingang läuft per CSS, nichts zu tun
+      },
+
+      // ── State 2: Working — Reasoning + Tool-Calls ────────
+      function (root) {
+        const log = root.querySelector('[data-reasoning]');
+        const tools = root.querySelector('[data-tool-calls]');
+        // Reset
+        log.querySelectorAll('.reasoning-step').forEach(s => {
+          s.classList.remove('is-visible', 'is-active', 'is-done');
+        });
+        tools.querySelectorAll('.tool-call').forEach(c => c.classList.remove('is-visible'));
+
+        window.DemoHelpers.animateReasoningSteps(log, { activeMs: 2200, gapMs: 600 });
+        window.DemoHelpers.revealToolCalls(tools, { gapMs: 2400 });
+      },
+
+      // ── State 3: Output — Typewriter + Confidence ────────
+      function (root) {
+        const body = root.querySelector('[data-typewriter]');
+        const bar = root.querySelector('[data-confidence-bar]');
+        const pct = root.querySelector('[data-confidence-pct]');
+
+        // Reset
+        bar.style.width = '0%';
+        pct.textContent = '0%';
+
+        const text =
+`Buchungssatz · Eingangsrechnung RE-2026-04891
+
+Soll-Konto       3400  ·  Roh- und Hilfsstoffe
+Haben-Konto      70010 ·  Schmidt Stahl GmbH
+Betrag           4.872,40 €
+USt-Schlüssel    9 · 19 % Vorsteuer (Inland)
+Buchungstext     Stahlguss-Komponenten · LF PO-2026-217
+Belegdatum       24.04.2026
+Buchungsdatum    27.04.2026
+
+Skonto-Hinweis   2 % bis 11.05.2026 · −97,45 € · OP-Notiz gesetzt
+Belegbild        DocuWare · RE-2026-04891.pdf · verknüpft
+
+→ Übergabe an DATEV-Mandant 12847 · Stapel „Eingangsrechnungen 04"
+   vorbereitet, wartet auf Freigabe.`;
+
+        window.DemoHelpers.typewrite(body, text, { charMs: 12 });
+
+        // Confidence-Bar fill mit kleinem Delay (visuell parallel zum Tippen)
+        setTimeout(() => {
+          window.DemoHelpers.fillBar(bar, 98);
+          let p = 0;
+          const target = 98;
+          const start = performance.now();
+          function step(now) {
+            const t = Math.min(1, (now - start) / 800);
+            p = Math.round(target * (1 - Math.pow(1 - t, 3)));
+            pct.textContent = p + '%';
+            if (t < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }, 1400);
+      },
+
+      // ── State 4: Approval ────────────────────────────────
+      function (root) {
+        // Approval-Burst läuft per CSS keyframes, nichts zu tun
+      },
+
+      // ── State 5: Impact — KPIs animieren ─────────────────
+      function (root) {
+        const tiles = root.querySelectorAll('.kpi-num[data-kpi]');
+        tiles.forEach((el, i) => {
+          const target = parseFloat(el.dataset.kpi);
+          const decimals = parseInt(el.dataset.decimals || '0', 10);
+          const suffix = el.dataset.suffix || '';
+          // Reset
+          el.textContent = decimals ? '0,0' : '0';
+          setTimeout(() => {
+            window.DemoHelpers.countUp(el, target, { dur: 1100, decimals, suffix });
+          }, i * 180);
+        });
+      },
+    ],
+  };
+</script>
+
+</body>
+</html>

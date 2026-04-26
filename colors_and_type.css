@@ -52,12 +52,12 @@
   --dma-bg-final:       var(--dma-tiefsee);
   --dma-fg:             var(--dma-tinte);
   --dma-fg-muted:       var(--dma-grafit);
-  --dma-fg-subtle:      var(--dma-grau-mitte);
+  --dma-fg-subtle:      #64748B; /* slate-500, WCAG-AA-konform auf Elfenbein/Papier (5.7:1 / 6.2:1) */
   --dma-fg-inverse:     var(--dma-elfenbein);
   --dma-accent:         var(--dma-petrol);
   --dma-border:         var(--dma-dunst);
   --dma-border-strong:  var(--dma-tiefsee-12);
-  --dma-eyebrow:        var(--dma-grau-mitte);
+  --dma-eyebrow:        #64748B; /* slate-500, getrennt von --dma-grau-mitte (deko) für Text-Contrast */
   --dma-link:           var(--dma-petrol);
   --dma-link-hover:     var(--dma-tiefsee);
 

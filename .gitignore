@@ -3,3 +3,9 @@ node_modules/
 *.log
 .vercel
 .playwright-cli/
+
+# Local working folders — not deployed
+assets/**/_backup/
+assets/**/.src-backup/
+assets/**/_cover-drafts/
+content-references/

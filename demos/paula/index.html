@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Paula · Digitale Service-Mitarbeiterin — DMA Demo</title>
+<meta name="robots" content="noindex" />
+<link rel="stylesheet" href="../_shared/demo.css" />
+</head>
+<body>
+
+<div class="demo-stage-wrap">
+
+  <header class="demo-header">
+    <div class="demo-header-persona">
+      <div class="demo-header-avatar" aria-hidden="true">
+        <video poster="../../assets/personas/paula-poster.jpg" autoplay muted loop playsinline preload="metadata">
+          <source src="../../assets/personas/paula-anim.webm" type="video/webm">
+          <source src="../../assets/personas/paula-anim.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="demo-header-text">
+        <p class="persona-name">Paula</p>
+        <span class="persona-role">Digitale Service-Mitarbeiterin · Werner-Antriebssysteme GmbH</span>
+      </div>
+    </div>
+    <div class="demo-header-meta">
+      <span class="live-dot" aria-hidden="true"></span>
+      <span>Live · Mo 27.04. · 14:23</span>
+    </div>
+  </header>
+
+  <div class="demo-cockpit">
+
+    <div class="demo-cockpit-bar">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="url">service.werner-antriebssysteme.de/cockpit</span>
+      <div class="autoplay-progress"><span data-autoplay-progress></span></div>
+      <span class="step-indicator" data-step-indicator>Schritt <b>1</b> · von 5</span>
+    </div>
+
+    <div class="demo-cockpit-body">
+
+      <!-- ════════════════════════ STATE 1 · INBOX ════════════════════════ -->
+      <section class="demo-state" data-state="1">
+        <span class="state-eyebrow">Schritt 1 · Eingang</span>
+        <h2 class="state-title">Neues Ticket — automatisch übernommen.</h2>
+
+        <div class="state-grid">
+          <article class="ticket">
+            <div class="ticket-head">
+              <div class="left">
+                <span class="new-pill">Neu</span>
+                <span>Ticket TKT-2026-1147</span>
+                <span>·</span>
+                <span>Outlook → Cockpit</span>
+              </div>
+              <span class="timestamp">Mo 27.04. · 14:23:51</span>
+            </div>
+            <div class="ticket-body">
+              <div class="ticket-from">
+                <div>
+                  <div class="from-name">Markus Schmidt</div>
+                  <div class="from-org">Stadtwerke Heilbronn AöR · Technische Beschaffung</div>
+                </div>
+                <div class="from-channel">E-Mail · markus.schmidt@stwh.de</div>
+              </div>
+              <div class="ticket-subject">Lieferstatus Auftrag VA-2026-3471 — bitte um Update</div>
+              <p class="ticket-message">
+                Sehr geehrtes Service-Team,<br><br>
+                wir warten noch auf den Industrie-Antrieb aus unserem Auftrag VA-2026-3471 (bestellt am 11.04.). Die Montage bei uns ist für Mittwoch geplant. Können Sie uns einen aktuellen Versandstatus geben?<br><br>
+                Vielen Dank.<br>
+                M. Schmidt
+              </p>
+            </div>
+          </article>
+
+          <aside class="inbox-side">
+            <div class="inbox-meta">
+              <div class="inbox-meta-row">
+                <span class="label">Klassifikation</span>
+                <span class="value">Lieferstatus-Anfrage</span>
+              </div>
+              <div class="inbox-meta-row">
+                <span class="label">Priorität</span>
+                <span class="value">Standard</span>
+              </div>
+              <div class="inbox-meta-row">
+                <span class="label">Stamm-Kunde</span>
+                <span class="value">seit 2019 · 28 Aufträge</span>
+              </div>
+              <div class="inbox-meta-row">
+                <span class="label">SLA</span>
+                <span class="value">Antwort &lt; 4h</span>
+              </div>
+            </div>
+
+            <div class="card card--inset">
+              <span class="card-eyebrow">Heute im Eingang</span>
+              <div class="queue-list">
+                <div class="queue-row is-active">
+                  <span class="id">TKT-1147</span>
+                  <span class="label-text">Lieferstatus-Anfrage</span>
+                  <span class="age">jetzt</span>
+                </div>
+                <div class="queue-row">
+                  <span class="id">TKT-1146</span>
+                  <span class="label-text">Rechnungs-Kopie angefordert</span>
+                  <span class="age">2 min</span>
+                </div>
+                <div class="queue-row">
+                  <span class="id">TKT-1145</span>
+                  <span class="label-text">Zugangsdaten Service-Portal</span>
+                  <span class="age">7 min</span>
+                </div>
+                <div class="queue-row">
+                  <span class="id">TKT-1144</span>
+                  <span class="label-text">Datenblatt Antrieb 22kW</span>
+                  <span class="age">14 min</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ════════════════════════ STATE 2 · WORKING ════════════════════════ -->
+      <section class="demo-state" data-state="2">
+        <span class="state-eyebrow">Schritt 2 · Recherche</span>
+        <h2 class="state-title">Paula prüft Stammdaten, Auftrag und Versand.</h2>
+
+        <div class="state-grid">
+          <div class="reasoning-log" data-reasoning>
+            <div class="reasoning-step">
+              <span class="marker"></span>
+              <div class="text">
+                <div class="head">Anfrage klassifizieren</div>
+                <div class="detail">Lieferstatus · Stamm-Kunde · keine Eskalations-Trigger.</div>
+              </div>
+            </div>
+            <div class="reasoning-step">
+              <span class="marker"></span>
+              <div class="text">
+                <div class="head">Stammdaten Stadtwerke Heilbronn AöR prüfen</div>
+                <div class="detail">Kunde seit 2019 · 28 Aufträge · Bonität ok · Standard-Tonalität: förmlich.</div>
+              </div>
+            </div>
+            <div class="reasoning-step">
+              <span class="marker"></span>
+              <div class="text">
+                <div class="head">Auftrag VA-2026-3471 in SAP nachschlagen</div>
+                <div class="detail">Industrie-Antrieb 22 kW · bestellt 11.04. · Versand 24.04.2026 · DHL Spedition.</div>
+              </div>
+            </div>
+            <div class="reasoning-step">
+              <span class="marker"></span>
+              <div class="text">
+                <div class="head">DHL-Tracking abrufen</div>
+                <div class="detail">Sendung 0034…612 · Status: in finaler Zustellung · ETA 28.04. vormittags.</div>
+              </div>
+            </div>
+            <div class="reasoning-step">
+              <span class="marker"></span>
+              <div class="text">
+                <div class="head">Antwort entwerfen</div>
+                <div class="detail">Werner-Tonalität · konkrete Tracking-Daten · Tracking-Link · Aufstellort-Frage offen halten.</div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="work-side" data-tool-calls>
+            <div class="tool-call" data-tool="sap">
+              <div class="tool-name">SAP B1 → Aufträge</div>
+              <div class="tool-result">VA-2026-3471 · 22 kW Antrieb · Versand 24.04.2026 · 1 Kolli, 84 kg</div>
+            </div>
+            <div class="tool-call" data-tool="dhl">
+              <div class="tool-name">DHL Tracking API</div>
+              <div class="tool-result">Status: Sendung wird zugestellt · ETA Di 28.04., 10:00–13:00 · letzter Scan: HUB Heilbronn 04:12</div>
+            </div>
+            <div class="tool-call" data-tool="kb">
+              <div class="tool-name">Wissensbasis · Lieferzusagen</div>
+              <div class="tool-result">Verbindliche ETA-Auskunft nur bei DHL-Status „Zustellung" · Tracking-Link erforderlich</div>
+            </div>
+            <div class="tool-call" data-tool="crm">
+              <div class="tool-name">CRM · Kontakthistorie</div>
+              <div class="tool-result">M. Schmidt · letzte Korrespondenz 18.03. · präferiert förmliche Anrede mit Nachname</div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ════════════════════════ STATE 3 · OUTPUT ════════════════════════ -->
+      <section class="demo-state" data-state="3">
+        <span class="state-eyebrow">Schritt 3 · Antwort</span>
+        <h2 class="state-title">Paula formuliert die Antwort — mit echten Bestelldaten.</h2>
+
+        <div class="state-grid">
+          <div class="compose">
+            <div class="compose-head">
+              <div class="compose-head-row">
+                <span class="label">An</span>
+                <span class="value">markus.schmidt@stwh.de</span>
+              </div>
+              <div class="compose-head-row">
+                <span class="label">Betreff</span>
+                <span class="value">AW: Lieferstatus Auftrag VA-2026-3471 — bitte um Update</span>
+              </div>
+              <div class="compose-head-row">
+                <span class="label">Vorgang</span>
+                <span class="value">TKT-2026-1147</span>
+              </div>
+            </div>
+            <div class="compose-body" data-typewriter><span class="typing-cursor"></span></div>
+          </div>
+
+          <aside class="work-side">
+            <div class="card">
+              <span class="card-eyebrow">Antwort-Sicherheit</span>
+              <h3 class="card-title">Hohe Konfidenz</h3>
+              <div class="confidence-bar"><span data-confidence-bar></span></div>
+              <div class="confidence-meta">
+                <span>Belegte Datenquellen</span>
+                <span class="pct" data-confidence-pct>0%</span>
+              </div>
+            </div>
+
+            <div class="card card--inset">
+              <span class="card-eyebrow">Quellen verwendet</span>
+              <ul class="sources-list">
+                <li><span class="src-icon">SAP</span> Auftrag VA-2026-3471 · Versand-Datensatz</li>
+                <li><span class="src-icon">DHL</span> Tracking 00340434398472736612</li>
+                <li><span class="src-icon">KB</span> Lieferzusagen-Richtlinie v3.2</li>
+                <li><span class="src-icon">CRM</span> Kontakthistorie M. Schmidt</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ════════════════════════ STATE 4 · APPROVAL / SEND ════════════════════════ -->
+      <section class="demo-state" data-state="4">
+        <div class="approval-shell">
+          <div class="approval-icon" aria-hidden="true"></div>
+          <h2 class="approval-title">Antwort gesendet.</h2>
+          <p class="approval-subtitle">
+            Vorgang automatisch geschlossen, Stammdaten aktualisiert, CRM-Touchpoint protokolliert. Eskalation nicht erforderlich.
+          </p>
+          <div class="approval-receipt">
+            <span><span class="key">Vorgang</span> <span class="val">TKT-2026-1147</span></span>
+            <span class="sep" aria-hidden="true"></span>
+            <span><span class="key">Bearbeitungszeit</span> <span class="val">1 min 47 s</span></span>
+            <span class="sep" aria-hidden="true"></span>
+            <span><span class="key">Empfänger</span> <span class="val">Stadtwerke Heilbronn</span></span>
+            <span class="sep" aria-hidden="true"></span>
+            <span><span class="key">Status</span> <span class="val">Gesendet · 14:25:38</span></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════ STATE 5 · IMPACT ════════════════════════ -->
+      <section class="demo-state" data-state="5">
+        <div class="impact-shell">
+          <span class="impact-eyebrow">Schritt 5 · Wochenbilanz · Kalenderwoche 17</span>
+          <h2 class="impact-title">Paula in der Praxis — diese Woche bei Werner-Antriebssysteme.</h2>
+
+          <div class="kpi-grid">
+            <div class="kpi-tile">
+              <div class="kpi-num" data-kpi="187">0</div>
+              <span class="kpi-label">Tickets bearbeitet</span>
+              <span class="kpi-delta">+23 % vs. Vorwoche</span>
+            </div>
+            <div class="kpi-tile">
+              <div class="kpi-num" data-kpi="4" data-suffix=" min">0</div>
+              <span class="kpi-label">Ø Reaktionszeit</span>
+              <span class="kpi-delta">−89 % vs. Manuell</span>
+            </div>
+            <div class="kpi-tile">
+              <div class="kpi-num" data-kpi="38">0</div>
+              <span class="kpi-label">An Team eskaliert</span>
+              <span class="kpi-delta is-warn">Komplexe Fälle · korrekt</span>
+            </div>
+            <div class="kpi-tile">
+              <div class="kpi-num" data-kpi="4.8" data-decimals="1" data-suffix=" / 5">0</div>
+              <span class="kpi-label">Kundenzufriedenheit</span>
+              <span class="kpi-delta">+0,6 vs. Vormonat</span>
+            </div>
+          </div>
+
+          <div class="compare-strip">
+            <div class="compare-block">
+              <span class="label">Vorher · ohne Paula</span>
+              <div class="value">24 h Reaktionszeit</div>
+              <div class="sub">3-köpfiges Service-Team · 280 Standard-Tickets/Woche · regelmäßig Beschwerden</div>
+            </div>
+            <div class="compare-arrow">→</div>
+            <div class="compare-block">
+              <span class="label">Mit Paula · seit Tag 30</span>
+              <div class="value">Unter 4 min Reaktionszeit</div>
+              <div class="sub">Team bearbeitet nur noch komplexe Fälle · Kunden-NPS messbar gestiegen</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<script src="../_shared/demo.js"></script>
+<script>
+  // ============================================================
+  // Paula — Demo-Konfiguration
+  // ============================================================
+  window.DemoConfig = {
+    durations: [9000, 22000, 21000, 8000, 14000],
+
+    onState: [
+      // ── State 1: Inbox ────────────────────────────────────
+      function (root) {
+        // Ticket arrival animation läuft per CSS, nichts zu tun
+      },
+
+      // ── State 2: Working — Reasoning + Tool-Calls ────────
+      function (root) {
+        const log = root.querySelector('[data-reasoning]');
+        const tools = root.querySelector('[data-tool-calls]');
+        // Reset
+        log.querySelectorAll('.reasoning-step').forEach(s => {
+          s.classList.remove('is-visible', 'is-active', 'is-done');
+        });
+        tools.querySelectorAll('.tool-call').forEach(c => c.classList.remove('is-visible'));
+
+        window.DemoHelpers.animateReasoningSteps(log, { activeMs: 2200, gapMs: 600 });
+        window.DemoHelpers.revealToolCalls(tools, { gapMs: 2400 });
+      },
+
+      // ── State 3: Output — Typewriter + Confidence ────────
+      function (root) {
+        const body = root.querySelector('[data-typewriter]');
+        const bar = root.querySelector('[data-confidence-bar]');
+        const pct = root.querySelector('[data-confidence-pct]');
+
+        // Reset
+        bar.style.width = '0%';
+        pct.textContent = '0%';
+
+        const text =
+`Sehr geehrter Herr Schmidt,
+
+vielen Dank für Ihre Anfrage zu Auftrag VA-2026-3471.
+
+Die Sendung wurde am 24.04.2026 versandt und befindet sich aktuell in der finalen Zustellung. Voraussichtliches Eintreffen bei Ihnen: morgen, Di 28.04.2026, vormittags.
+
+Tracking-Nummer DHL: 00340 4343 9847 2736 612
+Direktlink: https://nolp.dhl.de/?piececode=00340434398472736612
+
+Falls Sie Hinweise zum Aufstellort oder zur Übergabe haben, geben Sie uns gerne Bescheid — wir leiten das an die Spedition weiter.
+
+Beste Grüße
+Service-Team
+Werner-Antriebssysteme GmbH`;
+
+        window.DemoHelpers.typewrite(body, text, { charMs: 14 });
+
+        // Confidence-Bar fill mit kleinem Delay (visuell parallel zum Tippen)
+        setTimeout(() => {
+          window.DemoHelpers.fillBar(bar, 96);
+          let p = 0;
+          const target = 96;
+          const start = performance.now();
+          function step(now) {
+            const t = Math.min(1, (now - start) / 800);
+            p = Math.round(target * (1 - Math.pow(1 - t, 3)));
+            pct.textContent = p + '%';
+            if (t < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }, 1400);
+      },
+
+      // ── State 4: Approval ────────────────────────────────
+      function (root) {
+        // Approval-Burst läuft per CSS keyframes, nichts zu tun
+      },
+
+      // ── State 5: Impact — KPIs animieren ─────────────────
+      function (root) {
+        const tiles = root.querySelectorAll('.kpi-num[data-kpi]');
+        tiles.forEach((el, i) => {
+          const target = parseFloat(el.dataset.kpi);
+          const decimals = parseInt(el.dataset.decimals || '0', 10);
+          const suffix = el.dataset.suffix || '';
+          // Reset
+          el.textContent = decimals ? '0,0' : '0';
+          setTimeout(() => {
+            window.DemoHelpers.countUp(el, target, { dur: 1100, decimals, suffix });
+          }, i * 180);
+        });
+      },
+    ],
+  };
+</script>
+
+</body>
+</html>

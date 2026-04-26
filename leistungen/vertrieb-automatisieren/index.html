@@ -18,6 +18,7 @@
 <meta name="twitter:description" content="Anfragen qualifizieren, Angebote kalkulieren, CRM pflegen — in 30 Tagen besetzt." />
 <meta name="twitter:image" content="https://lp-theta-lac.vercel.app/assets/og-image.png" />
 <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+<link rel="preload" as="image" href="../../assets/personas/jonas-cover-480w.webp" type="image/webp" imagesrcset="../../assets/personas/jonas-cover-480w.webp 480w, ../../assets/personas/jonas-cover-960w.webp 960w" imagesizes="(max-width: 600px) 480px, 960px" fetchpriority="high" />
 <link rel="stylesheet" href="../../colors_and_type.css" />
 <link rel="stylesheet" href="../../styles/site.css" />
 <script type="application/ld+json">
@@ -151,6 +152,8 @@
   </div>
 </div>
 
+<main>
+
 <header class="leistung-hero">
   <div class="container">
     <div class="leistung-hero-grid">
@@ -172,15 +175,22 @@
         </div>
       </div>
       <div class="leistung-hero-persona" data-persona="jonas">
-        <img class="persona-cover" src="../../assets/personas/jonas-cover.png" alt="Jonas — Digitaler Vertriebsinnendienst" loading="eager" decoding="async" width="1024" height="1536">
+        <picture>
+          <source type="image/webp" srcset="../../assets/personas/jonas-cover-480w.webp 480w, ../../assets/personas/jonas-cover-960w.webp 960w" sizes="(max-width: 600px) 480px, 960px">
+          <img class="persona-cover" src="../../assets/personas/jonas-cover-480w.jpg" srcset="../../assets/personas/jonas-cover-480w.jpg 480w, ../../assets/personas/jonas-cover-960w.jpg 960w" sizes="(max-width: 600px) 480px, 960px" alt="Jonas — Digitaler Vertriebsinnendienst" width="480" height="720" fetchpriority="high" decoding="async">
+        </picture>
         <span class="headshot-status">Verfügbar</span>
       </div>
     </div>
   </div>
 </header>
 
-<section class="leistung-section section--warm">
+<section class="leistung-section section--warm" data-macht-section="positive">
   <div class="container">
+    <div class="leistung-macht-tabs" role="tablist" aria-label="Was er macht und nicht macht">
+      <button type="button" role="tab" data-macht-tab="positive" aria-selected="true" class="is-active">Was er macht</button>
+      <button type="button" role="tab" data-macht-tab="negative" aria-selected="false">Was er nicht macht</button>
+    </div>
     <div class="leistung-split">
       <div class="leistung-split-left">
         <span class="eyebrow">Aufgabenpaket</span>
@@ -206,8 +216,12 @@
   </div>
 </section>
 
-<section class="leistung-section">
+<section class="leistung-section" data-macht-section="negative">
   <div class="container">
+    <div class="leistung-macht-tabs" role="tablist" aria-label="Was er macht und nicht macht">
+      <button type="button" role="tab" data-macht-tab="positive" aria-selected="false">Was er macht</button>
+      <button type="button" role="tab" data-macht-tab="negative" aria-selected="true" class="is-active">Was er nicht macht</button>
+    </div>
     <div class="leistung-split">
       <div class="leistung-split-left">
         <span class="eyebrow">Klare Abgrenzung</span>
@@ -238,15 +252,35 @@
     <div class="leistung-narrow">
       <span class="eyebrow">Ein Tag im Betrieb</span>
       <h2>Beispiel: 60 Anfragen pro Woche.</h2>
-      <p class="leistung-body">
-        Ein typischer Industrie-Mittelständler bekommt rund 60 Vertriebsanfragen pro Woche. 70 % davon sind Standard — Sägen, Bohren, Standardteile, klare Stückzahl, klares Material. Heute braucht ein Vertriebsmitarbeiter dafür ungefähr drei volle Arbeitstage pro Woche. Trotzdem dauert die Erstantwort oft 24–48 Stunden, weil die Anfrage in der Mailflut liegt.
-      </p>
-      <p class="leistung-body">
-        Mit einem digitalen Mitarbeiter passiert die Erstreaktion in unter zehn Minuten. Standard-Anfragen werden vollständig kalkuliert und gehen mit Angebot raus, sobald die Vertriebs-Freigabe da ist. Sonderfälle landen direkt im Postfach des zuständigen Vertriebskollegen — mit allen Daten vorbereitet, mit Empfehlung, mit Hintergrund.
-      </p>
-      <p class="leistung-body">
-        <strong>Effekt:</strong> aus drei Vertriebs-Tagen pro Woche werden zwei Stunden. Die freie Zeit fließt in Schlüsselkunden-Pflege und Up-Sells. Dazu: nachweisbar höhere Conversion-Rate, weil Angebote nicht mehr 48 Stunden auf sich warten lassen.
-      </p>
+      <div class="stat-block">
+        <div class="stat-volume">
+          <span class="stat-num">60</span>
+          <span class="stat-label">Anfragen pro Woche</span>
+        </div>
+        <div class="stat-bar" role="img" aria-label="42 Anfragen automatisiert (70%), 18 Anfragen eskaliert (30%)">
+          <div class="stat-bar-fill stat-bar-fill--automated" style="width: 70%">
+            <span>42 automatisiert</span>
+          </div>
+          <div class="stat-bar-fill stat-bar-fill--escalated" style="width: 30%">
+            <span>18 eskaliert</span>
+          </div>
+        </div>
+        <div class="stat-comparison">
+          <span class="stat-comparison-label">Erstreaktion</span>
+          <div class="stat-comparison-grid">
+            <div class="stat-comparison-card stat-comparison-card--before">
+              <span class="stat-comparison-num">24–48 h</span>
+              <span class="stat-comparison-side">vorher</span>
+            </div>
+            <div class="stat-comparison-arrow" aria-hidden="true">→</div>
+            <div class="stat-comparison-card stat-comparison-card--after">
+              <span class="stat-comparison-num">&lt; 10 min</span>
+              <span class="stat-comparison-side">mit DMA</span>
+            </div>
+          </div>
+        </div>
+        <p class="stat-effect"><strong>Effekt:</strong> aus drei Vertriebs-Tagen pro Woche werden zwei Stunden. Die freie Zeit fließt in Schlüsselkunden-Pflege und Up-Sells — höhere Conversion-Rate inklusive.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -266,16 +300,15 @@
       </div>
       <div class="leistung-split-right">
         <span class="eyebrow">Integriert mit</span>
-        <ul class="leistung-tools">
-          <li>HubSpot</li>
-          <li>Pipedrive</li>
-          <li>Salesforce</li>
-          <li>Microsoft Dynamics</li>
-          <li>SAP CRM</li>
-          <li>weclapp</li>
-          <li>Outlook / Microsoft 365</li>
-          <li>+ Custom-CRM nach Scoping</li>
-        </ul>
+        <div class="tool-logo-grid">
+          <img src="../../assets/logos/hubspot.svg" alt="HubSpot" loading="lazy" />
+          <img src="../../assets/logos/pipedrive.svg" alt="Pipedrive" loading="lazy" />
+          <img src="../../assets/logos/salesforce.svg" alt="Salesforce" loading="lazy" />
+          <img src="../../assets/logos/dynamics.svg" alt="Microsoft Dynamics" loading="lazy" />
+          <img src="../../assets/logos/sap.svg" alt="SAP CRM" loading="lazy" />
+          <img src="../../assets/logos/microsoftoutlook.svg" alt="Outlook / Microsoft 365" loading="lazy" />
+        </div>
+        <p class="tools-note">+ weclapp &amp; Custom-CRM nach Scoping</p>
       </div>
     </div>
   </div>
@@ -289,13 +322,16 @@
       <p class="leistung-body">Walkthrough: wie aus einer eingehenden Anfrage in unter zehn Minuten ein vollständiges Angebot wird — kalkuliert, geprüft, versandbereit.</p>
     </div>
 
-    <div class="demo-loom-wrap">
-      <!-- <iframe src="https://www.loom.com/embed/LOOM_ID_JONAS_VERTRIEB" allowfullscreen></iframe> -->
-      <div class="demo-loom-placeholder">
-        <span class="icon">▶</span>
-        <strong>90-Sekunden-Walkthrough kommt</strong>
-        <span>Felipe spricht das Video diese Woche ein. Solange — Erstgespräch buchen, wir zeigen Live.</span>
-      </div>
+    <div class="demo-embed-wrap">
+      <iframe class="demo-embed-iframe"
+              src="../../demos/jonas/index.html"
+              title="Jonas · Live-Demo · Vertriebs-Walkthrough"
+              loading="lazy"
+              allow="autoplay"></iframe>
+      <a class="demo-embed-fullscreen" href="../../demos/jonas/index.html" target="_blank" rel="noopener" aria-label="Demo im neuen Tab öffnen">
+        <span aria-hidden="true">⤢</span>
+        <span>Vollbild</span>
+      </a>
     </div>
 
     <article class="demo-persona-card">
@@ -335,6 +371,16 @@
   </div>
 </section>
 
+<section class="leistung-section">
+  <div class="container">
+    <div class="leistung-cta-block glass">
+      <h2>Bereit, Ihren Vertrieb zu digitalisieren?</h2>
+      <p class="leistung-body">Ein 30-Minuten-Erstgespräch. Wir schauen, ob ein digitaler Mitarbeiter zu Ihrem Anfrage-Volumen und Ihrem CRM-Setup passt. Kein Vertrieb-Druck, kein Vorab-Pitch.</p>
+      <a class="btn btn-primary" href="../../kontakt/">Erstgespräch buchen</a>
+    </div>
+  </div>
+</section>
+
 <section class="leistung-section section--warm">
   <div class="container">
     <div class="section-head">
@@ -362,15 +408,7 @@
   </div>
 </section>
 
-<section class="leistung-section">
-  <div class="container">
-    <div class="leistung-cta-block glass">
-      <h2>Bereit, Ihren Vertrieb zu digitalisieren?</h2>
-      <p class="leistung-body">Ein 30-Minuten-Erstgespräch. Wir schauen, ob ein digitaler Mitarbeiter zu Ihrem Anfrage-Volumen und Ihrem CRM-Setup passt. Kein Vertrieb-Druck, kein Vorab-Pitch.</p>
-      <a class="btn btn-primary" href="../../kontakt/">Erstgespräch buchen</a>
-    </div>
-  </div>
-</section>
+</main>
 
 <footer class="footer">
   <div class="container">
@@ -382,7 +420,7 @@
         <p class="footer-tagline">Personaldienstleister für digitale Mitarbeiter im deutschen Industrie-Mittelstand.</p>
       </div>
       <div>
-        <h5>Leistungen</h5>
+        <h3>Leistungen</h3>
         <ul>
           <li><a href="../buchhaltung-automatisieren/">Buchhaltung automatisieren</a></li>
           <li><a href="../vertrieb-automatisieren/">Vertrieb automatisieren</a></li>
@@ -390,7 +428,7 @@
         </ul>
       </div>
       <div>
-        <h5>Menü</h5>
+        <h3>Menü</h3>
         <ul>
           <li><a href="../../#agents">Rollen</a></li>
           <li><a href="../../live-demo/index.html">Live Demos</a></li>
@@ -400,7 +438,7 @@
         </ul>
       </div>
       <div>
-        <h5>Recht</h5>
+        <h3>Recht</h3>
         <ul>
           <li><a href="../../impressum.html">Impressum</a></li>
           <li><a href="../../datenschutz.html">Datenschutz</a></li>
@@ -456,6 +494,43 @@ function setMobilePanelOpen(open) {
 navMobileToggle.addEventListener('click', () => setMobilePanelOpen(!navMobilePanel.classList.contains('is-open')));
 navMobilePanel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMobilePanelOpen(false)));
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && navMobilePanel.classList.contains('is-open')) setMobilePanelOpen(false); });
+
+/* ─── Macht/Nicht-Macht Tab-Toggle (≤720px) ─── */
+const machtTabs = document.querySelectorAll('.leistung-macht-tabs [data-macht-tab]');
+const machtSections = document.querySelectorAll('[data-macht-section]');
+const machtMQ = window.matchMedia('(max-width: 720px)');
+
+function activateMachtTab(name) {
+  machtTabs.forEach(b => {
+    const active = b.dataset.machtTab === name;
+    b.classList.toggle('is-active', active);
+    b.setAttribute('aria-selected', active ? 'true' : 'false');
+  });
+  machtSections.forEach(s => s.classList.toggle('is-active', s.dataset.machtSection === name));
+}
+machtTabs.forEach(b => b.addEventListener('click', () => activateMachtTab(b.dataset.machtTab)));
+
+function syncMachtMode(mobile) {
+  if (mobile) activateMachtTab('positive');
+  else machtSections.forEach(s => s.classList.remove('is-active'));
+}
+syncMachtMode(machtMQ.matches);
+machtMQ.addEventListener('change', e => syncMachtMode(e.matches));
+</script>
+<script>
+/* Klaro a11y shim — Klaro renders dialog without resolving aria-labelledby in time for Lighthouse */
+window.addEventListener('load', function() {
+  var label = 'Cookies und Datenschutz';
+  function tag() {
+    var n = document.getElementById('klaro-cookie-notice');
+    if (n) n.setAttribute('aria-label', label);
+    var m = document.getElementById('klaro-cookie-modal');
+    if (m) m.setAttribute('aria-label', label);
+  }
+  tag();
+  setTimeout(tag, 500);
+  setTimeout(tag, 1500);
+});
 </script>
 </body>
 </html>

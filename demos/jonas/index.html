@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jonas · Digitaler Vertriebsinnendienst — DMA Demo</title>
+<meta name="robots" content="noindex" />
+<link rel="stylesheet" href="../_shared/demo.css" />
+</head>
+<body>
+
+<div class="demo-stage-wrap">
+
+  <header class="demo-header">
+    <div class="demo-header-persona">
+      <div class="demo-header-avatar" aria-hidden="true">
+        <video poster="../../assets/personas/jonas-poster.jpg" autoplay muted loop playsinline preload="metadata">
+          <source src="../../assets/personas/jonas-anim.webm" type="video/webm">
+          <source src="../../assets/personas/jonas-anim.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="demo-header-text">
+        <p class="persona-name">Jonas</p>
+        <span class="persona-role">Digitaler Vertriebsinnendienst · Werner-Antriebssysteme GmbH</span>
+      </div>
+    </div>
+    <div class="demo-header-meta">
+      <span class="live-dot" aria-hidden="true"></span>
+      <span>Live · Mo 27.04. · 11:08</span>
+    </div>
+  </header>
+
+  <div class="demo-cockpit">
+
+    <div class="demo-cockpit-bar">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="url">vertrieb.werner-antriebssysteme.de/cockpit</span>
+      <div class="autoplay-progress"><span data-autoplay-progress></span></div>
+      <span class="step-indicator" data-step-indicator>Schritt <b>1</b> · von 5</span>
+    </div>
+
+    <div class="demo-cockpit-body">
+
+      <!-- ════════════════════════ STATE 1 · INBOX ════════════════════════ -->
+      <section class="demo-state" data-state="1">
+        <span class="state-eyebrow">Schritt 1 · Eingang</span>
+        <h2 class="state-title">Neue Anfrage — automatisch übernommen.</h2>
+
+        <div class="state-grid">
+          <article class="ticket">
+            <div class="ticket-head">
+              <div class="left">
+                <span class="new-pill">Neu</span>
+                <span>Anfrage ANF-2026-0418</span>
+                <span>·</span>
+                <span>Outlook → CRM</span>
+              </div>
+              <span class="timestamp">Mo 27.04. · 11:08:14</span>
+            </div>
+            <div class="ticket-body">
+              <div class="ticket-from">
+                <div>
+                  <div class="from-name">Tobias Werner</div>
+                  <div class="from-org">TechBau Anlagenbau Mannheim GmbH · Einkauf</div>
+                </div>
+                <div class="from-channel">E-Mail · t.werner@techbau-mannheim.de</div>
+              </div>
+              <div class="ticket-subject">Anfrage Industrieantriebe 22 kW · Pumpenstation · Q2 2026</div>
+              <p class="ticket-message">
+                Sehr geehrtes Vertriebsteam,<br><br>
+                für ein Pumpenstation-Projekt benötigen wir 4 Stück Industrieantriebe à 22 kW (IE3, B5-Flansch). Wunsch-Liefertermin Q2 2026, spätestens 30.06.<br><br>
+                Bitte um Angebot inkl. Lieferzeit und Konditionen. Konfigurationsdetails im Anhang.<br><br>
+                Mit freundlichen Grüßen<br>
+                Tobias Werner · Einkauf
+              </p>
+            </div>
+          </article>
+
+          <aside class="inbox-side">
+            <div class="inbox-meta">
+              <div class="inbox-meta-row">
+                <span class="label">Klassifikation</span>
+                <span class="value">Standard-Konfiguration · Neukunde</span>
+              </div>
+              <div class="inbox-meta-row">
+                <span class="label">ICP-Match</span>
+                <span class="value">Maschinenbau · DACH ✓</span>
+              </div>
+              <div class="inbox-meta-row">
+                <span class="label">Stückzahl</span>
+                <span class="value">4 · Standardvariante</span>
+              </div>
+              <div class="inbox-meta-row">
+                <span class="label">SLA</span>
+                <span class="value">Erst-Reaktion &lt; 4h</span>
+              </div>
+            </div>
+
+            <div class="card card--inset">
+              <span class="card-eyebrow">Heute im Eingang</span>
+              <div class="queue-list">
+                <div class="queue-row is-active">
+                  <span class="id">ANF-0418</span>
+                  <span class="label-text">TechBau · 4× 22 kW Antrieb</span>
+                  <span class="age">jetzt</span>
+                </div>
+                <div class="queue-row">
+                  <span class="id">ANF-0417</span>
+                  <span class="label-text">Müller Anlagen · Ersatzteil</span>
+                  <span class="age">6 min</span>
+                </div>
+                <div class="queue-row">
+                  <span class="id">ANF-0416</span>
+                  <span class="label-text">RheinMetallbau · Konfig-Frage</span>
+                  <span class="age">14 min</span>
+                </div>
+                <div class="queue-row">
+                  <span class="id">ANF-0415</span>
+                  <span class="label-text">Stadtwerke Karlsruhe · Wartung</span>
+                  <span class="age">22 min</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ════════════════════════ STATE 2 · WORKING ════════════════════════ -->
+      <section class="demo-state" data-state="2">
+        <span class="state-eyebrow">Schritt 2 · Qualifikation</span>
+        <h2 class="state-title">Jonas qualifiziert, kalkuliert und stellt das Angebot zusammen.</h2>
+
+        <div class="state-grid">
+          <div class="reasoning-log" data-reasoning>
+            <div class="reasoning-step">
+              <span class="marker"></span>
+              <div class="text">
+                <div class="head">Anfrage gegen ICP prüfen</div>
+                <div class="detail">Maschinenbau · 50–500 MA · DACH · Standard-Konfiguration ✓ · keine Eskalations-Trigger.</div>
+              </div>
+            </div>
+            <div class="reasoning-step">
+              <span class="marker"></span>
+              <div class="text">
+                <div class="head">CRM-Stammdaten · TechBau Mannheim</div>
+                <div class="detail">Neukunde · keine Historie · Bonität via Creditreform „2,1 ausreichend" · Standard-Konditionen ok.</div>
+              </div>
+            </div>
+            <div class="reasoning-step">
+              <span class="marker"></span>
+              <div class="text">
+                <div class="head">Konfiguration validieren · SAP-Produktstammdaten</div>
+                <div class="detail">Antrieb 22 kW IE3 B5 · Artikel WAS-22B5-IE3 · auf Lager 6 Stk · Lieferzeit Standard 4 Wochen.</div>
+              </div>
+            </div>
+            <div class="reasoning-step">
+              <span class="marker"></span>
+              <div class="text">
+                <div class="head">Preis-Kalkulation · Margenkontrolle</div>
+                <div class="detail">Listenpreis 3.890 € · Mengen-Staffel 4–9 Stk: −5 % · Stückpreis 3.695,50 € · Marge 31 % ✓.</div>
+              </div>
+            </div>
+            <div class="reasoning-step">
+              <span class="marker"></span>
+              <div class="text">
+                <div class="head">Angebot zusammenstellen · Folge-Aktionen</div>
+                <div class="detail">Mail + Angebots-PDF · Gültigkeit 30 Tage · Pipeline-Stage „Angebot" · Follow-up Tag 7.</div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="work-side" data-tool-calls>
+            <div class="tool-call" data-tool="hubspot">
+              <div class="tool-name">HubSpot CRM · ICP & Stammdaten</div>
+              <div class="tool-result">TechBau Mannheim · Neukunde angelegt · Kontakt T. Werner · Quelle: Webformular</div>
+            </div>
+            <div class="tool-call" data-tool="sap">
+              <div class="tool-name">SAP B1 → Produkt & Verfügbarkeit</div>
+              <div class="tool-result">WAS-22B5-IE3 · Bestand 6 Stk · Lieferzeit 4 Wochen · Listenpreis 3.890 €</div>
+            </div>
+            <div class="tool-call" data-tool="kb">
+              <div class="tool-name">Preisschema · Mengen-Staffel</div>
+              <div class="tool-result">Staffel 4–9 Stk · −5 % · Min-Marge 25 % · Stückpreis 3.695,50 € freigegeben</div>
+            </div>
+            <div class="tool-call" data-tool="crm">
+              <div class="tool-name">CRM · Pipeline-Pflege</div>
+              <div class="tool-result">Deal angelegt · Stage „Angebot" · Wert 14.782 € · Follow-up 04.05. · Owner Jonas</div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ════════════════════════ STATE 3 · OUTPUT ════════════════════════ -->
+      <section class="demo-state" data-state="3">
+        <span class="state-eyebrow">Schritt 3 · Angebot</span>
+        <h2 class="state-title">Jonas formuliert das Angebot — mit echten Konfig- und Preisdaten.</h2>
+
+        <div class="state-grid">
+          <div class="compose">
+            <div class="compose-head">
+              <div class="compose-head-row">
+                <span class="label">An</span>
+                <span class="value">t.werner@techbau-mannheim.de</span>
+              </div>
+              <div class="compose-head-row">
+                <span class="label">Betreff</span>
+                <span class="value">Angebot ANG-2026-0612 · 4× Industrieantrieb 22 kW</span>
+              </div>
+              <div class="compose-head-row">
+                <span class="label">Vorgang</span>
+                <span class="value">ANF-2026-0418 · Pipeline „Angebot"</span>
+              </div>
+            </div>
+            <div class="compose-body" data-typewriter><span class="typing-cursor"></span></div>
+          </div>
+
+          <aside class="work-side">
+            <div class="card">
+              <span class="card-eyebrow">Angebots-Sicherheit</span>
+              <h3 class="card-title">Hohe Konfidenz</h3>
+              <div class="confidence-bar"><span data-confidence-bar></span></div>
+              <div class="confidence-meta">
+                <span>Belegte Datenquellen</span>
+                <span class="pct" data-confidence-pct>0%</span>
+              </div>
+            </div>
+
+            <div class="card card--inset">
+              <span class="card-eyebrow">Quellen verwendet</span>
+              <ul class="sources-list">
+                <li><span class="src-icon">HUB</span> ICP-Check + Neukunden-Anlage</li>
+                <li><span class="src-icon">SAP</span> Produkt WAS-22B5-IE3 · Bestand · Lieferzeit</li>
+                <li><span class="src-icon">KB</span> Preisschema · Margenregel v2.4</li>
+                <li><span class="src-icon">CRM</span> Pipeline-Stage + Follow-up gesetzt</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ════════════════════════ STATE 4 · APPROVAL / SEND ════════════════════════ -->
+      <section class="demo-state" data-state="4">
+        <div class="approval-shell">
+          <div class="approval-icon" aria-hidden="true"></div>
+          <h2 class="approval-title">Angebot versendet & CRM gepflegt.</h2>
+          <p class="approval-subtitle">
+            Angebot per Mail an TechBau, Pipeline auf „Angebot" gesetzt, Follow-up für Tag 7 terminiert. Eskalation nicht erforderlich.
+          </p>
+          <div class="approval-receipt">
+            <span><span class="key">Angebot</span> <span class="val">ANG-2026-0612</span></span>
+            <span class="sep" aria-hidden="true"></span>
+            <span><span class="key">Bearbeitungszeit</span> <span class="val">7 min 12 s</span></span>
+            <span class="sep" aria-hidden="true"></span>
+            <span><span class="key">Pipeline-Wert</span> <span class="val">14.782 €</span></span>
+            <span class="sep" aria-hidden="true"></span>
+            <span><span class="key">Follow-up</span> <span class="val">Mo 04.05. · 09:00</span></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════ STATE 5 · IMPACT ════════════════════════ -->
+      <section class="demo-state" data-state="5">
+        <div class="impact-shell">
+          <span class="impact-eyebrow">Schritt 5 · Wochenbilanz · Kalenderwoche 17</span>
+          <h2 class="impact-title">Jonas in der Praxis — diese Woche bei Werner-Antriebssysteme.</h2>
+
+          <div class="kpi-grid">
+            <div class="kpi-tile">
+              <div class="kpi-num" data-kpi="53">0</div>
+              <span class="kpi-label">Anfragen bearbeitet</span>
+              <span class="kpi-delta">+12 % vs. Vorwoche</span>
+            </div>
+            <div class="kpi-tile">
+              <div class="kpi-num" data-kpi="8" data-suffix=" min">0</div>
+              <span class="kpi-label">Ø Erst-Reaktion</span>
+              <span class="kpi-delta">−97 % vs. Manuell</span>
+            </div>
+            <div class="kpi-tile">
+              <div class="kpi-num" data-kpi="41">0</div>
+              <span class="kpi-label">Angebote rausgegangen</span>
+              <span class="kpi-delta">12 zur Vertriebs-Klärung</span>
+            </div>
+            <div class="kpi-tile">
+              <div class="kpi-num" data-kpi="100" data-suffix=" %">0</div>
+              <span class="kpi-label">Pipeline-Hygiene</span>
+              <span class="kpi-delta is-warn">Stages aktuell · Follow-ups gesetzt</span>
+            </div>
+          </div>
+
+          <div class="compare-strip">
+            <div class="compare-block">
+              <span class="label">Vorher · ohne Jonas</span>
+              <div class="value">24–48 h Reaktionszeit</div>
+              <div class="sub">3-köpfiger Innendienst · 60 Anfragen/Woche · Pipeline regelmäßig veraltet · Anfragen verloren</div>
+            </div>
+            <div class="compare-arrow">→</div>
+            <div class="compare-block">
+              <span class="label">Mit Jonas · seit Tag 30</span>
+              <div class="value">Unter 10 min bis Erst-Reaktion</div>
+              <div class="sub">Vertrieb verhandelt nur noch · Standard-Angebote raus binnen Minuten · Conversion messbar gestiegen</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<script src="../_shared/demo.js"></script>
+<script>
+  // ============================================================
+  // Jonas — Demo-Konfiguration
+  // ============================================================
+  window.DemoConfig = {
+    durations: [9000, 22000, 21000, 8000, 14000],
+
+    onState: [
+      // ── State 1: Inbox ────────────────────────────────────
+      function (root) {
+        // Anfragen-Eingang läuft per CSS, nichts zu tun
+      },
+
+      // ── State 2: Working — Reasoning + Tool-Calls ────────
+      function (root) {
+        const log = root.querySelector('[data-reasoning]');
+        const tools = root.querySelector('[data-tool-calls]');
+        // Reset
+        log.querySelectorAll('.reasoning-step').forEach(s => {
+          s.classList.remove('is-visible', 'is-active', 'is-done');
+        });
+        tools.querySelectorAll('.tool-call').forEach(c => c.classList.remove('is-visible'));
+
+        window.DemoHelpers.animateReasoningSteps(log, { activeMs: 2200, gapMs: 600 });
+        window.DemoHelpers.revealToolCalls(tools, { gapMs: 2400 });
+      },
+
+      // ── State 3: Output — Typewriter + Confidence ────────
+      function (root) {
+        const body = root.querySelector('[data-typewriter]');
+        const bar = root.querySelector('[data-confidence-bar]');
+        const pct = root.querySelector('[data-confidence-pct]');
+
+        // Reset
+        bar.style.width = '0%';
+        pct.textContent = '0%';
+
+        const text =
+`Sehr geehrter Herr Werner,
+
+vielen Dank für Ihre Anfrage zu unseren Industrieantrieben.
+
+Anbei unser Angebot für Ihr Pumpenstation-Projekt:
+
+Pos. 1   4 Stk · Industrieantrieb 22 kW, IE3, B5-Flansch
+         Artikel WAS-22B5-IE3
+         Stückpreis        3.695,50 €
+         Gesamt            14.782,00 €
+
+Lieferzeit:     4 Wochen ab Auftragseingang (passt zu Q2 2026)
+Zahlungsziel:   30 Tage netto · 2 % Skonto bei Zahlung in 14 Tagen
+Versand:        frei Haus · Versicherung inklusive
+Gültigkeit:     30 Tage (bis 27.05.2026)
+
+Die vollständige Angebots-PDF (ANG-2026-0612) ist beigefügt.
+Bei Rückfragen zur Konfiguration oder zu Sondermassen melde
+ich mich gerne — meine Kollegin Frau Berger steht ebenfalls
+zur Verfügung.
+
+Mit freundlichen Grüßen
+Vertriebsinnendienst
+Werner-Antriebssysteme GmbH`;
+
+        window.DemoHelpers.typewrite(body, text, { charMs: 12 });
+
+        // Confidence-Bar fill mit kleinem Delay (visuell parallel zum Tippen)
+        setTimeout(() => {
+          window.DemoHelpers.fillBar(bar, 94);
+          let p = 0;
+          const target = 94;
+          const start = performance.now();
+          function step(now) {
+            const t = Math.min(1, (now - start) / 800);
+            p = Math.round(target * (1 - Math.pow(1 - t, 3)));
+            pct.textContent = p + '%';
+            if (t < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }, 1400);
+      },
+
+      // ── State 4: Approval ────────────────────────────────
+      function (root) {
+        // Approval-Burst läuft per CSS keyframes, nichts zu tun
+      },
+
+      // ── State 5: Impact — KPIs animieren ─────────────────
+      function (root) {
+        const tiles = root.querySelectorAll('.kpi-num[data-kpi]');
+        tiles.forEach((el, i) => {
+          const target = parseFloat(el.dataset.kpi);
+          const decimals = parseInt(el.dataset.decimals || '0', 10);
+          const suffix = el.dataset.suffix || '';
+          // Reset
+          el.textContent = decimals ? '0,0' : '0';
+          setTimeout(() => {
+            window.DemoHelpers.countUp(el, target, { dur: 1100, decimals, suffix });
+          }, i * 180);
+        });
+      },
+    ],
+  };
+</script>
+
+</body>
+</html>

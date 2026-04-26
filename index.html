@@ -192,6 +192,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
+<main>
+
 <!-- ============ HERO ============ -->
 <header class="hero">
   <video class="hero-video" poster="assets/hero/hero-poster.jpg" autoplay muted playsinline preload="metadata" aria-hidden="true">
@@ -241,7 +243,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="tab-panel active" id="tab-external">
       <p class="tab-caption fade-up" data-i18n="ext.sublede">Ticket rein. Beleg rein. Angebot raus. Drei Abteilungen, drei Entscheider, drei parallele Einstiegspfade.</p>
 
-      <div class="agents-grid">
+      <div class="agents-grid mobile-carousel">
 
         <article class="atelier-card profile-card">
           <div class="profile-headshot" data-persona="paula">
@@ -454,6 +456,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p data-i18n="process.lede">Vom unverbindlichen Erstgespräch bis zum laufenden Betrieb — klar, planbar, ohne Überraschungen.</p>
     </div>
 
+    <div class="process-grid-wrap">
     <div class="process-grid">
       <article class="atelier-card process-card fade-up">
         <div class="process-card__image">
@@ -490,6 +493,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3 class="process-card__title" data-i18n="process.step4.title">Wartung & Verbesserung</h3>
         <p class="process-card__body" data-i18n="process.step4.body">Nach Go-Live laufend gewartet und schrittweise verbessert. Ihr digitaler Mitarbeiter wird mit der Zeit besser, nicht schlechter.</p>
       </article>
+    </div>
     </div>
 
     <div class="process-cta fade-up">
@@ -644,6 +648,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+</main>
+
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="container">
@@ -656,7 +662,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="footer-teaser" data-i18n="foot.teaser">Weitere Rollen auf Anfrage</span>
       </div>
       <div>
-        <h5 data-i18n="foot.leistungen">Leistungen</h5>
+        <h3 data-i18n="foot.leistungen">Leistungen</h3>
         <ul>
           <li><a href="leistungen/buchhaltung-automatisieren/" data-i18n="foot.buchhaltung">Buchhaltung automatisieren</a></li>
           <li><a href="leistungen/vertrieb-automatisieren/" data-i18n="foot.vertrieb">Vertrieb automatisieren</a></li>
@@ -664,7 +670,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
       <div>
-        <h5 data-i18n="foot.menu">Menü</h5>
+        <h3 data-i18n="foot.menu">Menü</h3>
         <ul>
           <li><a href="#agents" data-i18n="nav.agents">Rollen</a></li>
           <li><a href="#example" data-i18n="nav.example">Beispiel</a></li>
@@ -675,21 +681,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
       <div>
-        <h5 data-i18n="foot.standort">Standort</h5>
+        <h3 data-i18n="foot.standort">Standort</h3>
         <ul>
           <li>Stuttgart</li>
           <li>München</li>
         </ul>
       </div>
       <div>
-        <h5 data-i18n="foot.folgen">Folgen</h5>
+        <h3 data-i18n="foot.folgen">Folgen</h3>
         <ul>
           <li><a href="#" data-i18n="foot.linkedin">LinkedIn</a></li>
           <li><a href="#" data-i18n="foot.felipe">Felipe</a></li>
         </ul>
       </div>
       <div>
-        <h5 data-i18n="foot.recht">Recht</h5>
+        <h3 data-i18n="foot.recht">Recht</h3>
         <ul>
           <li><a href="impressum.html" data-i18n="foot.impressum">Impressum</a></li>
           <li><a href="datenschutz.html" data-i18n="foot.datenschutz">Datenschutz</a></li>
@@ -1020,6 +1026,21 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     v.pause();
   });
 }
+</script>
+<script>
+/* Klaro a11y shim — Klaro renders dialog without resolving aria-labelledby in time for Lighthouse */
+window.addEventListener('load', function() {
+  var label = 'Cookies und Datenschutz';
+  function tag() {
+    var n = document.getElementById('klaro-cookie-notice');
+    if (n) n.setAttribute('aria-label', label);
+    var m = document.getElementById('klaro-cookie-modal');
+    if (m) m.setAttribute('aria-label', label);
+  }
+  tag();
+  setTimeout(tag, 500);
+  setTimeout(tag, 1500);
+});
 </script>
 </body>
 </html>

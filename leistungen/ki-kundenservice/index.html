@@ -18,6 +18,7 @@
 <meta name="twitter:description" content="Standard-Anfragen, Ticket-Qualifizierung, Eskalation — in 30 Tagen besetzt." />
 <meta name="twitter:image" content="https://lp-theta-lac.vercel.app/assets/og-image.png" />
 <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+<link rel="preload" as="image" href="../../assets/personas/paula-cover-480w.webp" type="image/webp" imagesrcset="../../assets/personas/paula-cover-480w.webp 480w, ../../assets/personas/paula-cover-960w.webp 960w" imagesizes="(max-width: 600px) 480px, 960px" fetchpriority="high" />
 <link rel="stylesheet" href="../../colors_and_type.css" />
 <link rel="stylesheet" href="../../styles/site.css" />
 <script type="application/ld+json">
@@ -151,6 +152,8 @@
   </div>
 </div>
 
+<main>
+
 <header class="leistung-hero">
   <div class="container">
     <div class="leistung-hero-grid">
@@ -172,15 +175,22 @@
         </div>
       </div>
       <div class="leistung-hero-persona" data-persona="paula">
-        <img class="persona-cover" src="../../assets/personas/paula-cover.png" alt="Paula — Digitale Service-Mitarbeiterin" loading="eager" decoding="async" width="1024" height="1536">
+        <picture>
+          <source type="image/webp" srcset="../../assets/personas/paula-cover-480w.webp 480w, ../../assets/personas/paula-cover-960w.webp 960w" sizes="(max-width: 600px) 480px, 960px">
+          <img class="persona-cover" src="../../assets/personas/paula-cover-480w.jpg" srcset="../../assets/personas/paula-cover-480w.jpg 480w, ../../assets/personas/paula-cover-960w.jpg 960w" sizes="(max-width: 600px) 480px, 960px" alt="Paula — Digitale Service-Mitarbeiterin" width="480" height="720" fetchpriority="high" decoding="async">
+        </picture>
         <span class="headshot-status">Verfügbar</span>
       </div>
     </div>
   </div>
 </header>
 
-<section class="leistung-section section--warm">
+<section class="leistung-section section--warm" data-macht-section="positive">
   <div class="container">
+    <div class="leistung-macht-tabs" role="tablist" aria-label="Was er macht und nicht macht">
+      <button type="button" role="tab" data-macht-tab="positive" aria-selected="true" class="is-active">Was er macht</button>
+      <button type="button" role="tab" data-macht-tab="negative" aria-selected="false">Was er nicht macht</button>
+    </div>
     <div class="leistung-split">
       <div class="leistung-split-left">
         <span class="eyebrow">Aufgabenpaket</span>
@@ -206,8 +216,12 @@
   </div>
 </section>
 
-<section class="leistung-section">
+<section class="leistung-section" data-macht-section="negative">
   <div class="container">
+    <div class="leistung-macht-tabs" role="tablist" aria-label="Was er macht und nicht macht">
+      <button type="button" role="tab" data-macht-tab="positive" aria-selected="false">Was er macht</button>
+      <button type="button" role="tab" data-macht-tab="negative" aria-selected="true" class="is-active">Was er nicht macht</button>
+    </div>
     <div class="leistung-split">
       <div class="leistung-split-left">
         <span class="eyebrow">Klare Abgrenzung</span>
@@ -238,15 +252,35 @@
     <div class="leistung-narrow">
       <span class="eyebrow">Ein Tag im Betrieb</span>
       <h2>Beispiel: 400 Tickets pro Woche.</h2>
-      <p class="leistung-body">
-        Ein typischer Industrie-Mittelständler mit B2B-Service bekommt rund 400 Tickets pro Woche. Davon sind ungefähr 280 Standard — Lieferstatus, Rechnung-Kopie, Zugangsdaten, einfache Produkt-Fragen. Heute braucht ein dreiköpfiges Service-Team dafür den Großteil seiner Zeit. Reaktionszeit: oft 24 Stunden, manchmal länger.
-      </p>
-      <p class="leistung-body">
-        Mit einem digitalen Mitarbeiter werden die 280 Routine-Tickets binnen Minuten beantwortet — vollständig, mit Bezug auf echte Bestelldaten, in der richtigen Tonalität. Die 120 komplexen Tickets gehen mit Hintergrund-Daten und Antwort-Vorschlag direkt an die richtige Service-Kollegin.
-      </p>
-      <p class="leistung-body">
-        <strong>Effekt:</strong> Reaktionszeit fällt von 24h auf unter 30 Minuten. Service-Team bearbeitet nur noch das, wo Erfahrung gefragt ist. Kunden-Bewertungen steigen messbar — weil Wartezeit der häufigste Beschwerdepunkt war.
-      </p>
+      <div class="stat-block">
+        <div class="stat-volume">
+          <span class="stat-num">400</span>
+          <span class="stat-label">Tickets pro Woche</span>
+        </div>
+        <div class="stat-bar" role="img" aria-label="280 Tickets automatisiert (70%), 120 Tickets eskaliert (30%)">
+          <div class="stat-bar-fill stat-bar-fill--automated" style="width: 70%">
+            <span>280 automatisiert</span>
+          </div>
+          <div class="stat-bar-fill stat-bar-fill--escalated" style="width: 30%">
+            <span>120 eskaliert</span>
+          </div>
+        </div>
+        <div class="stat-comparison">
+          <span class="stat-comparison-label">Reaktionszeit</span>
+          <div class="stat-comparison-grid">
+            <div class="stat-comparison-card stat-comparison-card--before">
+              <span class="stat-comparison-num">24 h</span>
+              <span class="stat-comparison-side">vorher</span>
+            </div>
+            <div class="stat-comparison-arrow" aria-hidden="true">→</div>
+            <div class="stat-comparison-card stat-comparison-card--after">
+              <span class="stat-comparison-num">30 min</span>
+              <span class="stat-comparison-side">mit DMA</span>
+            </div>
+          </div>
+        </div>
+        <p class="stat-effect"><strong>Effekt:</strong> Service-Team bearbeitet nur, wo Erfahrung gefragt ist. Kunden-Bewertungen steigen messbar — weil Wartezeit der häufigste Beschwerdepunkt war.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -266,16 +300,15 @@
       </div>
       <div class="leistung-split-right">
         <span class="eyebrow">Integriert mit</span>
-        <ul class="leistung-tools">
-          <li>Zendesk</li>
-          <li>Freshdesk</li>
-          <li>HubSpot Service</li>
-          <li>Salesforce Service</li>
-          <li>Microsoft Dynamics</li>
-          <li>Outlook / Microsoft 365</li>
-          <li>Slack</li>
-          <li>+ Custom-Helpdesk nach Scoping</li>
-        </ul>
+        <div class="tool-logo-grid">
+          <img src="../../assets/logos/zendesk.svg" alt="Zendesk" loading="lazy" />
+          <img src="../../assets/logos/hubspot.svg" alt="HubSpot Service" loading="lazy" />
+          <img src="../../assets/logos/salesforce.svg" alt="Salesforce Service" loading="lazy" />
+          <img src="../../assets/logos/dynamics.svg" alt="Microsoft Dynamics 365" loading="lazy" />
+          <img src="../../assets/logos/microsoftoutlook.svg" alt="Outlook / Microsoft 365" loading="lazy" />
+          <img src="../../assets/logos/slack.svg" alt="Slack" loading="lazy" />
+        </div>
+        <p class="tools-note">+ Freshdesk &amp; Custom-Helpdesk nach Scoping</p>
       </div>
     </div>
   </div>
@@ -289,13 +322,16 @@
       <p class="leistung-body">Walkthrough: wie ein Standard-Service-Ticket binnen Minuten beantwortet wird — mit Bezug auf echte Bestelldaten, nicht generischen Skript-Antworten.</p>
     </div>
 
-    <div class="demo-loom-wrap">
-      <!-- <iframe src="https://www.loom.com/embed/LOOM_ID_PAULA_KUNDENSERVICE" allowfullscreen></iframe> -->
-      <div class="demo-loom-placeholder">
-        <span class="icon">▶</span>
-        <strong>90-Sekunden-Walkthrough kommt</strong>
-        <span>Felipe spricht das Video diese Woche ein. Solange — Erstgespräch buchen, wir zeigen Live.</span>
-      </div>
+    <div class="demo-embed-wrap">
+      <iframe class="demo-embed-iframe"
+              src="../../demos/paula/index.html"
+              title="Paula · Live-Demo · Kundenservice-Walkthrough"
+              loading="lazy"
+              allow="autoplay"></iframe>
+      <a class="demo-embed-fullscreen" href="../../demos/paula/index.html" target="_blank" rel="noopener" aria-label="Demo im neuen Tab öffnen">
+        <span aria-hidden="true">⤢</span>
+        <span>Vollbild</span>
+      </a>
     </div>
 
     <article class="demo-persona-card">
@@ -335,6 +371,16 @@
   </div>
 </section>
 
+<section class="leistung-section">
+  <div class="container">
+    <div class="leistung-cta-block glass">
+      <h2>Bereit, Ihren Kundenservice zu digitalisieren?</h2>
+      <p class="leistung-body">Ein 30-Minuten-Erstgespräch. Wir schauen, ob ein digitaler Mitarbeiter zu Ihrem Ticket-Volumen und Ihrem Service-Setup passt. Kein Vertrieb-Druck, kein Vorab-Pitch.</p>
+      <a class="btn btn-primary" href="../../kontakt/">Erstgespräch buchen</a>
+    </div>
+  </div>
+</section>
+
 <section class="leistung-section section--warm">
   <div class="container">
     <div class="section-head">
@@ -362,15 +408,7 @@
   </div>
 </section>
 
-<section class="leistung-section">
-  <div class="container">
-    <div class="leistung-cta-block glass">
-      <h2>Bereit, Ihren Kundenservice zu digitalisieren?</h2>
-      <p class="leistung-body">Ein 30-Minuten-Erstgespräch. Wir schauen, ob ein digitaler Mitarbeiter zu Ihrem Ticket-Volumen und Ihrem Service-Setup passt. Kein Vertrieb-Druck, kein Vorab-Pitch.</p>
-      <a class="btn btn-primary" href="../../kontakt/">Erstgespräch buchen</a>
-    </div>
-  </div>
-</section>
+</main>
 
 <footer class="footer">
   <div class="container">
@@ -382,7 +420,7 @@
         <p class="footer-tagline">Personaldienstleister für digitale Mitarbeiter im deutschen Industrie-Mittelstand.</p>
       </div>
       <div>
-        <h5>Leistungen</h5>
+        <h3>Leistungen</h3>
         <ul>
           <li><a href="../buchhaltung-automatisieren/">Buchhaltung automatisieren</a></li>
           <li><a href="../vertrieb-automatisieren/">Vertrieb automatisieren</a></li>
@@ -390,7 +428,7 @@
         </ul>
       </div>
       <div>
-        <h5>Menü</h5>
+        <h3>Menü</h3>
         <ul>
           <li><a href="../../#agents">Rollen</a></li>
           <li><a href="../../live-demo/index.html">Live Demos</a></li>
@@ -400,7 +438,7 @@
         </ul>
       </div>
       <div>
-        <h5>Recht</h5>
+        <h3>Recht</h3>
         <ul>
           <li><a href="../../impressum.html">Impressum</a></li>
           <li><a href="../../datenschutz.html">Datenschutz</a></li>
@@ -456,6 +494,43 @@ function setMobilePanelOpen(open) {
 navMobileToggle.addEventListener('click', () => setMobilePanelOpen(!navMobilePanel.classList.contains('is-open')));
 navMobilePanel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMobilePanelOpen(false)));
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && navMobilePanel.classList.contains('is-open')) setMobilePanelOpen(false); });
+
+/* ─── Macht/Nicht-Macht Tab-Toggle (≤720px) ─── */
+const machtTabs = document.querySelectorAll('.leistung-macht-tabs [data-macht-tab]');
+const machtSections = document.querySelectorAll('[data-macht-section]');
+const machtMQ = window.matchMedia('(max-width: 720px)');
+
+function activateMachtTab(name) {
+  machtTabs.forEach(b => {
+    const active = b.dataset.machtTab === name;
+    b.classList.toggle('is-active', active);
+    b.setAttribute('aria-selected', active ? 'true' : 'false');
+  });
+  machtSections.forEach(s => s.classList.toggle('is-active', s.dataset.machtSection === name));
+}
+machtTabs.forEach(b => b.addEventListener('click', () => activateMachtTab(b.dataset.machtTab)));
+
+function syncMachtMode(mobile) {
+  if (mobile) activateMachtTab('positive');
+  else machtSections.forEach(s => s.classList.remove('is-active'));
+}
+syncMachtMode(machtMQ.matches);
+machtMQ.addEventListener('change', e => syncMachtMode(e.matches));
+</script>
+<script>
+/* Klaro a11y shim — Klaro renders dialog without resolving aria-labelledby in time for Lighthouse */
+window.addEventListener('load', function() {
+  var label = 'Cookies und Datenschutz';
+  function tag() {
+    var n = document.getElementById('klaro-cookie-notice');
+    if (n) n.setAttribute('aria-label', label);
+    var m = document.getElementById('klaro-cookie-modal');
+    if (m) m.setAttribute('aria-label', label);
+  }
+  tag();
+  setTimeout(tag, 500);
+  setTimeout(tag, 1500);
+});
 </script>
 </body>
 </html>
