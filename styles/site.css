@@ -2693,3 +2693,205 @@ section, header.hero {
 }
 .article-hero-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 @media (max-width: 720px) { .article-hero-img { aspect-ratio: 4 / 3; border-radius: var(--dma-radius-md); margin-bottom: 32px; } }
+
+/* ============================================================
+   LEISTUNG-PAGES (Use-Case-Sub-Pages)
+   ============================================================ */
+
+.page-leistung { background: var(--dma-elfenbein); }
+
+.leistung-hero {
+  padding: 140px 0 64px;
+  background: var(--dma-elfenbein);
+}
+.leistung-h1 {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 24px 0 24px;
+  color: var(--dma-tiefsee);
+  letter-spacing: -0.01em;
+}
+.leistung-lede {
+  font-size: var(--dma-text-md);
+  line-height: 1.55;
+  color: var(--dma-grafit);
+  margin-bottom: 32px;
+  max-width: 720px;
+}
+.leistung-eyebrow { margin-bottom: 24px; }
+.leistung-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+.leistung-section { padding: 80px 0; }
+.leistung-section .container { max-width: 1080px; }
+.leistung-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+@media (max-width: 800px) { .leistung-split { grid-template-columns: 1fr; gap: 32px; } }
+.leistung-split-left h2,
+.leistung-narrow h2 {
+  font-size: var(--dma-text-2xl);
+  line-height: 1.2;
+  margin: 16px 0 24px;
+  color: var(--dma-tiefsee);
+}
+.leistung-body {
+  font-size: var(--dma-text-base);
+  line-height: 1.6;
+  color: var(--dma-tinte);
+  margin-bottom: 16px;
+}
+.leistung-list { list-style: none; padding: 0; margin: 0; }
+.leistung-list li {
+  padding: 14px 0 14px 28px;
+  border-bottom: 1px solid var(--dma-dunst);
+  position: relative;
+  font-size: var(--dma-text-base);
+  line-height: 1.5;
+  color: var(--dma-tinte);
+}
+.leistung-list li::before {
+  content: "→"; position: absolute; left: 0; top: 14px;
+  color: var(--dma-petrol);
+  font-weight: 700;
+}
+.leistung-list li:last-child { border-bottom: 0; }
+.leistung-list--negative li::before { content: "×"; color: var(--dma-grau-mitte); }
+.leistung-list strong {
+  color: var(--dma-tiefsee);
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.leistung-tools {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.leistung-tools li {
+  padding: 8px 14px;
+  background: var(--dma-papier);
+  border: 1px solid var(--dma-dunst);
+  border-radius: 999px;
+  font-size: var(--dma-text-sm);
+  font-family: var(--dma-font-mono);
+  color: var(--dma-grafit);
+}
+.leistung-narrow {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.leistung-cta-block {
+  padding: 56px 48px;
+  text-align: center;
+  border-radius: var(--dma-radius-lg);
+  max-width: 720px;
+  margin: 0 auto;
+}
+.leistung-cta-block h2 { margin-bottom: 16px; }
+.leistung-cta-block p { margin: 0 auto 24px; max-width: 540px; }
+.leistung-inline-link {
+  color: var(--dma-petrol);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid var(--dma-petrol);
+  margin-left: 4px;
+}
+.leistung-inline-link:hover { color: var(--dma-petrol-hell); border-color: var(--dma-petrol-hell); }
+
+/* Breadcrumb */
+.breadcrumb {
+  font-size: var(--dma-text-xs);
+  color: var(--dma-grafit);
+  margin-bottom: 24px;
+  font-family: var(--dma-font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.breadcrumb a { color: var(--dma-petrol); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb [aria-current] { color: var(--dma-tinte); }
+.breadcrumb span:not([aria-current]) { margin: 0 8px; color: var(--dma-grau-mitte); }
+
+/* ====== Embedded Live-Demo Section ====== */
+.leistung-demo {
+  padding: 96px 0;
+  background: var(--dma-papier);
+}
+.leistung-demo .container { max-width: 1080px; }
+.leistung-demo .section-head { text-align: center; margin-bottom: 40px; }
+
+.demo-loom-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  border-radius: var(--dma-radius-lg);
+  overflow: hidden;
+  background: var(--dma-tiefsee);
+  margin-bottom: 40px;
+  box-shadow: 0 12px 48px rgba(15, 23, 42, 0.10);
+}
+.demo-loom-wrap iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+.demo-loom-placeholder {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  color: var(--dma-elfenbein);
+  text-align: center;
+  padding: 32px;
+  background: linear-gradient(135deg, var(--dma-tiefsee) 0%, var(--dma-petrol) 100%);
+}
+.demo-loom-placeholder .icon {
+  font-size: 56px;
+  margin-bottom: 16px;
+  opacity: 0.85;
+}
+.demo-loom-placeholder strong { font-size: var(--dma-text-lg); margin-bottom: 8px; display: block; }
+.demo-loom-placeholder span { font-size: var(--dma-text-sm); opacity: 0.75; max-width: 480px; }
+
+/* Persona-Card unter Demo */
+.demo-persona-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+  align-items: center;
+  padding: 32px;
+  background: var(--dma-elfenbein);
+  border: 1px solid var(--dma-dunst);
+  border-radius: var(--dma-radius-lg);
+}
+@media (max-width: 720px) {
+  .demo-persona-card { grid-template-columns: 1fr; text-align: center; }
+}
+.demo-persona-headshot {
+  width: 200px; height: 200px;
+  border-radius: var(--dma-radius-md);
+  overflow: hidden;
+  background: var(--dma-papier);
+}
+@media (max-width: 720px) { .demo-persona-headshot { margin: 0 auto; } }
+.demo-persona-headshot img,
+.demo-persona-headshot video {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.demo-persona-info h3 {
+  font-size: var(--dma-text-xl);
+  color: var(--dma-tiefsee);
+  margin-bottom: 4px;
+}
+.demo-persona-role {
+  font-size: var(--dma-text-sm);
+  color: var(--dma-grafit);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-family: var(--dma-font-mono);
+  margin-bottom: 16px;
+}
+.demo-persona-info p { color: var(--dma-tinte); line-height: 1.55; margin-bottom: 16px; }
+.demo-persona-info .leistung-tools { margin-bottom: 20px; }
+.demo-persona-info .btn { display: inline-flex; }
