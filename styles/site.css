@@ -2089,7 +2089,8 @@ section, header.hero {
   font-family: var(--dma-font-mono);
   font-size: 12px;
   letter-spacing: 0.06em;
-  color: var(--dma-petrol-hell);
+  /* Heller Tone für WCAG-AA auf footer-dark (--petrol-hell #5A7FE5 = 3.74:1, failed) */
+  color: #B5C7F0;
 }
 
 .footer-divider {
@@ -2903,8 +2904,14 @@ section, header.hero {
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
-.breadcrumb a { color: var(--dma-petrol); text-decoration: none; }
-.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb a {
+  color: var(--dma-petrol);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(30, 58, 138, 0.3);
+}
+.breadcrumb a:hover { text-decoration-color: var(--dma-petrol); }
 .breadcrumb [aria-current] { color: var(--dma-tinte); }
 .breadcrumb span:not([aria-current]) { margin: 0 8px; color: var(--dma-eyebrow); }
 
@@ -3154,6 +3161,39 @@ section, header.hero {
   display: block;
   background: var(--dma-papier);
 }
+/* Skeleton während Iframe deferred lädt (LCP-Optimierung) */
+.calendar-iframe-skeleton {
+  flex: 1;
+  width: 100%;
+  height: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, var(--dma-papier) 0%, var(--dma-elfenbein) 100%);
+  color: var(--dma-fg-subtle);
+  font-family: var(--dma-font-mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+.calendar-skeleton-text::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+  border: 2px solid var(--dma-dunst);
+  border-top-color: var(--dma-petrol);
+  border-radius: 50%;
+  vertical-align: -2px;
+  animation: dma-spin 0.9s linear infinite;
+}
+@keyframes dma-spin { to { transform: rotate(360deg); } }
+@media (max-width: 720px) {
+  .calendar-iframe-skeleton {
+    flex: 0 0 auto;
+    height: clamp(540px, 78vh, 720px);
+  }
+}
 @media (max-width: 720px) {
   .calendar-iframe {
     /* flex überschreiben: iframe wächst Parent, statt von ihm geschrumpft zu werden */
@@ -3319,9 +3359,11 @@ section, header.hero {
 .demo-embed-fullscreen span:first-child { font-size: 13px; }
 
 @media (max-width: 720px) {
-  .demo-embed-wrap { aspect-ratio: 4 / 5; }
-  @supports not (aspect-ratio: 4 / 5) {
-    .demo-embed-wrap { padding-bottom: 125%; }
+  .demo-embed-wrap {
+    aspect-ratio: auto;
+    height: 880px;
+    max-height: 90vh;
+    min-height: 720px;
   }
 }
 
@@ -3418,4 +3460,18 @@ section, header.hero {
 /* "powered by Klaro" footnote dimmen */
 .klaro .cookie-modal .cm-footer .cm-powered-by {
   opacity: 0.5;
+}
+
+/* "Einstellungen / Mehr erfahren" Link in Cookie-Notice — Klaro default
+   verwendet petrol auf dark = 1.35:1 (komplett unleserlich). Override auf weiss. */
+.klaro .cookie-notice .cm-link,
+.klaro .cookie-notice .cn-learn-more,
+.klaro .cookie-notice a {
+  color: #B5C7F0 !important;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.klaro .cookie-notice .cm-link:hover,
+.klaro .cookie-notice a:hover {
+  color: #ffffff !important;
 }
