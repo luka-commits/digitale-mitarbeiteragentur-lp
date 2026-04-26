@@ -2695,6 +2695,106 @@ section, header.hero {
 @media (max-width: 720px) { .article-hero-img { aspect-ratio: 4 / 3; border-radius: var(--dma-radius-md); margin-bottom: 32px; } }
 
 /* ============================================================
+   NAV DROPDOWN (Leistungen)
+   ============================================================ */
+
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.nav-dropdown-trigger {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  /* match .nav-center a — same padding, font, color, transitions */
+  padding: 8px 14px;
+  font-family: inherit;
+  font-size: var(--dma-text-sm);
+  color: var(--dma-fg-muted);
+  border-radius: 6px;
+  transition: color 150ms, background 150ms;
+}
+.nav-dropdown-trigger:hover {
+  color: var(--dma-fg);
+  background: var(--dma-tiefsee-04);
+}
+.nav-dropdown[data-open="true"] .nav-dropdown-trigger {
+  color: var(--dma-fg);
+  background: var(--dma-tiefsee-04);
+}
+.nav-dropdown-trigger .nav-dropdown-arrow {
+  display: inline-block;
+  transition: transform 200ms var(--dma-ease-standard, ease);
+  opacity: 0.7;
+}
+.nav-dropdown[data-open="true"] .nav-dropdown-trigger .nav-dropdown-arrow,
+.nav-dropdown:hover .nav-dropdown-trigger .nav-dropdown-arrow {
+  transform: rotate(180deg);
+}
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  min-width: 320px;
+  background: var(--dma-elfenbein);
+  border: 1px solid var(--dma-dunst);
+  border-radius: var(--dma-radius-md, 12px);
+  box-shadow: 0 12px 48px rgba(15, 23, 42, 0.12);
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 180ms var(--dma-ease-standard, ease), transform 180ms var(--dma-ease-standard, ease), visibility 180ms;
+  z-index: 100;
+}
+.nav-dropdown[data-open="true"] .nav-dropdown-menu,
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown-menu a {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--dma-tinte);
+  transition: background 120ms ease;
+}
+.nav-dropdown-menu a:hover {
+  background: var(--dma-papier);
+}
+.nav-dropdown-menu .dropdown-title {
+  display: block;
+  font-weight: 600;
+  font-size: var(--dma-text-base);
+  color: var(--dma-tiefsee);
+  margin-bottom: 2px;
+}
+.nav-dropdown-menu .dropdown-sub {
+  display: block;
+  font-size: var(--dma-text-xs);
+  color: var(--dma-grafit);
+  font-family: var(--dma-font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Mobile: dropdown items as flat list */
+.nav-mobile-leistungen-head {
+  font-size: var(--dma-text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--dma-grau-mitte);
+  font-family: var(--dma-font-mono);
+  margin: 16px 0 4px;
+}
+
+/* ============================================================
    LEISTUNG-PAGES (Use-Case-Sub-Pages)
    ============================================================ */
 
