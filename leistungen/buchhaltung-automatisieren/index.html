@@ -61,7 +61,7 @@
           "name": "Welche Buchhaltungs-Software unterstützt der digitale Mitarbeiter?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "DATEV, Lexware, sevDesk, BuchhaltungsButler — die Standards im deutschen Mittelstand. Bei spezifischen ERP-Anbindungen (SAP Business One, Microsoft Dynamics, Sage) prüfen wir im Scoping. Wir arbeiten in Ihrem System, nicht parallel dazu."
+            "text": "DATEV, Lexware, sevDesk, SAP Business One, Microsoft Dynamics 365 Business Central, DocuWare — alle Standards im deutschen Mittelstand. Custom-ERP nach Scoping. Wir arbeiten in Ihrem System, nicht parallel dazu."
           }
         },
         {
@@ -158,64 +158,86 @@
 <!-- ============ HERO ============ -->
 <header class="leistung-hero">
   <div class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="../../">DMA</a>
-      <span aria-hidden="true">›</span>
-      <a href="../">Leistungen</a>
-      <span aria-hidden="true">›</span>
-      <span aria-current="page">Buchhaltung automatisieren</span>
-    </nav>
-    <span class="eyebrow leistung-eyebrow">Leistung · Buchhaltung · Industrie-Mittelstand</span>
-    <h1 class="leistung-h1">Ein digitaler Mitarbeiter für Ihre Buchhaltung.</h1>
-    <p class="leistung-lede">Belege erfassen, Rechnungen prüfen, OP-Listen pflegen, DATEV-Sync. Täglich, sauber, ohne Krankenstand. Buchhaltung digitalisieren — ohne Ihren Steuerberater zu wechseln.</p>
-    <div class="leistung-ctas">
-      <a class="btn btn-primary" href="../../kontakt/">Erstgespräch buchen</a>
-      <a class="btn btn-text" href="#demo">Live-Demo ansehen</a>
+    <div class="leistung-hero-grid">
+      <div class="leistung-hero-text">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../">DMA</a>
+          <span aria-hidden="true">›</span>
+          <a href="../">Leistungen</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Buchhaltung automatisieren</span>
+        </nav>
+        <span class="eyebrow leistung-eyebrow">Leistung · Buchhaltung · Industrie-Mittelstand</span>
+        <span class="eyebrow-persona"><strong>Martin</strong> · Digitaler Buchhalter</span>
+        <h1 class="leistung-h1">Ein digitaler Mitarbeiter für Ihre Buchhaltung.</h1>
+        <p class="leistung-lede">Belege erfassen, Rechnungen prüfen, OP-Listen pflegen, DATEV-Sync. Täglich, sauber, ohne Krankenstand. Buchhaltung digitalisieren — ohne Ihren Steuerberater zu wechseln.</p>
+        <div class="trust-strip" aria-label="Trust-Anker">
+          <div class="trust-strip-anchor">
+            <span class="anchor-value">In 30 Tagen live</span>
+            <span class="anchor-label">Implementierung</span>
+          </div>
+          <div class="trust-strip-anchor">
+            <span class="anchor-value">6 Aufgaben übernommen</span>
+            <span class="anchor-label">Klarer Scope</span>
+          </div>
+          <div class="trust-strip-anchor">
+            <span class="anchor-value">Frankfurt-Hosting</span>
+            <span class="anchor-label">DSGVO &middot; EU-Daten</span>
+          </div>
+        </div>
+        <div class="leistung-ctas">
+          <a class="btn btn-primary" href="../../kontakt/">Erstgespräch buchen</a>
+          <a class="btn btn-text" href="#demo">Live-Demo ansehen</a>
+        </div>
+      </div>
+      <div class="leistung-hero-persona" data-persona="martin">
+        <img class="persona-cover" src="../../assets/personas/martin-cover.png" alt="Martin — Digitaler Buchhalter" loading="eager" decoding="async" width="1024" height="1536">
+        <span class="headshot-status">Verfügbar</span>
+      </div>
     </div>
   </div>
 </header>
 
-<!-- ============ WAS ER ÜBERNIMMT ============ -->
+<!-- ============ SECTION 2 — AUFGABENPAKET + TOOLS (✓ macht / × macht nicht / Integrationen) ============ -->
 <section class="leistung-section section--warm">
   <div class="container">
-    <div class="leistung-split">
-      <div class="leistung-split-left">
-        <span class="eyebrow">Aufgabenpaket</span>
-        <h2>Was Ihr digitaler Buchhalter täglich übernimmt.</h2>
-        <p class="leistung-body">
-          Buchhaltung im Mittelstand ist kein Mangel an Software, sondern ein Mangel an Händen. Belege türmen sich, weil niemand Zeit hat sie sauber zu erfassen. OP-Listen veralten, weil das Mahnwesen liegen bleibt. Ein digitaler Mitarbeiter besetzt genau diese Lücke — er erledigt das Standard-Tagesgeschäft, damit Ihre Buchhalterin sich um die Fälle kümmern kann, die ein Mensch entscheiden muss.
-        </p>
-      </div>
-      <div class="leistung-split-right">
-        <ul class="leistung-list">
-          <li><strong>Belege erfassen</strong> — eingehende Rechnungen, Quittungen, Kassenbons. Aus E-Mail-Anhang, Scan-Ordner oder direkt aus DocuWare.</li>
-          <li><strong>Vorkontierung</strong> — nach Ihrem Kontenrahmen. Lernfähig: was Ihre Buchhalterin einmal korrigiert, sitzt beim nächsten Beleg.</li>
-          <li><strong>DATEV-Sync</strong> — saubere Übergabe an Ihren Steuerberater. Inklusive Belegbild-Anhang.</li>
-          <li><strong>OP-Listen-Pflege</strong> — offene Posten täglich aktualisiert, fällige Rechnungen markiert.</li>
-          <li><strong>Mahnwesen-Vorbereitung</strong> — Mahnvorschläge mit Mahnstufe, Anschreiben-Entwurf, Versand zur Freigabe.</li>
-          <li><strong>Rechnungsprüfung</strong> — Eingangsrechnungen gegen Bestellung und Lieferschein. Abweichungen flagged, nicht still verbucht.</li>
-        </ul>
-      </div>
+    <div class="section-head">
+      <span class="eyebrow">Aufgabenpaket</span>
+      <h2>Konkret, was übernimmt — und mit welchen Tools.</h2>
     </div>
-  </div>
-</section>
-
-<!-- ============ WAS ER NICHT MACHT ============ -->
-<section class="leistung-section">
-  <div class="container">
-    <div class="leistung-split">
-      <div class="leistung-split-left">
-        <span class="eyebrow">Klare Abgrenzung</span>
-        <h2>Was er nicht macht — und warum das gut ist.</h2>
-        <p class="leistung-body">
-          Ein digitaler Mitarbeiter ersetzt keinen Steuerberater. Er entscheidet keine steuerlichen Fragen, baut keinen Jahresabschluss, beantwortet keine Betriebsprüfer. Diese Aufgaben brauchen menschliches Urteil und Haftung — beides bleibt bei Ihrem bestehenden Steuerberater.
-        </p>
-        <p class="leistung-body">
-          Genau diese Trennung macht den digitalen Mitarbeiter erst nutzbar. Er bedient das tägliche Volumen, Ihr Steuerberater die Strategie. Beide arbeiten in derselben DATEV-Akte zusammen.
-        </p>
-      </div>
-      <div class="leistung-split-right">
-        <ul class="leistung-list leistung-list--negative">
+    <div class="tasks-split">
+      <article class="tasks-card tasks-card--positive">
+        <span class="eyebrow">Übernimmt</span>
+        <ul class="tasks-list tasks-list--iconed">
+          <li>
+            <svg class="task-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+            <div><strong>Belege erfassen</strong> — Rechnungen, Quittungen, Kassenbons aus E-Mail, Scan-Ordner oder DocuWare</div>
+          </li>
+          <li>
+            <svg class="task-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="14" x2="8.01" y2="14"/><line x1="12" y1="14" x2="12.01" y2="14"/><line x1="16" y1="14" x2="16.01" y2="14"/><line x1="8" y1="18" x2="8.01" y2="18"/><line x1="12" y1="18" x2="12.01" y2="18"/><line x1="16" y1="18" x2="16.01" y2="18"/></svg>
+            <div><strong>Vorkontierung</strong> — nach Ihrem Kontenrahmen, lernfähig pro Korrektur</div>
+          </li>
+          <li>
+            <svg class="task-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+            <div><strong>DATEV-Sync</strong> — saubere Übergabe an den Steuerberater inkl. Belegbild</div>
+          </li>
+          <li>
+            <svg class="task-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 7 5 9 9 5"/><polyline points="3 14 5 16 9 12"/><polyline points="3 21 5 23 9 19"/><line x1="13" y1="7" x2="21" y2="7"/><line x1="13" y1="14" x2="21" y2="14"/><line x1="13" y1="21" x2="21" y2="21"/></svg>
+            <div><strong>OP-Listen-Pflege</strong> — offene Posten täglich aktualisiert, Fälligkeiten markiert</div>
+          </li>
+          <li>
+            <svg class="task-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+            <div><strong>Mahnwesen-Vorbereitung</strong> — Mahnvorschläge mit Stufe + Anschreiben zur Freigabe</div>
+          </li>
+          <li>
+            <svg class="task-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            <div><strong>Rechnungsprüfung</strong> — Eingangsrechnungen gegen Bestellung &amp; Lieferschein</div>
+          </li>
+        </ul>
+      </article>
+      <article class="tasks-card tasks-card--negative">
+        <span class="eyebrow">Übernimmt nicht</span>
+        <ul class="tasks-list">
           <li>Kein Steuerberater-Ersatz</li>
           <li>Keine Jahresabschlüsse</li>
           <li>Keine Steuererklärungen</li>
@@ -223,124 +245,73 @@
           <li>Keine Liquiditätsplanung oder Strategie-Entscheidungen</li>
           <li>Keine Vertragsverhandlungen mit Lieferanten</li>
         </ul>
+      </article>
+    </div>
+    <p class="tasks-bridge">
+      <strong>Tagesgeschäft</strong> beim digitalen Mitarbeiter, <strong>Strategie und Haftung</strong> beim Steuerberater. Beide arbeiten in derselben DATEV-Akte.
+    </p>
+
+    <div class="tools-block">
+      <span class="eyebrow">Integriert mit</span>
+      <div class="tool-logo-grid">
+        <img src="../../assets/logos/datev.svg" alt="DATEV" loading="lazy" />
+        <img src="../../assets/logos/lexoffice.svg" alt="Lexware Office" loading="lazy" />
+        <img src="../../assets/logos/sevdesk.svg" alt="sevDesk" loading="lazy" />
+        <img src="../../assets/logos/sap.svg" alt="SAP Business One" loading="lazy" />
+        <img src="../../assets/logos/dynamics.svg" alt="Microsoft Dynamics 365 Business Central" loading="lazy" />
+        <img src="../../assets/logos/docuware.svg" alt="DocuWare" loading="lazy" />
       </div>
+      <p class="tools-note">+ Custom-ERP nach Scoping</p>
     </div>
   </div>
 </section>
 
-<!-- ============ BEISPIEL ============ -->
-<section class="leistung-section section--warm">
-  <div class="container">
-    <div class="leistung-narrow">
-      <span class="eyebrow">Ein Tag im Betrieb</span>
-      <h2>Beispiel: 200 Eingangsrechnungen pro Monat.</h2>
-      <p class="leistung-body">
-        Ein typischer Industrie-Mittelständler mit 80 Mitarbeitern bekommt rund 200 Eingangsrechnungen im Monat. Heute braucht eine Buchhalterin dafür etwa zwei volle Arbeitstage pro Monat — Belege öffnen, kontieren, ins System tippen, Mahnwesen aktualisieren.
-      </p>
-      <p class="leistung-body">
-        Mit einem digitalen Mitarbeiter passieren 95 % davon ohne Tastatur-Eingabe: er liest die Belege, kontiert nach Ihrem Schema, übergibt an DATEV. Ihre Buchhalterin sieht eine Liste der 5 % unklaren Fälle und entscheidet — pro Beleg etwa 30 Sekunden statt fünf Minuten.
-      </p>
-      <p class="leistung-body">
-        <strong>Effekt:</strong> aus zwei Buchhaltungstagen pro Monat werden zwei Stunden. Die freigewordene Zeit fließt in das, was bisher liegen blieb — saubere Mahnläufe, Stammdaten-Pflege, vertiefte Plausibilitätsprüfungen.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ DSGVO + TOOLS ============ -->
-<section class="leistung-section">
-  <div class="container">
-    <div class="leistung-split">
-      <div class="leistung-split-left">
-        <span class="eyebrow">DSGVO &amp; Tools</span>
-        <h2>Ihre Buchhaltungsdaten verlassen Deutschland nicht.</h2>
-        <p class="leistung-body">
-          Buchhaltungsdaten sind sensibel — Umsätze, Lieferantenbeziehungen, Personaldaten. Wir hosten in Frankfurt am Main, EU-Datenresidenz von Tag 1, mit standardisiertem Auftragsverarbeitungsvertrag. Kein Modell-Training mit Ihren Daten, minimale Retention, ISO 27001-zertifiziertes Rechenzentrum.
-        </p>
-        <p class="leistung-body">
-          Für regulierte Branchen — Maschinenbau mit Exportkontrolle, Medizintechnik, Verteidigung — deployen wir komplett on-premise. Die Buchhaltungsdaten verlassen Ihr Netzwerk nicht.
-        </p>
-      </div>
-      <div class="leistung-split-right">
-        <span class="eyebrow">Integriert mit</span>
-        <ul class="leistung-tools">
-          <li>DATEV</li>
-          <li>Lexware Office</li>
-          <li>sevDesk</li>
-          <li>BuchhaltungsButler</li>
-          <li>SAP Business One</li>
-          <li>Microsoft Dynamics</li>
-          <li>DocuWare</li>
-          <li>+ Custom-ERP nach Scoping</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ LIVE-DEMO ============ -->
+<!-- ============ SECTION 3 — DEMO + FAQ + CTA (Decision-Closer) ============ -->
 <section id="demo" class="leistung-demo">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Live-Demo · 90 Sekunden</span>
-      <h2>Schauen Sie Paula bei der Arbeit zu.</h2>
+      <span class="eyebrow">Live-Demo &middot; 90 Sekunden</span>
+      <h2>Schauen Sie Martin bei der Arbeit zu.</h2>
       <p class="leistung-body">Walkthrough: ein typischer Buchhaltungs-Tag mit einem digitalen Mitarbeiter. Belege rein, kontiert, in DATEV — ohne Tastatur.</p>
     </div>
 
     <div class="demo-loom-wrap">
       <!-- Loom-Embed: ID austauschen sobald Felipe eingesprochen hat -->
-      <!-- <iframe src="https://www.loom.com/embed/LOOM_ID_PAULA_BUCHHALTUNG" allowfullscreen></iframe> -->
+      <!-- <iframe src="https://www.loom.com/embed/LOOM_ID_MARTIN_BUCHHALTUNG" allowfullscreen></iframe> -->
       <div class="demo-loom-placeholder">
         <span class="icon">▶</span>
         <strong>90-Sekunden-Walkthrough kommt</strong>
-        <span>Felipe spricht das Video diese Woche ein. Solange — Erstgespräch buchen, wir zeigen Live.</span>
+        <span>Felipe spricht das Video diese Woche ein. Solange &mdash; Erstgespräch buchen, wir zeigen Live.</span>
       </div>
     </div>
 
     <article class="demo-persona-card">
       <div class="demo-persona-headshot">
-        <video poster="../../assets/personas/paula-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
-          <source src="../../assets/personas/paula-anim.webm" type="video/webm">
-          <source src="../../assets/personas/paula-anim.mp4" type="video/mp4">
+        <video poster="../../assets/personas/martin-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+          <source src="../../assets/personas/martin-anim.webm" type="video/webm">
+          <source src="../../assets/personas/martin-anim.mp4" type="video/mp4">
         </video>
       </div>
       <div class="demo-persona-info">
-        <h3>Paula</h3>
-        <div class="demo-persona-role">Digitale Auftragssachbearbeiterin &amp; Buchhalterin</div>
-        <p>Trainiert auf 18 Monate Auftragsdaten. ERP-, CRM-, DATEV- und DocuWare-Integration ab Tag 1. Macht was Ihre Buchhalterin jeden Tag macht — nur ohne Mittagspause.</p>
+        <h3>Martin</h3>
+        <div class="demo-persona-role">Digitaler Buchhalter</div>
+        <p>Trainiert auf 24 Monate Beleg- und Kontierungsdaten. DATEV-, Lexware- und DocuWare-Integration ab Tag 1. Macht was Ihre Buchhalterin jeden Tag macht — nur ohne Mittagspause.</p>
         <ul class="leistung-tools">
           <li>DATEV</li>
           <li>Lexware</li>
           <li>SAP B1</li>
           <li>DocuWare</li>
-          <li>Pipedrive</li>
+          <li>sevDesk</li>
         </ul>
-        <a class="btn btn-primary" href="../../kontakt/">Paula einsetzen — Erstgespräch →</a>
+        <a class="btn btn-primary" href="../../kontakt/">Martin einsetzen — Erstgespräch &rarr;</a>
       </div>
     </article>
-  </div>
-</section>
 
-<!-- ============ 30 TAGE ============ -->
-<section class="leistung-section">
-  <div class="container">
-    <div class="leistung-narrow">
-      <span class="eyebrow">Implementierung</span>
-      <h2>In 30 Tagen besetzt.</h2>
-      <p class="leistung-body">
-        Eine Woche Scoping — wir verstehen Ihren Kontenrahmen, Ihre DATEV-Anbindung, Ihre Belegquellen. Drei Wochen Build inklusive Tests an echten Belegen und Schulung Ihrer Buchhalterin. Tag 30: Go-Live mit echten Fällen, kein Sandbox-Theater.
-        <a href="../../#process" class="leistung-inline-link">Detail-Prozess auf der DMA-Startseite →</a>
-      </p>
-    </div>
-  </div>
-</section>
+    <div class="section-divider" aria-hidden="true"></div>
 
-<!-- ============ FAQ ============ -->
-<section class="leistung-section section--warm">
-  <div class="container">
     <div class="section-head">
       <span class="eyebrow">Häufig gefragt</span>
-      <h2>Was Geschäftsführer zur Buchhaltungs-Digitalisierung fragen.</h2>
+      <h2>Was Geschäftsführer fragen.</h2>
     </div>
     <div class="faq-wrap glass">
       <div class="faq-item">
@@ -349,7 +320,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" type="button"><span>Welche Buchhaltungs-Software unterstützt der digitale Mitarbeiter?</span><span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">DATEV, Lexware, sevDesk, BuchhaltungsButler — die Standards im deutschen Mittelstand. Bei spezifischen ERP-Anbindungen (SAP Business One, Microsoft Dynamics, Sage) prüfen wir im Scoping. Wir arbeiten in Ihrem System, nicht parallel dazu.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">DATEV, Lexware, sevDesk, SAP Business One, Microsoft Dynamics 365 Business Central, DocuWare — alle Standards im deutschen Mittelstand. Custom-ERP nach Scoping. Wir arbeiten in Ihrem System, nicht parallel dazu.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" type="button"><span>Wie schnell ist die Buchhaltung digitalisiert?</span><span class="plus">+</span></button>
@@ -360,12 +331,9 @@
         <div class="faq-a"><div class="faq-a-inner">Ja. EU-Datenresidenz (Frankfurt), Auftragsverarbeitungsvertrag, kein Modell-Training mit Ihren Daten. Für regulierte Branchen on-premise verfügbar — die Buchhaltungsdaten verlassen Ihr Netzwerk nicht.</div></div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ============ CTA ============ -->
-<section class="leistung-section">
-  <div class="container">
+    <div class="section-divider" aria-hidden="true"></div>
+
     <div class="leistung-cta-block glass">
       <h2>Bereit, Ihre Buchhaltung zu digitalisieren?</h2>
       <p class="leistung-body">Ein 30-Minuten-Erstgespräch. Wir schauen, ob ein digitaler Mitarbeiter zu Ihrem Volumen und Ihrem Steuerberater-Setup passt. Kein Vertrieb-Druck, kein Vorab-Pitch.</p>

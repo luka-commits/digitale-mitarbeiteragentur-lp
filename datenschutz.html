@@ -10,8 +10,22 @@
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <link rel="stylesheet" href="colors_and_type.css" />
 <link rel="stylesheet" href="styles/site.css" />
+
+<!-- ============ Analytics + Consent (Klaro! → GTM → GA4) ============ -->
+<link rel="stylesheet" href="/vendor/klaro/klaro.css" />
+<script defer src="/vendor/klaro/config.js"></script>
+<script defer src="/vendor/klaro/klaro.js" data-klaro-config="klaroConfig"></script>
+<script type="text/plain" data-type="application/javascript" data-name="googleTagManager">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLACEHOLDER');
+</script>
 </head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLACEHOLDER"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <nav class="nav" id="nav">
   <div class="container nav-inner">
@@ -81,13 +95,30 @@
       <h2>4 · Hosting</h2>
       <p>Diese Website wird bei <strong>Vercel Inc.</strong> (San Francisco, USA) gehostet. Beim Aufruf der Website werden technische Logdaten (IP-Adresse, Browser, Zeitstempel) zur Sicherstellung des Betriebs verarbeitet (Art. 6 Abs. 1 lit. f DSGVO). Vercel ist nach den EU-US Data Privacy Framework zertifiziert.</p>
 
-      <h2>5 · Cookies</h2>
-      <p>Diese Website setzt einen technisch notwendigen Local-Storage-Eintrag (`dma_lang`) zur Speicherung Ihrer Sprachauswahl. Tracking- oder Werbe-Cookies werden nicht gesetzt.</p>
+      <h2>5 · Cookies und Consent-Management</h2>
+      <p>Diese Website verwendet Cookies und ähnliche Speichermechanismen. Wir unterscheiden zwischen technisch notwendigen und einwilligungspflichtigen Cookies:</p>
+      <ul>
+        <li><strong>Technisch notwendig:</strong> Ein Local-Storage-Eintrag (<code>dma_lang</code>) speichert Ihre Sprachauswahl. Ein Cookie der Klaro!-Consent-Software (<code>klaro-dma</code>) speichert Ihre Cookie-Einstellungen, damit das Banner nicht bei jedem Besuch neu erscheint. Diese Daten werden ohne Einwilligung gespeichert (Art. 6 Abs. 1 lit. f DSGVO, § 25 Abs. 2 Nr. 2 TTDSG).</li>
+        <li><strong>Einwilligungspflichtig:</strong> Cookies für Reichweitenmessung (Google Analytics 4, siehe § 6) werden ausschließlich nach Ihrer aktiven Einwilligung über das Cookie-Banner gesetzt (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TTDSG).</li>
+      </ul>
+      <p>Sie können Ihre Einwilligung jederzeit widerrufen oder anpassen, indem Sie auf den Link <a href="#" onclick="event.preventDefault(); if(window.klaro) window.klaro.show();"><strong>„Cookie-Einstellungen"</strong></a> im Footer klicken. Der Widerruf wirkt sich nur für die Zukunft aus.</p>
 
-      <h2>6 · Ihre Rechte</h2>
+      <h2>6 · Reichweitenmessung mit Google Analytics 4</h2>
+      <p>Sofern Sie über das Cookie-Banner eingewilligt haben, nutzen wir <strong>Google Analytics 4</strong> (Anbieter: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Google Analytics setzt Cookies (typisch <code>_ga</code>, <code>_ga_*</code>), um zu analysieren, wie Sie unsere Website nutzen — insbesondere aufgerufene Seiten, Verweildauer, Quellen (Referrer / Suchmaschinen) und Click-Pfade.</p>
+      <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung) und § 25 Abs. 1 TTDSG.</p>
+      <p><strong>Zweck:</strong> Optimierung unserer Website, Verständnis des Besucherverhaltens, Verbesserung unseres Inhalts.</p>
+      <p><strong>Empfänger / Datenübermittlung:</strong> Google Ireland Limited als Verantwortlicher und Google LLC (USA) als Auftragsverarbeiter. Beim Einsatz kommt es zur Übermittlung in die USA. Google ist nach dem EU-US Data Privacy Framework zertifiziert.</p>
+      <p><strong>Speicherdauer:</strong> Die Standard-Aufbewahrungsdauer in GA4 beträgt 14 Monate. Wir haben IP-Anonymisierung aktiviert, sodass IP-Adressen vor der Speicherung gekürzt werden.</p>
+      <p><strong>Widerruf:</strong> Sie können Ihre Einwilligung jederzeit über die <a href="#" onclick="event.preventDefault(); if(window.klaro) window.klaro.show();">Cookie-Einstellungen</a> widerrufen. Bei abgelehnter Einwilligung verwenden wir <em>Google Consent Mode v2</em>: dann werden ausschließlich anonymisierte, aggregierte Statistik-Pings ohne personenbezogene Cookies übertragen.</p>
+      <p>Weitere Informationen zur Datenverarbeitung bei Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+
+      <h2>7 · Google Tag Manager</h2>
+      <p>Wir nutzen den <strong>Google Tag Manager</strong> als Tool zur Verwaltung der Tracking-Tags (insbesondere für Google Analytics 4). Der Tag Manager selbst speichert keine Cookies und erfasst keine personenbezogenen Daten — er ist ausschließlich eine technische Container-Lösung. Er lädt erst nach Ihrer Einwilligung, da er als Träger der eingebetteten Analytics-Tags eingestuft wird.</p>
+
+      <h2>8 · Ihre Rechte</h2>
       <p>Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie auf Datenübertragbarkeit. Beschwerden können Sie bei der zuständigen Aufsichtsbehörde einreichen — in unserem Fall: [Landesbeauftragte für Datenschutz Baden-Württemberg].</p>
 
-      <h2>7 · DSGVO-Versprechen für DMA-Mandate</h2>
+      <h2>9 · DSGVO-Versprechen für DMA-Mandate</h2>
       <p>Im operativen Betrieb mit Kundendaten (digitale Mitarbeiter, die in Kunden-Systeme integriert sind) gelten zusätzlich:</p>
       <ul>
         <li>EU-Datenresidenz (Frankfurt) für alle verarbeiteten Daten</li>
@@ -97,7 +128,7 @@
         <li>Auf Wunsch On-Premise-Deployment für regulierte Branchen</li>
       </ul>
 
-      <h2>8 · Änderungen dieser Erklärung</h2>
+      <h2>10 · Änderungen dieser Erklärung</h2>
       <p>Wir passen diese Datenschutzerklärung an, sobald sich rechtliche oder technische Rahmenbedingungen ändern. Es gilt jeweils die zum Zeitpunkt Ihres Besuchs geltende Fassung.</p>
 
       <p style="margin-top: 32px; font-size: 13px; color: var(--dma-fg-subtle);">Stand: [Datum eintragen]</p>
@@ -108,7 +139,7 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-bottom footer-bottom--bare">
-      <span>© 2026 DMA · Digitale Mitarbeiter Agentur · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
+      <span>© 2026 DMA · Digitale Mitarbeiter Agentur · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="#" onclick="event.preventDefault(); if(window.klaro) window.klaro.show();">Cookie-Einstellungen</a></span>
     </div>
   </div>
 </footer>

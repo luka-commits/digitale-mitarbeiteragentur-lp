@@ -153,19 +153,28 @@
 
 <header class="leistung-hero">
   <div class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="../../">DMA</a>
-      <span aria-hidden="true">›</span>
-      <a href="../">Leistungen</a>
-      <span aria-hidden="true">›</span>
-      <span aria-current="page">KI Kundenservice</span>
-    </nav>
-    <span class="eyebrow leistung-eyebrow">Leistung · Kundenservice · Industrie-Mittelstand</span>
-    <h1 class="leistung-h1">Ein digitaler Mitarbeiter im Kundenservice.</h1>
-    <p class="leistung-lede">Standard-Anfragen beantworten, Tickets qualifizieren, komplexe Fälle eskalieren. KI im Kundenservice — ohne Bot-Skript, ohne Wartezeit, in Ihrem bestehenden Ticket-System.</p>
-    <div class="leistung-ctas">
-      <a class="btn btn-primary" href="../../kontakt/">Erstgespräch buchen</a>
-      <a class="btn btn-text" href="#demo">Live-Demo ansehen</a>
+    <div class="leistung-hero-grid">
+      <div class="leistung-hero-text">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../">DMA</a>
+          <span aria-hidden="true">›</span>
+          <a href="../">Leistungen</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">KI Kundenservice</span>
+        </nav>
+        <span class="eyebrow leistung-eyebrow">Leistung · Kundenservice · Industrie-Mittelstand</span>
+        <span class="eyebrow-persona"><strong>Paula</strong> · Digitale Service-Mitarbeiterin</span>
+        <h1 class="leistung-h1">Ein digitaler Mitarbeiter im Kundenservice.</h1>
+        <p class="leistung-lede">Standard-Anfragen beantworten, Tickets qualifizieren, komplexe Fälle eskalieren. KI im Kundenservice — ohne Bot-Skript, ohne Wartezeit, in Ihrem bestehenden Ticket-System.</p>
+        <div class="leistung-ctas">
+          <a class="btn btn-primary" href="../../kontakt/">Erstgespräch buchen</a>
+          <a class="btn btn-text" href="#demo">Live-Demo ansehen</a>
+        </div>
+      </div>
+      <div class="leistung-hero-persona" data-persona="paula">
+        <img class="persona-cover" src="../../assets/personas/paula-cover.png" alt="Paula — Digitale Service-Mitarbeiterin" loading="eager" decoding="async" width="1024" height="1536">
+        <span class="headshot-status">Verfügbar</span>
+      </div>
     </div>
   </div>
 </header>
@@ -276,12 +285,12 @@
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Live-Demo · 90 Sekunden</span>
-      <h2>Schauen Sie einen digitalen Service-Mitarbeiter bei der Arbeit zu.</h2>
+      <h2>Schauen Sie Paula bei der Arbeit zu.</h2>
       <p class="leistung-body">Walkthrough: wie ein Standard-Service-Ticket binnen Minuten beantwortet wird — mit Bezug auf echte Bestelldaten, nicht generischen Skript-Antworten.</p>
     </div>
 
     <div class="demo-loom-wrap">
-      <!-- <iframe src="https://www.loom.com/embed/LOOM_ID_KUNDENSERVICE" allowfullscreen></iframe> -->
+      <!-- <iframe src="https://www.loom.com/embed/LOOM_ID_PAULA_KUNDENSERVICE" allowfullscreen></iframe> -->
       <div class="demo-loom-placeholder">
         <span class="icon">▶</span>
         <strong>90-Sekunden-Walkthrough kommt</strong>
@@ -290,13 +299,16 @@
     </div>
 
     <article class="demo-persona-card">
-      <div class="demo-persona-headshot" style="background: linear-gradient(135deg, var(--dma-papier), var(--dma-nebel-hell)); display: flex; align-items: center; justify-content: center; font-family: var(--dma-font-mono); font-size: 64px; font-weight: 700; color: var(--dma-petrol);">
-        ?
+      <div class="demo-persona-headshot">
+        <video poster="../../assets/personas/paula-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+          <source src="../../assets/personas/paula-anim.webm" type="video/webm">
+          <source src="../../assets/personas/paula-anim.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="demo-persona-info">
-        <h3>Eine neue Rolle, individuell trainiert</h3>
-        <div class="demo-persona-role">Digitale Service-Mitarbeiterin · individuell trainiert</div>
-        <p>Den Service-Mitarbeiter bauen wir spezifisch für Ihren Kundenservice — trainiert auf Ihre häufigsten Ticket-Typen, Ihre Wissensbasis, Ihre Tonalität. Im Erstgespräch klären wir Persona-Profil und Trainings-Datenbasis.</p>
+        <h3>Paula</h3>
+        <div class="demo-persona-role">Digitale Service-Mitarbeiterin</div>
+        <p>Trainiert auf Ihre häufigsten Ticket-Typen, Ihre Wissensbasis, Ihre Tonalität. Beantwortet Standard-Anfragen sofort, eskaliert komplexe Fälle an Ihr Team — wie eine eingearbeitete Kollegin, nur ohne Wartezeit.</p>
         <ul class="leistung-tools">
           <li>Zendesk</li>
           <li>Freshdesk</li>
@@ -304,7 +316,7 @@
           <li>Salesforce</li>
           <li>Outlook</li>
         </ul>
-        <a class="btn btn-primary" href="../../kontakt/">Persona definieren — Erstgespräch →</a>
+        <a class="btn btn-primary" href="../../kontakt/">Paula einsetzen — Erstgespräch →</a>
       </div>
     </article>
   </div>

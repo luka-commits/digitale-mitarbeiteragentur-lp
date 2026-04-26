@@ -76,8 +76,22 @@
   ]
 }
 </script>
+
+<!-- ============ Analytics + Consent (Klaro! → GTM → GA4) ============ -->
+<link rel="stylesheet" href="/vendor/klaro/klaro.css" />
+<script defer src="/vendor/klaro/config.js"></script>
+<script defer src="/vendor/klaro/klaro.js" data-klaro-config="klaroConfig"></script>
+<script type="text/plain" data-type="application/javascript" data-name="googleTagManager">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLACEHOLDER');
+</script>
 </head>
 <body class="page-kontakt">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLACEHOLDER"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <nav class="nav" id="nav">
   <div class="container nav-inner">
@@ -281,6 +295,7 @@
         <ul>
           <li><a href="../impressum.html">Impressum</a></li>
           <li><a href="../datenschutz.html">Datenschutz</a></li>
+          <li><a href="#" onclick="event.preventDefault(); if(window.klaro) window.klaro.show();">Cookie-Einstellungen</a></li>
         </ul>
       </div>
     </div>

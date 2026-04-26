@@ -1,0 +1,37 @@
+<!--
+═══════════════════════════════════════════════════════════════════════════════
+  DMA Analytics + Consent Snippet — single source of truth
+  Copy 1:1 in den <head> jeder LP-Seite (vor allen anderen Scripts).
+  Reihenfolge ist kritisch: Klaro! lädt zuerst und blockiert GTM bis Consent.
+
+  Vor Live-Schaltung ersetzen:
+    GTM-PLACEHOLDER  →  echte GTM-Container-ID (z.B. GTM-WXY4Z7H)
+    Felipe trägt das nach, sobald er Phase A (Account-Setup) abgeschlossen hat.
+
+  Consent Mode v2 ist aktiv: GA4 sendet bei Ablehnung anonymisierte Pings
+  (denied state). Cookies werden nur bei "Akzeptieren" gesetzt.
+═══════════════════════════════════════════════════════════════════════════════
+-->
+
+<!-- 1. Klaro! Cookie-Consent (lädt zuerst, setzt default-deny + zeigt Banner) -->
+<link rel="stylesheet" href="/vendor/klaro/klaro.css" />
+<script defer src="/vendor/klaro/config.js"></script>
+<script defer src="/vendor/klaro/klaro.js" data-klaro-config="klaroConfig"></script>
+
+<!-- 2. Google Tag Manager (gated by Klaro! → data-type="text/plain" + data-name="googleTagManager") -->
+<script type="text/plain" data-type="application/javascript" data-name="googleTagManager">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLACEHOLDER');
+</script>
+
+<!--
+  Den folgenden <noscript>-Fallback im <body> direkt nach <body>-Opening einfügen:
+
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLACEHOLDER"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+-->
