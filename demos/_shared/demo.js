@@ -214,9 +214,16 @@
      * @param {object} opts - { charMs, onDone }
      */
     typewrite(el, text, opts = {}) {
+      // Re-entrancy guard: kill any in-flight tick chain on this element first,
+      // sonst racen zwei setTimeout-Chains und verschränken Chars (Bug bei Loop-Re-Entry).
+      if (el._typewriterTimer) {
+        clearTimeout(el._typewriterTimer);
+        el._typewriterTimer = null;
+      }
       const charMs = opts.charMs || 18;
       let i = 0;
       const cursor = el.querySelector('.typing-cursor');
+      if (cursor) cursor.classList.remove('is-done');
       // Body content vor cursor leeren
       Array.from(el.childNodes).forEach(n => {
         if (n !== cursor) el.removeChild(n);
@@ -226,13 +233,14 @@
         if (i >= text.length) {
           if (cursor) cursor.classList.add('is-done');
           if (typeof opts.onDone === 'function') opts.onDone();
+          el._typewriterTimer = null;
           return;
         }
         const ch = text[i];
         const node = document.createTextNode(ch);
         el.insertBefore(node, cursor);
         i++;
-        setTimeout(tick, ch === '\n' ? charMs * 4 : charMs);
+        el._typewriterTimer = setTimeout(tick, ch === '\n' ? charMs * 4 : charMs);
       }
       tick();
     },
