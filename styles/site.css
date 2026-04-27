@@ -3359,21 +3359,20 @@ section, header.hero {
 .demo-embed-fullscreen span:first-child { font-size: 13px; }
 
 @media (max-width: 720px) {
-  /* Mobile: Iframe wächst mit Content (postMessage-Sync), kein fix Aspect mehr.
-     Demo läuft im natural-flow, page scrollt natürlich. */
+  /* Mobile: Iframe fix-height — jeder State passt in 1 Viewport (kein Scroll im Iframe).
+     clamp adaptiert an Phone-Größe: iPhone SE ~633px, iPhone 14 ~800px, größer 800px. */
   .demo-embed-wrap {
     aspect-ratio: auto;
-    height: auto;
+    height: clamp(660px, 95vh, 800px);
     min-height: 0;
     max-height: none;
     box-shadow: 0 8px 32px rgba(15, 23, 42, 0.08);
   }
   .demo-embed-iframe {
-    position: relative;
-    inset: auto;
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: auto;
-    min-height: 720px;        /* Fallback bevor postMessage-Sync greift */
+    height: 100%;
     display: block;
   }
 }

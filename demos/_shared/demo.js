@@ -14,20 +14,17 @@
 
   // Auto-Embed-Mode: wenn die Demo in einem Iframe läuft, kompakteres Layout aktivieren.
   // ?embed=1 erzwingt manuell, ?embed=0 deaktiviert.
-  // Mobile (≤720px) bekommt KEIN is-embed → standalone-flow rendert sauber, iframe wächst mit content.
+  // Mobile-Variante: is-embed greift, ABER mobile-spezifische CSS-Rules cutten Content
+  // damit jeder State in 1 Viewport passt (kein Scroll im Iframe).
   const embedQ = params.get('embed');
   const inIframe = (function () { try { return window.self !== window.top; } catch (e) { return true; } })();
-  const mobileMQ = window.matchMedia('(max-width: 720px)');
-  const isEmbed = embedQ === '1' || (embedQ !== '0' && inIframe && !mobileMQ.matches);
+  const isEmbed = embedQ === '1' || (embedQ !== '0' && inIframe);
   if (isEmbed) document.documentElement.classList.add('is-embed');
 
-  // Parent-Sync (nur wenn iframed): height + state-change posten, damit Leistungspage iframe.height + scroll syncen kann.
+  // Parent-Sync (nur State-Change posten — Iframe ist auf Mobile fix-height, kein height-sync nötig).
   function postToParent(payload) {
     if (!inIframe) return;
     try { window.parent.postMessage(payload, '*'); } catch (e) {}
-  }
-  function reportHeight() {
-    postToParent({ type: 'dma-demo-height', height: document.documentElement.scrollHeight });
   }
 
   function log(...args) { if (debug) console.log('[demo]', ...args); }
@@ -88,11 +85,8 @@
         catch (e) { console.error('state hook failed', idx, e); }
       }
 
-      // Parent-Sync: state-change + neue Content-Höhe posten (für mobile-flow).
+      // Parent-Sync: state-change posten (Page kann optional zum Demo-Anker scrollen).
       postToParent({ type: 'dma-demo-state-change', index: idx });
-      // rAF damit DOM nach hook-render gemessen wird, plus zweiter Pass für Animationen die später erst die Höhe ändern.
-      requestAnimationFrame(reportHeight);
-      setTimeout(reportHeight, 600);
 
       if (!opts.silent) advanceProgress();
     }
@@ -188,8 +182,33 @@
       });
     }
 
-    // ── Resize-Listener: Iframe-Höhe re-syncen wenn Viewport kippt (rotation) oder Layout-Reflow.
-    window.addEventListener('resize', reportHeight);
+    // ── Mobile-Embed: Counter-Pills nach Reasoning-Log und Queue-List injizieren.
+    //    Mobile-CSS versteckt Steps 4+ und Queue-Rows 3+, der Pill zeigt was abgeschnitten wurde.
+    function injectCounterPills() {
+      if (!isEmbed) return;
+      if (!window.matchMedia('(max-width: 720px)').matches) return;
+      document.querySelectorAll('.reasoning-log').forEach(log => {
+        if (log.querySelector('.reasoning-counter')) return;
+        const total = log.querySelectorAll('.reasoning-step').length;
+        if (total > 3) {
+          const pill = document.createElement('div');
+          pill.className = 'reasoning-counter';
+          pill.textContent = '+ ' + (total - 3) + ' weitere Schritte';
+          log.appendChild(pill);
+        }
+      });
+      document.querySelectorAll('.queue-list').forEach(list => {
+        if (list.querySelector('.queue-counter')) return;
+        const total = list.querySelectorAll('.queue-row').length;
+        if (total > 2) {
+          const pill = document.createElement('div');
+          pill.className = 'queue-counter';
+          pill.textContent = '+ ' + (total - 2) + ' weitere im Eingang';
+          list.appendChild(pill);
+        }
+      });
+    }
+    injectCounterPills();
 
     // ── Start ──────────────────────────────────────────────────
     setStep(0);
@@ -278,6 +297,12 @@
      * KPI-Counter — zählt von 0 zur Zielzahl.
      */
     countUp(el, target, opts = {}) {
+      // Re-entrancy guard: cancel laufenden rAF-chain auf diesem Element bevor neuer startet.
+      // Verhindert Race wenn state 5 schnell mehrfach getriggert wird.
+      if (el._countUpRaf) {
+        cancelAnimationFrame(el._countUpRaf);
+        el._countUpRaf = null;
+      }
       const dur = opts.dur || 1100;
       const suffix = opts.suffix || '';
       const prefix = opts.prefix || '';
@@ -288,9 +313,13 @@
         const eased = 1 - Math.pow(1 - t, 3);
         const v = target * eased;
         el.textContent = prefix + v.toFixed(decimals).replace('.', ',') + suffix;
-        if (t < 1) requestAnimationFrame(step);
+        if (t < 1) {
+          el._countUpRaf = requestAnimationFrame(step);
+        } else {
+          el._countUpRaf = null;
+        }
       }
-      requestAnimationFrame(step);
+      el._countUpRaf = requestAnimationFrame(step);
     },
 
     /**
