@@ -18,6 +18,11 @@
 <meta name="twitter:description" content="Wo digitale Mitarbeiter den Innendienst entlasten — und wo sie es bewusst nicht tun." />
 <meta name="twitter:image" content="https://lp-theta-lac.vercel.app/assets/artikel/druckerei.jpg" />
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#1E3A8A" />
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/IBMPlexSans-700.woff2" crossorigin />
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/IBMPlexMono-700.woff2" crossorigin />
 <link rel="stylesheet" href="../colors_and_type.css" />
 <link rel="stylesheet" href="../styles/site.css" />
 <script type="application/ld+json">
@@ -110,7 +115,10 @@
 
 <div class="container">
   <figure class="article-hero-img">
-    <img src="../assets/artikel/druckerei.jpg" alt="Mittelständische Druckerei in einem deutschen Gewerbegebiet — Außenansicht" loading="lazy" />
+    <picture>
+      <source type="image/webp" srcset="../assets/artikel/druckerei.webp" />
+      <img src="../assets/artikel/druckerei.jpg" alt="Mittelständische Druckerei in einem deutschen Gewerbegebiet — Außenansicht" width="1536" height="1024" loading="lazy" decoding="async" />
+    </picture>
   </figure>
 </div>
 

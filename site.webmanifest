@@ -1,0 +1,22 @@
+{
+  "name": "DMA · Digitale Mitarbeiter Agentur",
+  "short_name": "DMA",
+  "description": "Personaldienstleister für digitale Mitarbeiter im deutschen Industrie-Mittelstand",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAFC",
+  "theme_color": "#1E3A8A",
+  "lang": "de",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

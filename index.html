@@ -18,7 +18,12 @@
 <meta name="twitter:description" content="In 30 Tagen besetzt. Digitale Mitarbeiter für Buchhaltung, Vertrieb und Kundenservice." />
 <meta name="twitter:image" content="https://lp-theta-lac.vercel.app/assets/og-image.png" />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-<link rel="preload" as="image" href="assets/hero/hero-poster.jpg" fetchpriority="high" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#1E3A8A" />
+<link rel="preload" as="image" href="assets/hero/hero-poster.webp" fetchpriority="high" />
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/IBMPlexSans-700.woff2" crossorigin />
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/IBMPlexMono-700.woff2" crossorigin />
 <link rel="stylesheet" href="colors_and_type.css" />
 <link rel="stylesheet" href="styles/site.css" />
 <script type="application/ld+json">
@@ -47,7 +52,21 @@
         "Kundenservice digitalisieren",
         "Workflow-Digitalisierung"
       ],
-      "knowsAbout": ["Mittelstand", "Industrie-Mittelstand", "DSGVO", "EU-Datenresidenz", "DATEV", "ERP-Integration"]
+      "knowsAbout": ["Mittelstand", "Industrie-Mittelstand", "DSGVO", "EU-Datenresidenz", "DATEV", "ERP-Integration"],
+      "priceRange": "€€€",
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Industrie-Mittelstand 50-500 Mitarbeiter"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://lp-theta-lac.vercel.app/#website",
+      "url": "https://lp-theta-lac.vercel.app/",
+      "name": "DMA · Digitale Mitarbeiter Agentur",
+      "description": "Personaldienstleister für digitale Mitarbeiter — Industrie-Mittelstand DACH",
+      "inLanguage": "de-DE",
+      "publisher": { "@id": "https://lp-theta-lac.vercel.app/#organization" }
     },
     {
       "@type": "FAQPage",
@@ -109,7 +128,8 @@
 
 <!-- ============ Analytics + Consent (Klaro! → GTM → GA4) ============ -->
 <!-- Single source of truth: lp/_partials/analytics-head.html -->
-<link rel="stylesheet" href="/vendor/klaro/klaro.css" />
+<link rel="stylesheet" href="/vendor/klaro/klaro.css" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="/vendor/klaro/klaro.css" /></noscript>
 <script defer src="/vendor/klaro/config.js"></script>
 <script defer src="/vendor/klaro/klaro.js" data-klaro-config="klaroConfig"></script>
 <script type="text/plain" data-type="application/javascript" data-name="googleTagManager">
@@ -197,7 +217,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ============ HERO ============ -->
 <header class="hero">
-  <video class="hero-video" poster="assets/hero/hero-poster.jpg" autoplay muted playsinline preload="metadata" aria-hidden="true">
+  <video class="hero-video" poster="assets/hero/hero-poster.webp" autoplay muted playsinline preload="metadata" aria-hidden="true">
     <source src="assets/hero/hero-anim-mobile.webm" type="video/webm" media="(max-width: 768px)">
     <source src="assets/hero/hero-anim-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
     <source src="assets/hero/hero-anim.webm" type="video/webm">
@@ -461,7 +481,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="process-grid">
       <article class="atelier-card process-card fade-up">
         <div class="process-card__image">
-          <img src="assets/process/01-erstgespraech.webp" alt="Felipe im Erstgespräch mit einem Geschäftsführer am Holztisch" loading="lazy" />
+          <img src="assets/process/01-erstgespraech.webp" alt="Felipe im Erstgespräch mit einem Geschäftsführer am Holztisch" width="1536" height="1024" loading="lazy" decoding="async" />
         </div>
         <span class="step-num">Schritt 01</span>
         <h3 class="process-card__title" data-i18n="process.step1.title">Erstgespräch</h3>
@@ -470,7 +490,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="atelier-card process-card fade-up delay-1">
         <div class="process-card__image">
-          <img src="assets/process/02-live-demo.webp" alt="Hand zeigt auf Demo-Dashboard auf einem Laptop-Bildschirm" loading="lazy" />
+          <img src="assets/process/02-live-demo.webp" alt="Hand zeigt auf Demo-Dashboard auf einem Laptop-Bildschirm" width="1536" height="1024" loading="lazy" decoding="async" />
         </div>
         <span class="step-num">Schritt 02</span>
         <h3 class="process-card__title" data-i18n="process.step2.title">Live-Demo</h3>
@@ -479,7 +499,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="atelier-card process-card fade-up delay-2">
         <div class="process-card__image">
-          <img src="assets/process/03-umsetzung.webp" alt="Felipe schult drei digitale Mitarbeiter im Onboarding" loading="lazy" />
+          <img src="assets/process/03-umsetzung.webp" alt="Felipe schult drei digitale Mitarbeiter im Onboarding" width="1536" height="1024" loading="lazy" decoding="async" />
         </div>
         <span class="step-num">Schritt 03</span>
         <h3 class="process-card__title" data-i18n="process.step3.title">Umsetzung in 30 Tagen</h3>
@@ -488,7 +508,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="atelier-card process-card fade-up delay-3">
         <div class="process-card__image">
-          <img src="assets/process/04-wartung.webp" alt="Felipe analysiert Prozess-Diagramme an einem Whiteboard" loading="lazy" />
+          <img src="assets/process/04-wartung.webp" alt="Felipe analysiert Prozess-Diagramme an einem Whiteboard" width="1536" height="1024" loading="lazy" decoding="async" />
         </div>
         <span class="step-num">Schritt 04</span>
         <h3 class="process-card__title" data-i18n="process.step4.title">Wartung & Verbesserung</h3>
@@ -515,7 +535,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a class="example-link" href="artikel/druckindustrie.html" data-i18n="industry.link">Ganzen Artikel lesen →</a>
       </div>
       <figure class="industry-photo">
-        <img src="assets/artikel/druckerei.jpg" alt="Mittelständische Druckerei in einem deutschen Gewerbegebiet. Außenansicht" loading="lazy" />
+        <picture>
+          <source type="image/webp" srcset="assets/artikel/druckerei.webp" />
+          <img src="assets/artikel/druckerei.jpg" alt="Mittelständische Druckerei in einem deutschen Gewerbegebiet. Außenansicht" width="1536" height="1024" loading="lazy" decoding="async" />
+        </picture>
       </figure>
     </div>
   </div>

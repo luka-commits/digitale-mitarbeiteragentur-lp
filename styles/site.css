@@ -1159,67 +1159,6 @@ section, header.hero {
   margin-top: auto;
 }
 .profile-actions .btn { flex: 1; justify-content: center; }
-/* Heute-live Eyebrow über Activity-Feed */
-.feed-eyebrow {
-  display: block;
-  font-family: var(--dma-font-mono);
-  font-size: 11px;
-  letter-spacing: var(--dma-track-eyebrow);
-  text-transform: uppercase;
-  color: var(--dma-petrol);
-  margin-bottom: 8px;
-}
-
-/* Activity-Feed-Mini */
-.activity-feed {
-  background: var(--dma-elfenbein);
-  border: 1px solid var(--dma-dunst);
-  border-radius: var(--dma-radius-sm);
-  padding: 12px 14px;
-  height: 76px;
-  overflow: hidden;
-  position: relative;
-  margin-bottom: 16px;
-}
-.activity-feed::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    to bottom,
-    rgba(250, 250, 252, 1) 0%,
-    transparent 18%,
-    transparent 82%,
-    rgba(250, 250, 252, 1) 100%
-  );
-}
-.activity-feed-track {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  animation: activity-scroll 18s linear infinite;
-}
-@keyframes activity-scroll {
-  0%   { transform: translateY(0); }
-  100% { transform: translateY(-50%); }
-}
-.activity-item {
-  display: flex;
-  gap: 10px;
-  font-size: 11px;
-  font-family: var(--dma-font-mono);
-  color: var(--dma-fg-muted);
-  line-height: 1.4;
-}
-.activity-item .time {
-  color: var(--dma-petrol);
-  flex-shrink: 0;
-}
-.activity-item .desc {
-  color: var(--dma-fg);
-  font-family: var(--dma-font-body);
-}
 
 .persona-demo-cta {
   background: transparent;
@@ -2328,7 +2267,6 @@ section, header.hero {
     transition-duration: 0.01ms !important;
   }
   .fade-up { opacity: 1; transform: none; }
-  .activity-feed-track { animation: none; }
 }
 
 /* ================== INDUSTRIE-FOTO (rechte Spalte im industry-split) ================== */

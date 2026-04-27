@@ -4,7 +4,14 @@
    Tokens-Snapshot aus lp/colors_and_type.css (2026-04-27)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+/* IBM Plex self-hosted (DSGVO + perf). Verweist auf shared /assets/fonts/. */
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('/assets/fonts/IBMPlexSans-400.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 500; font-display: swap; src: url('/assets/fonts/IBMPlexSans-500.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('/assets/fonts/IBMPlexSans-600.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url('/assets/fonts/IBMPlexSans-700.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('/assets/fonts/IBMPlexMono-400.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url('/assets/fonts/IBMPlexMono-500.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 700; font-display: swap; src: url('/assets/fonts/IBMPlexMono-700.woff2') format('woff2'); }
 
 :root {
   --dma-tiefsee:        #1A2E3A;
@@ -1631,5 +1638,105 @@ html.is-embed .compare-arrow { font-size: 18px; }
     -webkit-line-clamp: 6;
     max-height: 160px;
   }
+
+  /* ════════════════════════════════════════════════════════
+     Mobile-Minimalismus (Plan v2, 2026-04-27)
+     Eine Botschaft pro State, mehr Whitespace, Detail-Subs raus.
+     Diese Regeln überschreiben die obigen Mobile-Cuts wo nötig.
+     ════════════════════════════════════════════════════════ */
+
+  /* Title-Spans: short statt long (Default `.title-short { display: none }` weiter unten) */
+  html.is-embed .title-short { display: inline; }
+  html.is-embed .title-long { display: none; }
+
+  /* ── State 1: Inbox-Side komplett raus ───────────────── */
+  html.is-embed [data-state="1"] .inbox-side { display: none; }
+  html.is-embed [data-state="1"] .ticket-message {
+    -webkit-line-clamp: 2;
+  }
+  html.is-embed [data-state="1"] .ticket-from .from-channel { display: none; }
+
+  /* ── State 2: Reasoning-Detail-Subs raus, Heads größer ── */
+  html.is-embed [data-state="2"] .reasoning-step .text .detail { display: none; }
+  html.is-embed [data-state="2"] .reasoning-step { padding: 8px 0; }
+  html.is-embed [data-state="2"] .reasoning-step .text .head {
+    font-size: 12.5px;
+    line-height: 1.4;
+  }
+
+  /* ── State 3: Vorgang-Row + Sources-Card raus, Compose 4 Lines ── */
+  html.is-embed [data-state="3"] .compose-head-row:nth-child(3) { display: none; }
+  html.is-embed [data-state="3"] .compose-body {
+    -webkit-line-clamp: 4;
+    max-height: 110px;
+  }
+  html.is-embed [data-state="3"] .work-side .card--inset { display: none; }
+  html.is-embed [data-state="3"] .work-side .card:not(.card--inset) {
+    padding: 12px 14px;
+  }
+  html.is-embed [data-state="3"] .confidence-meta {
+    margin-top: 4px;
+    font-size: 10.5px;
+  }
+
+  /* ── State 4: Nur Bearbeitungszeit als Big-Number ────── */
+  html.is-embed [data-state="4"] .approval-subtitle {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-width: 280px;
+    margin-bottom: 14px;
+  }
+  /* Receipt: Column-Flex mit nur dem 1. Feld (Bearbeitungszeit nach Reorder) */
+  html.is-embed [data-state="4"] .approval-receipt {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: unset;
+    gap: 4px;
+    align-items: center;
+    text-align: center;
+  }
+  html.is-embed [data-state="4"] .approval-receipt > span:nth-of-type(n+2) { display: none; }
+  html.is-embed [data-state="4"] .approval-receipt > span {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  html.is-embed [data-state="4"] .approval-receipt .key {
+    font-size: 9.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--dma-fg-subtle);
+  }
+  html.is-embed [data-state="4"] .approval-receipt .val {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  /* ── State 5: 2 große KPIs (1 Spalte), Compare-Subs raus ── */
+  html.is-embed [data-state="5"] .kpi-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  html.is-embed [data-state="5"] .kpi-tile:nth-child(n+3) { display: none; }
+  html.is-embed [data-state="5"] .kpi-tile {
+    padding: 14px 16px;
+  }
+  html.is-embed [data-state="5"] .kpi-tile .kpi-num {
+    font-size: 32px;
+  }
+  html.is-embed [data-state="5"] .kpi-tile .kpi-label {
+    font-size: 10px;
+  }
+  html.is-embed [data-state="5"] .compare-block .sub { display: none; }
+  html.is-embed [data-state="5"] .compare-block .value { font-size: 16px; }
+  html.is-embed [data-state="5"] .compare-strip {
+    padding: 14px 16px;
+  }
 }
+
+/* Title-Spans Default (außerhalb @media) — Desktop zeigt nur long */
+.title-short { display: none; }
+.title-long { display: inline; }
 
