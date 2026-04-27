@@ -1,7 +1,13 @@
-# Backups + legacy
-assets/hero/_backup/
+# Backups + drafts (never deploy)
+assets/**/_backup/
+assets/**/.src-backup/
+assets/**/_src-backup/
+assets/**/_cover-drafts/
+assets/**/_draft*
 *.bak
 *.bak-*
+*_backup.*
+*_draft.*
 *.original.md
 
 # Build tooling (not meant for deployment)
@@ -12,6 +18,13 @@ cv/template.html
 brand-v5-preview.html
 design-system.md
 page-plan.md
+content-references/
+seo-research/
+transcripts/
+
+# Test artefacts
+.playwright-cli/
+**/.playwright-cli/
 
 # Dotfiles + os
 .DS_Store

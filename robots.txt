@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /cv/
+Disallow: /demos/
 
 Sitemap: https://lp-theta-lac.vercel.app/sitemap.xml

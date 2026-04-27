@@ -3,38 +3,83 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>DMA — Artikel · Industrie-Perspektiven</title>
+<title>DMA · Artikel · Industrie-Perspektiven</title>
 <meta name="description" content="Industrie-Perspektiven, Beobachtungen und Notizen zur Digitalisierung des Mittelstands. Von der Druckindustrie bis zur DSGVO im Alltag." />
 <link rel="canonical" href="https://lp-theta-lac.vercel.app/artikel/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="DMA · Digitale Mitarbeiter Agentur" />
-<meta property="og:title" content="DMA — Artikel · Industrie-Perspektiven" />
+<meta property="og:title" content="DMA · Artikel · Industrie-Perspektiven" />
 <meta property="og:description" content="Wie sich der Mittelstand digitalisiert. Beobachtungen aus Branchen, Notizen aus Projekten." />
 <meta property="og:url" content="https://lp-theta-lac.vercel.app/artikel/" />
 <meta property="og:image" content="https://lp-theta-lac.vercel.app/assets/og-image.png" />
 <meta property="og:locale" content="de_DE" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="DMA — Artikel · Industrie-Perspektiven" />
+<meta name="twitter:title" content="DMA · Artikel · Industrie-Perspektiven" />
 <meta name="twitter:description" content="Wie sich der Mittelstand digitalisiert." />
 <meta name="twitter:image" content="https://lp-theta-lac.vercel.app/assets/og-image.png" />
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
 <link rel="stylesheet" href="../colors_and_type.css" />
 <link rel="stylesheet" href="../styles/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://lp-theta-lac.vercel.app/artikel/#page",
+      "name": "DMA Artikel — Industrie-Perspektiven",
+      "description": "Industrie-Perspektiven, Beobachtungen und Notizen zur Digitalisierung des Mittelstands.",
+      "inLanguage": "de-DE",
+      "publisher": {
+        "@type": "Organization",
+        "name": "DMA · Digitale Mitarbeiter Agentur",
+        "url": "https://lp-theta-lac.vercel.app/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lp-theta-lac.vercel.app/" },
+        { "@type": "ListItem", "position": 2, "name": "Artikel", "item": "https://lp-theta-lac.vercel.app/artikel/" }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
 <nav class="nav" id="nav">
   <div class="container nav-inner">
     <div class="nav-left">
-      <a class="dma-nav-logo" href="../index.html" aria-label="DMA · Digitale Mitarbeiter Agentur">
+      <a class="dma-nav-logo" href="../" aria-label="DMA · Digitale Mitarbeiter Agentur">
         <pre class="dma-lockup dma-lockup--nav" aria-hidden="true"><span class="slash">////</span>DIGITALE
 <span class="slash">/</span>MITARBEITER
 <span class="slash">/////</span>AGENTUR</pre>
       </a>
       <div class="nav-center">
-        <a href="../index.html" data-i18n="nav.home">Home</a>
-        <a href="index.html" data-i18n="nav.newsletter">Newsletter</a>
-        <a href="../live-demo/index.html" data-i18n="nav.demos">Live Demos</a>
+        <a href="../">Home</a>
+        <div class="nav-dropdown" id="nav-leistungen" data-open="false">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+            <span>Leistungen</span>
+            <svg class="nav-dropdown-arrow" aria-hidden="true" viewBox="0 0 12 8" width="10" height="7" fill="none"><path d="M1 1.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="../leistungen/buchhaltung-automatisieren/" role="menuitem">
+              <span class="dropdown-title">Buchhaltung automatisieren</span>
+              <span class="dropdown-sub">Belege · OP-Listen · DATEV</span>
+            </a>
+            <a href="../leistungen/vertrieb-automatisieren/" role="menuitem">
+              <span class="dropdown-title">Vertrieb automatisieren</span>
+              <span class="dropdown-sub">Anfragen · Angebote · CRM</span>
+            </a>
+            <a href="../leistungen/ki-kundenservice/" role="menuitem">
+              <span class="dropdown-title">KI Kundenservice</span>
+              <span class="dropdown-sub">Tickets · Eskalation · 24/7</span>
+            </a>
+          </div>
+        </div>
+        <a href="./" aria-current="page">Newsletter</a>
       </div>
     </div>
     <div class="nav-right">
@@ -42,7 +87,7 @@
         <button class="active" data-lang="de">DE</button>
         <button data-lang="en" title="Englisch in Vorbereitung">EN</button>
       </div>
-      <a class="btn btn-primary btn-sm" href="../index.html#lead" data-i18n="nav.cta">Jetzt rekrutieren</a>
+      <a class="btn btn-primary btn-sm" href="../kontakt/">Jetzt rekrutieren</a>
       <button class="nav-mobile-toggle" id="nav-mobile-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-mobile-panel">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
       </button>
@@ -53,16 +98,19 @@
 <div class="nav-mobile-panel" id="nav-mobile-panel" aria-hidden="true">
   <div class="container">
     <div class="nav-mobile-links">
-      <a href="../index.html" data-i18n="nav.home">Home</a>
-      <a href="index.html" data-i18n="nav.newsletter">Newsletter</a>
-      <a href="../live-demo/index.html" data-i18n="nav.demos">Live Demos</a>
+      <a href="../">Home</a>
+      <div class="nav-mobile-leistungen-head">Leistungen</div>
+      <a href="../leistungen/buchhaltung-automatisieren/">Buchhaltung automatisieren</a>
+      <a href="../leistungen/vertrieb-automatisieren/">Vertrieb automatisieren</a>
+      <a href="../leistungen/ki-kundenservice/">KI Kundenservice</a>
+      <a href="./" aria-current="page">Newsletter</a>
     </div>
     <div class="nav-mobile-foot">
       <div class="lang-toggle" role="group" aria-label="Sprache">
         <button class="active" data-lang="de">DE</button>
         <button data-lang="en" title="Englisch in Vorbereitung">EN</button>
       </div>
-      <a class="btn btn-primary btn-sm" href="../index.html#lead" data-i18n="nav.cta">Jetzt rekrutieren</a>
+      <a class="btn btn-primary btn-sm" href="../kontakt/">Jetzt rekrutieren</a>
     </div>
   </div>
 </div>
@@ -78,12 +126,12 @@
     <div class="article-grid fade-up">
       <a class="article-card" href="druckindustrie.html">
         <div class="article-card-img">
-          <img src="../assets/artikel/druckerei.jpg" alt="Mittelständische Druckerei in einem deutschen Gewerbegebiet — Außenansicht" loading="lazy" />
+          <img src="../assets/artikel/druckerei.jpg" alt="Mittelständische Druckerei in einem deutschen Gewerbegebiet. Außenansicht" loading="lazy" />
         </div>
         <div class="article-card-body">
           <span class="article-card-tag" data-i18n="articles.druck.tag">Industrie-Perspektive</span>
           <h3 data-i18n="articles.druck.title">Wie sich die Druckindustrie neu erfindet.</h3>
-          <p data-i18n="articles.druck.excerpt">Auflagen schrumpfen, Aufträge werden kleiner und schneller. Wo digitale Mitarbeiter den Innendienst entlasten — und wo sie es bewusst nicht tun.</p>
+          <p data-i18n="articles.druck.excerpt">Auflagen schrumpfen, Aufträge werden kleiner und schneller. Wo digitale Mitarbeiter den Innendienst entlasten. Und wo sie es bewusst nicht tun.</p>
           <span class="article-card-foot" data-i18n="articles.druck.foot">Lesen →</span>
         </div>
       </a>
@@ -94,7 +142,7 @@
         </div>
         <div class="article-card-body">
           <span class="article-card-tag" data-i18n="articles.dsgvo.tag">Praxis · DSGVO</span>
-          <h3 data-i18n="articles.dsgvo.title">DSGVO bei digitalen Mitarbeitern — was wirklich zählt.</h3>
+          <h3 data-i18n="articles.dsgvo.title">DSGVO bei digitalen Mitarbeitern. Was wirklich zählt.</h3>
           <p data-i18n="articles.dsgvo.excerpt">Datenresidenz, Modell-Training, AV-Verträge. Was im Pflichtenheft stehen muss, bevor der erste Vorgang verarbeitet wird.</p>
           <span class="article-card-foot" data-i18n="articles.stub.foot">In Arbeit</span>
         </div>
@@ -106,7 +154,7 @@
         </div>
         <div class="article-card-body">
           <span class="article-card-tag" data-i18n="articles.stack.tag">Praxis · Integration</span>
-          <h3 data-i18n="articles.stack.title">Integration in den Bestand-Stack — kein Rip-and-Replace.</h3>
+          <h3 data-i18n="articles.stack.title">Integration in den Bestand-Stack. Kein Rip-and-Replace.</h3>
           <p data-i18n="articles.stack.excerpt">Wie ein digitaler Mitarbeiter in CRM, ERP, DATEV und Ticket-System einzieht, ohne dass am Tag des Go-Lives etwas Bestehendes umgestellt werden muss.</p>
           <span class="article-card-foot" data-i18n="articles.stub.foot">In Arbeit</span>
         </div>
@@ -137,13 +185,13 @@ const I18N = {
     "articles.lede": "Observations from industries, notes from projects, answers to questions that keep coming up in first calls.",
     "articles.druck.tag": "Industry perspective",
     "articles.druck.title": "How the print industry is reinventing itself.",
-    "articles.druck.excerpt": "Print runs are shrinking, orders smaller and faster. Where digital employees take load off the back office — and where they deliberately don't.",
+    "articles.druck.excerpt": "Print runs are shrinking, orders smaller and faster. Where digital employees take load off the back office. And where they deliberately don't.",
     "articles.druck.foot": "Read →",
     "articles.dsgvo.tag": "Practice · GDPR",
-    "articles.dsgvo.title": "GDPR for digital employees — what actually matters.",
+    "articles.dsgvo.title": "GDPR for digital employees. What actually matters.",
     "articles.dsgvo.excerpt": "Data residency, model training, processor agreements. What needs to be in the spec before the first case is handled.",
     "articles.stack.tag": "Practice · Integration",
-    "articles.stack.title": "Integration into your existing stack — no rip-and-replace.",
+    "articles.stack.title": "Integration into your existing stack. No rip-and-replace.",
     "articles.stack.excerpt": "How a digital employee moves into your CRM, ERP, DATEV and ticket system without anything existing being switched off on go-live day.",
     "articles.stub.label": "soon",
     "articles.stub.foot": "In progress"

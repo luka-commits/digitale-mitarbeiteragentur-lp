@@ -19,12 +19,12 @@ button { font-family: inherit; cursor: pointer; }
   .container { padding: 0 20px; }
 }
 
-/* Section-Padding: Brand-CI Section 4: 80 desktop / 56 mobile */
+/* Section-Padding: Brand-CI Section 4: 80 desktop / 48 mobile (mobile-tightened 2026-04-27) */
 section, header.hero {
   padding: var(--dma-space-9) 0;
 }
 @media (max-width: 720px) {
-  section, header.hero { padding: var(--dma-space-8) 0; }
+  section, header.hero { padding: var(--dma-space-7) 0; }
 }
 /* v5: section-warm bleibt subtil getönt aber translucent → Body-Gradient fließt durch.
    Soft fade-in/out an den Edges, damit angrenzende Sektionen visuell verbunden bleiben. */
@@ -58,12 +58,11 @@ section, header.hero {
 }
 .btn-sm { padding: 9px 16px; font-size: var(--dma-text-sm); }
 
-/* Primary: Minimalist — Atelier Petrol-Teal, on-hover rotierender Hell-Teal-Gradient-Ring
-   (CSS-Port von hover-border-gradient: kein Auto-Cycle, animiert nur on-hover, respektiert reduced-motion)
-   --btn-fill / --btn-glow sind lokale Overrides, noch nicht in brand-tokens promoted */
+/* Primary: Minimalist — v5 Cobalt, on-hover rotierender Hell-Cobalt-Gradient-Ring
+   (CSS-Port von hover-border-gradient: kein Auto-Cycle, animiert nur on-hover, respektiert reduced-motion) */
 .btn-primary {
-  --btn-fill: #2F7680;
-  --btn-glow: #7FCDD7;
+  --btn-fill: var(--dma-petrol);
+  --btn-glow: var(--dma-petrol-hell);
   background: var(--btn-fill);
   color: var(--dma-elfenbein);
   border: 1px solid var(--btn-fill);
@@ -571,7 +570,9 @@ section, header.hero {
   text-align: left;
 }
 @media (max-width: 880px) {
-  .hero { min-height: 78vh; padding: 80px 0 clamp(60px, 10vh, 100px); }
+  /* Mobile: Lower-third bleibt — flex-end + tighteres Bottom-Padding,
+     damit Text dort sitzt wo Eye eh hinguckt (untere ~40% der Hero) */
+  .hero { min-height: 78vh; padding: 80px 0 clamp(48px, 8vh, 80px); }
 }
 
 /* Background video — full bleed */
@@ -627,7 +628,10 @@ section, header.hero {
   text-wrap: balance;
 }
 @media (max-width: 720px) {
-  .hero-headline { font-size: var(--dma-text-4xl); }
+  /* Mobile: middle-ground zwischen original 56px und shrunk 32px.
+     ~40-46px = strong genug für Hero-Impact, lässt Video atmen. */
+  .hero-headline { font-size: clamp(36px, 10vw, 46px); line-height: 1.05; }
+  .hero-eyebrow { margin-bottom: 14px; }
 }
 .hero-sub {
   margin: 20px 0 0;
@@ -642,7 +646,10 @@ section, header.hero {
   text-wrap: balance;
 }
 @media (max-width: 720px) {
-  .hero-sub { font-size: var(--dma-text-xl); }
+  .hero-sub {
+    font-size: var(--dma-text-md);  /* 18px — passt zur middle-ground Headline */
+    margin-top: 14px;
+  }
 }
 .hero-body {
   margin: 16px 0 0;
@@ -674,7 +681,7 @@ section, header.hero {
 /* Hero-Pill text on dark video bg */
 .hero .hero-pill { color: var(--dma-elfenbein); }
 .hero .btn-text { color: var(--dma-elfenbein); border-bottom-color: rgba(250, 250, 252, 0.5); }
-.hero .btn-text:hover { color: #fff; border-bottom-color: #fff; }
+.hero .btn-text:hover { color: var(--dma-elfenbein); border-bottom-color: var(--dma-elfenbein); }
 .hero-pill {
   display: inline-flex;
   align-items: center;
@@ -912,26 +919,105 @@ section, header.hero {
    Anwendung: zusätzlich zur Grid-Klasse, z.B. <div class="agents-grid mobile-carousel">.
    Aktiviert horizontal-Snap unter 720px, lässt Desktop unverändert. */
 @media (max-width: 720px) {
-  .mobile-carousel {
+  .carousel-wrap {
+    position: relative;
+    overflow: hidden;
+    padding: 8px 0 0;
+    margin: 0;
+    /* Vertikaler Pan ist native (page scroll), horizontaler Pan handle ich in JS */
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  .carousel-wrap .mobile-carousel,
+  .carousel-wrap .process-grid {
     display: flex;
     grid-template-columns: none;
-    overflow-x: auto;
-    overflow-y: visible;
-    column-gap: 0;
-    row-gap: 0;
     gap: 16px;
-    padding: 8px 5vw 24px;
-    margin: 0 -5vw;
-    scroll-snap-type: x mandatory;
-    scroll-padding: 0 5vw;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    padding: 0 16px;
+    margin: 0;
+    overflow: visible;
+    scroll-snap-type: none;
+    transform: translateX(0);
+    will-change: transform;
+    transition: transform 380ms cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .mobile-carousel::-webkit-scrollbar { display: none; }
-  .mobile-carousel > * {
-    flex: 0 0 82%;
-    scroll-snap-align: center;
+  /* Hohe Specificity um alte .process-card:nth-child(N) Width-Rules zu schlagen */
+  .carousel-wrap .mobile-carousel > *,
+  .carousel-wrap .process-grid > .process-card,
+  .carousel-wrap .process-grid > * {
+    flex: 0 0 auto !important;
+    width: calc(100vw - 64px) !important;
+    max-width: 360px !important;
+    scroll-snap-align: none;
   }
+  .carousel-wrap .headshot-video {
+    pointer-events: none;
+  }
+  .carousel-wrap a,
+  .carousel-wrap button {
+    touch-action: manipulation;
+  }
+  /* Process-Card Bilder bleiben 4:3 (original landscape, kein Crop)
+     Card-Width matched mit Profile-Card durch carousel-wrap > * Rule. */
+
+  .carousel-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 18px 16px 0;
+    padding: 0;
+  }
+  .carousel-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--dma-dunst);
+    background: var(--dma-papier);
+    color: var(--dma-tiefsee);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 150ms, border-color 150ms, opacity 150ms;
+    flex-shrink: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .carousel-btn:hover { background: var(--dma-elfenbein); border-color: var(--dma-tiefsee); }
+  .carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+  .carousel-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  /* Aktiver Dot als Pill: visuell viel deutlicher dass mehrere Karten existieren */
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: var(--dma-dunst);
+    padding: 0;
+    cursor: pointer;
+    transition: background 220ms cubic-bezier(0.22, 1, 0.36, 1),
+                width 220ms cubic-bezier(0.22, 1, 0.36, 1);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .carousel-dot.is-active {
+    background: var(--dma-tiefsee);
+    width: 28px;
+    border-radius: 5px;
+  }
+}
+/* Desktop: JS-Wrap auflösen + Nav unsichtbar (Cards laufen als normales Grid) */
+@media (min-width: 721px) {
+  .carousel-wrap { display: contents; }
+  .carousel-nav { display: none; }
 }
 
 /* Profile-Card V5 — Headshot prominent + CV-Snippet + 2-Button-Layout */
@@ -946,7 +1032,7 @@ section, header.hero {
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: linear-gradient(160deg, var(--dma-nebel-hell) 0%, var(--dma-papier) 60%, var(--dma-petrol-soft, #DCE9EC) 100%);
+  background: linear-gradient(160deg, var(--dma-nebel-hell) 0%, var(--dma-papier) 100%);
   border-bottom: 1px solid var(--dma-dunst);
   display: flex;
   align-items: center;
@@ -1261,7 +1347,7 @@ section, header.hero {
   width: 100%;
   max-width: 820px;
   height: 100%;
-  background: #fff;
+  background: var(--dma-elfenbein);
   border: 0;
   border-radius: var(--dma-radius-md);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
@@ -1277,7 +1363,7 @@ section, header.hero {
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: rgba(15, 23, 42, 0.6);
-  color: #fff;
+  color: var(--dma-elfenbein);
   font-size: 22px;
   line-height: 1;
   cursor: pointer;
@@ -1329,11 +1415,11 @@ section, header.hero {
 }
 .cv-modal-btn--ghost:hover {
   background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  color: var(--dma-elfenbein);
 }
 .cv-modal-btn--primary {
   background: var(--dma-petrol);
-  color: #fff;
+  color: var(--dma-elfenbein);
 }
 .cv-modal-btn--primary:hover {
   background: var(--dma-petrol-hell);
@@ -1489,7 +1575,7 @@ section, header.hero {
 }
 .bauplan-modul.is-active {
   border-color: var(--dma-petrol);
-  background: #fff;
+  background: var(--dma-elfenbein);
   box-shadow:
     0 0 0 4px rgba(30, 58, 138, 0.08),
     0 8px 24px rgba(30, 58, 138, 0.18);
@@ -1743,16 +1829,18 @@ section, header.hero {
     display: flex;
     grid-template-columns: none;
     overflow-x: auto;
-    overflow-y: visible;
+    overflow-y: hidden;
     column-gap: 0;
     row-gap: 0;
     gap: 16px;
-    padding: 8px 5vw 24px;
-    margin: 0 -5vw;
+    padding: 8px 16px 24px;
+    margin: 0;
     scroll-snap-type: x mandatory;
-    scroll-padding: 0 5vw;
-    -webkit-overflow-scrolling: touch;
+    scroll-padding-left: 16px;
     scrollbar-width: none;
+    touch-action: pan-x pan-y;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
   .process-grid::-webkit-scrollbar { display: none; }
   .process-grid::before { display: none; }
@@ -1762,11 +1850,11 @@ section, header.hero {
   .process-card:nth-child(2),
   .process-card:nth-child(3),
   .process-card:nth-child(4) {
-    /* 78% statt 82% — mehr Peek von Card N+1 = klarere Slider-Affordance */
-    flex: 0 0 78%;
+    flex: none;
+    width: 78%;
     grid-column: auto;
     grid-row: auto;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
   }
   .process-card::after { display: none; }
 
@@ -2115,6 +2203,12 @@ section, header.hero {
   font-size: var(--dma-text-4xl);
   line-height: var(--dma-lead-snug);
   letter-spacing: var(--dma-track-tight);
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+@media (max-width: 720px) {
+  .blueprint-hero { padding: 88px 0 40px; }
+  .blueprint-hero h1 { font-size: var(--dma-text-2xl); }
 }
 .blueprint-meta {
   display: flex;
@@ -2185,6 +2279,11 @@ section, header.hero {
 .legal-wrap h1 {
   font-size: var(--dma-text-3xl);
   margin-bottom: 32px;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+@media (max-width: 480px) {
+  .legal-wrap h1 { font-size: var(--dma-text-2xl); }
 }
 .legal-wrap h2 {
   font-size: var(--dma-text-md);
@@ -3089,7 +3188,45 @@ section, header.hero {
 /* ====== Kontakt-Page ====== */
 .page-kontakt { background: var(--dma-elfenbein); }
 
-.kontakt-hero { padding: 140px 0 48px; background: var(--dma-elfenbein); }
+.kontakt-hero { padding: 96px 0 40px; background: var(--dma-elfenbein); }
+.kontakt-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 1100px;
+}
+.kontakt-hero-text { min-width: 0; }
+.kontakt-hero-image {
+  border-radius: var(--dma-radius-lg);
+  overflow: hidden;
+  background: var(--dma-tiefsee-04);
+}
+.kontakt-hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+@media (max-width: 800px) {
+  .kontakt-hero { padding: 64px 0 24px; }
+  .kontakt-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .kontakt-hero-image {
+    order: -1;
+    max-height: 200px;
+  }
+  .kontakt-hero-image img {
+    aspect-ratio: 16 / 9;
+    max-height: 200px;
+  }
+}
+@media (max-width: 720px) {
+  .kontakt-hero { padding: 48px 0 16px; }
+}
 
 .kontakt-grid {
   display: grid;
@@ -3153,19 +3290,28 @@ section, header.hero {
   70% { box-shadow: 0 0 0 6px rgba(62, 129, 113, 0); }
   100% { box-shadow: 0 0 0 0 rgba(62, 129, 113, 0); }
 }
-.calendar-iframe {
+/* Wrapper hält iframe + skeleton in derselben Slot-Höhe → kein CLS beim Mount.
+   Iframe ist always block (about:blank initial), Skeleton liegt absolut darüber
+   bis Cal.com loaded → nur z-index-Wechsel statt Layout-Shift. */
+.calendar-iframe-wrap {
+  position: relative;
   flex: 1;
   width: 100%;
   height: 640px;
+}
+.calendar-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   border: 0;
   display: block;
   background: var(--dma-papier);
 }
-/* Skeleton während Iframe deferred lädt (LCP-Optimierung) */
 .calendar-iframe-skeleton {
-  flex: 1;
-  width: 100%;
-  height: 640px;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3189,16 +3335,8 @@ section, header.hero {
 }
 @keyframes dma-spin { to { transform: rotate(360deg); } }
 @media (max-width: 720px) {
-  .calendar-iframe-skeleton {
+  .calendar-iframe-wrap {
     flex: 0 0 auto;
-    height: clamp(540px, 78vh, 720px);
-  }
-}
-@media (max-width: 720px) {
-  .calendar-iframe {
-    /* flex überschreiben: iframe wächst Parent, statt von ihm geschrumpft zu werden */
-    flex: 0 0 auto;
-    /* iOS-Safari-safe: vh kann durch dynamische Toolbar springen, clamp begrenzt */
     height: clamp(540px, 78vh, 720px);
   }
 }
@@ -3359,7 +3497,7 @@ section, header.hero {
 .demo-embed-fullscreen span:first-child { font-size: 13px; }
 
 @media (max-width: 720px) {
-  /* Mobile: Iframe fix-height — jeder State passt in 1 Viewport (kein Scroll im Iframe).
+  /* Mobile: Iframe fix-height, jeder State passt in 1 Viewport (kein Scroll im Iframe).
      clamp adaptiert an Phone-Größe: iPhone SE ~633px, iPhone 14 ~800px, größer 800px. */
   .demo-embed-wrap {
     aspect-ratio: auto;
@@ -3441,7 +3579,7 @@ section, header.hero {
   --border-radius: 6px;
   --border-style: solid;
   --border-width: 1px;
-  --button-text-color: #fff;
+  --button-text-color: var(--dma-elfenbein, #FAFAFC);
 }
 
 /* Notice-Position: rechts unten, mit DMA-Spacing */
@@ -3484,4 +3622,19 @@ section, header.hero {
 .klaro .cookie-notice .cm-link:hover,
 .klaro .cookie-notice a:hover {
   color: #ffffff !important;
+}
+
+/* ================== MOBILE VERTICAL RHYTHM ================== */
+/* Mobile-Tightening (2026-04-27): kürzere Section-Übergänge + weniger
+   interne Lücken auf ≤720px. Token-konform (--dma-space-6/7/8), Desktop
+   bleibt unverändert. Section-Padding-Token-Swap siehe Zeile 22-28. */
+@media (max-width: 720px) {
+  .section-head { margin: 0 auto 32px; }
+  .timeline-wrap { margin-bottom: 32px; }
+  .timeline-bridge { margin-top: 32px; }
+  .process-cta { margin-top: 40px; }
+  .tools-block { margin-top: 40px; }
+  .footer { padding: var(--dma-space-7) 0 32px; }
+  .footer-top { margin-bottom: 40px; }
+  .leistung-section { padding: var(--dma-space-7) 0; }
 }

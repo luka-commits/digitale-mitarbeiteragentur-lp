@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="10" fill="#FAF7F0"/>
+  <rect width="64" height="64" rx="10" fill="#FAFAFC"/>
   <g font-family="'IBM Plex Mono', ui-monospace, Menlo, monospace" font-weight="700" letter-spacing="0">
-    <text x="32" y="28" text-anchor="middle" font-size="13" fill="#2F7680">/////</text>
+    <text x="32" y="28" text-anchor="middle" font-size="13" fill="#1E3A8A">/////</text>
     <text x="32" y="48" text-anchor="middle" font-size="18" fill="#1A2E3A">DMA</text>
   </g>
 </svg>

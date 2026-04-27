@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Jetzt rekrutieren | DMA · Digitale Mitarbeiter Agentur</title>
-<meta name="description" content="Rekrutieren Sie einen digitalen Mitarbeiter. 30 Minuten Erstgespräch, kein Pitch — wir prüfen Ihre offene Rolle und sagen ehrlich, ob ein digitaler Kollege dazu passt." />
+<meta name="description" content="Rekrutieren Sie einen digitalen Mitarbeiter. 30 Minuten Erstgespräch, kein Pitch. Wir prüfen Ihre offene Rolle und sagen ehrlich, ob ein digitaler Kollege dazu passt." />
 <link rel="canonical" href="https://lp-theta-lac.vercel.app/kontakt/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="DMA · Digitale Mitarbeiter Agentur" />
@@ -27,14 +27,21 @@
     {
       "@type": "ContactPage",
       "@id": "https://lp-theta-lac.vercel.app/kontakt/#contactpage",
-      "name": "Kontakt — Erstgespräch buchen",
+      "name": "Kontakt. Erstgespräch buchen",
       "description": "Termin-Buchung für ein 30-minütiges Erstgespräch mit DMA. Wir prüfen, ob ein digitaler Mitarbeiter zu Ihrer offenen Rolle passt.",
       "url": "https://lp-theta-lac.vercel.app/kontakt/",
       "isPartOf": {
         "@type": "ProfessionalService",
-        "name": "DMA — Digitale Mitarbeiter Agentur",
+        "name": "DMA · Digitale Mitarbeiter Agentur",
         "url": "https://lp-theta-lac.vercel.app/"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lp-theta-lac.vercel.app/" },
+        { "@type": "ListItem", "position": 2, "name": "Kontakt", "item": "https://lp-theta-lac.vercel.app/kontakt/" }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -44,7 +51,7 @@
           "name": "Was kostet das Erstgespräch?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nichts. 30 Minuten, kein Pitch, keine versteckten Kosten. Wir prüfen, ob ein digitaler Mitarbeiter zu Ihrer offenen Rolle passt — wenn nicht, sagen wir das ehrlich."
+            "text": "Nichts. 30 Minuten, kein Pitch, keine versteckten Kosten. Wir prüfen, ob ein digitaler Mitarbeiter zu Ihrer offenen Rolle passt. Wenn nicht, sagen wir das ehrlich."
           }
         },
         {
@@ -52,7 +59,7 @@
           "name": "Wer nimmt am Termin teil?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Felipe — Founder von DMA. Auf Ihrer Seite gerne 1–2 Personen aus der Fachabteilung der offenen Rolle (z.B. Buchhaltungsleitung, Vertriebsleitung). Mehr brauchen wir im Erstgespräch nicht."
+            "text": "Felipe. Founder von DMA. Auf Ihrer Seite gerne 1–2 Personen aus der Fachabteilung der offenen Rolle (z.B. Buchhaltungsleitung, Vertriebsleitung). Mehr brauchen wir im Erstgespräch nicht."
           }
         },
         {
@@ -68,7 +75,7 @@
           "name": "Was sollte ich zum Termin mitbringen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Eine offene Rolle möglichst konkret (Aufgabenpaket, Volumen, eingesetzte Tools). 30 Minuten ohne Unterbrechung. Kein Pitch-Deck, keine RFP — wir wollen verstehen, nicht verkauft werden."
+            "text": "Eine offene Rolle möglichst konkret (Aufgabenpaket, Volumen, eingesetzte Tools). 30 Minuten ohne Unterbrechung. Kein Pitch-Deck, keine RFP. Wir wollen verstehen, nicht verkauft werden."
           }
         }
       ]
@@ -161,14 +168,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header class="kontakt-hero">
   <div class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="../">DMA</a>
-      <span aria-hidden="true">›</span>
-      <span aria-current="page">Rekrutieren</span>
-    </nav>
-    <span class="eyebrow leistung-eyebrow">Rekrutieren · Erstgespräch · 30 Minuten</span>
-    <h1 class="leistung-h1">Jetzt rekrutieren.</h1>
-    <p class="leistung-lede">30 Minuten Erstgespräch, kein Pitch. Sie erzählen uns von der offenen Rolle, wir prüfen, ob ein digitaler Mitarbeiter dazu passt — und sagen ehrlich, wenn nicht.</p>
+    <div class="kontakt-hero-grid">
+      <div class="kontakt-hero-text">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../">DMA</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Rekrutieren</span>
+        </nav>
+        <span class="eyebrow leistung-eyebrow">Rekrutieren · Erstgespräch · 30 Minuten</span>
+        <h1 class="leistung-h1">Jetzt rekrutieren.</h1>
+        <p class="leistung-lede">30 Minuten Erstgespräch, kein Pitch. Sie erzählen uns von der offenen Rolle, wir prüfen, ob ein digitaler Mitarbeiter dazu passt. Und sagen ehrlich, wenn nicht.</p>
+      </div>
+      <div class="kontakt-hero-image">
+        <img src="../assets/process/03-umsetzung.webp" alt="Felipe schult drei digitale Mitarbeiter im Onboarding" loading="eager" decoding="async" fetchpriority="high" />
+      </div>
+    </div>
   </div>
 </header>
 
@@ -180,20 +194,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span>Erstgespräch · 30 Min</span>
           <span class="calendar-embed-status calendar-embed-status--live">Live</span>
         </div>
-        <!-- Cal.com Embed — Felipes Kalender: cal.com/felipe-holanda/30min -->
-        <iframe
-          class="calendar-iframe"
-          src="https://cal.com/felipe-holanda/30min?theme=light&primaryColor=1E3A8A&hideEventTypeDetails=false"
-          width="100%"
-          height="640"
-          frameborder="0"
-          loading="lazy"
-          title="Erstgespräch buchen — DMA Online-Kalender"
-          allow="camera; microphone; fullscreen; payment"
-        ></iframe>
+        <!-- Cal.com Embed. Felipes Kalender: cal.com/felipe-holanda/30min
+             Iframe + Skeleton im gemeinsamen Wrapper mit position:relative,
+             damit Skeleton absolut über Iframe liegt → kein CLS beim Mount. -->
+        <div class="calendar-iframe-wrap">
+          <iframe
+            class="calendar-iframe"
+            data-src="https://cal.com/felipe-holanda/30min?theme=light&amp;primaryColor=1E3A8A&amp;hideEventTypeDetails=false"
+            src="about:blank"
+            width="100%"
+            height="640"
+            frameborder="0"
+            loading="lazy"
+            title="Erstgespräch buchen. DMA Online-Kalender"
+            allow="camera; microphone; fullscreen; payment"
+          ></iframe>
+          <div class="calendar-iframe-skeleton" aria-hidden="true">
+            <span class="calendar-skeleton-text">Kalender wird geladen …</span>
+          </div>
+        </div>
         <noscript>
           <div class="calendar-placeholder">
-            <p>Aktivieren Sie JavaScript, um den Kalender zu sehen — oder schreiben Sie uns direkt: <a href="mailto:hallo@dma-agentur.de">hallo@dma-agentur.de</a>.</p>
+            <p>Aktivieren Sie JavaScript, um den Kalender zu sehen. Oder schreiben Sie uns direkt: <a href="mailto:hallo@dma-agentur.de">hallo@dma-agentur.de</a>.</p>
           </div>
         </noscript>
       </div>
@@ -243,11 +265,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="faq-wrap glass">
       <div class="faq-item">
         <button class="faq-q" type="button"><span>Was kostet das Erstgespräch?</span><span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Nichts. 30 Minuten, kein Pitch, keine versteckten Kosten. Wir prüfen, ob ein digitaler Mitarbeiter zu Ihrer offenen Rolle passt — wenn nicht, sagen wir das ehrlich.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Nichts. 30 Minuten, kein Pitch, keine versteckten Kosten. Wir prüfen, ob ein digitaler Mitarbeiter zu Ihrer offenen Rolle passt. Wenn nicht, sagen wir das ehrlich.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" type="button"><span>Wer nimmt am Termin teil?</span><span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Felipe — Founder von DMA. Auf Ihrer Seite gerne 1–2 Personen aus der Fachabteilung der offenen Rolle (z.B. Buchhaltungsleitung, Vertriebsleitung). Mehr brauchen wir im Erstgespräch nicht.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Felipe. Founder von DMA. Auf Ihrer Seite gerne 1–2 Personen aus der Fachabteilung der offenen Rolle (z.B. Buchhaltungsleitung, Vertriebsleitung). Mehr brauchen wir im Erstgespräch nicht.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" type="button"><span>Welche Sprache wird gesprochen?</span><span class="plus">+</span></button>
@@ -255,7 +277,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="faq-item">
         <button class="faq-q" type="button"><span>Was sollte ich zum Termin mitbringen?</span><span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Eine offene Rolle möglichst konkret (Aufgabenpaket, Volumen, eingesetzte Tools). 30 Minuten ohne Unterbrechung. Kein Pitch-Deck, keine RFP — wir wollen verstehen, nicht verkauft werden.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Eine offene Rolle möglichst konkret (Aufgabenpaket, Volumen, eingesetzte Tools). 30 Minuten ohne Unterbrechung. Kein Pitch-Deck, keine RFP. Wir wollen verstehen, nicht verkauft werden.</div></div>
       </div>
     </div>
   </div>
@@ -271,7 +293,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="footer-tagline">Personaldienstleister für digitale Mitarbeiter im deutschen Industrie-Mittelstand.</p>
       </div>
       <div>
-        <h5>Leistungen</h5>
+        <h3>Leistungen</h3>
         <ul>
           <li><a href="../leistungen/buchhaltung-automatisieren/">Buchhaltung automatisieren</a></li>
           <li><a href="../leistungen/vertrieb-automatisieren/">Vertrieb automatisieren</a></li>
@@ -279,7 +301,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
       <div>
-        <h5>Menü</h5>
+        <h3>Menü</h3>
         <ul>
           <li><a href="../#agents">Rollen</a></li>
           <li><a href="../artikel/index.html">Artikel</a></li>
@@ -289,7 +311,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
       <div>
-        <h5>Recht</h5>
+        <h3>Recht</h3>
         <ul>
           <li><a href="../impressum.html">Impressum</a></li>
           <li><a href="../datenschutz.html">Datenschutz</a></li>
@@ -347,6 +369,42 @@ function setMobilePanelOpen(open) {
 navMobileToggle.addEventListener('click', () => setMobilePanelOpen(!navMobilePanel.classList.contains('is-open')));
 navMobilePanel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMobilePanelOpen(false)));
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && navMobilePanel.classList.contains('is-open')) setMobilePanelOpen(false); });
+
+/* ─── Cal.com Iframe Lazy-Mount (LCP-Optimierung) ───
+   Iframe lädt deferred. Entweder nach IntersectionObserver-Trigger oder Fallback nach 1s.
+   Vermeidet 9s LCP durch Cal.coms eigene synchron-geladene Assets. */
+(function() {
+  const iframe = document.querySelector('.calendar-iframe[data-src]');
+  const skeleton = document.querySelector('.calendar-iframe-skeleton');
+  if (!iframe) return;
+
+  let mounted = false;
+  function mount() {
+    if (mounted) return;
+    mounted = true;
+    /* Listener BEVOR src-Swap registrieren. About:blank-load ist schon gefeuert,
+       once:true greift erst beim nächsten load (Cal.com fertig). */
+    iframe.addEventListener('load', () => {
+      if (skeleton) skeleton.remove();
+    }, { once: true });
+    iframe.src = iframe.dataset.src;
+    iframe.removeAttribute('data-src');
+  }
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          mount();
+          io.disconnect();
+        }
+      });
+    }, { rootMargin: '300px' });
+    io.observe(iframe);
+  }
+  // Fallback: bei sehr schnellen Usern oder wenn IO nicht greift, nach 1s mounten
+  setTimeout(mount, 1000);
+})();
 </script>
 </body>
 </html>

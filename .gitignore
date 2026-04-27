@@ -3,9 +3,20 @@ node_modules/
 *.log
 .vercel
 .playwright-cli/
+**/.playwright-cli/
+.audit/
 
 # Local working folders — not deployed
 assets/**/_backup/
 assets/**/.src-backup/
+assets/**/_src-backup/
 assets/**/_cover-drafts/
+assets/**/_draft*
+*.bak
+*.bak-*
+*_backup.*
+*_draft.*
+*.original.md
 content-references/
+seo-research/
+transcripts/

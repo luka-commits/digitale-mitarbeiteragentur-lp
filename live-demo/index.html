@@ -3,23 +3,33 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Live-Demos · DMA — Drei digitale Mitarbeiter im Einsatz</title>
+<title>Live-Demos · DMA · Drei digitale Mitarbeiter im Einsatz</title>
 <meta name="description" content="Drei interaktive Live-Demos der digitalen Mitarbeiter Paula, Martin und Jonas. Cockpit, Workflow und Tool-Integration zum Selbst-Durchklicken." />
 <link rel="canonical" href="https://lp-theta-lac.vercel.app/live-demo/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="DMA · Digitale Mitarbeiter Agentur" />
-<meta property="og:title" content="Live-Demos · DMA — Drei digitale Mitarbeiter im Einsatz" />
-<meta property="og:description" content="Cockpit, Workflow und Tool-Integration der digitalen Mitarbeiter Paula, Martin und Jonas — zum Selbst-Durchklicken." />
+<meta property="og:title" content="Live-Demos · DMA · Drei digitale Mitarbeiter im Einsatz" />
+<meta property="og:description" content="Cockpit, Workflow und Tool-Integration der digitalen Mitarbeiter Paula, Martin und Jonas. Zum Selbst-Durchklicken." />
 <meta property="og:url" content="https://lp-theta-lac.vercel.app/live-demo/" />
 <meta property="og:image" content="https://lp-theta-lac.vercel.app/assets/og-image.png" />
 <meta property="og:locale" content="de_DE" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Live-Demos · DMA" />
-<meta name="twitter:description" content="Drei digitale Mitarbeiter im Einsatz — Cockpit, Workflow, Stats." />
+<meta name="twitter:description" content="Drei digitale Mitarbeiter im Einsatz. Cockpit, Workflow, Stats." />
 <meta name="twitter:image" content="https://lp-theta-lac.vercel.app/assets/og-image.png" />
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
 <link rel="stylesheet" href="../colors_and_type.css" />
 <link rel="stylesheet" href="../styles/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lp-theta-lac.vercel.app/" },
+    { "@type": "ListItem", "position": 2, "name": "Live-Demos", "item": "https://lp-theta-lac.vercel.app/live-demo/" }
+  ]
+}
+</script>
 <style>
   /* ================== LIVE-DEMO HUB ================== */
   .demo-hub {
@@ -72,7 +82,7 @@
     background: var(--dma-nebel-hell);
   }
 
-  /* Persona-Card — full-width, Media + Meta */
+  /* Persona-Card. Full-width, Media + Meta */
   .demo-section {
     padding: 80px 0;
     border-top: 1px solid var(--dma-dunst);
@@ -326,15 +336,34 @@
 <nav class="nav" id="nav">
   <div class="container nav-inner">
     <div class="nav-left">
-      <a class="dma-nav-logo" href="../index.html" aria-label="DMA · Digitale Mitarbeiter Agentur">
+      <a class="dma-nav-logo" href="../" aria-label="DMA · Digitale Mitarbeiter Agentur">
         <pre class="dma-lockup dma-lockup--nav" aria-hidden="true"><span class="slash">////</span>DIGITALE
 <span class="slash">/</span>MITARBEITER
 <span class="slash">/////</span>AGENTUR</pre>
       </a>
       <div class="nav-center">
-        <a href="../index.html" data-i18n="nav.home">Home</a>
-        <a href="../artikel/index.html" data-i18n="nav.newsletter">Newsletter</a>
-        <a href="index.html" data-i18n="nav.demos" aria-current="page">Live Demos</a>
+        <a href="../">Home</a>
+        <div class="nav-dropdown" id="nav-leistungen" data-open="false">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+            <span>Leistungen</span>
+            <svg class="nav-dropdown-arrow" aria-hidden="true" viewBox="0 0 12 8" width="10" height="7" fill="none"><path d="M1 1.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="../leistungen/buchhaltung-automatisieren/" role="menuitem">
+              <span class="dropdown-title">Buchhaltung automatisieren</span>
+              <span class="dropdown-sub">Belege · OP-Listen · DATEV</span>
+            </a>
+            <a href="../leistungen/vertrieb-automatisieren/" role="menuitem">
+              <span class="dropdown-title">Vertrieb automatisieren</span>
+              <span class="dropdown-sub">Anfragen · Angebote · CRM</span>
+            </a>
+            <a href="../leistungen/ki-kundenservice/" role="menuitem">
+              <span class="dropdown-title">KI Kundenservice</span>
+              <span class="dropdown-sub">Tickets · Eskalation · 24/7</span>
+            </a>
+          </div>
+        </div>
+        <a href="../artikel/">Newsletter</a>
       </div>
     </div>
     <div class="nav-right">
@@ -342,7 +371,7 @@
         <button class="active" data-lang="de">DE</button>
         <button data-lang="en" title="Englisch in Vorbereitung">EN</button>
       </div>
-      <a class="btn btn-primary btn-sm" href="../index.html#lead" data-i18n="nav.cta">Erstgespräch</a>
+      <a class="btn btn-primary btn-sm" href="../kontakt/">Jetzt rekrutieren</a>
       <button class="nav-mobile-toggle" id="nav-mobile-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-mobile-panel">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
       </button>
@@ -353,16 +382,19 @@
 <div class="nav-mobile-panel" id="nav-mobile-panel" aria-hidden="true">
   <div class="container">
     <div class="nav-mobile-links">
-      <a href="../index.html" data-i18n="nav.home">Home</a>
-      <a href="../artikel/index.html" data-i18n="nav.newsletter">Newsletter</a>
-      <a href="index.html" data-i18n="nav.demos">Live Demos</a>
+      <a href="../">Home</a>
+      <div class="nav-mobile-leistungen-head">Leistungen</div>
+      <a href="../leistungen/buchhaltung-automatisieren/">Buchhaltung automatisieren</a>
+      <a href="../leistungen/vertrieb-automatisieren/">Vertrieb automatisieren</a>
+      <a href="../leistungen/ki-kundenservice/">KI Kundenservice</a>
+      <a href="../artikel/">Newsletter</a>
     </div>
     <div class="nav-mobile-foot">
       <div class="lang-toggle" role="group" aria-label="Sprache">
         <button class="active" data-lang="de">DE</button>
         <button data-lang="en" title="Englisch in Vorbereitung">EN</button>
       </div>
-      <a class="btn btn-primary btn-sm" href="../index.html#lead" data-i18n="nav.cta">Erstgespräch</a>
+      <a class="btn btn-primary btn-sm" href="../kontakt/">Jetzt rekrutieren</a>
     </div>
   </div>
 </div>
@@ -373,7 +405,7 @@
     <div class="section-head fade-up">
       <span class="eyebrow" data-i18n="livedemo.eyebrow">Live-Demos · Drei Rollen zum Durchklicken</span>
       <h1 data-i18n="livedemo.headline">Drei digitale Mitarbeiter. Selbst durchklicken.</h1>
-      <p class="lede" data-i18n="livedemo.lede">Vorschau, kurzer Video-Walkthrough und ein Klick in die echte Demo-Anwendung. So sehen Paula, Martin und Jonas im Tagesgeschäft aus — bevor wir gemeinsam das Erstgespräch führen.</p>
+      <p class="lede" data-i18n="livedemo.lede">Vorschau, kurzer Video-Walkthrough und ein Klick in die echte Demo-Anwendung. So sehen Paula, Martin und Jonas im Tagesgeschäft aus. Bevor wir gemeinsam das Erstgespräch führen.</p>
     </div>
   </div>
 
@@ -415,7 +447,7 @@
       </div>
 
       <div class="demo-meta">
-        <p class="demo-summary" data-i18n="livedemo.paula.summary">Paula liest eingehende E-Mails, prüft Stammdaten, legt Aufträge im SAP an und versendet Bestätigungen. Sie sehen jeden Schritt im Cockpit — und greifen ein, wenn Paula einen Konflikt eskaliert.</p>
+        <p class="demo-summary" data-i18n="livedemo.paula.summary">Paula liest eingehende E-Mails, prüft Stammdaten, legt Aufträge im SAP an und versendet Bestätigungen. Sie sehen jeden Schritt im Cockpit. Und greifen ein, wenn Paula einen Konflikt eskaliert.</p>
 
         <div>
           <h4 data-i18n="livedemo.stats.head">Was Paula heute geleistet hat</h4>
@@ -529,7 +561,7 @@
       </div>
 
       <div class="demo-meta">
-        <p class="demo-summary" data-i18n="livedemo.jonas.summary">Jonas qualifiziert eingehende Anfragen, schreibt Angebote, hält Follow-Ups nach und pflegt das CRM sauber. Vom ersten Kontakt bis zur unterschriebenen Bestellung — ohne dass jemand klicken muss.</p>
+        <p class="demo-summary" data-i18n="livedemo.jonas.summary">Jonas qualifiziert eingehende Anfragen, schreibt Angebote, hält Follow-Ups nach und pflegt das CRM sauber. Vom ersten Kontakt bis zur unterschriebenen Bestellung. Ohne dass jemand klicken muss.</p>
 
         <div>
           <h4 data-i18n="livedemo.stats.head">Was Jonas diesen Monat geleistet hat</h4>
@@ -649,14 +681,14 @@ const I18N = {
 
     "livedemo.eyebrow": "Live demos · Three roles to click through",
     "livedemo.headline": "Three digital colleagues. Click through yourself.",
-    "livedemo.lede": "Preview, a short video walkthrough and one click into the live demo. This is what Paula, Martin and Jonas look like on the job — before we sit down for an intro call.",
+    "livedemo.lede": "Preview, a short video walkthrough and one click into the live demo. This is what Paula, Martin and Jonas look like on the job. Before we sit down for an intro call.",
     "livedemo.mockup.label": "Cockpit preview · screenshot coming",
     "livedemo.video.caption": "Video tour · 90 sec.",
     "livedemo.video.body": "Loom walkthrough with Felipe is on its way. Until then: open the demo or book a call.",
 
-    "livedemo.paula.summary": "Paula reads incoming emails, checks master data, creates orders in SAP and sends confirmations. You see every step in the cockpit — and step in when Paula escalates a conflict.",
+    "livedemo.paula.summary": "Paula reads incoming emails, checks master data, creates orders in SAP and sends confirmations. You see every step in the cockpit. And step in when Paula escalates a conflict.",
     "livedemo.martin.summary": "Martin handles requisitions from the workshop, compares suppliers, releases orders and posts goods receipts. Complaints, dunning and forecasts run cleanly in the background.",
-    "livedemo.jonas.summary": "Jonas qualifies incoming requests, drafts quotes, follows up on time and keeps the CRM clean. From first contact to signed order — without anyone clicking.",
+    "livedemo.jonas.summary": "Jonas qualifies incoming requests, drafts quotes, follows up on time and keeps the CRM clean. From first contact to signed order. Without anyone clicking.",
 
     "livedemo.stats.head": "What they delivered today",
     "livedemo.tools.head": "Integrated with",
@@ -674,7 +706,7 @@ const I18N = {
     "livedemo.cta.body": "15 minutes, no slides. We walk through your morning and show where a digital colleague would relieve the load right away.",
     "livedemo.cta.btn": "Book a call",
 
-    "foot.tagline": "Staffing for digital colleagues — industrial mid-market, DACH.",
+    "foot.tagline": "Staffing for digital colleagues. Industrial mid-market, DACH.",
     "foot.menu": "Menu",
     "foot.legal": "Legal",
     "foot.impressum": "Imprint",

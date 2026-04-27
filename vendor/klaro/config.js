@@ -46,7 +46,7 @@
         consentNotice: {
           description:
             'Wir verwenden Cookies und ähnliche Technologien, um zu verstehen, wie Sie unsere Seite nutzen, und um Ihr Erlebnis zu verbessern. Sie können selbst entscheiden, welche Kategorien Sie zulassen.',
-          changeDescription: 'Es gibt Änderungen seit Ihrem letzten Besuch — bitte erneuern Sie Ihre Einwilligung.',
+          changeDescription: 'Es gibt Änderungen seit Ihrem letzten Besuch. Bitte erneuern Sie Ihre Einwilligung.',
           learnMore: 'Einstellungen',
         },
         consentModal: {
@@ -84,7 +84,7 @@
           analytics: {
             title: 'Analyse',
             description:
-              'Hilft uns zu verstehen, wie Besucher die Seite nutzen — Pageviews, Quellen, Verweildauer. Daten werden anonymisiert verarbeitet.',
+              'Hilft uns zu verstehen, wie Besucher die Seite nutzen. Pageviews, Quellen, Verweildauer. Daten werden anonymisiert verarbeitet.',
           },
         },
         googleAnalytics: {
@@ -101,8 +101,8 @@
         purposes: ['analytics'],
         default: false,
         cookies: [
-          [/^_ga.*$/, '/', '.dma-agentur.de'],
-          [/^_gid$/, '/', '.dma-agentur.de'],
+          [/^_ga.*$/, '/'],
+          [/^_gid$/, '/'],
         ],
         callback: function (consent /*, service */) {
           if (typeof window.gtag !== 'function') return;
