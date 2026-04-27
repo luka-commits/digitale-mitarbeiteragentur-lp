@@ -545,7 +545,7 @@ html, body {
 }
 
 .reasoning-log::before {
-  content: "PAULA · DENKT";
+  content: "DIGITALER MITARBEITER · DENKT";
   position: absolute;
   top: 12px;
   right: 16px;
@@ -554,6 +554,9 @@ html, body {
   color: var(--dma-petrol-hell);
   opacity: 0.7;
 }
+body.demo-paula  .reasoning-log::before { content: "PAULA · DENKT"; }
+body.demo-martin .reasoning-log::before { content: "MARTIN · PRÜFT"; }
+body.demo-jonas  .reasoning-log::before { content: "JONAS · KALKULIERT"; }
 
 .reasoning-step {
   display: flex;
@@ -1554,5 +1557,79 @@ html.is-embed .compare-arrow { font-size: 18px; }
     overflow: hidden;
   }
   html.is-embed .compare-arrow { font-size: 14px; transform: rotate(90deg); margin: 0 auto; }
+
+  /* ── Mobile-Polish (Audit-Fixes) ───────────────────────── */
+
+  /* Persona-Role im Header: max 2 Zeilen, kein 3-line wrap */
+  html.is-embed .demo-header-text .persona-role {
+    font-size: 9.5px;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Ticket-Head — left cluster: Channel-Pill weglassen (Outlook → CRM ist redundant zur Mail-Adresse).
+     Nur NEU-Pill + Beleg-/Ticket-Nummer behalten. */
+  html.is-embed .ticket-head {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  html.is-embed .ticket-head .left {
+    flex-wrap: wrap;
+    gap: 6px;
+    row-gap: 4px;
+  }
+  html.is-embed .ticket-head .left > span:nth-child(n+4) { display: none; }
+  /* Separator-Dot zwischen ID und Channel auch raus */
+  html.is-embed .ticket-head .left > span:nth-child(3) { display: none; }
+  html.is-embed .ticket-head .timestamp {
+    font-size: 9.5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Ticket-From: from-name+org links / from-channel rechts → stack column */
+  html.is-embed .ticket-from {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  html.is-embed .ticket-from .from-name { font-size: 13px; }
+  html.is-embed .ticket-from .from-org { font-size: 10.5px; }
+  html.is-embed .ticket-from .from-channel {
+    font-size: 9.5px;
+    color: var(--dma-fg-subtle);
+    align-self: flex-start;
+  }
+
+  /* KPI-Tile labels: kein hyphen-break bei "PIPELINE-HYGIENE" etc. — labels sind kurz genug für nowrap */
+  html.is-embed .kpi-tile .kpi-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* Deltas + Compare-Values: balanced wrapping + keine browser-hyphenation */
+  html.is-embed .kpi-tile .kpi-delta,
+  html.is-embed .compare-block .value,
+  html.is-embed .compare-block .sub {
+    text-wrap: balance;
+    hyphens: none;
+    -webkit-hyphens: none;
+    word-break: keep-all;
+  }
+
+  /* State 3 · Output: cards stack statt 2-col grid (Confidence-Label hatte zu wenig Platz) */
+  html.is-embed [data-state="3"] .work-side {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  /* Compose-Body kürzer (vor table-format-Section schneiden) */
+  html.is-embed [data-state="3"] .compose-body {
+    -webkit-line-clamp: 6;
+    max-height: 160px;
+  }
 }
 
