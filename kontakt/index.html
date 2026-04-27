@@ -140,10 +140,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="nav-right">
-      <div class="lang-toggle" role="group" aria-label="Sprache">
-        <button class="active" data-lang="de">DE</button>
-        <button data-lang="en" title="Englisch in Vorbereitung">EN</button>
-      </div>
       <a class="btn btn-primary btn-sm" href="#kalender" aria-current="page">Jetzt rekrutieren</a>
       <button class="nav-mobile-toggle" id="nav-mobile-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-mobile-panel">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
@@ -163,101 +159,89 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="../artikel/index.html">Newsletter</a>
     </div>
     <div class="nav-mobile-foot">
-      <div class="lang-toggle" role="group" aria-label="Sprache">
-        <button class="active" data-lang="de">DE</button>
-        <button data-lang="en" title="Englisch in Vorbereitung">EN</button>
-      </div>
       <a class="btn btn-primary btn-sm" href="#kalender">Jetzt rekrutieren</a>
     </div>
   </div>
 </div>
 
-<header class="kontakt-hero">
+<header class="kontakt-hero kontakt-hero--minimal">
   <div class="container">
-    <div class="kontakt-hero-grid">
-      <div class="kontakt-hero-text">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="../">DMA</a>
-          <span aria-hidden="true">›</span>
-          <span aria-current="page">Rekrutieren</span>
-        </nav>
-        <span class="eyebrow leistung-eyebrow">Rekrutieren · Erstgespräch · 30 Minuten</span>
-        <h1 class="leistung-h1">Jetzt rekrutieren.</h1>
-        <p class="leistung-lede">30 Minuten Erstgespräch, kein Pitch. Sie erzählen uns von der offenen Rolle, wir prüfen, ob ein digitaler Mitarbeiter dazu passt. Und sagen ehrlich, wenn nicht.</p>
-      </div>
-      <div class="kontakt-hero-image">
-        <img src="../assets/process/03-umsetzung.webp" alt="Felipe schult drei digitale Mitarbeiter im Onboarding" width="1536" height="1024" loading="eager" decoding="async" fetchpriority="high" />
-      </div>
-    </div>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">DMA</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Rekrutieren</span>
+    </nav>
+    <h1 class="leistung-h1">Jetzt rekrutieren.</h1>
+    <p class="leistung-lede">30 Minuten Erstgespräch. Termin direkt unten wählen.</p>
   </div>
 </header>
 
-<section id="kalender" class="leistung-section">
+<section id="kalender" class="leistung-section leistung-section--tight">
   <div class="container">
-    <div class="kontakt-grid">
-      <div class="calendar-embed">
-        <div class="calendar-embed-header">
-          <span>Erstgespräch · 30 Min</span>
-          <span class="calendar-embed-status calendar-embed-status--live">Live</span>
+    <div class="calendar-embed calendar-embed--full">
+      <div class="calendar-embed-header">
+        <span>Erstgespräch · 30 Min</span>
+        <span class="calendar-embed-status calendar-embed-status--live">Live</span>
+      </div>
+      <!-- Cal.com Embed. Felipes Kalender: cal.com/felipe-holanda/30min -->
+      <div class="calendar-iframe-wrap">
+        <iframe
+          class="calendar-iframe"
+          data-src="https://cal.com/felipe-holanda/30min?theme=light&amp;primaryColor=1E3A8A&amp;hideEventTypeDetails=false"
+          src="about:blank"
+          width="100%"
+          height="640"
+          frameborder="0"
+          loading="lazy"
+          title="Erstgespräch buchen. DMA Online-Kalender"
+          allow="camera; microphone; fullscreen; payment"
+        ></iframe>
+        <div class="calendar-iframe-skeleton" aria-hidden="true">
+          <span class="calendar-skeleton-text">Kalender wird geladen …</span>
         </div>
-        <!-- Cal.com Embed. Felipes Kalender: cal.com/felipe-holanda/30min
-             Iframe + Skeleton im gemeinsamen Wrapper mit position:relative,
-             damit Skeleton absolut über Iframe liegt → kein CLS beim Mount. -->
-        <div class="calendar-iframe-wrap">
-          <iframe
-            class="calendar-iframe"
-            data-src="https://cal.com/felipe-holanda/30min?theme=light&amp;primaryColor=1E3A8A&amp;hideEventTypeDetails=false"
-            src="about:blank"
-            width="100%"
-            height="640"
-            frameborder="0"
-            loading="lazy"
-            title="Erstgespräch buchen. DMA Online-Kalender"
-            allow="camera; microphone; fullscreen; payment"
-          ></iframe>
-          <div class="calendar-iframe-skeleton" aria-hidden="true">
-            <span class="calendar-skeleton-text">Kalender wird geladen …</span>
-          </div>
+      </div>
+      <noscript>
+        <div class="calendar-placeholder">
+          <p>Aktivieren Sie JavaScript, um den Kalender zu sehen. Oder schreiben Sie uns direkt: <a href="mailto:hallo@dma-agentur.de">hallo@dma-agentur.de</a>.</p>
         </div>
-        <noscript>
-          <div class="calendar-placeholder">
-            <p>Aktivieren Sie JavaScript, um den Kalender zu sehen. Oder schreiben Sie uns direkt: <a href="mailto:hallo@dma-agentur.de">hallo@dma-agentur.de</a>.</p>
-          </div>
-        </noscript>
+      </noscript>
+    </div>
+  </div>
+</section>
+
+<section class="leistung-section section--warm">
+  <div class="container">
+    <div class="kontakt-info-grid">
+      <div class="kontakt-side-block">
+        <h3>Was Sie ins Erstgespräch mitbringen</h3>
+        <ul>
+          <li>Eine offene Rolle, möglichst konkret</li>
+          <li>Aufgabenpaket + Volumen (z.B. „200 Belege/Monat")</li>
+          <li>Eingesetzte Tools (DATEV, HubSpot, Zendesk &hellip;)</li>
+          <li>30 Minuten ohne Unterbrechung</li>
+        </ul>
       </div>
 
-      <aside class="kontakt-side">
-        <div class="kontakt-side-block">
-          <h3>Was Sie ins Erstgespräch mitbringen</h3>
-          <ul>
-            <li>Eine offene Rolle, möglichst konkret</li>
-            <li>Aufgabenpaket + Volumen (z.B. „200 Belege/Monat")</li>
-            <li>Eingesetzte Tools (DATEV, HubSpot, Zendesk &hellip;)</li>
-            <li>30 Minuten ohne Unterbrechung</li>
-          </ul>
-        </div>
+      <div class="kontakt-side-block">
+        <h3>Direkt-Kontakt</h3>
+        <span class="label">E-Mail</span>
+        <p><a href="mailto:hallo@dma-agentur.de">hallo@dma-agentur.de</a></p>
+        <span class="label">LinkedIn</span>
+        <p><a href="#" target="_blank" rel="noopener">Felipe auf LinkedIn</a></p>
+        <span class="label">Standort</span>
+        <p>Stuttgart · München · DACH-weit remote</p>
+      </div>
 
-        <div class="kontakt-side-block">
-          <h3>Direkt-Kontakt</h3>
-          <span class="label">E-Mail</span>
-          <p><a href="mailto:hallo@dma-agentur.de">hallo@dma-agentur.de</a></p>
-          <span class="label">LinkedIn</span>
-          <p><a href="#" target="_blank" rel="noopener">Felipe auf LinkedIn</a></p>
-          <span class="label">Standort</span>
-          <p>Stuttgart · München · DACH-weit remote</p>
-        </div>
-
-        <div class="kontakt-side-block">
-          <h3>Was passiert im Erstgespräch?</h3>
-          <ul>
-            <li>Sie erzählen uns von der offenen Rolle</li>
-            <li>Wir prüfen Use-Case-Fit ehrlich</li>
-            <li>Skizze: Aufgabenpaket, Tools, Implementierungs-Pfad</li>
-            <li>Pricing-Indikation</li>
-            <li>Wenn Match: konkrete nächste Schritte</li>
-          </ul>
-        </div>
-      </aside>
+      <div class="kontakt-side-block">
+        <h3>Was passiert im Erstgespräch?</h3>
+        <ul>
+          <li>Sie erzählen uns von der offenen Rolle</li>
+          <li>Wir prüfen Use-Case-Fit ehrlich</li>
+          <li>Skizze: Aufgabenpaket, Tools, Implementierungs-Pfad</li>
+          <li>Pricing-Indikation</li>
+          <li>Wenn Match: konkrete nächste Schritte</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>

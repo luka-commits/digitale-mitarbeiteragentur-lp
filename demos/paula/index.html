@@ -312,7 +312,7 @@
   // Paula — Demo-Konfiguration
   // ============================================================
   window.DemoConfig = {
-    durations: [9000, 22000, 21000, 8000, 14000],
+    durations: [3000, 8500, 7000, 2500, 5000],
 
     onState: [
       // ── State 1: Inbox ────────────────────────────────────
@@ -330,8 +330,8 @@
         });
         tools.querySelectorAll('.tool-call').forEach(c => c.classList.remove('is-visible'));
 
-        window.DemoHelpers.animateReasoningSteps(log, { activeMs: 2200, gapMs: 600 });
-        window.DemoHelpers.revealToolCalls(tools, { gapMs: 2400 });
+        window.DemoHelpers.animateReasoningSteps(log, { activeMs: 900, gapMs: 200 });
+        window.DemoHelpers.revealToolCalls(tools, { gapMs: 900 });
       },
 
       // ── State 3: Output — Typewriter + Confidence ────────
@@ -347,20 +347,14 @@
         const text =
 `Sehr geehrter Herr Schmidt,
 
-vielen Dank für Ihre Anfrage zu Auftrag VA-2026-3471.
+Auftrag VA-2026-3471 wurde am 24.04. versandt — ETA morgen, Di 28.04., vormittags.
 
-Die Sendung wurde am 24.04.2026 versandt und befindet sich aktuell in der finalen Zustellung. Voraussichtliches Eintreffen bei Ihnen: morgen, Di 28.04.2026, vormittags.
-
-Tracking-Nummer DHL: 00340 4343 9847 2736 612
-Direktlink: https://nolp.dhl.de/?piececode=00340434398472736612
-
-Falls Sie Hinweise zum Aufstellort oder zur Übergabe haben, geben Sie uns gerne Bescheid — wir leiten das an die Spedition weiter.
+Tracking DHL: 00340 4343 9847 2736 612
 
 Beste Grüße
-Service-Team
-Werner-Antriebssysteme GmbH`;
+Werner-Antriebssysteme`;
 
-        window.DemoHelpers.typewrite(body, text, { charMs: 14 });
+        window.DemoHelpers.typewrite(body, text, { charMs: 5 });
 
         // Confidence-Bar fill mit kleinem Delay (visuell parallel zum Tippen)
         setTimeout(() => {

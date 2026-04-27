@@ -52,7 +52,7 @@
     let isPaused = false;
 
     // Default-Dauern pro State (ms). Persona kann via DemoConfig.durations überschreiben.
-    const defaultDurations = [8000, 22000, 18000, 7000, 12000];
+    const defaultDurations = [3000, 8500, 7000, 2500, 5000];
     const durations = (cfg.durations && cfg.durations.length === total)
       ? cfg.durations
       : defaultDurations.slice(0, total);
@@ -268,7 +268,7 @@
         clearTimeout(el._typewriterTimer);
         el._typewriterTimer = null;
       }
-      const charMs = opts.charMs || 18;
+      const charMs = opts.charMs || 6;
       let i = 0;
       const cursor = el.querySelector('.typing-cursor');
       if (cursor) cursor.classList.remove('is-done');

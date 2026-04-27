@@ -313,7 +313,7 @@
   // Jonas — Demo-Konfiguration
   // ============================================================
   window.DemoConfig = {
-    durations: [9000, 22000, 21000, 8000, 14000],
+    durations: [3000, 8500, 7000, 2500, 5000],
 
     onState: [
       // ── State 1: Inbox ────────────────────────────────────
@@ -331,8 +331,8 @@
         });
         tools.querySelectorAll('.tool-call').forEach(c => c.classList.remove('is-visible'));
 
-        window.DemoHelpers.animateReasoningSteps(log, { activeMs: 2200, gapMs: 600 });
-        window.DemoHelpers.revealToolCalls(tools, { gapMs: 2400 });
+        window.DemoHelpers.animateReasoningSteps(log, { activeMs: 900, gapMs: 200 });
+        window.DemoHelpers.revealToolCalls(tools, { gapMs: 900 });
       },
 
       // ── State 3: Output — Typewriter + Confidence ────────
@@ -348,30 +348,16 @@
         const text =
 `Sehr geehrter Herr Werner,
 
-vielen Dank für Ihre Anfrage zu unseren Industrieantrieben.
+Angebot ANG-2026-0612 zu Ihrem Pumpenstation-Projekt:
 
-Anbei unser Angebot für Ihr Pumpenstation-Projekt:
-
-Pos. 1   4 Stk · Industrieantrieb 22 kW, IE3, B5-Flansch
-         Artikel WAS-22B5-IE3
-         Stückpreis        3.695,50 €
-         Gesamt            14.782,00 €
-
-Lieferzeit:     4 Wochen ab Auftragseingang (passt zu Q2 2026)
-Zahlungsziel:   30 Tage netto · 2 % Skonto bei Zahlung in 14 Tagen
-Versand:        frei Haus · Versicherung inklusive
-Gültigkeit:     30 Tage (bis 27.05.2026)
-
-Die vollständige Angebots-PDF (ANG-2026-0612) ist beigefügt.
-Bei Rückfragen zur Konfiguration oder zu Sondermassen melde
-ich mich gerne — meine Kollegin Frau Berger steht ebenfalls
-zur Verfügung.
+Pos. 1 · 4× Industrieantrieb 22 kW IE3 B5
+Stückpreis 3.695,50 € · Gesamt 14.782,00 €
+Lieferzeit 4 Wochen · Gültig bis 27.05.2026
 
 Mit freundlichen Grüßen
-Vertriebsinnendienst
-Werner-Antriebssysteme GmbH`;
+Vertriebsinnendienst`;
 
-        window.DemoHelpers.typewrite(body, text, { charMs: 12 });
+        window.DemoHelpers.typewrite(body, text, { charMs: 5 });
 
         // Confidence-Bar fill mit kleinem Delay (visuell parallel zum Tippen)
         setTimeout(() => {

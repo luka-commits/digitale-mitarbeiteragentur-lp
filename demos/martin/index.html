@@ -313,7 +313,7 @@
   // Martin — Demo-Konfiguration
   // ============================================================
   window.DemoConfig = {
-    durations: [9000, 22000, 21000, 8000, 14000],
+    durations: [3000, 8500, 7000, 2500, 5000],
 
     onState: [
       // ── State 1: Inbox ────────────────────────────────────
@@ -331,8 +331,8 @@
         });
         tools.querySelectorAll('.tool-call').forEach(c => c.classList.remove('is-visible'));
 
-        window.DemoHelpers.animateReasoningSteps(log, { activeMs: 2200, gapMs: 600 });
-        window.DemoHelpers.revealToolCalls(tools, { gapMs: 2400 });
+        window.DemoHelpers.animateReasoningSteps(log, { activeMs: 900, gapMs: 200 });
+        window.DemoHelpers.revealToolCalls(tools, { gapMs: 900 });
       },
 
       // ── State 3: Output — Typewriter + Confidence ────────
@@ -346,23 +346,14 @@
         pct.textContent = '0%';
 
         const text =
-`Buchungssatz · Eingangsrechnung RE-2026-04891
+`Buchungssatz · RE-2026-04891
 
-Soll-Konto       3400  ·  Roh- und Hilfsstoffe
-Haben-Konto      70010 ·  Schmidt Stahl GmbH
-Betrag           4.872,40 €
-USt-Schlüssel    9 · 19 % Vorsteuer (Inland)
-Buchungstext     Stahlguss-Komponenten · LF PO-2026-217
-Belegdatum       24.04.2026
-Buchungsdatum    27.04.2026
+Soll  3400 / Haben  70010 · Schmidt Stahl GmbH
+4.872,40 € · 19 % Vorsteuer · Skonto 2 % bis 11.05.
 
-Skonto-Hinweis   2 % bis 11.05.2026 · −97,45 € · OP-Notiz gesetzt
-Belegbild        DocuWare · RE-2026-04891.pdf · verknüpft
+→ DATEV-Stapel „Eingangsrechnungen 04" — Freigabe pending.`;
 
-→ Übergabe an DATEV-Mandant 12847 · Stapel „Eingangsrechnungen 04"
-   vorbereitet, wartet auf Freigabe.`;
-
-        window.DemoHelpers.typewrite(body, text, { charMs: 12 });
+        window.DemoHelpers.typewrite(body, text, { charMs: 5 });
 
         // Confidence-Bar fill mit kleinem Delay (visuell parallel zum Tippen)
         setTimeout(() => {
