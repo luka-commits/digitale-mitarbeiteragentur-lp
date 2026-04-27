@@ -14,11 +14,21 @@
 
   // Auto-Embed-Mode: wenn die Demo in einem Iframe läuft, kompakteres Layout aktivieren.
   // ?embed=1 erzwingt manuell, ?embed=0 deaktiviert.
+  // Mobile (≤720px) bekommt KEIN is-embed → standalone-flow rendert sauber, iframe wächst mit content.
   const embedQ = params.get('embed');
-  const isEmbed = embedQ === '1' || (embedQ !== '0' && (function () {
-    try { return window.self !== window.top; } catch (e) { return true; }
-  })());
+  const inIframe = (function () { try { return window.self !== window.top; } catch (e) { return true; } })();
+  const mobileMQ = window.matchMedia('(max-width: 720px)');
+  const isEmbed = embedQ === '1' || (embedQ !== '0' && inIframe && !mobileMQ.matches);
   if (isEmbed) document.documentElement.classList.add('is-embed');
+
+  // Parent-Sync (nur wenn iframed): height + state-change posten, damit Leistungspage iframe.height + scroll syncen kann.
+  function postToParent(payload) {
+    if (!inIframe) return;
+    try { window.parent.postMessage(payload, '*'); } catch (e) {}
+  }
+  function reportHeight() {
+    postToParent({ type: 'dma-demo-height', height: document.documentElement.scrollHeight });
+  }
 
   function log(...args) { if (debug) console.log('[demo]', ...args); }
 
@@ -77,6 +87,12 @@
         try { hook(states[idx]); }
         catch (e) { console.error('state hook failed', idx, e); }
       }
+
+      // Parent-Sync: state-change + neue Content-Höhe posten (für mobile-flow).
+      postToParent({ type: 'dma-demo-state-change', index: idx });
+      // rAF damit DOM nach hook-render gemessen wird, plus zweiter Pass für Animationen die später erst die Höhe ändern.
+      requestAnimationFrame(reportHeight);
+      setTimeout(reportHeight, 600);
 
       if (!opts.silent) advanceProgress();
     }
@@ -161,6 +177,19 @@
         if (i < total) go(i);
       }
     });
+
+    // ── Touch-Pause: tap auf cockpit-body pausiert/resumiert autoplay (mobile-friendly Spacebar-Ersatz).
+    const cockpitBody = document.querySelector('.demo-cockpit-body');
+    if (cockpitBody && !isManual) {
+      cockpitBody.addEventListener('click', e => {
+        // Klicks auf Links/Buttons innerhalb durchlassen
+        if (e.target.closest('a, button')) return;
+        togglePause();
+      });
+    }
+
+    // ── Resize-Listener: Iframe-Höhe re-syncen wenn Viewport kippt (rotation) oder Layout-Reflow.
+    window.addEventListener('resize', reportHeight);
 
     // ── Start ──────────────────────────────────────────────────
     setStep(0);

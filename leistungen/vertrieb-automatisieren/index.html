@@ -480,6 +480,26 @@ syncMachtMode(machtMQ.matches);
 machtMQ.addEventListener('change', e => syncMachtMode(e.matches));
 </script>
 <script>
+/* Demo-Iframe Mobile-Sync: Höhe + Scroll-Anchor via postMessage von _shared/demo.js */
+(function() {
+  var mobileMQ = window.matchMedia('(max-width: 720px)');
+  window.addEventListener('message', function(e) {
+    if (!e.data || typeof e.data !== 'object') return;
+    if (!mobileMQ.matches) return;
+    if (e.data.type === 'dma-demo-height') {
+      var iframe = document.querySelector('.demo-embed-iframe');
+      if (iframe && e.data.height > 0) iframe.style.height = e.data.height + 'px';
+    } else if (e.data.type === 'dma-demo-state-change') {
+      var demo = document.getElementById('demo');
+      if (demo) {
+        var top = demo.getBoundingClientRect().top + window.scrollY - 70;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    }
+  });
+})();
+</script>
+<script>
 /* Klaro a11y shim — Klaro renders dialog without resolving aria-labelledby in time for Lighthouse */
 window.addEventListener('load', function() {
   var label = 'Cookies und Datenschutz';
