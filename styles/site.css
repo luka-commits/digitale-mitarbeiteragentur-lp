@@ -1955,7 +1955,7 @@ section, header.hero {
   object-position: center top;
 }
 @media (max-width: 880px) {
-  .founder-portrait { aspect-ratio: 16 / 11; }
+  .founder-portrait { aspect-ratio: 4 / 5; max-width: 360px; margin: 0 auto; }
   .founder-portrait .headshot-initial { font-size: 28vw; }
 }
 .founder-text .eyebrow { display: block; margin-bottom: 12px; }
