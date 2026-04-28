@@ -740,9 +740,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
-<!-- CV-Modal: Inline PDF, ohne Card-Chrome -->
+<!-- CV-Modal: Pre-rendered Pages + Tab-Switcher -->
 <div class="cv-modal" id="cv-modal" aria-hidden="true">
-  <iframe class="cv-modal-frame" id="cv-modal-frame" src="about:blank" title="Lebenslauf"></iframe>
+  <div class="cv-modal-stage">
+    <img class="cv-modal-page" id="cv-modal-page" src="" alt="" decoding="async" />
+  </div>
+  <div class="cv-modal-tabs" role="tablist" aria-label="Lebenslauf Seiten">
+    <button type="button" role="tab" data-cv-page="1" class="active" aria-selected="true">Cover</button>
+    <button type="button" role="tab" data-cv-page="2" aria-selected="false">Profil</button>
+    <button type="button" role="tab" data-cv-page="3" aria-selected="false">Tools</button>
+  </div>
   <button class="cv-modal-close" id="cv-modal-close" aria-label="Schließen">×</button>
   <div class="cv-modal-actions">
     <a class="cv-modal-btn cv-modal-btn--ghost" id="cv-modal-pdf" href="#" download>PDF herunterladen ↓</a>
@@ -980,12 +987,13 @@ const io = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
 
-// ─── CV-Modal (inline PDF, minimal chrome) ───────────────────
+// ─── CV-Modal (pre-rendered pages + tab-switcher) ────────────
 const cvModal = document.getElementById('cv-modal');
-const cvModalFrame = document.getElementById('cv-modal-frame');
+const cvModalPage = document.getElementById('cv-modal-page');
 const cvModalClose = document.getElementById('cv-modal-close');
 const cvModalPdf = document.getElementById('cv-modal-pdf');
 const cvModalDemo = document.getElementById('cv-modal-demo');
+const cvModalTabs = document.querySelectorAll('.cv-modal-tabs [data-cv-page]');
 const personaNames = { paula: 'Paula', martin: 'Martin', jonas: 'Jonas' };
 const personaDemoUrls = {
   paula: 'leistungen/ki-kundenservice/#demo',
@@ -993,21 +1001,34 @@ const personaDemoUrls = {
   jonas: 'leistungen/vertrieb-automatisieren/#demo'
 };
 let cvModalLastTrigger = null;
+let cvModalPersona = null;
 
 function getCvFocusable() {
-  return [cvModalClose, cvModalPdf, cvModalDemo].filter(el => el && !el.disabled);
+  return [...cvModalTabs, cvModalClose, cvModalPdf, cvModalDemo].filter(el => el && !el.disabled);
+}
+
+function setCvPage(page) {
+  if (!cvModalPersona) return;
+  const p = String(page);
+  cvModalPage.src = `assets/cv/${cvModalPersona}-page-${p}.jpg`;
+  cvModalPage.alt = `Lebenslauf ${personaNames[cvModalPersona]} — Seite ${p}`;
+  cvModalTabs.forEach(b => {
+    const active = b.dataset.cvPage === p;
+    b.classList.toggle('active', active);
+    b.setAttribute('aria-selected', active ? 'true' : 'false');
+  });
 }
 
 function openCV(persona, trigger) {
   if (!personaNames[persona]) return;
-  // Mobile: direkt PDF in neuem Tab öffnen (Native-Viewer ist deutlich schneller
-  // als iframe-PDF in Mobile Safari/Chrome). Desktop: Modal-Iframe wie vorher.
+  // Mobile: direkt PDF in neuem Tab öffnen (Native-Viewer ist deutlich schneller).
   if (window.matchMedia('(max-width: 720px)').matches) {
     window.open(`assets/cv/${persona}.pdf`, '_blank', 'noopener');
     return;
   }
   cvModalLastTrigger = trigger || document.activeElement;
-  cvModalFrame.src = `assets/cv/${persona}.pdf#view=FitH&toolbar=0&navpanes=0`;
+  cvModalPersona = persona;
+  setCvPage(1);
   cvModalPdf.href = `assets/cv/${persona}.pdf`;
   cvModalPdf.setAttribute('download', `DMA-Lebenslauf-${personaNames[persona]}.pdf`);
   cvModalDemo.href = personaDemoUrls[persona] || '#';
@@ -1019,13 +1040,16 @@ function openCV(persona, trigger) {
 function closeCV() {
   cvModal.classList.remove('is-open');
   cvModal.setAttribute('aria-hidden', 'true');
-  cvModalFrame.src = 'about:blank';
+  cvModalPage.src = '';
+  cvModalPersona = null;
   document.body.style.overflow = '';
   if (cvModalLastTrigger && typeof cvModalLastTrigger.focus === 'function') {
     cvModalLastTrigger.focus();
   }
   cvModalLastTrigger = null;
 }
+
+cvModalTabs.forEach(b => b.addEventListener('click', () => setCvPage(b.dataset.cvPage)));
 
 document.querySelectorAll('[data-cv]').forEach(b =>
   b.addEventListener('click', (ev) => openCV(b.dataset.cv, ev.currentTarget))

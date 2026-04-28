@@ -1314,15 +1314,58 @@ section, header.hero {
 }
 .cv-modal.is-open { opacity: 1; pointer-events: auto; }
 
-.cv-modal-frame {
+.cv-modal-stage {
   width: 100%;
   max-width: 820px;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cv-modal-page {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   background: var(--dma-elfenbein);
-  border: 0;
   border-radius: var(--dma-radius-md);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
   display: block;
+  object-fit: contain;
+}
+.cv-modal-tabs {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 2;
+}
+.cv-modal-tabs button {
+  font-family: var(--dma-font-display);
+  font-weight: 500;
+  font-size: var(--dma-text-sm);
+  letter-spacing: -0.005em;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: background var(--dma-dur-base) var(--dma-ease-standard),
+              color var(--dma-dur-base) var(--dma-ease-standard);
+}
+.cv-modal-tabs button:hover { color: var(--dma-elfenbein); }
+.cv-modal-tabs button.active {
+  background: var(--dma-elfenbein);
+  color: var(--dma-tiefsee);
 }
 
 .cv-modal-close {
@@ -1396,9 +1439,12 @@ section, header.hero {
   background: var(--dma-petrol-hell);
 }
 
+.cv-modal { padding-top: 76px; }
 @media (max-width: 560px) {
-  .cv-modal { padding: 16px 12px 88px; }
+  .cv-modal { padding: 76px 12px 88px; }
   .cv-modal-close { top: 12px; right: 12px; }
+  .cv-modal-tabs { top: 60px; padding: 3px; }
+  .cv-modal-tabs button { padding: 6px 12px; font-size: var(--dma-text-xs); }
   .cv-modal-actions { left: 12px; right: 12px; transform: none; flex-direction: column; border-radius: var(--dma-radius-md); }
   .cv-modal-btn { width: 100%; text-align: center; }
 }
