@@ -84,7 +84,7 @@ Quelle-of-Truth: `~/Desktop/LifeOS/projects/felipe/felipe.md` unter "Open Decisi
 - Brand-Name + Domain (aktuell Arbeitsname "Digitale Mitarbeiteragentur")
 - Logo (Platzhalter: Wordmark)
 - Email auf eigener Domain (Platzhalter: `TODO-felipe@domain.tld`)
-- Formspree-Account + Endpoint (Platzhalter: `TODO-felipe-formspree-id`)
+- Form-Endpoint: aktuell auf FormSubmit (`felipe.holandagroup@gmail.com`) → Felipe muss FormSubmit-Confirm-Mail bestätigen, dann läuft's. Für Volume später ggf. Formspree/n8n.
 - Demo-App-URL (Platzhalter: `TODO-felipe-demo-url` — aktuell verweist auf Pocket-CEO-Demo)
 - Founder-Foto + LinkedIn-URL in Team-Section
 - Impressum, Datenschutz, AGB (DSGVO)
