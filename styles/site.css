@@ -1919,12 +1919,26 @@ section, header.hero {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 0.95fr 1fr;
-  gap: 56px;
+  grid-template-areas:
+    "portrait headline"
+    "portrait text";
+  gap: 0 56px;
   align-items: start;
 }
+.founder-headline { grid-area: headline; }
+.founder-portrait { grid-area: portrait; }
+.founder-text { grid-area: text; margin-top: 24px; }
 @media (max-width: 880px) {
-  .founder-split { grid-template-columns: 1fr; gap: 24px; }
-  .founder-text { text-align: center; }
+  .founder-split {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "headline"
+      "portrait"
+      "text";
+    gap: 16px;
+  }
+  .founder-headline { text-align: center; }
+  .founder-text { margin-top: 0; text-align: center; }
   .founder-text .role-tag { display: inline-block; }
 }
 .founder-portrait {
