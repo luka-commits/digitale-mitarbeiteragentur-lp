@@ -343,21 +343,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="agents-grid">
 
         <article class="atelier-card showcase-card">
-          <div class="showcase-mark">OR</div>
+          <div class="showcase-mark">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+          </div>
           <h3 data-i18n="int.outreach.head">Outbound, der nie schläft.</h3>
           <p data-i18n="int.outreach.body">Recherchiert tagsüber Zielfirmen, schreibt nachts persönliche Erst-Nachrichten, übergibt warme Antworten an Felipe. Läuft seit Monaten in unseren eigenen Systemen.</p>
           <span class="meta">Stack · Apollo · Heyreach · Notion</span>
         </article>
 
         <article class="atelier-card showcase-card">
-          <div class="showcase-mark">BH</div>
+          <div class="showcase-mark">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v20l2-2 2 2 2-2 2 2 2-2 2 2 2-2 2 2V2l-2 2-2-2-2 2-2-2-2 2-2-2-2 2Z"/><path d="M14 8H8"/><path d="M16 12H8"/><path d="M13 16H8"/></svg>
+          </div>
           <h3 data-i18n="int.buchhaltung.head">Rechnungen, Mahnungen, Reporting.</h3>
           <p data-i18n="int.buchhaltung.body">Eingehende Belege werden klassifiziert, gebucht und an die Steuerberatung übergeben. Monats-Reporting steht am 5.. Ohne einen Klick von uns.</p>
           <span class="meta">Stack · DATEV · Lexoffice · Sevdesk</span>
         </article>
 
         <article class="atelier-card showcase-card">
-          <div class="showcase-mark">EC</div>
+          <div class="showcase-mark">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+          </div>
           <h3 data-i18n="int.email.head">Aus Inbox-Chaos werden CRM-Cases.</h3>
           <p data-i18n="int.email.body">Jede Mail an info@ wird gelesen, klassifiziert, einem Vorgang zugeordnet und mit Vorschlagsantwort an den richtigen Menschen übergeben.</p>
           <span class="meta">Stack · Pipedrive · Gmail · Notion</span>
@@ -541,7 +547,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="founder-split fade-up">
       <div class="founder-portrait" data-persona="felipe">
-        <span class="headshot-initial">F</span>
+        <picture>
+          <source type="image/webp" srcset="assets/felipe.webp" />
+          <img src="assets/felipe.jpg" width="1066" height="1600" alt="Felipe Holanda · Gründer DMA" class="founder-photo" loading="lazy" decoding="async" />
+        </picture>
       </div>
       <div class="founder-text">
         <span class="eyebrow" data-i18n="felipe.eyebrow">Über uns</span>
@@ -581,6 +590,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- RIGHT: Form + Loom-CTA -->
       <div class="atelier-card lead-form-wrap">
         <form class="lead-form" id="lead-form" action="https://formspree.io/f/TODO-felipe-formspree-id" method="POST" novalidate>
+          <div>
+            <label for="lead-email" data-i18n="lead.f.email">E-Mail-Adresse</label>
+            <input type="email" id="lead-email" name="email" placeholder="ihr.name@firma.de" required autocomplete="email" inputmode="email" />
+          </div>
           <div>
             <label for="lead-website" data-i18n="lead.f.website">Unternehmens-Website</label>
             <input type="url" id="lead-website" name="website" placeholder="https://" required />
@@ -700,13 +713,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
       <div>
-        <h3 data-i18n="foot.standort">Standort</h3>
-        <ul>
-          <li>Stuttgart</li>
-          <li>München</li>
-        </ul>
-      </div>
-      <div>
         <h3 data-i18n="foot.folgen">Folgen</h3>
         <ul>
           <li><a href="#" data-i18n="foot.linkedin">LinkedIn</a></li>
@@ -725,7 +731,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="footer-divider">
       <span data-i18n="foot.copy">© 2026 DMA · Digitale Mitarbeiter Agentur</span>
       <span class="dma-signet dma-signet--md">/////</span>
-      <span data-i18n="foot.crafted">Made in Stuttgart</span>
+      <span data-i18n="foot.crafted">Made in Germany</span>
     </div>
   </div>
 </footer>
