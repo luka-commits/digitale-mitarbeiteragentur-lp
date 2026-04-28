@@ -436,6 +436,11 @@ section, header.hero {
   .nav-center { display: none; }
   .nav-right .lang-toggle { display: none; }
 }
+/* Mobile (<720px): "Jetzt rekrutieren"-CTA aus der Nav-Right ausblenden,
+   Hamburger-Panel enthält den CTA bereits. Verhindert Logo-Überlappung. */
+@media (max-width: 720px) {
+  .nav-right > .btn-primary { display: none; }
+}
 
 /* Mobile-Hamburger-Toggle */
 .nav-mobile-toggle {
@@ -3579,13 +3584,14 @@ section, header.hero {
 .demo-embed-fullscreen span:first-child { font-size: 13px; }
 
 @media (max-width: 720px) {
-  /* Mobile: Iframe fix-height, jeder State passt in 1 Viewport (kein Scroll im Iframe).
-     clamp adaptiert an Phone-Größe: iPhone SE ~633px, iPhone 14 ~800px, größer 800px. */
+  /* Mobile: Iframe fix-height. Reduziert auf ~70vh damit unter dem Demo
+     immer noch Inhalt sichtbar ist (Scroll-Anreiz). */
   .demo-embed-wrap {
     aspect-ratio: auto;
-    height: clamp(660px, 95vh, 800px);
+    height: clamp(520px, 68vh, 640px);
     min-height: 0;
     max-height: none;
+    margin-bottom: 24px;
     box-shadow: 0 8px 32px rgba(15, 23, 42, 0.08);
   }
   .demo-embed-iframe {

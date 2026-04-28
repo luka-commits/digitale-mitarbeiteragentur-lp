@@ -990,6 +990,12 @@ function getCvFocusable() {
 
 function openCV(persona, trigger) {
   if (!personaNames[persona]) return;
+  // Mobile: direkt PDF in neuem Tab öffnen (Native-Viewer ist deutlich schneller
+  // als iframe-PDF in Mobile Safari/Chrome). Desktop: Modal-Iframe wie vorher.
+  if (window.matchMedia('(max-width: 720px)').matches) {
+    window.open(`assets/cv/${persona}.pdf`, '_blank', 'noopener');
+    return;
+  }
   cvModalLastTrigger = trigger || document.activeElement;
   cvModalFrame.src = `assets/cv/${persona}.pdf#view=FitH&toolbar=0&navpanes=0`;
   cvModalPdf.href = `assets/cv/${persona}.pdf`;
