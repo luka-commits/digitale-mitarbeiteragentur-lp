@@ -1923,7 +1923,9 @@ section, header.hero {
   align-items: start;
 }
 @media (max-width: 880px) {
-  .founder-split { grid-template-columns: 1fr; gap: 28px; }
+  .founder-split { grid-template-columns: 1fr; gap: 24px; }
+  .founder-text { text-align: center; }
+  .founder-text .role-tag { display: inline-block; }
 }
 .founder-portrait {
   aspect-ratio: 4 / 5;
@@ -1955,7 +1957,7 @@ section, header.hero {
   object-position: center top;
 }
 @media (max-width: 880px) {
-  .founder-portrait { aspect-ratio: 4 / 5; max-width: 360px; margin: 0 auto; }
+  .founder-portrait { aspect-ratio: 4 / 5; max-width: 240px; margin: 0 auto; }
   .founder-portrait .headshot-initial { font-size: 28vw; }
 }
 .founder-text .eyebrow { display: block; margin-bottom: 12px; }
@@ -2070,6 +2072,11 @@ section, header.hero {
   font-weight: 500;
   color: var(--dma-fg);
   margin-bottom: 6px;
+}
+.lead-form .form-required {
+  color: var(--dma-petrol);
+  margin-left: 4px;
+  font-weight: 600;
 }
 .lead-form input,
 .lead-form select,
