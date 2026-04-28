@@ -1952,7 +1952,7 @@ section, header.hero {
 }
 .founder-portrait .founder-photo {
   object-fit: cover;
-  object-position: center 25%;
+  object-position: center top;
 }
 @media (max-width: 880px) {
   .founder-portrait { aspect-ratio: 16 / 11; }
