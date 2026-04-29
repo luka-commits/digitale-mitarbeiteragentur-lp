@@ -20,3 +20,4 @@ assets/**/_draft*
 content-references/
 seo-research/
 transcripts/
+.env*.local
