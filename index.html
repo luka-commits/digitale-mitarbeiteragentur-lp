@@ -1011,10 +1011,14 @@ function getCvFocusable() {
   return [...cvModalTabs, cvModalClose, cvModalPdf, cvModalDemo].filter(el => el && !el.disabled);
 }
 
+// Cache-bust query for CV assets — Vercel serves /assets/* with immutable cache,
+// so we bump this string when CV PDFs/JPGs are regenerated.
+const CV_ASSET_VERSION = '20260429';
+
 function setCvPage(page) {
   if (!cvModalPersona) return;
   const p = String(page);
-  cvModalPage.src = `assets/cv/${cvModalPersona}-page-${p}.jpg`;
+  cvModalPage.src = `assets/cv/${cvModalPersona}-page-${p}.jpg?v=${CV_ASSET_VERSION}`;
   cvModalPage.alt = `Lebenslauf ${personaNames[cvModalPersona]} — Seite ${p}`;
   cvModalTabs.forEach(b => {
     const active = b.dataset.cvPage === p;
@@ -1027,13 +1031,13 @@ function openCV(persona, trigger) {
   if (!personaNames[persona]) return;
   // Mobile: direkt PDF in neuem Tab öffnen (Native-Viewer ist deutlich schneller).
   if (window.matchMedia('(max-width: 720px)').matches) {
-    window.open(`assets/cv/${persona}.pdf`, '_blank', 'noopener');
+    window.open(`assets/cv/${persona}.pdf?v=${CV_ASSET_VERSION}`, '_blank', 'noopener');
     return;
   }
   cvModalLastTrigger = trigger || document.activeElement;
   cvModalPersona = persona;
   setCvPage(1);
-  cvModalPdf.href = `assets/cv/${persona}.pdf`;
+  cvModalPdf.href = `assets/cv/${persona}.pdf?v=${CV_ASSET_VERSION}`;
   cvModalPdf.setAttribute('download', `DMA-Lebenslauf-${personaNames[persona]}.pdf`);
   cvModalDemo.href = personaDemoUrls[persona] || '#';
   cvModal.classList.add('is-open');
