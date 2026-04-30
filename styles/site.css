@@ -631,6 +631,12 @@ section, header.hero {
   margin: 0;
   text-align: left;
   text-wrap: balance;
+  /* Keine Auto-Trennung in der Hero — "Mit-arbeiter" sieht unprofessionell aus.
+     Lang="de" triggert sonst gerne deutsche Silbentrennung. */
+  hyphens: manual;
+  -webkit-hyphens: manual;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 @media (max-width: 720px) {
   /* Mobile: middle-ground zwischen original 56px und shrunk 32px.
