@@ -222,10 +222,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="eyebrow hero-eyebrow fade-up" data-i18n="hero.eyebrow">Digitale Mitarbeiter · Industrie-Mittelstand · DSGVO-konform</span>
       <h1 class="hero-headline fade-up delay-1" data-i18n="hero.h1">Ihr neuer Mitarbeiter ist digital.</h1>
       <p class="hero-sub fade-up delay-2" data-i18n="hero.sub">In 30 Tagen einsatzbereit. Übernimmt die Aufgaben, für die Sie keinen Menschen finden, und entlastet Ihr Team von Routine.</p>
+      <p class="hero-sub-2 fade-up delay-2" data-i18n="hero.sub2">Sehen Sie Ihren neuen Mitarbeiter in Aktion, bevor Sie sich entscheiden.</p>
       <div class="hero-ctas fade-up delay-3">
-        <a class="btn btn-primary" href="kontakt/" data-i18n="hero.cta1">Kostenloses Erstgespräch</a>
+        <a class="btn btn-primary" href="kontakt/" data-i18n="hero.cta1">Kostenlose Demo anfordern</a>
         <a class="btn btn-text" href="#agents" data-i18n="hero.cta2">Digitale Mitarbeiter kennenlernen</a>
       </div>
+      <ul class="hero-trust fade-up delay-3" data-i18n-list="hero.trust">
+        <li><span class="hero-trust__check" aria-hidden="true">✓</span> <span data-i18n="hero.trust1">Use-Case-Audit kostenlos</span></li>
+        <li><span class="hero-trust__check" aria-hidden="true">✓</span> <span data-i18n="hero.trust2">Live-Demo kostenlos</span></li>
+        <li><span class="hero-trust__check" aria-hidden="true">✓</span> <span data-i18n="hero.trust3">Volle Erstattung wenn KPIs nicht erreicht</span></li>
+      </ul>
     </div>
   </div>
 </header>
@@ -474,7 +480,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="section-head fade-up">
       <span class="eyebrow" data-i18n="process.eyebrow">In 4 Schritten zum digitalen Mitarbeiter</span>
       <h2 data-i18n="process.headline">So arbeiten wir mit Ihnen.</h2>
-      <p data-i18n="process.lede">Vom unverbindlichen Erstgespräch bis zum laufenden Betrieb. Klar, planbar, ohne Überraschungen.</p>
+      <p data-i18n="process.lede">Vom Use-Case-Audit bis zum laufenden Betrieb. Klar, planbar, ohne Überraschungen.</p>
     </div>
 
     <div class="process-grid-wrap">
@@ -484,8 +490,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <img src="assets/process/01-erstgespraech.webp" alt="Felipe im Erstgespräch mit einem Geschäftsführer am Holztisch" width="1536" height="1024" loading="lazy" decoding="async" />
         </div>
         <span class="step-num">Schritt 01</span>
-        <h3 class="process-card__title" data-i18n="process.step1.title">Erstgespräch</h3>
-        <p class="process-card__body" data-i18n="process.step1.body">Unverbindliches Gespräch über Ihre größten Engpässe. Wo lohnt sich digitale Unterstützung wirklich? Kein Match → wir sagen es.</p>
+        <h3 class="process-card__title" data-i18n="process.step1.title">Use-Case-Audit</h3>
+        <p class="process-card__body" data-i18n="process.step1.body">Wir gehen Ihre Aufgaben durch und finden, wo ein digitaler Mitarbeiter bei Ihnen sinnvoll ist. 30 Min Gespräch + 2-Pager. Kostenlos.</p>
       </article>
 
       <article class="atelier-card process-card fade-up delay-1">
@@ -493,8 +499,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <img src="assets/process/02-live-demo.webp" alt="Hand zeigt auf Demo-Dashboard auf einem Laptop-Bildschirm" width="1536" height="1024" loading="lazy" decoding="async" />
         </div>
         <span class="step-num">Schritt 02</span>
-        <h3 class="process-card__title" data-i18n="process.step2.title">Live-Demo</h3>
-        <p class="process-card__body" data-i18n="process.step2.body">Wir bauen kostenlos eine erste Demo + Analyse für Ihren Use-Case. Im zweiten Call zeigen wir, was konkret möglich ist.</p>
+        <h3 class="process-card__title" data-i18n="process.step2.title">Interaktive Live-Demo</h3>
+        <p class="process-card__body" data-i18n="process.step2.body">Sie sehen, wie Ihr digitaler Mitarbeiter eine Aufgabe aus Ihrem Alltag erledigt, mit Ihren Tools, in Ihrem Kontext. Keine trockenen Folien, keine graue Theorie. Kostenlos.</p>
       </article>
 
       <article class="atelier-card process-card fade-up delay-2">
@@ -518,7 +524,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="process-cta fade-up">
-      <a href="#lead-form" class="btn btn-primary" data-i18n="process.cta">Erstgespräch vereinbaren</a>
+      <a href="#lead-form" class="btn btn-primary" data-i18n="process.cta">Kostenlose Demo anfordern</a>
+      <p class="process-cta__risk" data-i18n="process.risk">Wir tragen das Risiko, nicht Sie. Werden vorab definierte KPIs nicht erreicht: volle Erstattung.</p>
     </div>
   </div>
 </section>
@@ -1316,6 +1323,118 @@ window.addEventListener('load', function() {
   setTimeout(tag, 500);
   setTimeout(tag, 1500);
 });
+</script>
+
+<!-- ============ DEMO POPUP ============ -->
+<div id="demo-popup" class="demo-popup" role="dialog" aria-labelledby="demo-popup-title" aria-modal="true" aria-hidden="true">
+  <div class="demo-popup__backdrop" data-popup-close></div>
+  <div class="demo-popup__card">
+    <button type="button" class="demo-popup__close" data-popup-close aria-label="Schließen">✕</button>
+    <span class="demo-popup__eyebrow">Kostenlos · Unverbindlich</span>
+    <h2 id="demo-popup-title" class="demo-popup__title">Sehen Sie Ihren neuen Mitarbeiter in Aktion.</h2>
+
+    <div class="demo-popup__tiles">
+      <article class="demo-popup__tile">
+        <div class="demo-popup__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </div>
+        <h3 class="demo-popup__tile-title">Use-Case-Audit + Live-Demo</h3>
+        <p class="demo-popup__tile-body">Wir zeigen Ihnen konkret, wie Ihr neuer Mitarbeiter bei Ihnen arbeitet. Mit Ihren Tools, in Ihrem Kontext. Kostenlos.</p>
+      </article>
+
+      <article class="demo-popup__tile">
+        <div class="demo-popup__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3 class="demo-popup__tile-title">Wir tragen das Risiko</h3>
+        <p class="demo-popup__tile-body">Erreicht Ihr digitaler Mitarbeiter die vorab definierten Ziele nicht: volle Erstattung. Absolute finanzielle Sicherheit für Sie.</p>
+      </article>
+    </div>
+
+    <div class="demo-popup__actions">
+      <a class="btn btn-primary" href="kontakt/" data-popup-cta>Kostenlose Demo anfordern</a>
+      <button type="button" class="demo-popup__remind" data-popup-close>Später erinnern</button>
+    </div>
+  </div>
+</div>
+<script>
+(function() {
+  var popup = document.getElementById('demo-popup');
+  if (!popup) return;
+  var COOKIE_DISMISS = 'dma_demo_popup_dismissed';
+  var COOKIE_CTA = 'dma_demo_popup_cta';
+
+  function getCookie(name) {
+    var match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+    return match ? decodeURIComponent(match[1]) : null;
+  }
+  function setCookie(name, value, days) {
+    var expires = new Date(Date.now() + days * 864e5).toUTCString();
+    document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/; SameSite=Lax';
+  }
+  function show() {
+    if (popup.classList.contains('is-open')) return;
+    popup.classList.add('is-open');
+    popup.setAttribute('aria-hidden', 'false');
+  }
+  function hide(setDismiss) {
+    if (!popup.classList.contains('is-open')) return;
+    popup.classList.remove('is-open');
+    popup.setAttribute('aria-hidden', 'true');
+    if (setDismiss) setCookie(COOKIE_DISMISS, '1', 7);
+  }
+  function shouldShow() {
+    if (getCookie(COOKIE_CTA)) return false;
+    if (getCookie(COOKIE_DISMISS)) return false;
+    return true;
+  }
+
+  popup.querySelectorAll('[data-popup-close]').forEach(function(el) {
+    el.addEventListener('click', function() { hide(true); });
+  });
+  var ctaBtn = popup.querySelector('[data-popup-cta]');
+  if (ctaBtn) {
+    ctaBtn.addEventListener('click', function() { setCookie(COOKIE_CTA, '1', 30); });
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') hide(true);
+  });
+
+  if (!shouldShow()) return;
+
+  var triggered = false;
+  setTimeout(function() {
+    if (triggered) return;
+    triggered = true;
+    show();
+  }, 25000);
+
+  var isMobile = window.matchMedia('(max-width: 768px)').matches;
+  if (!isMobile) {
+    document.addEventListener('mouseout', function(e) {
+      if (triggered) return;
+      if (e.relatedTarget) return;
+      if (e.clientY <= 0) {
+        triggered = true;
+        show();
+      }
+    });
+  } else {
+    window.addEventListener('scroll', function() {
+      if (triggered) return;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight > 0 && (window.scrollY / docHeight) >= 0.6) {
+        triggered = true;
+        show();
+      }
+    }, { passive: true });
+  }
+})();
 </script>
 </body>
 </html>
