@@ -751,8 +751,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div class="cv-modal-tabs" role="tablist" aria-label="Lebenslauf Seiten">
     <button type="button" role="tab" data-cv-page="1" class="active" aria-selected="true">Cover</button>
-    <button type="button" role="tab" data-cv-page="2" aria-selected="false">Profil</button>
-    <button type="button" role="tab" data-cv-page="3" aria-selected="false">Tools</button>
+    <button type="button" role="tab" data-cv-page="2" aria-selected="false">Bauplan</button>
+    <button type="button" role="tab" data-cv-page="3" aria-selected="false">Vorteile</button>
   </div>
   <button class="cv-modal-close" id="cv-modal-close" aria-label="Schließen">×</button>
   <div class="cv-modal-actions">
@@ -1013,7 +1013,7 @@ function getCvFocusable() {
 
 // Cache-bust query for CV assets — Vercel serves /assets/* with immutable cache,
 // so we bump this string when CV PDFs/JPGs are regenerated.
-const CV_ASSET_VERSION = '20260508';
+const CV_ASSET_VERSION = '20260508b';
 
 function setCvPage(page) {
   if (!cvModalPersona) return;
