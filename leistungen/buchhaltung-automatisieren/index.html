@@ -521,12 +521,6 @@ if (document.fonts && document.fonts.ready) {
     if (e.data.type === 'dma-demo-height') {
       var iframe = document.querySelector('.demo-embed-iframe');
       if (iframe && e.data.height > 0) iframe.style.height = e.data.height + 'px';
-    } else if (e.data.type === 'dma-demo-state-change') {
-      var demo = document.getElementById('demo');
-      if (demo) {
-        var top = demo.getBoundingClientRect().top + window.scrollY - 70;
-        window.scrollTo({ top: top, behavior: 'smooth' });
-      }
     }
   });
 })();
