@@ -1729,6 +1729,249 @@ section, header.hero {
   max-width: 640px;
 }
 
+/* ----- Click-Affordance: Frame-Hint + Modul-Toggle ----- */
+.bauplan-frame-hint {
+  position: absolute;
+  top: -10px;
+  right: 24px;
+  background: var(--dma-elfenbein, var(--dma-papier));
+  padding: 2px 12px;
+  font-family: var(--dma-font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--dma-petrol);
+  text-transform: uppercase;
+  pointer-events: none;
+}
+@media (max-width: 520px) {
+  .bauplan-frame-hint { display: none; }
+}
+
+.bauplan-modul {
+  position: relative;
+}
+.bauplan-modul-toggle {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid var(--dma-dunst);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 220ms var(--dma-ease-standard),
+    border-color 220ms var(--dma-ease-standard);
+}
+.bauplan-modul-toggle::before {
+  content: '+';
+  font-family: var(--dma-font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--dma-fg-muted);
+  transition: color 220ms var(--dma-ease-standard);
+}
+.bauplan-modul:hover .bauplan-modul-toggle {
+  border-color: var(--dma-petrol);
+}
+.bauplan-modul:hover .bauplan-modul-toggle::before {
+  color: var(--dma-petrol);
+}
+.bauplan-modul.is-active .bauplan-modul-toggle {
+  border-color: var(--dma-petrol);
+  background: var(--dma-petrol);
+}
+.bauplan-modul.is-active .bauplan-modul-toggle::before {
+  content: '✓';
+  color: var(--dma-elfenbein);
+  font-size: 11px;
+}
+
+/* ----- Detail-Panel: Lead + Defines (Chips) + Example ----- */
+.bauplan-detail-lead {
+  font-size: 16px;
+  line-height: var(--dma-lead-body);
+  color: var(--dma-fg);
+  margin: 0 auto 22px;
+  max-width: 640px;
+  font-weight: 500;
+}
+
+.bauplan-defines {
+  max-width: 640px;
+  margin: 0 auto 18px;
+  padding: 14px 16px;
+  border: 1px dashed var(--dma-dunst);
+  border-radius: var(--dma-radius-md);
+  background: rgba(30, 58, 138, 0.025);
+}
+.bauplan-defines-label {
+  display: block;
+  font-family: var(--dma-font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dma-fg-subtle);
+  margin-bottom: 10px;
+}
+.bauplan-defines-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+.bauplan-defines-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 11px;
+  border-radius: var(--dma-radius-pill);
+  background: var(--dma-elfenbein);
+  border: 1px solid var(--dma-dunst);
+  font-family: var(--dma-font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--dma-tiefsee);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.bauplan-example {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  background: rgba(30, 58, 138, 0.04);
+  border-left: 3px solid var(--dma-petrol);
+  border-radius: 0 var(--dma-radius-md) var(--dma-radius-md) 0;
+  text-align: left;
+}
+.bauplan-example-label {
+  display: block;
+  font-family: var(--dma-font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dma-petrol);
+  margin-bottom: 8px;
+}
+.bauplan-example-body {
+  font-size: 15px;
+  line-height: var(--dma-lead-body);
+  color: var(--dma-fg);
+  margin: 0;
+  max-width: none;
+  text-align: left;
+}
+.bauplan-example-body strong {
+  color: var(--dma-tiefsee);
+  font-weight: 600;
+}
+
+/* Variant: Flow (Modul 03) */
+.bauplan-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  counter-reset: flow-step;
+}
+.bauplan-flow-step {
+  position: relative;
+  padding: 8px 14px 8px 32px;
+  background: var(--dma-elfenbein);
+  border: 1px solid var(--dma-petrol);
+  border-radius: var(--dma-radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--dma-tiefsee);
+  counter-increment: flow-step;
+}
+.bauplan-flow-step::before {
+  content: counter(flow-step);
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--dma-petrol);
+  color: var(--dma-elfenbein);
+  font-family: var(--dma-font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bauplan-flow-arrow {
+  font-family: var(--dma-font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dma-petrol);
+  line-height: 1;
+}
+
+/* Variant: Rules (Modul 04) */
+.bauplan-rules {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.bauplan-rule {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: var(--dma-elfenbein);
+  border: 1px solid var(--dma-dunst);
+  border-radius: var(--dma-radius-sm);
+  font-size: 13px;
+}
+.bauplan-rule-cond {
+  font-family: var(--dma-font-mono);
+  color: var(--dma-fg);
+  text-align: right;
+}
+.bauplan-rule-arrow {
+  font-family: var(--dma-font-mono);
+  font-weight: 700;
+  color: var(--dma-petrol);
+}
+.bauplan-rule-target {
+  font-weight: 600;
+  color: var(--dma-tiefsee);
+}
+
+/* Mobile tweaks */
+@media (max-width: 720px) {
+  .bauplan-defines { padding: 12px; }
+  .bauplan-example { padding: 14px 16px; }
+  .bauplan-detail-lead { font-size: 15px; margin-bottom: 16px; }
+  .bauplan-defines-chip { font-size: 11px; padding: 4px 9px; }
+  .bauplan-flow-step { font-size: 12px; padding: 6px 12px 6px 26px; }
+  .bauplan-flow-step::before { width: 16px; height: 16px; font-size: 9px; left: 6px; }
+  .bauplan-rule {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    text-align: center;
+  }
+  .bauplan-rule-cond { text-align: center; }
+  .bauplan-modul-toggle { width: 14px; height: 14px; top: 6px; right: 6px; }
+  .bauplan-modul-toggle::before { font-size: 11px; }
+}
+
 /* ================== PROCESS ROADMAP — vertikale Alternating-Timeline ================== */
 .process-grid {
   display: grid;

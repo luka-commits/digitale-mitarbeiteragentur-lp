@@ -389,7 +389,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="section-head fade-up">
       <span class="eyebrow" data-i18n="bauplan.eyebrow">Bauplan</span>
       <h2 data-i18n="bauplan.headline">Vom Stellenprofil zum digitalen Mitarbeiter. In 5 Modulen.</h2>
-      <p data-i18n="bauplan.lede">Kompetenzen definieren den Mitarbeiter. Prozesse steuern die Ausführung.</p>
+      <p data-i18n="bauplan.lede">Kompetenzen definieren den Mitarbeiter. Prozesse steuern die Ausführung. Klicken Sie ein Modul, um zu sehen, was wir konkret definieren.</p>
     </div>
 
     <div class="bauplan-layout fade-up">
@@ -397,6 +397,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- Visual: Arbeitsbereich umschließt 2 Säulen mit insgesamt 5 Modulen -->
       <div class="bauplan-arbeitsbereich" aria-labelledby="bauplan-frame-label">
         <span class="bauplan-frame-label" id="bauplan-frame-label" data-i18n="bauplan.arbeitsbereich.label">Arbeitsbereich</span>
+        <span class="bauplan-frame-hint" data-i18n="bauplan.arbeitsbereich.hint" aria-hidden="true">Modul wählen ↓</span>
         <div class="bauplan-saeulen">
 
           <div class="bauplan-saeule" data-saeule="kompetenzen">
@@ -405,10 +406,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <button class="bauplan-modul is-active" data-modul="rolle" type="button" role="tab" aria-selected="true">
                 <span class="bauplan-modul-num">01</span>
                 <span class="bauplan-modul-title" data-i18n="bauplan.m1.title">Rolle</span>
+                <span class="bauplan-modul-toggle" aria-hidden="true"></span>
               </button>
               <button class="bauplan-modul" data-modul="aufgaben" type="button" role="tab" aria-selected="false">
                 <span class="bauplan-modul-num">02</span>
                 <span class="bauplan-modul-title" data-i18n="bauplan.m2.title">Aufgaben</span>
+                <span class="bauplan-modul-toggle" aria-hidden="true"></span>
               </button>
             </div>
           </div>
@@ -419,14 +422,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <button class="bauplan-modul" data-modul="ablauf" type="button" role="tab" aria-selected="false">
                 <span class="bauplan-modul-num">03</span>
                 <span class="bauplan-modul-title" data-i18n="bauplan.m3.title">Ablauf</span>
+                <span class="bauplan-modul-toggle" aria-hidden="true"></span>
               </button>
               <button class="bauplan-modul" data-modul="leitplanken" type="button" role="tab" aria-selected="false">
                 <span class="bauplan-modul-num">04</span>
                 <span class="bauplan-modul-title" data-i18n="bauplan.m4.title">Leitplanken</span>
+                <span class="bauplan-modul-toggle" aria-hidden="true"></span>
               </button>
               <button class="bauplan-modul" data-modul="kanaele" type="button" role="tab" aria-selected="false">
                 <span class="bauplan-modul-num">05</span>
                 <span class="bauplan-modul-title" data-i18n="bauplan.m5.title">Kanäle</span>
+                <span class="bauplan-modul-toggle" aria-hidden="true"></span>
               </button>
             </div>
           </div>
@@ -440,31 +446,122 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="bauplan-detail-panel is-active" data-modul="rolle">
           <span class="bauplan-detail-eyebrow"><span data-i18n="bauplan.kompetenzen.label">Kompetenzen</span> · <span data-i18n="bauplan.m1.eyebrow">Modul 01</span></span>
           <h3 data-i18n="bauplan.m1.head">Wer übernimmt die Rolle?</h3>
-          <p data-i18n="bauplan.m1.body">Welche Position bekleidet der digitale Mitarbeiter? Beispiel: Paula · Digitale Service-Mitarbeiterin. Sachlich, präzise, professionelle Sie-Ansprache. Wir definieren Persönlichkeit, Tonalität und Auftreten. Wie bei einem echten Onboarding.</p>
+          <p class="bauplan-detail-lead" data-i18n="bauplan.m1.lead">Wir definieren Persönlichkeit, Tonalität und Auftreten. Wie bei einem echten Onboarding.</p>
+          <div class="bauplan-defines">
+            <span class="bauplan-defines-label" data-i18n="bauplan.defines.label">Wir definieren</span>
+            <div class="bauplan-defines-chips">
+              <span class="bauplan-defines-chip" data-i18n="bauplan.m1.chip1">Job-Titel</span>
+              <span class="bauplan-defines-chip" data-i18n="bauplan.m1.chip2">Persönlichkeit</span>
+              <span class="bauplan-defines-chip" data-i18n="bauplan.m1.chip3">Tonalität</span>
+              <span class="bauplan-defines-chip" data-i18n="bauplan.m1.chip4">Ansprache</span>
+            </div>
+          </div>
+          <div class="bauplan-example">
+            <span class="bauplan-example-label" data-i18n="bauplan.example.label.paula">Beispiel · Paula</span>
+            <p class="bauplan-example-body" data-i18n="bauplan.m1.example"><strong>Digitale Service-Mitarbeiterin.</strong> Sachlich, präzise, professionelle Sie-Ansprache. Klar im Auftreten gegenüber Kunden, freundlich gegenüber Innendienst-Kollegen.</p>
+          </div>
         </div>
 
         <div class="bauplan-detail-panel" data-modul="aufgaben">
           <span class="bauplan-detail-eyebrow"><span data-i18n="bauplan.kompetenzen.label">Kompetenzen</span> · <span data-i18n="bauplan.m2.eyebrow">Modul 02</span></span>
           <h3 data-i18n="bauplan.m2.head">Welche Aufgaben gehören zum Job?</h3>
-          <p data-i18n="bauplan.m2.body">Konkreter Aufgaben-Scope statt vager Job-Beschreibung. Beispiel Paula: Aufträge erfassen, Stammdaten pflegen, Lieferterminbestätigungen verschicken, einfache Rückfragen beantworten. Was nicht im Scope steht, macht sie nicht. Und wird ergänzt, wenn nötig.</p>
+          <p class="bauplan-detail-lead" data-i18n="bauplan.m2.lead">Konkreter Aufgaben-Scope statt vager Job-Beschreibung. Was nicht im Scope steht, macht sie nicht. Und wird ergänzt, wenn nötig.</p>
+          <div class="bauplan-defines">
+            <span class="bauplan-defines-label" data-i18n="bauplan.defines.label">Wir definieren</span>
+            <div class="bauplan-defines-chips">
+              <span class="bauplan-defines-chip" data-i18n="bauplan.m2.chip1">In-Scope-Aufgaben</span>
+              <span class="bauplan-defines-chip" data-i18n="bauplan.m2.chip2">Out-of-Scope</span>
+              <span class="bauplan-defines-chip" data-i18n="bauplan.m2.chip3">Erwartetes Volumen</span>
+              <span class="bauplan-defines-chip" data-i18n="bauplan.m2.chip4">Übergabe-Punkte</span>
+            </div>
+          </div>
+          <div class="bauplan-example">
+            <span class="bauplan-example-label" data-i18n="bauplan.example.label.paula">Beispiel · Paula</span>
+            <p class="bauplan-example-body" data-i18n="bauplan.m2.example">Erfasst Aufträge, pflegt Stammdaten, verschickt Lieferterminbestätigungen, beantwortet einfache Rückfragen. Komplexe Reklamationen gehen direkt an den Innendienst.</p>
+          </div>
         </div>
 
         <div class="bauplan-detail-panel" data-modul="ablauf">
           <span class="bauplan-detail-eyebrow"><span data-i18n="bauplan.prozesse.label">Prozesse</span> · <span data-i18n="bauplan.m3.eyebrow">Modul 03</span></span>
           <h3 data-i18n="bauplan.m3.head">Wie läuft eine Aufgabe ab?</h3>
-          <p data-i18n="bauplan.m3.body">Der Weg von Trigger bis Ergebnis ist Schritt für Schritt definiert. Kein Improvisieren. Beispiel: Anfrage per E-Mail kommt rein → Daten werden extrahiert → ERP-Eintrag erstellt → Bestätigung an Kunde raus. Reproduzierbar, prüfbar, übergebbar.</p>
+          <p class="bauplan-detail-lead" data-i18n="bauplan.m3.lead">Der Weg von Trigger bis Ergebnis ist Schritt für Schritt definiert. Kein Improvisieren. Reproduzierbar, prüfbar, übergebbar.</p>
+          <div class="bauplan-defines">
+            <span class="bauplan-defines-label" data-i18n="bauplan.defines.label">Wir definieren</span>
+            <div class="bauplan-defines-chips">
+              <span class="bauplan-defines-chip" data-i18n="bauplan.m3.chip1">Trigger</span>
+              <span class="bauplan-defines-chip" data-i18n="bauplan.m3.chip2">Schritte</span>
+              <span class="bauplan-defines-chip" data-i18n="bauplan.m3.chip3">System-Aufrufe</span>
+              <span class="bauplan-defines-chip" data-i18n="bauplan.m3.chip4">Ergebnis</span>
+            </div>
+          </div>
+          <div class="bauplan-example bauplan-example--flow">
+            <span class="bauplan-example-label" data-i18n="bauplan.example.label.flow">Beispiel · Auftragsanfrage</span>
+            <div class="bauplan-flow" role="list" aria-label="Ablauf einer Auftragsanfrage">
+              <span class="bauplan-flow-step" role="listitem" data-i18n="bauplan.m3.step1">Anfrage per E-Mail</span>
+              <span class="bauplan-flow-arrow" aria-hidden="true">→</span>
+              <span class="bauplan-flow-step" role="listitem" data-i18n="bauplan.m3.step2">Daten extrahieren</span>
+              <span class="bauplan-flow-arrow" aria-hidden="true">→</span>
+              <span class="bauplan-flow-step" role="listitem" data-i18n="bauplan.m3.step3">ERP-Eintrag erstellen</span>
+              <span class="bauplan-flow-arrow" aria-hidden="true">→</span>
+              <span class="bauplan-flow-step" role="listitem" data-i18n="bauplan.m3.step4">Bestätigung an Kunde</span>
+            </div>
+          </div>
         </div>
 
         <div class="bauplan-detail-panel" data-modul="leitplanken">
           <span class="bauplan-detail-eyebrow"><span data-i18n="bauplan.prozesse.label">Prozesse</span> · <span data-i18n="bauplan.m4.eyebrow">Modul 04</span></span>
           <h3 data-i18n="bauplan.m4.head">Was darf er. Was nicht?</h3>
-          <p data-i18n="bauplan.m4.body">Klare Eskalationsregeln statt Halluzination. Beispiel: Auftragswert über 10.000 € → Freigabe Geschäftsführung. Confidence unter 85 % → Rückfrage an den Innendienst. Reklamation → direkt an die Vertriebsleitung. Wenn etwas unklar ist, fragt er nach. Er erfindet nichts.</p>
+          <p class="bauplan-detail-lead" data-i18n="bauplan.m4.lead">Klare Eskalationsregeln statt Halluzination. Wenn etwas unklar ist, fragt er nach. Er erfindet nichts.</p>
+          <div class="bauplan-defines">
+            <span class="bauplan-defines-label" data-i18n="bauplan.defines.label">Wir definieren</span>
+            <div class="bauplan-defines-chips">
+              <span class="bauplan-defines-chip" data-i18n="bauplan.m4.chip1">Eskalations-Regeln</span>
+              <span class="bauplan-defines-chip" data-i18n="bauplan.m4.chip2">Confidence-Schwelle</span>
+              <span class="bauplan-defines-chip" data-i18n="bauplan.m4.chip3">Freigabe-Grenzen</span>
+              <span class="bauplan-defines-chip" data-i18n="bauplan.m4.chip4">Audit-Log</span>
+            </div>
+          </div>
+          <div class="bauplan-example bauplan-example--rules">
+            <span class="bauplan-example-label" data-i18n="bauplan.example.label.eskalation">Beispiel · Eskalation</span>
+            <ul class="bauplan-rules">
+              <li class="bauplan-rule">
+                <span class="bauplan-rule-cond" data-i18n="bauplan.m4.rule1.cond">Auftragswert &gt; 10.000 €</span>
+                <span class="bauplan-rule-arrow" aria-hidden="true">→</span>
+                <span class="bauplan-rule-target" data-i18n="bauplan.m4.rule1.target">Geschäftsführung</span>
+              </li>
+              <li class="bauplan-rule">
+                <span class="bauplan-rule-cond" data-i18n="bauplan.m4.rule2.cond">Confidence &lt; 85 %</span>
+                <span class="bauplan-rule-arrow" aria-hidden="true">→</span>
+                <span class="bauplan-rule-target" data-i18n="bauplan.m4.rule2.target">Innendienst</span>
+              </li>
+              <li class="bauplan-rule">
+                <span class="bauplan-rule-cond" data-i18n="bauplan.m4.rule3.cond">Reklamation</span>
+                <span class="bauplan-rule-arrow" aria-hidden="true">→</span>
+                <span class="bauplan-rule-target" data-i18n="bauplan.m4.rule3.target">Vertriebsleitung</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div class="bauplan-detail-panel" data-modul="kanaele">
           <span class="bauplan-detail-eyebrow"><span data-i18n="bauplan.prozesse.label">Prozesse</span> · <span data-i18n="bauplan.m5.eyebrow">Modul 05</span></span>
           <h3 data-i18n="bauplan.m5.head">Wo ist er erreichbar?</h3>
-          <p data-i18n="bauplan.m5.body">Er arbeitet in dem Stack, den Sie schon haben. E-Mail, ERP, CRM, DATEV, Ticket-System, Slack. Keine Parallel-Systeme, kein Rip-and-Replace. Wenn ein Tool fehlt, sagen wir es im Erstgespräch. Keine Vorab-Investition in zehn neue SaaS-Lizenzen.</p>
+          <p class="bauplan-detail-lead" data-i18n="bauplan.m5.lead">Er arbeitet in dem Stack, den Sie schon haben. Keine Parallel-Systeme, kein Rip-and-Replace.</p>
+          <div class="bauplan-defines">
+            <span class="bauplan-defines-label" data-i18n="bauplan.defines.label.tools">Unterstützte Systeme</span>
+            <div class="bauplan-defines-chips">
+              <span class="bauplan-defines-chip">E-Mail</span>
+              <span class="bauplan-defines-chip">ERP</span>
+              <span class="bauplan-defines-chip">CRM</span>
+              <span class="bauplan-defines-chip">DATEV</span>
+              <span class="bauplan-defines-chip">Ticket-System</span>
+              <span class="bauplan-defines-chip">Slack</span>
+            </div>
+          </div>
+          <div class="bauplan-example">
+            <span class="bauplan-example-label" data-i18n="bauplan.example.label.paula">Beispiel · Paula</span>
+            <p class="bauplan-example-body" data-i18n="bauplan.m5.example">Arbeitet in Outlook (E-Mail), in Ihrem ERP (Auftragserfassung) und in DATEV (Belege). Login mit ihrem eigenen User-Account. Wenn ein Tool fehlt, sagen wir es im Erstgespräch.</p>
+          </div>
         </div>
 
       </div>
