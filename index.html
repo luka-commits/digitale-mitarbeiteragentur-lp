@@ -212,11 +212,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ============ HERO ============ -->
 <header class="hero">
-  <video class="hero-video" poster="assets/hero/hero-poster.webp" autoplay muted playsinline preload="metadata" aria-hidden="true">
-    <source src="assets/hero/hero-anim-mobile.webm" type="video/webm" media="(max-width: 768px)">
-    <source src="assets/hero/hero-anim-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
-    <source src="assets/hero/hero-anim.webm" type="video/webm">
-    <source src="assets/hero/hero-anim.mp4" type="video/mp4">
+  <video class="hero-video" poster="assets/hero/hero-poster.webp" muted playsinline preload="none" data-defer-video aria-hidden="true">
+    <source data-src="assets/hero/hero-anim-mobile.webm" type="video/webm" media="(max-width: 768px)">
+    <source data-src="assets/hero/hero-anim-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+    <source data-src="assets/hero/hero-anim.webm" type="video/webm">
+    <source data-src="assets/hero/hero-anim.mp4" type="video/mp4">
   </video>
   <div class="container">
     <div class="hero-text">
@@ -1536,13 +1536,10 @@ window.addEventListener('load', function() {
 </script>
 
 <script>
-// Lazy-load below-the-fold videos (persona headshots). They were autoplay+preload=metadata,
-// which causes the browser to fetch them eagerly on page load. Now they only load + play
-// when scrolled into view → big mobile LCP/TBT win.
+// Video performance: hero video defers until window.load (saves 1MB from
+// initial bandwidth on mobile, improving LCP). Persona videos only load
+// when scrolled into viewport.
 (function() {
-  var lazyVideos = document.querySelectorAll('video[data-lazy-video]');
-  if (!lazyVideos.length) return;
-
   function activate(video) {
     if (video.dataset.lazyLoaded) return;
     video.dataset.lazyLoaded = '1';
@@ -1554,6 +1551,24 @@ window.addEventListener('load', function() {
     if (p && typeof p.catch === 'function') p.catch(function() {});
   }
 
+  // Hero video: trigger after load + idle window so it doesn't compete with
+  // critical resources. Falls back to setTimeout if requestIdleCallback missing.
+  var heroVideos = document.querySelectorAll('video[data-defer-video]');
+  if (heroVideos.length) {
+    var schedule = function(fn) {
+      if ('requestIdleCallback' in window) window.requestIdleCallback(fn, { timeout: 2000 });
+      else setTimeout(fn, 400);
+    };
+    var triggerHero = function() {
+      schedule(function() { heroVideos.forEach(activate); });
+    };
+    if (document.readyState === 'complete') triggerHero();
+    else window.addEventListener('load', triggerHero);
+  }
+
+  // Persona videos: lazy-load when scrolled into view.
+  var lazyVideos = document.querySelectorAll('video[data-lazy-video]');
+  if (!lazyVideos.length) return;
   if (!('IntersectionObserver' in window)) {
     lazyVideos.forEach(activate);
     return;
