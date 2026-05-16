@@ -1,0 +1,12 @@
+{
+  "name": "dma-lp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DMA landing page — static site. `build` minifies CSS on Vercel.",
+  "scripts": {
+    "build": "npx clean-css-cli styles/site.css -o styles/site.min.css && npx clean-css-cli colors_and_type.css -o colors_and_type.min.css"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3"
+  }
+}

@@ -24,7 +24,7 @@
       ]
     },
     {
-      "source": "/colors_and_type.css",
+      "source": "/colors_and_type.min.css",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=300, must-revalidate" }
       ]

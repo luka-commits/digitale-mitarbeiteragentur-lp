@@ -24,8 +24,8 @@
 <link rel="preload" as="image" href="assets/hero/hero-poster.webp" fetchpriority="high" />
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/IBMPlexSans-700.woff2" crossorigin />
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/IBMPlexMono-700.woff2" crossorigin />
-<link rel="stylesheet" href="colors_and_type.css" />
-<link rel="stylesheet" href="styles/site.css" />
+<link rel="stylesheet" href="colors_and_type.min.css" />
+<link rel="stylesheet" href="styles/site.min.css" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -139,6 +139,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PLACEHOLDER');
 </script>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLACEHOLDER"
@@ -268,9 +269,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <article class="atelier-card profile-card">
           <div class="profile-headshot" data-persona="paula">
-            <video class="headshot-video" poster="assets/personas/paula-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
-              <source src="assets/personas/paula-anim.webm" type="video/webm">
-              <source src="assets/personas/paula-anim.mp4" type="video/mp4">
+            <video class="headshot-video" poster="assets/personas/paula-poster.jpg" muted loop playsinline preload="none" data-lazy-video aria-hidden="true">
+              <source data-src="assets/personas/paula-anim.webm" type="video/webm">
+              <source data-src="assets/personas/paula-anim.mp4" type="video/mp4">
             </video>
             <span class="headshot-initial" aria-hidden="true">P</span>
             <span class="headshot-status" data-i18n="ext.paula.status">Verfügbar</span>
@@ -293,9 +294,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <article class="atelier-card profile-card">
           <div class="profile-headshot" data-persona="martin">
-            <video class="headshot-video" poster="assets/personas/martin-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
-              <source src="assets/personas/martin-anim.webm" type="video/webm">
-              <source src="assets/personas/martin-anim.mp4" type="video/mp4">
+            <video class="headshot-video" poster="assets/personas/martin-poster.jpg" muted loop playsinline preload="none" data-lazy-video aria-hidden="true">
+              <source data-src="assets/personas/martin-anim.webm" type="video/webm">
+              <source data-src="assets/personas/martin-anim.mp4" type="video/mp4">
             </video>
             <span class="headshot-initial" aria-hidden="true">M</span>
             <span class="headshot-status" data-i18n="ext.martin.status">Verfügbar</span>
@@ -318,9 +319,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <article class="atelier-card profile-card">
           <div class="profile-headshot" data-persona="jonas">
-            <video class="headshot-video" poster="assets/personas/jonas-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
-              <source src="assets/personas/jonas-anim.webm" type="video/webm">
-              <source src="assets/personas/jonas-anim.mp4" type="video/mp4">
+            <video class="headshot-video" poster="assets/personas/jonas-poster.jpg" muted loop playsinline preload="none" data-lazy-video aria-hidden="true">
+              <source data-src="assets/personas/jonas-anim.webm" type="video/webm">
+              <source data-src="assets/personas/jonas-anim.mp4" type="video/mp4">
             </video>
             <span class="headshot-initial" aria-hidden="true">J</span>
             <span class="headshot-status" data-i18n="ext.jonas.status">Verfügbar</span>
@@ -1531,6 +1532,41 @@ window.addEventListener('load', function() {
       }
     }, { passive: true });
   }
+})();
+</script>
+
+<script>
+// Lazy-load below-the-fold videos (persona headshots). They were autoplay+preload=metadata,
+// which causes the browser to fetch them eagerly on page load. Now they only load + play
+// when scrolled into view → big mobile LCP/TBT win.
+(function() {
+  var lazyVideos = document.querySelectorAll('video[data-lazy-video]');
+  if (!lazyVideos.length) return;
+
+  function activate(video) {
+    if (video.dataset.lazyLoaded) return;
+    video.dataset.lazyLoaded = '1';
+    video.querySelectorAll('source[data-src]').forEach(function(s) {
+      s.src = s.dataset.src;
+    });
+    video.load();
+    var p = video.play();
+    if (p && typeof p.catch === 'function') p.catch(function() {});
+  }
+
+  if (!('IntersectionObserver' in window)) {
+    lazyVideos.forEach(activate);
+    return;
+  }
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        activate(entry.target);
+        io.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '200px 0px' });
+  lazyVideos.forEach(function(v) { io.observe(v); });
 })();
 </script>
 </body>
